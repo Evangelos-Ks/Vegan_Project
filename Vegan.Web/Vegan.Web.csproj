@@ -307,6 +307,20 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vegan.Database\Vegan.Database.csproj">
+      <Project>{5d99a8a4-62ff-4386-bc9f-6f1bd9a10853}</Project>
+      <Name>Vegan.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vegan.Entities\Vegan.Entities.csproj">
+      <Project>{54d2e319-f5ed-4f05-87f8-1c72f497dc4e}</Project>
+      <Name>Vegan.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vegan.Services\Vegan.Services.csproj">
+      <Project>{6cb08aab-4499-4454-bf34-ad914cf50721}</Project>
+      <Name>Vegan.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
