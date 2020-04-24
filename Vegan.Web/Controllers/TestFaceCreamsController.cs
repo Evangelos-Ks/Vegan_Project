@@ -18,7 +18,7 @@ namespace Vegan.Web.Controllers
         // GET: TestFaceCreams
         public ActionResult Index()
         {
-            return View(db.Products.ToList());
+            return View(db.FaceCreams.ToList());
         }
 
         // GET: TestFaceCreams/Details/5

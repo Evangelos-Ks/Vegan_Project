@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Vegan.Entities.Care.Care>
+﻿@model IEnumerable<Vegan.Entities.Care.FaceCream>
 
 @{
     ViewBag.Title = "Index";
@@ -23,9 +23,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Directions)
         </th>
-        @*<th>
+        <th>
             @Html.DisplayNameFor(model => model.Incrediant)
-        </th>*@
+        </th>
         <th></th>
     </tr>
 
@@ -43,9 +43,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Directions)
         </td>
-        @*<td>
+        <td>
             @Html.DisplayFor(modelItem => item.Incrediant)
-        </td>*@
+        </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
