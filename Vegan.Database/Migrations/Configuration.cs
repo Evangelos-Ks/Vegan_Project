@@ -4,6 +4,7 @@
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Vegan.Entities.Care;
     using Vegan.Entities.Home;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Vegan.Database.MyDatabase>
@@ -15,15 +16,18 @@
 
         protected override void Seed(Vegan.Database.MyDatabase context)
         {
-            Candle c1 = new Candle() { Title = "c1", Price = 1.2m, ImageURL="#1", Instructions="1-instrcut"};
-            Candle c2 = new Candle() { Title = "c2", Price = 2.2m, ImageURL = "#2", Instructions = "2-instrcut" };
-            Candle c3 = new Candle() { Title = "c3", Price = 3.2m, ImageURL = "#3", Instructions = "3-instrcut" };
+            Candle c1 = new Candle() { Title = "c1", Price = 1.2m, ImageURL="#1", Instructions="1-instrcut", Description="descr1"};
+            Candle c2 = new Candle() { Title = "c2", Price = 2.2m, ImageURL = "#2", Instructions = "2-instrcut", Description = "descr2" };
+            Candle c3 = new Candle() { Title = "c3", Price = 3.2m, ImageURL = "#3", Instructions = "3-instrcut", Description = "descr3" };
 
 
-
+            FaceCream f1 = new FaceCream() { Title = "f1", Price = 1.1m, ImageURL = "#1", Incrediant = "some1", Directions = "directions1" };
+            FaceCream f2 = new FaceCream() { Title = "f2", Price = 2.2m, ImageURL = "#2", Incrediant = "some2", Directions = "directions2" };
+            FaceCream f3 = new FaceCream() { Title = "f3", Price = 3.3m, ImageURL = "#3", Incrediant = "some3", Directions = "directions3" };
 
 
             context.Candles.AddOrUpdate(x => x.Title, c1, c2, c3);
+            context.FaceCreams.AddOrUpdate(x => x.Title, f1, f2, f3);
             context.SaveChanges();
         }
     }

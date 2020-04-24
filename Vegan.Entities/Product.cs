@@ -14,5 +14,6 @@ namespace Vegan.Entities
 
         public string Title { get; set; }
 
+        public string ImageURL { get; set; }
     }
 }

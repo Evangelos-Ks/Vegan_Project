@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using Vegan.Entities.Home;
 using Vegan.Entities;
+using Vegan.Entities.Care;
 
 namespace Vegan.Database
 {
@@ -19,5 +20,7 @@ namespace Vegan.Database
         public DbSet<Candle> Candles { get; set; }
         public DbSet<Home> Homes { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<FaceCream> FaceCreams { get; set; }
+        public DbSet<Care> Cares { get; set; }
     }
 }

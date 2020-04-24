@@ -17,8 +17,8 @@ namespace Vegan.Entities.Home
 
         //TODO: Add Review 
 
-        //Layout: https://www.the-apothecary.ca/5x3-beeswax-candle
 
+        //Layout: https://www.the-apothecary.ca/5x3-beeswax-candle
 
     }
 }

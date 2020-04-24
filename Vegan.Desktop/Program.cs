@@ -14,21 +14,36 @@ namespace Vegan.Desktop
             MyDatabase myDatabase = new MyDatabase();
             foreach (var item in myDatabase.Products)
             {
-                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " "  );
+                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " "  + item.ImageURL);
             }
 
-            Console.WriteLine("--------------");
+            Console.WriteLine("-------HOME-------");
 
             foreach (var item in myDatabase.Homes)
             {
-                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL);
+                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Description );
             }
 
             Console.WriteLine("--------------");
 
             foreach (var item in myDatabase.Candles)
             {
-                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " +  item.ImageURL + " " +item.Instructions  );
+                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " +  item.ImageURL + " " + item.Description+ " " +item.Instructions  );
+            }
+
+            Console.WriteLine("--------CARE------");
+
+            foreach (var item in myDatabase.Cares)
+            {
+                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Directions );
+            }
+
+          
+            Console.WriteLine("--------------");
+
+            foreach (var item in myDatabase.FaceCreams)
+            {
+                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " +  item.ImageURL + " " + item.Directions + " " + item.Incrediant  );
             }
 
             Console.Read();
