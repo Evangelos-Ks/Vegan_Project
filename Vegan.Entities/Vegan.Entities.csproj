@@ -53,6 +53,8 @@
   <ItemGroup>
     <Compile Include="Care\Care.cs" />
     <Compile Include="Care\FaceCream.cs" />
+    <Compile Include="FoodHerb\FoodHerb.cs" />
+    <Compile Include="FoodHerb\Tea.cs" />
     <Compile Include="Home\Candle.cs" />
     <Compile Include="Home\Home.cs" />
     <Compile Include="Product.cs" />

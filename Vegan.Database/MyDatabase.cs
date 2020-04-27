@@ -7,6 +7,7 @@ using System.Data.Entity;
 using Vegan.Entities.Home;
 using Vegan.Entities;
 using Vegan.Entities.Care;
+using Vegan.Entities.FoodHerb;
 
 namespace Vegan.Database
 {
@@ -22,5 +23,7 @@ namespace Vegan.Database
         public DbSet<Product> Products { get; set; }
         public DbSet<FaceCream> FaceCreams { get; set; }
         public DbSet<Care> Cares { get; set; }
+        public DbSet<FoodHerb> FoodHerbs { get; set; }
+        public DbSet<Tea> Teas { get; set; }
     }
 }
