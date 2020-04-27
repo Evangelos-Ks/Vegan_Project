@@ -8,7 +8,7 @@ namespace Vegan.Entities.Supplement
 {
     public class SuperFood : Supplement
     {
-        public string Ingredient { get; set; }
+        public Dictionary<string, string> Ingredient { get; set; } // e.g. "Melatonin"(string 1)	"1 mg"(string 2)
 
         //https://www.superfoods.eu/products/
 

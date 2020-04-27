@@ -29,5 +29,6 @@ namespace Vegan.Database
         public DbSet<Spice> Spices { get; set; }
         public DbSet<Supplement> Supplements { get; set; }
         public DbSet<SuperFood> SuperFoods { get; set; }
+        public DbSet<PowerHealth> PowerHealths { get; set; }
     }
 }
