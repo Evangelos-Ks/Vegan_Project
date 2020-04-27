@@ -1,7 +1,7 @@
 ﻿namespace Vegan.Entities.Home
 {
     
-        public enum Size // count in ml
+        public enum BottleSize // count in ml
     {
             Three = 3, 
             Five = 5,

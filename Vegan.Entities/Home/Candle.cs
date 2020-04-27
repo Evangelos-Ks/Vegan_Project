@@ -12,7 +12,7 @@ namespace Vegan.Entities.Home
         public string Instructions { get; set; }
 
         //public string Why { get; set; }
-        //public string Size { get; set; } //eg 5x3"
+        //public string BottleSize { get; set; } //eg 5x3"
         //public string BurnTime { get; set; } //58-59 hours
 
         //TODO: Add Review 

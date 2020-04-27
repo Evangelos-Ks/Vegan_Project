@@ -47,7 +47,7 @@ namespace Vegan.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Price,Title,ImageURL,Directions,Incrediant")] FaceCream faceCream)
+        public ActionResult Create([Bind(Include = "Id,Price,Title,ImageURL,Directions,Incredient")] FaceCream faceCream)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace Vegan.Web.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Price,Title,ImageURL,Directions,Incrediant")] FaceCream faceCream)
+        public ActionResult Edit([Bind(Include = "Id,Price,Title,ImageURL,Directions,Incredient")] FaceCream faceCream)
         {
             if (ModelState.IsValid)
             {

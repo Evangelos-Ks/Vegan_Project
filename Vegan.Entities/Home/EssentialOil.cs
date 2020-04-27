@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Vegan.Entities.Home
 {
-    public partial class EssentialOil
+    public partial class EssentialOil : Home
     {
         public string Ingredient { get; set; }
-        public Size Size { get; set; }
+        public BottleSize Size { get; set; }
 
        // https://www.the-apothecary.ca/Synergies-Blends_c_19.html
     }

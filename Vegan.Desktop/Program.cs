@@ -44,7 +44,7 @@ namespace Vegan.Desktop
 
             foreach (var item in myDatabase.FaceCreams)
             {
-                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " +  item.ImageURL + " " + item.Directions + " " + item.Incrediant  );
+                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " +  item.ImageURL + " " + item.Directions + " " + item.Incredient  );
             }
 
             Console.WriteLine("--------FoodHome------");
