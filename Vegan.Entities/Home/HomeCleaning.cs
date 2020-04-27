@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Vegan.Entities.Home
 {
-    public abstract class Home : Product
+    public class HomeCleaning
     {
-       
-        public string Information { get; set; }
-
+        public string About { get; set; }
+        //https://www.the-apothecary.ca/Zero-Waste-Home-Cleaning
     }
 }

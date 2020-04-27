@@ -53,11 +53,21 @@
   <ItemGroup>
     <Compile Include="Care\Care.cs" />
     <Compile Include="Care\FaceCream.cs" />
+    <Compile Include="Care\Hair.cs" />
+    <Compile Include="Care\Lotion.cs" />
+    <Compile Include="Care\ShaveBeard.cs" />
+    <Compile Include="Care\Size.cs" />
     <Compile Include="FoodHerb\FoodHerb.cs" />
+    <Compile Include="FoodHerb\Salt.cs" />
     <Compile Include="FoodHerb\Spice.cs" />
+    <Compile Include="FoodHerb\SproutingSeed.cs" />
     <Compile Include="FoodHerb\Tea.cs" />
     <Compile Include="Home\Candle.cs" />
+    <Compile Include="Home\EssentialOil.cs" />
     <Compile Include="Home\Home.cs" />
+    <Compile Include="Home\HomeCleaning.cs" />
+    <Compile Include="Home\Kitchen.cs" />
+    <Compile Include="Home\Size.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Supplement\PowerHealth.cs" />

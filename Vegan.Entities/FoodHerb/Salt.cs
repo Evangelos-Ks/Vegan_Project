@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Vegan.Entities.FoodHerb
 {
-    public class Spice : FoodHerb
+    public class Salt : FoodHerb
     {
-        public string BulkPricing { get; set; } 
-
-        //https://www.the-apothecary.ca/cajun-seasoning 
+        public string BulkPricing { get; set; }
+        //https://www.the-apothecary.ca/Salts_c_294.html
     }
 }

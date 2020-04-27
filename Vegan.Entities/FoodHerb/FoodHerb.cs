@@ -8,8 +8,7 @@ namespace Vegan.Entities.FoodHerb
 {
     public abstract class FoodHerb : Product
     {
-        public string Description { get; set; }
-        //public bool Availability { get; set; }
+        public string Information { get; set; }
         //Review
     }
 }

@@ -8,6 +8,10 @@ namespace Vegan.Entities.FoodHerb
 {
     public class Tea : FoodHerb
     {
-        public string MoreInfo { get; set; }
+        public string MoreInformation { get; set; }
+        public string Preparation { get; set; }
+        public string Precautions { get; set; }
+
+        //https://www.the-apothecary.ca/Bulk-Herbs_c_71.html
     }
 }

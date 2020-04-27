@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Vegan.Entities.Home
 {
-    public abstract class Home : Product
+    public class Kitchen : Home
     {
-       
         public string Information { get; set; }
+        public string Instruction { get; set; }
 
+       // https://www.the-apothecary.ca/zero-waste-kitchen
     }
 }
