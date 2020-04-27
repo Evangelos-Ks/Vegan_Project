@@ -61,6 +61,28 @@ namespace Vegan.Desktop
                 Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Description + " " + item.MoreInfo);
             }
 
+            Console.WriteLine("--------------");
+
+            foreach (var item in myDatabase.Spices)
+            {
+                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Description + " " + item.MyProperty);
+            }
+
+            Console.WriteLine("--------Supplement------");
+
+            foreach (var item in myDatabase.Supplements)
+            {
+                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information);
+            }
+
+
+            Console.WriteLine("--------------");
+
+            foreach (var item in myDatabase.SuperFoods)
+            {
+                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information + " " + item.Ingredient);
+            }
+
             Console.Read();
         }
     }
