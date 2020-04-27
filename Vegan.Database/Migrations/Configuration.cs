@@ -45,14 +45,14 @@
 
 
             //=================================================== SuperFood ================================================
-            SuperFood sf1 = new SuperFood() { Title = "sf1", Price = 1.1m, ImageURL = "#1", Information = "Information1", Ingredient = new Dictionary<string, string>() { { "Ingredient1", "1 mg" } } };
-            SuperFood sf2 = new SuperFood() { Title = "sf2", Price = 2.2m, ImageURL = "#2", Information = "Information2", Ingredient = new Dictionary<string, string>() { { "Ingredient2", "2 mg" } } };
-            SuperFood sf3 = new SuperFood() { Title = "sf3", Price = 3.3m, ImageURL = "#3", Information = "Information3", Ingredient = new Dictionary<string, string>() { { "Ingredient3", "3 mg" } } };
+            SuperFood sf1 = new SuperFood() { Title = "sf1", Price = 1.1m, ImageURL = "#1", Information = "Information1", NameOfIngridient = "Ingredient1", ValueOfIngridient = "1 mg" };
+            SuperFood sf2 = new SuperFood() { Title = "sf2", Price = 2.2m, ImageURL = "#2", Information = "Information2", NameOfIngridient = "Ingredient2", ValueOfIngridient = "2 mg" };
+            SuperFood sf3 = new SuperFood() { Title = "sf3", Price = 3.3m, ImageURL = "#3", Information = "Information3", NameOfIngridient = "Ingredient3", ValueOfIngridient = "3 mg" };
 
             //=================================================== PowerHealth ==============================================
-            PowerHealth ph1 = new PowerHealth() { Title = "sf1", Price = 1.1m, ImageURL = "#1", Information = "Information1", Ingredient = new Dictionary<string, string>() { { "Ingredient1", "1 mg" } }, UseInstruction = "UseInstruction1" };
-            PowerHealth ph2 = new PowerHealth() { Title = "sf2", Price = 2.2m, ImageURL = "#2", Information = "Information2", Ingredient = new Dictionary<string, string>() { { "Ingredient2", "2 mg" } }, UseInstruction = "UseInstruction2" };
-            PowerHealth ph3 = new PowerHealth() { Title = "sf3", Price = 3.3m, ImageURL = "#3", Information = "Information3", Ingredient = new Dictionary<string, string>() { { "Ingredient3", "3 mg" } }, UseInstruction = "UseInstruction3" };
+            PowerHealth ph1 = new PowerHealth() { Title = "ph1", Price = 1.1m, ImageURL = "#1", Information = "Information1", NameOfIngridient = "Ingredient1", ValueOfIngridient = "1 mg", UseInstruction = "UseInstruction1" };
+            PowerHealth ph2 = new PowerHealth() { Title = "ph2", Price = 2.2m, ImageURL = "#2", Information = "Information2", NameOfIngridient = "Ingredient2", ValueOfIngridient = "2 mg", UseInstruction = "UseInstruction2" };
+            PowerHealth ph3 = new PowerHealth() { Title = "ph3", Price = 3.3m, ImageURL = "#3", Information = "Information3", NameOfIngridient = "Ingredient3", ValueOfIngridient = "3 mg", UseInstruction = "UseInstruction3" };
 
 
 

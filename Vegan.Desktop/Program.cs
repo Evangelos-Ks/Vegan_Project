@@ -81,24 +81,14 @@ namespace Vegan.Desktop
 
             foreach (var item in myDatabase.SuperFoods)
             {
-                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information + " " + item.Ingredient);
+                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information + " " + item.NameOfIngridient + " " + item.ValueOfIngridient);
             }
 
             Console.WriteLine("--------------");
 
             foreach (var item in myDatabase.PowerHealths)
             {
-                //PowerHealth ph = new PowerHealth() { Price = item.Price, Id = item.Id, Title = item.Title, ImageURL = item.ImageURL, Information = item.Information, Ingredient = item.Ingredient, UseInstruction = item.UseInstruction };
-
-                Console.Write(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information + " ");
-                foreach (var ingredient in item.Ingredient)
-                {
-                    Console.Write(ingredient.Key + " " + ingredient.Value + " ");
-                }
-                Console.WriteLine(item.UseInstruction);
-
-                //Νομίζω πως θέλει ξεχωριστό πίνακα γιατί στη βάση δεν βλέπει το value. Μια άλλη λύση είναι να βγάλουμε το dictionary και να βάλουμε δύο string στη 
-                //θέση του. string NameOfIngridient και string ValueOfIngridient. Εμένα μου αρέσει αυτή η ιδέα και νομίζω πως θα μας βολέψει πολύ.
+                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information + " " + item.NameOfIngridient + " " + item.ValueOfIngridient + " " + item.UseInstruction);
             }
 
             Console.Read();
