@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vegan.Entities.Care
 {
-    public class Care : Product
+    public abstract class Care : Product
     {
         public string Directions { get; set; }
 

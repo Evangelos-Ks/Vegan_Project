@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vegan.Entities.Home
 {
-    public class Home : Product
+    public abstract class Home : Product
     {
        
         public string Description { get; set; }
