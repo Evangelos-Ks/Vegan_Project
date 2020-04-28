@@ -59,14 +59,14 @@ namespace Vegan.Desktop
 
             foreach (var item in myDatabase.Teas)
             {
-                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Description + " " + item.MoreInfo);
+                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Description );
             }
 
             Console.WriteLine("--------------");
 
             foreach (var item in myDatabase.Spices)
             {
-                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Description + " " + item.MyProperty);
+                Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Description );
             }
 
             Console.WriteLine("--------Supplement------");

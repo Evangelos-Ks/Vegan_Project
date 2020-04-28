@@ -8,7 +8,6 @@ namespace Vegan.Entities.Care
 {
     public class FaceCream : Care
     {
-        public string Incredient { get; set; }
 
         //https://www.the-apothecary.ca/honey-therapy-body-lotion
     }
