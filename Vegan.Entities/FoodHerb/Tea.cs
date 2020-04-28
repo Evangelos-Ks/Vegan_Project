@@ -8,9 +8,18 @@ namespace Vegan.Entities.FoodHerb
 {
     public class Tea : FoodHerb
     {
-        public string MoreInformation { get; set; }
-        public string Preparation { get; set; }
-        public string Precautions { get; set; }
+        public string Ingredients { get; set; }
+        public string BulkPricing { get; set; }
+
+        //https://www.the-apothecary.ca/alpen-glow-tea
+
+
+
+        //Εδώ άλλαξα τις ιδιότητες, καθώς δεν ήταν ίδια με αυτά που θα έπαιρνα από το τσάι.
+
+        //public string MoreInformation { get; set; }
+        //public string Preparation { get; set; }
+        //public string Precautions { get; set; }
 
         //https://www.the-apothecary.ca/Bulk-Herbs_c_71.html
     }
