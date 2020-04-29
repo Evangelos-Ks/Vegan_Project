@@ -12,7 +12,6 @@ namespace Vegan.Services
         T GetByID(object id);
         void Insert(T obj);
         void Update(T obj);
-        void Delete(object id);
-        void Save();
+        void Delete(T obj);
     }
 }
