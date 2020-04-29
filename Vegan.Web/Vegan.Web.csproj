@@ -217,6 +217,7 @@
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\TestFaceCreamsController.cs" />
     <Compile Include="Controllers\TestProductsController.cs" />
+    <Compile Include="Controllers\TestProductsGController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -403,9 +404,15 @@
     <Content Include="Views\TestProducts\Details.cshtml" />
     <Content Include="Views\TestProducts\Edit.cshtml" />
     <Content Include="Views\TestProducts\Index.cshtml" />
+    <Content Include="Views\TestProductsG\Create.cshtml" />
+    <Content Include="Views\TestProductsG\Delete.cshtml" />
+    <Content Include="Views\TestProductsG\Details.cshtml" />
+    <Content Include="Views\TestProductsG\Edit.cshtml" />
+    <Content Include="Views\TestProductsG\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\GenericTestControler\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
