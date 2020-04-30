@@ -212,6 +212,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FaceCreamController.cs" />
+    <Compile Include="Controllers\TestControllers\CareController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\TestControllers\TestCaresController.cs" />
@@ -415,6 +417,16 @@
     <Content Include="Views\Product\EditProduct.cshtml" />
     <Content Include="Views\Product\DeleteProduct.cshtml" />
     <Content Include="Views\Product\DetailsProduct.cshtml" />
+    <Content Include="Views\TestViews\Care\AddCare.cshtml" />
+    <Content Include="Views\TestViews\Care\DeleteCare.cshtml" />
+    <Content Include="Views\TestViews\Care\DetailsCare.cshtml" />
+    <Content Include="Views\TestViews\Care\EditCare.cshtml" />
+    <Content Include="Views\TestViews\Care\Index.cshtml" />
+    <Content Include="Views\Care\FaceCream\AddFaceCream.cshtml" />
+    <Content Include="Views\Care\FaceCream\DeleteFaceCream.cshtml" />
+    <Content Include="Views\Care\FaceCream\DetailsFaceCream.cshtml" />
+    <Content Include="Views\Care\FaceCream\EditFaceCream.cshtml" />
+    <Content Include="Views\Care\FaceCream\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
