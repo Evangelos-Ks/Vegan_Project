@@ -213,11 +213,12 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\TestCaresController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
-    <Compile Include="Controllers\TestFaceCreamsController.cs" />
-    <Compile Include="Controllers\TestProductsController.cs" />
-    <Compile Include="Controllers\TestProductsGController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\TestControllers\TestCaresController.cs" />
+    <Compile Include="Controllers\TestControllers\TestController.cs" />
+    <Compile Include="Controllers\TestControllers\TestFaceCreamsController.cs" />
+    <Compile Include="Controllers\TestControllers\TestProductsController.cs" />
+    <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -388,31 +389,36 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Test\Index.cshtml" />
-    <Content Include="Views\TestFaceCreams\Create.cshtml" />
-    <Content Include="Views\TestFaceCreams\Delete.cshtml" />
-    <Content Include="Views\TestFaceCreams\Details.cshtml" />
-    <Content Include="Views\TestFaceCreams\Edit.cshtml" />
-    <Content Include="Views\TestFaceCreams\Index.cshtml" />
-    <Content Include="Views\TestCares\Create.cshtml" />
-    <Content Include="Views\TestCares\Delete.cshtml" />
-    <Content Include="Views\TestCares\Details.cshtml" />
-    <Content Include="Views\TestCares\Edit.cshtml" />
-    <Content Include="Views\TestCares\Index.cshtml" />
-    <Content Include="Views\TestProducts\Create.cshtml" />
-    <Content Include="Views\TestProducts\Delete.cshtml" />
-    <Content Include="Views\TestProducts\Details.cshtml" />
-    <Content Include="Views\TestProducts\Edit.cshtml" />
-    <Content Include="Views\TestProducts\Index.cshtml" />
-    <Content Include="Views\TestProductsG\Create.cshtml" />
-    <Content Include="Views\TestProductsG\Delete.cshtml" />
-    <Content Include="Views\TestProductsG\Details.cshtml" />
-    <Content Include="Views\TestProductsG\Edit.cshtml" />
-    <Content Include="Views\TestProductsG\Index.cshtml" />
+    <Content Include="Views\TestViews\Test\Index.cshtml" />
+    <Content Include="Views\TestViews\TestFaceCreams\Create.cshtml" />
+    <Content Include="Views\TestViews\TestFaceCreams\Delete.cshtml" />
+    <Content Include="Views\TestViews\TestFaceCreams\Details.cshtml" />
+    <Content Include="Views\TestViews\TestFaceCreams\Edit.cshtml" />
+    <Content Include="Views\TestViews\TestFaceCreams\Index.cshtml" />
+    <Content Include="Views\TestViews\TestCares\Create.cshtml" />
+    <Content Include="Views\TestViews\TestCares\Delete.cshtml" />
+    <Content Include="Views\TestViews\TestCares\Details.cshtml" />
+    <Content Include="Views\TestViews\TestCares\Edit.cshtml" />
+    <Content Include="Views\TestViews\TestCares\Index.cshtml" />
+    <Content Include="Views\TestViews\TestProducts\Create.cshtml" />
+    <Content Include="Views\TestViews\TestProducts\Delete.cshtml" />
+    <Content Include="Views\TestViews\TestProducts\Details.cshtml" />
+    <Content Include="Views\TestViews\TestProducts\Edit.cshtml" />
+    <Content Include="Views\TestViews\TestProducts\Index.cshtml" />
+    <Content Include="Views\TestViews\TestProductsG\Create.cshtml" />
+    <Content Include="Views\TestViews\TestProductsG\Delete.cshtml" />
+    <Content Include="Views\TestViews\TestProductsG\Details.cshtml" />
+    <Content Include="Views\TestViews\TestProductsG\Edit.cshtml" />
+    <Content Include="Views\TestViews\TestProductsG\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\AddProduct.cshtml" />
+    <Content Include="Views\Product\EditProduct.cshtml" />
+    <Content Include="Views\Product\DeleteProduct.cshtml" />
+    <Content Include="Views\Product\DetailsProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\GenericTestControler\" />
+    <Folder Include="Views\TestViews\TestUProduct\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -13,7 +13,7 @@ namespace Vegan.Services
     {
         //=========================================================== Fields ===============================================
         //Here TContext is nothing but your DBContext class
-        //In our example it is EmployeeDBContext class
+        //In our example it is MyDatabase class
         private readonly TdbContext db;
         private bool isDisposed;
         private string errorMessage = string.Empty;
@@ -22,14 +22,14 @@ namespace Vegan.Services
 
         //=========================================================== Constructor ==========================================
         //Using the Constructor we are initializing the _context variable is nothing but
-        //we are storing the DBContext (EmployeeDBContext) object in _context variable
+        //we are storing the DBContext (MyDatabase) object in _context variable
         public UnitOfWork()
         {
             this.db = new TdbContext();
         }
 
         //=========================================================== Properties ==========================++++++++++++++++++++================
-        //This Context property will return the DBContext object i.e. (EmployeeDBContext) object
+        //This Context property will return the DBContext object i.e. (MyDatabase) object
         public TdbContext Context
         {
             get { return db; }
