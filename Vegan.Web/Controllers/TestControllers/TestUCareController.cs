@@ -50,7 +50,7 @@ namespace Vegan.Web.Controllers
                     //Do Some Other Task with the Database
                     //If everything is working then commit the transaction else rollback the transaction
                     unitOfWork.Commit();
-                    return RedirectToAction("Index", "Care");
+                    return RedirectToAction("Index", "TestUCare");
                 }
             }
             catch (Exception ex)
@@ -81,7 +81,7 @@ namespace Vegan.Web.Controllers
             {
                 repository.Update(model);
                 unitOfWork.Save();
-                return RedirectToAction("Index", "Care");
+                return RedirectToAction("Index", "TestUCare");
             }
             else
             {
@@ -102,7 +102,7 @@ namespace Vegan.Web.Controllers
             Care product = repository.GetByID(productId);
             repository.Delete(product);
             unitOfWork.Save();
-            return RedirectToAction("Index", "Care");
+            return RedirectToAction("Index", "TestUCare");
         }
     }
 }

@@ -81,14 +81,14 @@ namespace Vegan.Desktop
 
             //foreach (var item in myDatabase.SuperFoods)
             //{
-            //    Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information + " " + item.NameOfIngridient + " " + item.ValueOfIngridient);
+            //    Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information + " " + item.NameOfIngredient + " " + item.ValueOfIngredient);
             //}
 
             //Console.WriteLine("--------------");
 
             //foreach (var item in myDatabase.PowerHealths)
             //{
-            //    Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information + " " + item.NameOfIngridient + " " + item.ValueOfIngridient + " " + item.UseInstruction);
+            //    Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information + " " + item.NameOfIngredient + " " + item.ValueOfIngredient + " " + item.UseInstruction);
             //}
 
 
@@ -101,16 +101,16 @@ namespace Vegan.Desktop
             
             foreach (var item in myDatabase.SuperFoods)
             {
-                var name = item.NameOfIngridient.Split(',');
+                var name = item.NameOfIngredient.Split(',');
                 names = new string[name.Length];
                 names = name;
 
 
-                var value = item.ValueOfIngridient.Split(',');
+                var value = item.ValueOfIngredient.Split(',');
                 values = new string[value.Length];
                 values = value;
 
-                if (item.ValueOfIngridient.Length > 0)
+                if (item.ValueOfIngredient.Length > 0)
                 {
                     for (int i = 0; i < names.Length; i++)
                     {

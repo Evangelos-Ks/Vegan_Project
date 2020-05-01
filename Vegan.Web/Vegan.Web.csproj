@@ -411,10 +411,10 @@
     <Content Include="Views\Product\EditProduct.cshtml" />
     <Content Include="Views\Product\DeleteProduct.cshtml" />
     <Content Include="Views\Product\DetailsProduct.cshtml" />
+    <Content Include="Views\TestUCare\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\TestViews\TestUCare\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
