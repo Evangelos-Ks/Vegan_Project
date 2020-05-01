@@ -217,6 +217,7 @@
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\TestControllers\TestUFaceCreamController.cs" />
     <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
+    <Compile Include="Controllers\TestUTeaController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -400,6 +401,11 @@
     <Content Include="Views\TestUFaceCream\DeleteFaceCream.cshtml" />
     <Content Include="Views\Shared\Components\_NavigationBar.cshtml" />
     <Content Include="Views\Shared\Components\_Footer.cshtml" />
+    <Content Include="Views\TestUTea\Index.cshtml" />
+    <Content Include="Views\TestUTea\AddTea.cshtml" />
+    <Content Include="Views\TestUTea\DetailsTea.cshtml" />
+    <Content Include="Views\TestUTea\EditTea.cshtml" />
+    <Content Include="Views\TestUTea\DeleteTea.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
