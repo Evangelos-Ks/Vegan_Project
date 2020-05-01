@@ -217,6 +217,7 @@
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\TestControllers\TestUFaceCreamController.cs" />
     <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
+    <Compile Include="Controllers\TestUEssentialOilController.cs" />
     <Compile Include="Controllers\TestUTeaController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -406,6 +407,11 @@
     <Content Include="Views\TestUTea\DetailsTea.cshtml" />
     <Content Include="Views\TestUTea\EditTea.cshtml" />
     <Content Include="Views\TestUTea\DeleteTea.cshtml" />
+    <Content Include="Views\TestUEssentialOil\Index.cshtml" />
+    <Content Include="Views\TestUEssentialOil\AddEssentialOil.cshtml" />
+    <Content Include="Views\TestUEssentialOil\DetailsEssentialOil.cshtml" />
+    <Content Include="Views\TestUEssentialOil\EditEssentialOil.cshtml" />
+    <Content Include="Views\TestUEssentialOil\DeleteEssentialOil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

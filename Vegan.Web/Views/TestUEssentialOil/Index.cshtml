@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Vegan.Entities.Home.EssentialOil>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Add Essential Oil", "AddEssentialOil")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageURL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameOfIngredientEssentOil)
+        </th>
+        @{
+            bool includedValuOfIngredient = false;
+            foreach (var item in Model)
+            {
+                if (string.IsNullOrWhiteSpace(item.ValueOfIngredientEssentOil))
+                {
+                    includedValuOfIngredient = false;
+
+                }
+                else
+                {
+                    includedValuOfIngredient = true;
+
+                }
+            }
+
+            if (includedValuOfIngredient)
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.ValueOfIngredientEssentOil)
+                </th>
+            }
+        }
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageURL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Information)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfIngredientEssentOil)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValueOfIngredientEssentOil)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditEssentialOil", new { productId = item.Id }) |
+                @Html.ActionLink("Details", "DetailsEssentialOil", new { productId = item.Id }) |
+                @Html.ActionLink("Delete", "DeleteEssentialOil", new { productId = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

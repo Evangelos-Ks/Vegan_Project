@@ -81,14 +81,14 @@ namespace Vegan.Desktop
 
             //foreach (var item in myDatabase.SuperFoods)
             //{
-            //    Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information + " " + item.NameOfIngredient + " " + item.ValueOfIngredient);
+            //    Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information + " " + item.NameOfIngredientEssentOil + " " + item.ValueOfIngredientEssentOil);
             //}
 
             //Console.WriteLine("--------------");
 
             //foreach (var item in myDatabase.PowerHealths)
             //{
-            //    Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information + " " + item.NameOfIngredient + " " + item.ValueOfIngredient + " " + item.UseInstruction);
+            //    Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " " + item.ImageURL + " " + item.Information + " " + item.NameOfIngredientEssentOil + " " + item.ValueOfIngredientEssentOil + " " + item.UseInstruction);
             //}
 
 
