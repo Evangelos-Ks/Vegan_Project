@@ -217,7 +217,6 @@
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\TestControllers\TestUFaceCreamController.cs" />
     <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
-    <Compile Include="Controllers\TestControllers\TestUSproutingSeedController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -396,9 +395,11 @@
     <Content Include="Views\TestUCare\Index.cshtml" />
     <Content Include="Views\TestUFaceCream\Index.cshtml" />
     <Content Include="Views\TestUFaceCream\AddFaceCream.cshtml" />
-    <Content Include="Views\TestUSproutingSeed\Index.cshtml" />
-    <Content Include="Views\TestUSproutingSeed\AddSproutingSeed.cshtml" />
-    <Content Include="Views\TestUSproutingSeed\DetailsSproutingSeed.cshtml" />
+    <Content Include="Views\TestUFaceCream\DetailsFaceCream.cshtml" />
+    <Content Include="Views\TestUFaceCream\EditFaceCream.cshtml" />
+    <Content Include="Views\TestUFaceCream\DeleteFaceCream.cshtml" />
+    <Content Include="Views\Shared\Components\_NavigationBar.cshtml" />
+    <Content Include="Views\Shared\Components\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
