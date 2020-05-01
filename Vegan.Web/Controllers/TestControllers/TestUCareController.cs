@@ -11,16 +11,16 @@ using Vegan.Entities.Care;
 
 namespace Vegan.Web.Controllers
 {
-    public class FaceCreamController : Controller
+    public class TestUCareController : Controller
     {
         //===================================== Fields =====================================================================
         private UnitOfWork<MyDatabase> unitOfWork = new UnitOfWork<MyDatabase>();
-        private GenericRepository<FaceCream> repository;
+        private GenericRepository<Care> repository;
 
         //===================================== Constructor ================================================================
-        public FaceCreamController()
+        public TestUCareController()
         {
-            repository = new GenericRepository<FaceCream>(unitOfWork);
+            repository = new GenericRepository<Care>(unitOfWork);
         }
 
         //===================================== Methods ====================================================================
@@ -32,13 +32,13 @@ namespace Vegan.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult AddFaceCream()
+        public ActionResult AddCare()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddFaceCream(FaceCream model)
+        public ActionResult AddCare(Care model)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace Vegan.Web.Controllers
                     //Do Some Other Task with the Database
                     //If everything is working then commit the transaction else rollback the transaction
                     unitOfWork.Commit();
-                    return RedirectToAction("Index", "FaceCream");
+                    return RedirectToAction("Index", "Care");
                 }
             }
             catch (Exception ex)
@@ -61,27 +61,27 @@ namespace Vegan.Web.Controllers
             return View();
         }
 
-        public ActionResult DetailsFaceCream(int productId)
+        public ActionResult DetailsCare(int productId)
         {
-            FaceCream productModel = repository.GetByID(productId);
+            Care productModel = repository.GetByID(productId);
             return View(productModel);
         }
 
         [HttpGet]
-        public ActionResult EditFaceCream(int productId)
+        public ActionResult EditCare(int productId)
         {
-            FaceCream productModel = repository.GetByID(productId);
+            Care productModel = repository.GetByID(productId);
             return View(productModel);
         }
 
         [HttpPost]
-        public ActionResult EditFaceCream(FaceCream model)
+        public ActionResult EditCare(Care model)
         {
             if (ModelState.IsValid)
             {
                 repository.Update(model);
                 unitOfWork.Save();
-                return RedirectToAction("Index", "FaceCream");
+                return RedirectToAction("Index", "Care");
             }
             else
             {
@@ -90,19 +90,19 @@ namespace Vegan.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult DeleteFaceCream(int productId)
+        public ActionResult DeleteCare(int productId)
         {
-            FaceCream product = repository.GetByID(productId);
+            Care product = repository.GetByID(productId);
             return View(product);
         }
 
-        [HttpPost, ActionName("DeleteFaceCream")]
+        [HttpPost, ActionName("DeleteCare")]
         public ActionResult Delete(int productId)
         {
-            FaceCream product = repository.GetByID(productId);
+            Care product = repository.GetByID(productId);
             repository.Delete(product);
             unitOfWork.Save();
-            return RedirectToAction("Index", "FaceCream");
+            return RedirectToAction("Index", "Care");
         }
     }
 }

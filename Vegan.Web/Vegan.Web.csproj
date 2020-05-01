@@ -212,14 +212,13 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\FaceCreamController.cs" />
-    <Compile Include="Controllers\TestControllers\CareController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\TestControllers\TestCaresController.cs" />
     <Compile Include="Controllers\TestControllers\TestController.cs" />
     <Compile Include="Controllers\TestControllers\TestFaceCreamsController.cs" />
     <Compile Include="Controllers\TestControllers\TestProductsController.cs" />
+    <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -397,11 +396,6 @@
     <Content Include="Views\TestViews\TestFaceCreams\Details.cshtml" />
     <Content Include="Views\TestViews\TestFaceCreams\Edit.cshtml" />
     <Content Include="Views\TestViews\TestFaceCreams\Index.cshtml" />
-    <Content Include="Views\TestViews\TestCares\Create.cshtml" />
-    <Content Include="Views\TestViews\TestCares\Delete.cshtml" />
-    <Content Include="Views\TestViews\TestCares\Details.cshtml" />
-    <Content Include="Views\TestViews\TestCares\Edit.cshtml" />
-    <Content Include="Views\TestViews\TestCares\Index.cshtml" />
     <Content Include="Views\TestViews\TestProducts\Create.cshtml" />
     <Content Include="Views\TestViews\TestProducts\Delete.cshtml" />
     <Content Include="Views\TestViews\TestProducts\Details.cshtml" />
@@ -417,20 +411,10 @@
     <Content Include="Views\Product\EditProduct.cshtml" />
     <Content Include="Views\Product\DeleteProduct.cshtml" />
     <Content Include="Views\Product\DetailsProduct.cshtml" />
-    <Content Include="Views\TestViews\Care\AddCare.cshtml" />
-    <Content Include="Views\TestViews\Care\DeleteCare.cshtml" />
-    <Content Include="Views\TestViews\Care\DetailsCare.cshtml" />
-    <Content Include="Views\TestViews\Care\EditCare.cshtml" />
-    <Content Include="Views\TestViews\Care\Index.cshtml" />
-    <Content Include="Views\Care\FaceCream\AddFaceCream.cshtml" />
-    <Content Include="Views\Care\FaceCream\DeleteFaceCream.cshtml" />
-    <Content Include="Views\Care\FaceCream\DetailsFaceCream.cshtml" />
-    <Content Include="Views\Care\FaceCream\EditFaceCream.cshtml" />
-    <Content Include="Views\Care\FaceCream\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\TestViews\TestUProduct\" />
+    <Folder Include="Views\TestViews\TestUCare\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
