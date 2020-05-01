@@ -63,7 +63,7 @@ namespace Vegan.Web.Controllers
 
         public ActionResult DetailsFaceCream(int productId)
         {
-            FaceCream productModel = repository.GetByID(productId);
+            Product productModel = repository.GetByID(productId);
             return View(productModel);
         }
 

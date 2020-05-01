@@ -395,6 +395,11 @@
     <Content Include="Views\TestUCare\Index.cshtml" />
     <Content Include="Views\TestUFaceCream\Index.cshtml" />
     <Content Include="Views\TestUFaceCream\AddFaceCream.cshtml" />
+    <Content Include="Views\TestUFaceCream\DetailsFaceCream.cshtml" />
+    <Content Include="Views\TestUFaceCream\EditFaceCream.cshtml" />
+    <Content Include="Views\TestUFaceCream\DeleteFaceCream.cshtml" />
+    <Content Include="Views\Shared\Components\_NavigationBar.cshtml" />
+    <Content Include="Views\Shared\Components\_Footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
