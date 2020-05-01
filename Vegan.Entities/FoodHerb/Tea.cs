@@ -8,7 +8,8 @@ namespace Vegan.Entities.FoodHerb
 {
     public class Tea : FoodHerb
     {
-        public string Ingredients { get; set; }
+        public string NameOfIngredient { get; set; }
+        public string ValueOfIngredient { get; set; }
         public string BulkPricing { get; set; }
 
         //https://www.the-apothecary.ca/alpen-glow-tea

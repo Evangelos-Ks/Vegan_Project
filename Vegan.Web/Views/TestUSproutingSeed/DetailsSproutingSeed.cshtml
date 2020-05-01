@@ -1,0 +1,74 @@
+﻿@model Vegan.Entities.FoodHerb.SproutingSeed
+
+@{
+    ViewBag.Title = "DetailsSproutingSeed";
+}
+
+<h2>Details Sprouting Seed</h2>
+
+<div>
+    <h4>Sprouting Seed</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Information)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Information)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameOfIngredient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameOfIngredient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValueOfIngredient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValueOfIngredient)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { productId = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
