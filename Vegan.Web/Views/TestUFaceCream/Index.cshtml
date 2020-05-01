@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Vegan.Entities.Care.Care>
+﻿@model IEnumerable<Vegan.Entities.Care.FaceCream>
 
 @{
     ViewBag.Title = "Index";
@@ -6,9 +6,9 @@
 
 <h2>Index</h2>
 
-@*<p>
-        @Html.ActionLink("Create New", "Create")
-    </p>*@
+<p>
+    @Html.ActionLink("Add face cream", "AddFaceCream")
+</p>
 <table class="table">
     <tr>
         <th>
@@ -29,15 +29,29 @@
         <th>
             @Html.DisplayNameFor(model => model.NameOfIngredient)
         </th>
-        @*@{ TODO
-            Model.Select(x => x.ValueOfIngredient);
-            if (Model.Select(x => x.ValueOfIngredient.Length) == 0)
-            {*@
-        @*<th>
-                @Html.DisplayNameFor(model => model.ValueOfIngredient)
-            </th>*@
-        @*}
-            }*@
+        @{
+            bool includedValuOfIngredient = false;
+            foreach (var item in Model)
+            {
+                if (string.IsNullOrWhiteSpace(item.ValueOfIngredient))
+                {
+                    includedValuOfIngredient = false;
+
+                }
+                else
+                {
+                    includedValuOfIngredient = true;
+
+                }
+            }
+
+            if (includedValuOfIngredient)
+            {
+                <th>
+                    @Html.DisplayNameFor(model => model.ValueOfIngredient)
+                </th>
+            }
+        }
         <th></th>
     </tr>
 
@@ -63,7 +77,7 @@
                 @Html.DisplayFor(modelItem => item.NameOfIngredient)
             </td>
             @{
-                if (!string.IsNullOrWhiteSpace(item.ValueOfIngredient))
+                if (includedValuOfIngredient)
                 {
                     <td>
                         @Html.DisplayFor(modelItem => item.ValueOfIngredient)
@@ -71,9 +85,9 @@
                 }
             }
             <td>
-                @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |*@
-                @Html.ActionLink("Details", "Details", new { productId = item.Id })
-                @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
             </td>
         </tr>
     }

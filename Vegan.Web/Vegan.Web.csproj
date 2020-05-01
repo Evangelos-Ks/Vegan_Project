@@ -393,10 +393,11 @@
     <Content Include="Views\Product\DeleteProduct.cshtml" />
     <Content Include="Views\Product\DetailsProduct.cshtml" />
     <Content Include="Views\TestUCare\Index.cshtml" />
+    <Content Include="Views\TestUFaceCream\Index.cshtml" />
+    <Content Include="Views\TestUFaceCream\AddFaceCream.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\TestUFaceCream\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
