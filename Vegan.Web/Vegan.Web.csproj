@@ -214,11 +214,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\TestControllers\TestCaresController.cs" />
-    <Compile Include="Controllers\TestControllers\TestController.cs" />
-    <Compile Include="Controllers\TestControllers\TestFaceCreamsController.cs" />
-    <Compile Include="Controllers\TestControllers\TestProductsController.cs" />
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
+    <Compile Include="Controllers\TestControllers\TestUFaceCreamController.cs" />
     <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -390,22 +387,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\TestViews\Test\Index.cshtml" />
-    <Content Include="Views\TestViews\TestFaceCreams\Create.cshtml" />
-    <Content Include="Views\TestViews\TestFaceCreams\Delete.cshtml" />
-    <Content Include="Views\TestViews\TestFaceCreams\Details.cshtml" />
-    <Content Include="Views\TestViews\TestFaceCreams\Edit.cshtml" />
-    <Content Include="Views\TestViews\TestFaceCreams\Index.cshtml" />
-    <Content Include="Views\TestViews\TestProducts\Create.cshtml" />
-    <Content Include="Views\TestViews\TestProducts\Delete.cshtml" />
-    <Content Include="Views\TestViews\TestProducts\Details.cshtml" />
-    <Content Include="Views\TestViews\TestProducts\Edit.cshtml" />
-    <Content Include="Views\TestViews\TestProducts\Index.cshtml" />
-    <Content Include="Views\TestViews\TestProductsG\Create.cshtml" />
-    <Content Include="Views\TestViews\TestProductsG\Delete.cshtml" />
-    <Content Include="Views\TestViews\TestProductsG\Details.cshtml" />
-    <Content Include="Views\TestViews\TestProductsG\Edit.cshtml" />
-    <Content Include="Views\TestViews\TestProductsG\Index.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\AddProduct.cshtml" />
     <Content Include="Views\Product\EditProduct.cshtml" />
@@ -415,6 +396,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\TestUFaceCream\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
