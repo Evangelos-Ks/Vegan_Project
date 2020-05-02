@@ -16,6 +16,7 @@ namespace Vegan.Entities
         //======== Navigation Property  Relationships with
         // Product -->  many
 
+
         public virtual ICollection<Product> Products { get; set; }
     }
 }
