@@ -15,6 +15,7 @@ namespace Vegan.Desktop
             //MyDatabase myDatabase = new MyDatabase();
             //foreach (var item in myDatabase.Products)
             //{
+            //
             //    Console.WriteLine(item.Price + " " + item.Id + " " + item.Title + " "  + item.ImageURL);
             //}
 
