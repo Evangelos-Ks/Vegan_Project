@@ -5,7 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Vegan.Web.Models;
+using Vegan.Entities.Library;
 
 namespace Vegan.Web
 {
