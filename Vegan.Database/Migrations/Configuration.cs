@@ -10,6 +10,9 @@
     using Vegan.Entities.Home;
     using Vegan.Entities.Supplement;
     using Size = Entities.Care.Size;
+    using Microsoft.AspNet.Identity.EntityFramework;
+    using Microsoft.AspNet.Identity;
+    using Vegan.Entities.Library;
     
 
     internal sealed class Configuration : DbMigrationsConfiguration<Vegan.Database.MyDatabase>
@@ -142,10 +145,86 @@
             SuperFood sf5 = new SuperFood() { Title = "HIPPOPHAES WOMAN", Price = 19.00m, ImageURL = "https://bit.ly/35dI1gX", Description = "SUPERFOODS NATURE’S BEST HIPPOPHAES WOMAN is suitable for the women’s needs, it contains a unique combination of Sea buckthorn, Ginger, Black cohosh, Rhodiola, Red clover, Magnesium and Vitamins Α, D, E which contribute to the normal function of the immune system, maintenance of healthy bones and teeth, normal iron metabolism and the protection of cells from oxidative stress.", NameOfIngredient = "Hippophae rhamnoides, Zingiber officinale, Actea racemose L, Rhodiola Rosea radix, Trifolium pretense, Magnesium, Resveratrol, Vitamin E, Vitamin A, Vitamin D3", ValueOfIngredient = "" };
             #endregion
 
+            #region Identity Roles
+
+            if (!context.Roles.Any(x => x.Name == "Admins"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Admins" };
+
+                manager.Create(role);
+            }
+
+            if (!context.Roles.Any(x => x.Name == "Supervisors"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Supervisors" };
+
+                manager.Create(role);
+            }
+
+            if (!context.Roles.Any(x => x.Name == "Subscribers"))
+            {
+                var store = new RoleStore<IdentityRole>(context);
+                var manager = new RoleManager<IdentityRole>(store);
+                var role = new IdentityRole { Name = "Subscribers" };
+
+                manager.Create(role);
+            }
+
+            var PasswordHash = new PasswordHasher();
+            if (!context.Users.Any(x => x.UserName == "admin@admin.net"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser
+                {
+                    UserName = "admin@admin.net",
+                    Email = "admin@admin.net",
+                    PasswordHash = PasswordHash.HashPassword("Admin1!")
+                };
+
+                manager.Create(user);
+                manager.AddToRole(user.Id, "Admins");
+            }
 
 
-            //*************************************************** Care ***************************************************
-            context.FaceCreams.AddOrUpdate(x => x.Title, f1, f2, f3, f4);
+            if (!context.Users.Any(x => x.UserName == "visor@visor.net"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser
+                {
+                    UserName = "visor@visor.net",
+                    Email = "visor@visor.net",
+                    PasswordHash = PasswordHash.HashPassword("Visor1!")
+                };
+
+                manager.Create(user);
+                manager.AddToRole(user.Id, "Supervisors");
+            }
+
+            if (!context.Users.Any(x => x.UserName == "Sub@Sub.net"))
+            {
+                var store = new UserStore<ApplicationUser>(context);
+                var manager = new UserManager<ApplicationUser>(store);
+                var user = new ApplicationUser
+                {
+                    UserName = "Sub@Sub.net",
+                    Email = "Sub@Sub.net",
+                    PasswordHash = PasswordHash.HashPassword("Sub1!Sub")
+                };
+
+                manager.Create(user);
+                manager.AddToRole(user.Id, "Subscribers");
+            }
+
+                #endregion
+
+                //*************************************************** Care ***************************************************
+                context.FaceCreams.AddOrUpdate(x => x.Title, f1, f2, f3, f4);
             context.Hairs.AddOrUpdate(x => x.Title, h1, h2, h3, h4, h5);
             context.Lotions.AddOrUpdate(x => x.Title, l1, l2);
             context.ShaveBeards.AddOrUpdate(x => x.Title, sb1, sb2, sb3, sb4);
