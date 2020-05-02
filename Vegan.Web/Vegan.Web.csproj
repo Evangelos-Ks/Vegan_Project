@@ -186,6 +186,13 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
+    <Compile Include="Controllers\TestControllers\TestUFaceCreamController.cs" />
+    <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
+    <Compile Include="Controllers\TestControllers\TestUSproutingSeedController.cs" />
+    <Compile Include="Controllers\TestUEssentialOilController.cs" />
+    <Compile Include="Controllers\TestUTeaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -356,6 +363,30 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\TestUCare\Index.cshtml" />
+    <Content Include="Views\TestUEssentialOil\AddEssentialOil.cshtml" />
+    <Content Include="Views\TestUEssentialOil\DeleteEssentialOil.cshtml" />
+    <Content Include="Views\TestUEssentialOil\DetailsEssentialOil.cshtml" />
+    <Content Include="Views\TestUEssentialOil\EditEssentialOil.cshtml" />
+    <Content Include="Views\TestUEssentialOil\Index.cshtml" />
+    <Content Include="Views\TestUFaceCream\AddFaceCream.cshtml" />
+    <Content Include="Views\TestUFaceCream\DeleteFaceCream.cshtml" />
+    <Content Include="Views\TestUFaceCream\DetailsFaceCream.cshtml" />
+    <Content Include="Views\TestUFaceCream\EditFaceCream.cshtml" />
+    <Content Include="Views\TestUFaceCream\Index.cshtml" />
+    <Content Include="Views\TestUTea\AddTea.cshtml" />
+    <Content Include="Views\TestUTea\DeleteTea.cshtml" />
+    <Content Include="Views\TestUTea\DetailsTea.cshtml" />
+    <Content Include="Views\TestUTea\EditTea.cshtml" />
+    <Content Include="Views\TestUTea\Index.cshtml" />
+    <Content Include="Views\TestUSproutingSeed\AddSproutingSeed.cshtml" />
+    <Content Include="Views\TestUSproutingSeed\DetailsSproutingSeed.cshtml" />
+    <Content Include="Views\TestUSproutingSeed\Index.cshtml" />
+    <Content Include="Views\Product\AddProduct.cshtml" />
+    <Content Include="Views\Product\DeleteProduct.cshtml" />
+    <Content Include="Views\Product\DetailsProduct.cshtml" />
+    <Content Include="Views\Product\EditProduct.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -368,6 +399,20 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vegan.Database\Vegan.Database.csproj">
+      <Project>{5d99a8a4-62ff-4386-bc9f-6f1bd9a10853}</Project>
+      <Name>Vegan.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vegan.Entities\Vegan.Entities.csproj">
+      <Project>{54d2e319-f5ed-4f05-87f8-1c72f497dc4e}</Project>
+      <Name>Vegan.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vegan.Services\Vegan.Services.csproj">
+      <Project>{6cb08aab-4499-4454-bf34-ad914cf50721}</Project>
+      <Name>Vegan.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
