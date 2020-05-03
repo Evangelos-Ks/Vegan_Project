@@ -187,6 +187,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SproutingSeedController.cs" />
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\TestControllers\TestUFaceCreamController.cs" />
     <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
@@ -384,6 +385,11 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\Components\_Footer.cshtml" />
     <Content Include="Views\Shared\Components\_NavigationBar.cshtml" />
+    <Content Include="Views\SproutingSeed\Index.cshtml" />
+    <Content Include="Views\SproutingSeed\AddSproutingSeed.cshtml" />
+    <Content Include="Views\SproutingSeed\DetailsSproutingSeed.cshtml" />
+    <Content Include="Views\SproutingSeed\EditSproutingSeed.cshtml" />
+    <Content Include="Views\SproutingSeed\DeleteSproutingSeed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
