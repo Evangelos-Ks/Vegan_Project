@@ -5,7 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Vegan.Web.Models;
+using Vegan.Entities.Library;
 
 namespace Vegan.Web
 {
@@ -54,15 +54,15 @@ namespace Vegan.Web
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "276494483386364",
+               appSecret: "d42246e65e9fef1a91c52e4495a33d65");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "219469292622-siilrc0etrrv2f4kjc2d63mss9v6gsn3.apps.googleusercontent.com",
+                ClientSecret = "QVQpM8-mQbQvzdhtjNzxI_iU"
+            });
         }
     }
 }

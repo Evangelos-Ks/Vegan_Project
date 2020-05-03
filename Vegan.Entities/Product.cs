@@ -21,5 +21,10 @@ namespace Vegan.Entities
         // public bool Availability { get; set; } // λεω να μπει εδω γιατι ολα την εχουν και ισως θελουμε να φαινεται και οταν καποιος βαζει το προιον στο cart
 
         //TODO after we reach the web: to Add Review
+
+
+        //======== Navigation Property Relationships with
+        // Order --> one or zero
+        public virtual Order Order { get; set; }
     }
 }

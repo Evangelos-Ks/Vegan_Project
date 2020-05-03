@@ -9,18 +9,23 @@ using Vegan.Entities;
 using Vegan.Entities.Care;
 using Vegan.Entities.FoodHerb;
 using Vegan.Entities.Supplement;
+using Vegan.Entities.Library;
+
 
 namespace Vegan.Database
 {
-   public  class MyDatabase : DbContext
+   public  class MyDatabase : ApplicationDbContext
     {
-        public MyDatabase() : base("Connection")
+        public MyDatabase() : base()
         {
            
         }
 
         //====================== Product ==================
         public DbSet<Product> Products { get; set; }
+
+        //====================== Order ==================
+        public DbSet<Order> Orders { get; set; }
 
         //====================== Care =====================
         public DbSet<Care> Cares { get; set; }
