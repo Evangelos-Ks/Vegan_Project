@@ -1,13 +1,14 @@
-﻿@model Vegan.Entities.Care.FaceCream
+﻿@model Vegan.Entities.FoodHerb.SproutingSeed
 
 @{
-    ViewBag.Title = "DetailsFaceCream";
+    ViewBag.Title = "DeleteSproutingSeed";
 }
 
-<h2>DetailsFaceCream</h2>
+<h2>DeleteSproutingSeed</h2>
 
+<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>FaceCream</h4>
+    <h4>SproutingSeed</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -31,8 +32,9 @@
         </dt>
 
         <dd>
-            <img src="@Html.DisplayFor(model => model.ImageURL)" width="100" height="100" alt="@Html.DisplayFor(model => model.Title)" />
+            <img src="@Html.DisplayFor(model => model.ImageURL)" height="100" width="100" alt="@Html.DisplayFor(model => model.Title)" />
         </dd>
+
 
         <dt>
             @Html.DisplayNameFor(model => model.Description)
@@ -43,11 +45,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Directions)
+            @Html.DisplayNameFor(model => model.Information)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Directions)
+            @Html.DisplayFor(model => model.Information)
         </dd>
 
         <dt>
@@ -67,8 +69,13 @@
         </dd>
 
     </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
 </div>
-<p>
-    @Html.ActionLink("Edit", "EditFaceCream", new { productId = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

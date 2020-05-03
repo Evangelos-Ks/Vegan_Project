@@ -26,6 +26,9 @@
         <th>
             @Html.DisplayNameFor(model => model.NameOfIngredientEssentOil)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValueOfIngredientEssentOil)
+        </th>
         @{
             bool includedValuOfIngredient = false;
             foreach (var item in Model)
@@ -62,7 +65,7 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageURL)
+               <img src="@Html.DisplayFor(modelItem => item.ImageURL)"  width ="100" height="100" alt="@Html.DisplayFor(modelItem => item.ImageURL)">
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)

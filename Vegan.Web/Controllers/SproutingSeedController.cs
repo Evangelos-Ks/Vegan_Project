@@ -7,18 +7,19 @@ using Vegan.Database;
 using Vegan.Entities;
 using Vegan.Services;
 using System.ComponentModel.DataAnnotations;
+using Vegan.Entities.Care;
 using Vegan.Entities.FoodHerb;
 
 namespace Vegan.Web.Controllers
 {
-    public class TestUSproutingSeedController : Controller
+    public class SproutingSeedController : Controller
     {
         //===================================== Fields =====================================================================
         private UnitOfWork<MyDatabase> unitOfWork = new UnitOfWork<MyDatabase>();
         private GenericRepository<SproutingSeed> repository;
 
         //===================================== Constructor ================================================================
-        public TestUSproutingSeedController()
+        public SproutingSeedController()
         {
             repository = new GenericRepository<SproutingSeed>(unitOfWork);
         }
@@ -50,7 +51,7 @@ namespace Vegan.Web.Controllers
                     //Do Some Other Task with the Database
                     //If everything is working then commit the transaction else rollback the transaction
                     unitOfWork.Commit();
-                    return RedirectToAction("Index", "TestUSproutingSeed");
+                    return RedirectToAction("Index", "SproutingSeed");
                 }
             }
             catch (Exception ex)
@@ -63,7 +64,7 @@ namespace Vegan.Web.Controllers
 
         public ActionResult DetailsSproutingSeed(int productId)
         {
-            SproutingSeed productModel = repository.GetByID(productId);
+            Product productModel = repository.GetByID(productId);
             return View(productModel);
         }
 
@@ -81,7 +82,7 @@ namespace Vegan.Web.Controllers
             {
                 repository.Update(model);
                 unitOfWork.Save();
-                return RedirectToAction("Index", "TestUSproutingSeed");
+                return RedirectToAction("Index", "SproutingSeed");
             }
             else
             {
@@ -102,7 +103,7 @@ namespace Vegan.Web.Controllers
             SproutingSeed product = repository.GetByID(productId);
             repository.Delete(product);
             unitOfWork.Save();
-            return RedirectToAction("Index", "TestUSproutingSeed");
+            return RedirectToAction("Index", "SproutingSeed");
         }
     }
 }

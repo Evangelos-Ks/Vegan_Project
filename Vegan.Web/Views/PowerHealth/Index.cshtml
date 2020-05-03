@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Vegan.Entities.FoodHerb.SproutingSeed>
+﻿@model IEnumerable<Vegan.Entities.Supplement.PowerHealth>
 
 @{
     ViewBag.Title = "Index";
@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Add Sprouting Seed", "AddSproutingSeed")
+    @Html.ActionLink("Add Power Health", "AddPowerHealth")
 </p>
 <table class="table">
     <tr>
@@ -19,7 +19,7 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ImageURL)
-        </th>
+        </th> 
         <th>
             @Html.DisplayNameFor(model => model.Description)
         </th>
@@ -29,6 +29,7 @@
         <th>
             @Html.DisplayNameFor(model => model.NameOfIngredient)
         </th>
+
         @{
             bool includedValuOfIngredient = false;
             foreach (var item in Model)
@@ -43,6 +44,8 @@
                     includedValuOfIngredient = true;
 
                 }
+
+
             }
 
             if (includedValuOfIngredient)
@@ -51,7 +54,12 @@
                     @Html.DisplayNameFor(model => model.ValueOfIngredient)
                 </th>
             }
+
+
         }
+        <th>
+            @Html.DisplayNameFor(model => model.UseInstruction)
+        </th>
         <th></th>
     </tr>
 
@@ -79,9 +87,12 @@
             @Html.DisplayFor(modelItem => item.ValueOfIngredient)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.DisplayFor(modelItem => item.UseInstruction)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditPowerHealth", new { productId=item.Id }) |
+            @Html.ActionLink("Details", "DetailsPowerHealth", new { productId = item.Id }) |
+            @Html.ActionLink("Delete", "DeletePowerHealth", new { productId = item.Id })
         </td>
     </tr>
 }
