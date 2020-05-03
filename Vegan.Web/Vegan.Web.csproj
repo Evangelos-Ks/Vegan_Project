@@ -186,6 +186,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PowerHealthController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SproutingSeedController.cs" />
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
@@ -390,6 +391,8 @@
     <Content Include="Views\SproutingSeed\DetailsSproutingSeed.cshtml" />
     <Content Include="Views\SproutingSeed\EditSproutingSeed.cshtml" />
     <Content Include="Views\SproutingSeed\DeleteSproutingSeed.cshtml" />
+    <Content Include="Views\PowerHealth\Index.cshtml" />
+    <Content Include="Views\PowerHealth\AddPowerHealth.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
