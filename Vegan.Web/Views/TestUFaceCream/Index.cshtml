@@ -29,6 +29,7 @@
         <th>
             @Html.DisplayNameFor(model => model.NameOfIngredient)
         </th>
+
         @{
             bool includedValuOfIngredient = false;
             foreach (var item in Model)
@@ -43,6 +44,8 @@
                     includedValuOfIngredient = true;
 
                 }
+
+
             }
 
             if (includedValuOfIngredient)
@@ -51,6 +54,8 @@
                     @Html.DisplayNameFor(model => model.ValueOfIngredient)
                 </th>
             }
+
+
         }
         <th></th>
     </tr>

@@ -190,7 +190,6 @@
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\TestControllers\TestUFaceCreamController.cs" />
     <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
-    <Compile Include="Controllers\TestControllers\TestUSproutingSeedController.cs" />
     <Compile Include="Controllers\TestUEssentialOilController.cs" />
     <Compile Include="Controllers\TestUTeaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -378,9 +377,6 @@
     <Content Include="Views\TestUTea\DetailsTea.cshtml" />
     <Content Include="Views\TestUTea\EditTea.cshtml" />
     <Content Include="Views\TestUTea\Index.cshtml" />
-    <Content Include="Views\TestUSproutingSeed\AddSproutingSeed.cshtml" />
-    <Content Include="Views\TestUSproutingSeed\DetailsSproutingSeed.cshtml" />
-    <Content Include="Views\TestUSproutingSeed\Index.cshtml" />
     <Content Include="Views\Product\AddProduct.cshtml" />
     <Content Include="Views\Product\DeleteProduct.cshtml" />
     <Content Include="Views\Product\DetailsProduct.cshtml" />
