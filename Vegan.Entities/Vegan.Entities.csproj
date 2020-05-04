@@ -113,6 +113,7 @@
     <Compile Include="Interfaces\IGenericRepository.cs" />
     <Compile Include="Interfaces\IOrder.cs" />
     <Compile Include="Interfaces\IProduct.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Interfaces\SupplementInterfaces\IPowerHealth.cs" />
     <Compile Include="Interfaces\SupplementInterfaces\ISuperFood.cs" />
     <Compile Include="Interfaces\SupplementInterfaces\ISupplement.cs" />
