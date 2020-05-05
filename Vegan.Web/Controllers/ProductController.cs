@@ -13,21 +13,22 @@ namespace Vegan.Web.Controllers.TestControllers
     public class ProductController : Controller
     {
         //===================================== Fields =====================================================================
-        private UnitOfWork<MyDatabase> unitOfWork = new UnitOfWork<MyDatabase>();
-        private GenericRepository<Product> repository;
+        private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
+        
+        
+        //private GenericRepository<Product> repository;
 
         //===================================== Constructor ================================================================
-        public ProductController()
-        {
-            repository = new GenericRepository<Product>(unitOfWork);
-        }
+        //public ProductController()
+        //{
+        //    repository = new GenericRepository<Product>(unitOfWork);
+        //}
 
         //===================================== Methods ====================================================================
         [HttpGet]
         public ActionResult Index()
         {
-            var products = repository.GetAll();
-            return View(products);
+            return View(unitOfWork.Products.GetAll());
         }
 
         [HttpGet]
@@ -41,36 +42,31 @@ namespace Vegan.Web.Controllers.TestControllers
         {
             try
             {
-                unitOfWork.CreateTransaction();
                 if (ModelState.IsValid)
                 {
-                    repository.Insert(model);
-                    unitOfWork.Save();
-                    //Do Some Other Task with the Database
-                    //If everything is working then commit the transaction else rollback the transaction
-                    unitOfWork.Commit();
+                    unitOfWork.Products.Add(model);
+                    unitOfWork.Complete();
+                    unitOfWork.Dispose();
                     return RedirectToAction("Index", "Product");
                 }
             }
             catch (Exception ex)
             {
-                //Log the exception and rollback the transaction
-                unitOfWork.Rollback();
+                //We want to show an error message
+                return View();
             }
             return View();
         }
 
         public ActionResult DetailsProduct(int productId)
         {
-            Product productModel = repository.GetByID(productId);
-            return View(productModel);
+            return View(unitOfWork.Products.GetById(productId));
         }
 
         [HttpGet]
         public ActionResult EditProduct(int productId)
         {
-            Product productModel = repository.GetByID(productId);
-            return View(productModel);
+            return View(unitOfWork.Products.GetById(productId));
         }
 
         [HttpPost]
@@ -78,8 +74,9 @@ namespace Vegan.Web.Controllers.TestControllers
         {
             if (ModelState.IsValid)
             {
-                repository.Update(model);
-                unitOfWork.Save();
+                unitOfWork.Products.Edit(model);
+                unitOfWork.Complete();
+                unitOfWork.Dispose();
                 return RedirectToAction("Index", "Product");
             }
             else
@@ -91,16 +88,17 @@ namespace Vegan.Web.Controllers.TestControllers
         [HttpGet]
         public ActionResult DeleteProduct(int productId)
         {
-            Product product = repository.GetByID(productId);
-            return View(product);
+            return View(unitOfWork.Products.GetById(productId));
         }
 
         [HttpPost, ActionName("DeleteProduct")]
         public ActionResult Delete(int productId)
         {
-            Product product = repository.GetByID(productId);
-            repository.Delete(product);
-            unitOfWork.Save();
+
+            var product = unitOfWork.Products.GetById(productId);
+            unitOfWork.Products.Delete(product);
+            unitOfWork.Complete();
+            unitOfWork.Dispose();
             return RedirectToAction("Index", "Product");
         }
     }

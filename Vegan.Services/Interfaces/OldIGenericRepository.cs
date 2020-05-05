@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vegan.Services
 {
-    public interface IGenericRepository<T> where T : class
+    public interface OldIGenericRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
         T GetByID(object id);
