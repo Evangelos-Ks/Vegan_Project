@@ -84,6 +84,7 @@
     <Compile Include="Care\Lotion.cs" />
     <Compile Include="Care\ShaveBeard.cs" />
     <Compile Include="Care\Size.cs" />
+    <Compile Include="CustomValidations\ValidatingPrice.cs" />
     <Compile Include="FoodHerb\FoodHerb.cs" />
     <Compile Include="FoodHerb\Salt.cs" />
     <Compile Include="FoodHerb\Spice.cs" />

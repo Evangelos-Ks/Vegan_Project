@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using Vegan.Entities.CustomValidations;
 
 namespace Vegan.Entities
 {
     public class Product
     {
+        [Display(Name = "Product ID")]
         public int Id { get; set; }
-       
+        
+        [CustomValidation(typeof(ValidatingPrice), "ValidationGreaterOrEqualToZero")]
         public decimal Price { get; set; }
-
+        [Required, MaxLength(150), MinLength(2)]
         public string Title { get; set; }
-
+        [Display(Name = "Image")]
         public string ImageURL { get; set; }
 
         public string Description { get; set; }
