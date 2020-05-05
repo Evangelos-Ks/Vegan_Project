@@ -7,7 +7,7 @@ using Vegan.Entities.Home;
 
 namespace Vegan.Entities.Interfaces.HomeInterfaces
 {
-    interface IHomeCleaning : IGenericRepository<HomeCleaning>
+    public interface IHomeCleaning : IGenericRepository<HomeCleaning>
     {
     }
 }

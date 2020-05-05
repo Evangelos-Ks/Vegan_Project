@@ -7,7 +7,7 @@ using Vegan.Entities.FoodHerb;
 
 namespace Vegan.Entities.Interfaces.FoodInterfaces
 {
-    interface ISproutingSeed : IGenericRepository<SproutingSeed>
+    public interface ISproutingSeed : IGenericRepository<SproutingSeed>
     {
     }
 }

@@ -7,7 +7,7 @@ using Vegan.Entities.Supplement;
 
 namespace Vegan.Entities.Interfaces.SupplementInterfaces
 {
-    interface ISupplement : IGenericRepository<Supplement.Supplement>
+    public interface ISupplement : IGenericRepository<Supplement.Supplement>
     {
     }
 }

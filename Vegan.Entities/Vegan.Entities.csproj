@@ -100,7 +100,7 @@
     <Compile Include="Interfaces\CareInterfaces\IHair.cs" />
     <Compile Include="Interfaces\CareInterfaces\ILotion.cs" />
     <Compile Include="Interfaces\CareInterfaces\IShaveBeard.cs" />
-    <Compile Include="Interfaces\FoodInterfaces\IFoodHearb.cs" />
+    <Compile Include="Interfaces\FoodInterfaces\IFoodHerb.cs" />
     <Compile Include="Interfaces\FoodInterfaces\ISalt.cs" />
     <Compile Include="Interfaces\FoodInterfaces\ISpice.cs" />
     <Compile Include="Interfaces\FoodInterfaces\ISproutingSeed.cs" />
@@ -114,6 +114,7 @@
     <Compile Include="Interfaces\IOrder.cs" />
     <Compile Include="Interfaces\IProduct.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Interfaces\SupplementInterfaces\IPowerHealth.cs" />
     <Compile Include="Interfaces\SupplementInterfaces\ISuperFood.cs" />
     <Compile Include="Interfaces\SupplementInterfaces\ISupplement.cs" />

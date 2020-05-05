@@ -40,15 +40,13 @@ namespace Vegan.Services
         {
             Context.Set<TEntity>();
             Context.Entry(entity).State = EntityState.Modified;
-            Context.SaveChanges();
+            //Context.SaveChanges();
         }
 
         public void Delete(TEntity entity)
         {
             Context.Set<TEntity>().Remove(entity);
         }
-
-
 
         public IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate)
         {

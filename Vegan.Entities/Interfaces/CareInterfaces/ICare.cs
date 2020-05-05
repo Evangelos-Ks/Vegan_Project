@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vegan.Entities.Interfaces
 {
-    interface ICare : IGenericRepository<Care.Care>
+    public interface ICare : IGenericRepository<Care.Care>
     {
     }
 }

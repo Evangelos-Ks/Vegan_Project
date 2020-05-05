@@ -7,7 +7,7 @@ using Vegan.Entities.Care;
 
 namespace Vegan.Entities.Interfaces
 {
-    interface IFaceCream : IGenericRepository<FaceCream>
+    public interface IFaceCream : IGenericRepository<FaceCream>
     {
     }
 }

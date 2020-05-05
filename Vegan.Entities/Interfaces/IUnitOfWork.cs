@@ -10,28 +10,29 @@ using Vegan.Entities.Interfaces.SupplementInterfaces;
 
 namespace Vegan.Entities.Interfaces
 {
-    interface IUnitOfWork : IDisposable
+    public interface IUnitOfWork : IDisposable
     {
-        ICare Care { get; }
-        IFaceCream FaceCream { get; }
-        IHair Hair { get; }
-        ILotion Lotion { get; }
-        IShaveBeard ShaveBeard { get; }
-        IFoodHearb FoodHearb { get; }
-        ISalt Salt { get; }
-        ISpice Spice { get; }
-        ISproutingSeed SproutingSeed { get; }
-        ITea Tea { get; }
-        ICandle Candle { get; }
-        IEssentialOil EssentialOil { get; }
-        IHome Home { get; }
-        IHomeCleaning HomeCleaning { get; }
-        IKitchen Kitchen { get; }
-        IPowerHealth PowerHealth { get; }
-        ISuperFood SuperFood { get; }
-        ISupplement Supplement { get; }
-        IOrder Order { get; }
-        IProduct Product { get; }
+        ICare Cares { get; }
+        IFaceCream FaceCreams { get; }
+        IHair Hairs { get; }
+        ILotion Lotions { get; }
+        IShaveBeard ShaveBeards { get; }
+        IFoodHerb FoodHerbs { get; }
+        ISalt Salts { get; }
+        ISpice Spices { get; }
+        ISproutingSeed SproutingSeeds { get; }
+        ITea Teas { get; }
+        ICandle Candles { get; }
+        IEssentialOil EssentialOils { get; }
+        IHome Homes { get; }
+        IHomeCleaning HomeCleanings { get; }
+        IKitchen Kitchens { get; }
+        IPowerHealth PowerHealths { get; }
+        ISuperFood SuperFoods { get; }
+        ISupplement Supplements { get; }
+        IOrder Orders { get; }
+        IProduct Products { get; }
+        IUser Users { get; }
 
         int Complete();
     }

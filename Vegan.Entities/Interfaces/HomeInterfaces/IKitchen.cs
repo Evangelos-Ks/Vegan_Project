@@ -7,7 +7,7 @@ using Vegan.Entities.Home;
 
 namespace Vegan.Entities.Interfaces.HomeInterfaces
 {
-    interface IKitchen : IGenericRepository<Kitchen>
+    public interface IKitchen : IGenericRepository<Kitchen>
     {
     }
 }

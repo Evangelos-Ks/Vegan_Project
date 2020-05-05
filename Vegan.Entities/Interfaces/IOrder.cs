@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Vegan.Entities.Interfaces
 {
-    interface IOrder : IGenericRepository<Order>
+    public interface IOrder : IGenericRepository<Order>
     {
     }
 }

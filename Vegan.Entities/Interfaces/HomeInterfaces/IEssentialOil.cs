@@ -7,7 +7,7 @@ using Vegan.Entities.Home;
 
 namespace Vegan.Entities.Interfaces.HomeInterfaces
 {
-    interface IEssentialOil : IGenericRepository<EssentialOil>
+    public interface IEssentialOil : IGenericRepository<EssentialOil>
     {
     }
 }

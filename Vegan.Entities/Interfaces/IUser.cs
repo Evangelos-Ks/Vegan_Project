@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Vegan.Entities.FoodHerb;
+using Vegan.Entities.Library;
 
-namespace Vegan.Entities.Interfaces.FoodInterfaces
+namespace Vegan.Entities.Interfaces
 {
-    public interface ITea : IGenericRepository<Tea>
+    public interface IUser : IGenericRepository<ApplicationUser>
     {
     }
 }

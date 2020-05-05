@@ -7,7 +7,7 @@ using Vegan.Entities.Home;
 
 namespace Vegan.Entities.Interfaces.HomeInterfaces
 {
-    interface ICandle : IGenericRepository<Candle>
+    public interface ICandle : IGenericRepository<Candle>
     {
     }
 }

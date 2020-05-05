@@ -7,7 +7,7 @@ using Vegan.Entities.FoodHerb;
 
 namespace Vegan.Entities.Interfaces.FoodInterfaces
 {
-    interface IFoodHearb : IGenericRepository<FoodHerb.FoodHerb>
+    public interface IFoodHerb : IGenericRepository<FoodHerb.FoodHerb>
     {
     }
 }
