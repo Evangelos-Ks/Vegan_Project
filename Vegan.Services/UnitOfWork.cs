@@ -16,7 +16,7 @@ using Vegan.Services.SupplementRepository;
 
 namespace Vegan.Services
 {
-    class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly MyDatabase context;
 
