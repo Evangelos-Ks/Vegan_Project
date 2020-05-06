@@ -78,6 +78,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomValidations\PriceValidation.cs" />
     <Compile Include="DomainClasses\Care\Care.cs" />
     <Compile Include="DomainClasses\Care\FaceCream.cs" />
     <Compile Include="DomainClasses\Care\Hair.cs" />
