@@ -393,6 +393,9 @@
     <Content Include="Views\FaceCreams\DetailsFaceCream.cshtml" />
     <Content Include="Views\FaceCreams\EditFaceCream.cshtml" />
     <Content Include="Views\FaceCreams\DeleteFaceCream.cshtml" />
+    <Content Include="Views\PowerHealth\DetailsPowerHealth.cshtml" />
+    <Content Include="Views\PowerHealth\EditPowerHealth.cshtml" />
+    <Content Include="Views\PowerHealth\DeletePowerHealth.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
