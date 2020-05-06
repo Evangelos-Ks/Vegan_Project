@@ -192,7 +192,7 @@
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\FaceCreamsController.cs" />
     <Compile Include="Controllers\EssentialOilController.cs" />
-    <Compile Include="Controllers\TestUTeaController.cs" />
+    <Compile Include="Controllers\TeaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -368,11 +368,11 @@
     <Content Include="Views\EssentialOil\DetailsEssentialOil.cshtml" />
     <Content Include="Views\EssentialOil\EditEssentialOil.cshtml" />
     <Content Include="Views\EssentialOil\Index.cshtml" />
-    <Content Include="Views\TestUTea\AddTea.cshtml" />
-    <Content Include="Views\TestUTea\DeleteTea.cshtml" />
-    <Content Include="Views\TestUTea\DetailsTea.cshtml" />
-    <Content Include="Views\TestUTea\EditTea.cshtml" />
-    <Content Include="Views\TestUTea\Index.cshtml" />
+    <Content Include="Views\Tea\AddTea.cshtml" />
+    <Content Include="Views\Tea\DeleteTea.cshtml" />
+    <Content Include="Views\Tea\DetailsTea.cshtml" />
+    <Content Include="Views\Tea\EditTea.cshtml" />
+    <Content Include="Views\Tea\Index.cshtml" />
     <Content Include="Views\Product\AddProduct.cshtml" />
     <Content Include="Views\Product\DeleteProduct.cshtml" />
     <Content Include="Views\Product\DetailsProduct.cshtml" />
