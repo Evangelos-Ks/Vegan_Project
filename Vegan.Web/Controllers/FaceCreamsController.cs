@@ -4,50 +4,50 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vegan.Database;
-using Vegan.Entities.FoodHerb;
+using Vegan.Entities.Care;
 using Vegan.Services;
 using System.ComponentModel.DataAnnotations;
 
 namespace Vegan.Web.Controllers.TestControllers
 {
-    public class SproutingSeedController : Controller
+    public class FaceCreamsController : Controller
     {
         //===================================== Fields =====================================================================
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
 
-        //private GenericRepository<SproutingSeed> repository;
+        //private GenericRepository<FaceCream> repository;
 
         //===================================== Constructor ================================================================
-        //public SproutingSeedController()
+        //public FaceCreamController()
         //{
-        //    repository = new GenericRepository<SproutingSeed>(unitOfWork);
+        //    repository = new GenericRepository<FaceCream>(unitOfWork);
         //}
 
         //===================================== Methods ====================================================================
         [HttpGet]
         public ActionResult Index()
         {
-            return View(unitOfWork.SproutingSeeds.GetAll());
+            return View(unitOfWork.FaceCreams.GetAll());
         }
 
         [HttpGet]
-        public ActionResult AddSproutingSeed()
+        public ActionResult AddFaceCream()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddSproutingSeed(SproutingSeed model)
+        public ActionResult AddFaceCream(FaceCream model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    unitOfWork.SproutingSeeds.Add(model);
+                    unitOfWork.FaceCreams.Add(model);
                     unitOfWork.Complete();
                     unitOfWork.Dispose();
-                    return RedirectToAction("Index", "SproutingSeed");
+                    return RedirectToAction("Index", "FaceCreams");
                 }
             }
             catch (Exception ex)
@@ -58,26 +58,26 @@ namespace Vegan.Web.Controllers.TestControllers
             return View();
         }
 
-        public ActionResult DetailsSproutingSeed(int productId)
+        public ActionResult DetailsFaceCream(int productId)
         {
-            return View(unitOfWork.SproutingSeeds.GetById(productId));
+            return View(unitOfWork.FaceCreams.GetById(productId));
         }
 
         [HttpGet]
-        public ActionResult EditSproutingSeed(int productId)
+        public ActionResult EditFaceCream(int productId)
         {
-            return View(unitOfWork.SproutingSeeds.GetById(productId));
+            return View(unitOfWork.FaceCreams.GetById(productId));
         }
 
         [HttpPost]
-        public ActionResult EditSproutingSeed(SproutingSeed model)
+        public ActionResult EditFaceCream(FaceCream model)
         {
             if (ModelState.IsValid)
             {
-                unitOfWork.SproutingSeeds.Edit(model);
+                unitOfWork.FaceCreams.Edit(model);
                 unitOfWork.Complete();
                 unitOfWork.Dispose();
-                return RedirectToAction("Index", "SproutingSeed");
+                return RedirectToAction("Index", "FaceCreams");
             }
             else
             {
@@ -86,20 +86,20 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
-        public ActionResult DeleteSproutingSeed(int productId)
+        public ActionResult DeleteFaceCream(int productId)
         {
-            return View(unitOfWork.SproutingSeeds.GetById(productId));
+            return View(unitOfWork.FaceCreams.GetById(productId));
         }
 
-        [HttpPost, ActionName("DeleteSproutingSeed")]
+        [HttpPost, ActionName("DeleteFaceCream")]
         public ActionResult Delete(int productId)
         {
 
-            var product = unitOfWork.SproutingSeeds.GetById(productId);
-            unitOfWork.SproutingSeeds.Delete(product);
+            var product = unitOfWork.FaceCreams.GetById(productId);
+            unitOfWork.FaceCreams.Delete(product);
             unitOfWork.Complete();
             unitOfWork.Dispose();
-            return RedirectToAction("Index", "SproutingSeed");
+            return RedirectToAction("Index", "FaceCreams");
         }
     }
 }

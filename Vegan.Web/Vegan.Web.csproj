@@ -190,7 +190,7 @@
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\SproutingSeedController.cs" />
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
-    <Compile Include="Controllers\TestControllers\TestUFaceCreamController.cs" />
+    <Compile Include="Controllers\FaceCreamsController.cs" />
     <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
     <Compile Include="Controllers\TestUEssentialOilController.cs" />
     <Compile Include="Controllers\TestUTeaController.cs" />
@@ -369,11 +369,6 @@
     <Content Include="Views\TestUEssentialOil\DetailsEssentialOil.cshtml" />
     <Content Include="Views\TestUEssentialOil\EditEssentialOil.cshtml" />
     <Content Include="Views\TestUEssentialOil\Index.cshtml" />
-    <Content Include="Views\TestUFaceCream\AddFaceCream.cshtml" />
-    <Content Include="Views\TestUFaceCream\DeleteFaceCream.cshtml" />
-    <Content Include="Views\TestUFaceCream\DetailsFaceCream.cshtml" />
-    <Content Include="Views\TestUFaceCream\EditFaceCream.cshtml" />
-    <Content Include="Views\TestUFaceCream\Index.cshtml" />
     <Content Include="Views\TestUTea\AddTea.cshtml" />
     <Content Include="Views\TestUTea\DeleteTea.cshtml" />
     <Content Include="Views\TestUTea\DetailsTea.cshtml" />
@@ -393,6 +388,11 @@
     <Content Include="Views\SproutingSeed\DeleteSproutingSeed.cshtml" />
     <Content Include="Views\PowerHealth\Index.cshtml" />
     <Content Include="Views\PowerHealth\AddPowerHealth.cshtml" />
+    <Content Include="Views\FaceCreams\Index.cshtml" />
+    <Content Include="Views\FaceCreams\AddFaceCream.cshtml" />
+    <Content Include="Views\FaceCreams\DetailsFaceCream.cshtml" />
+    <Content Include="Views\FaceCreams\EditFaceCream.cshtml" />
+    <Content Include="Views\FaceCreams\DeleteFaceCream.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

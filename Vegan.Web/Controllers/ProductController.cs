@@ -52,7 +52,7 @@ namespace Vegan.Web.Controllers.TestControllers
             }
             catch (Exception ex)
             {
-                //We want to show an error message
+                //TODO: We want to show an error message
                 return View();
             }
             return View();
