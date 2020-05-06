@@ -191,8 +191,7 @@
     <Compile Include="Controllers\SproutingSeedController.cs" />
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\FaceCreamsController.cs" />
-    <Compile Include="Controllers\TestControllers\TestUProductController.cs" />
-    <Compile Include="Controllers\TestUEssentialOilController.cs" />
+    <Compile Include="Controllers\EssentialOilController.cs" />
     <Compile Include="Controllers\TestUTeaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -364,11 +363,11 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\TestUCare\Index.cshtml" />
-    <Content Include="Views\TestUEssentialOil\AddEssentialOil.cshtml" />
-    <Content Include="Views\TestUEssentialOil\DeleteEssentialOil.cshtml" />
-    <Content Include="Views\TestUEssentialOil\DetailsEssentialOil.cshtml" />
-    <Content Include="Views\TestUEssentialOil\EditEssentialOil.cshtml" />
-    <Content Include="Views\TestUEssentialOil\Index.cshtml" />
+    <Content Include="Views\EssentialOil\AddEssentialOil.cshtml" />
+    <Content Include="Views\EssentialOil\DeleteEssentialOil.cshtml" />
+    <Content Include="Views\EssentialOil\DetailsEssentialOil.cshtml" />
+    <Content Include="Views\EssentialOil\EditEssentialOil.cshtml" />
+    <Content Include="Views\EssentialOil\Index.cshtml" />
     <Content Include="Views\TestUTea\AddTea.cshtml" />
     <Content Include="Views\TestUTea\DeleteTea.cshtml" />
     <Content Include="Views\TestUTea\DetailsTea.cshtml" />
