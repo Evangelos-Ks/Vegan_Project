@@ -197,6 +197,7 @@
     <Compile Include="Controllers\ShaveBeardController.cs" />
     <Compile Include="Controllers\SpiceController.cs" />
     <Compile Include="Controllers\SproutingSeedController.cs" />
+    <Compile Include="Controllers\SuperFoodController.cs" />
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\FaceCreamsController.cs" />
     <Compile Include="Controllers\EssentialOilController.cs" />
@@ -439,6 +440,11 @@
     <Content Include="Views\Kitchen\DetailsKitchen.cshtml" />
     <Content Include="Views\Kitchen\EditKitchen.cshtml" />
     <Content Include="Views\Kitchen\DeleteKitchen.cshtml" />
+    <Content Include="Views\SuperFood\Index.cshtml" />
+    <Content Include="Views\SuperFood\AddSuperFood.cshtml" />
+    <Content Include="Views\SuperFood\DetailsSuperFood.cshtml" />
+    <Content Include="Views\SuperFood\EditSuperFood.cshtml" />
+    <Content Include="Views\SuperFood\DeleteSuperFood.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
