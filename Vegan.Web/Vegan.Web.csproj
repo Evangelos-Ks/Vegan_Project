@@ -184,6 +184,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HairController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PowerHealthController.cs" />
@@ -395,6 +396,11 @@
     <Content Include="Views\PowerHealth\DetailsPowerHealth.cshtml" />
     <Content Include="Views\PowerHealth\EditPowerHealth.cshtml" />
     <Content Include="Views\PowerHealth\DeletePowerHealth.cshtml" />
+    <Content Include="Views\Hair\Index.cshtml" />
+    <Content Include="Views\Hair\AddHair.cshtml" />
+    <Content Include="Views\Hair\DetailsHair.cshtml" />
+    <Content Include="Views\Hair\EditHair.cshtml" />
+    <Content Include="Views\Hair\DeleteHair.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

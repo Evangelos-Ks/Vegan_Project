@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Vegan.Entities.FoodHerb.Tea>
+﻿@model IEnumerable<Vegan.Entities.Care.Hair>
 
 @{
     ViewBag.Title = "Index";
@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Add New Tea", "AddTea")
+    @Html.ActionLink("Create hair product", "AddHair")
 </p>
 <table class="table">
     <tr>
@@ -24,7 +24,7 @@
             @Html.DisplayNameFor(model => model.Description)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Information)
+            @Html.DisplayNameFor(model => model.Directions)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.NameOfIngredient)
@@ -53,7 +53,7 @@
             }
         }
         <th>
-            @Html.DisplayNameFor(model => model.BulkPricing)
+            @Html.DisplayNameFor(model => model.Detail)
         </th>
         <th></th>
     </tr>
@@ -69,11 +69,12 @@
     <td>
         <img src="@item.ImageURL" width="100" height="100" alt="@item.Title" />
     </td>
+
     <td>
         @Html.DisplayFor(modelItem => item.Description)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.Information)
+        @Html.DisplayFor(modelItem => item.Directions)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.NameOfIngredient)
@@ -82,13 +83,12 @@
         @Html.DisplayFor(modelItem => item.ValueOfIngredient)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.BulkPricing)
+        @Html.DisplayFor(modelItem => item.Detail)
     </td>
-
     <td>
-        @Html.ActionLink("Edit", "EditTea", new { productId = item.Id }) |
-        @Html.ActionLink("Details", "DetailsTea", new { productId = item.Id }) |
-        @Html.ActionLink("Delete", "DeleteTea", new { productId = item.Id })
+        @Html.ActionLink("Edit", "EditHair", new { productId = item.Id }) |
+        @Html.ActionLink("Details", "DetailsHair", new { productId = item.Id }) |
+        @Html.ActionLink("Delete", "DeleteHair", new { productId = item.Id })
     </td>
 </tr>
 }
