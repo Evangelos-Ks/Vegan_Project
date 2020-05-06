@@ -190,6 +190,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PowerHealthController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ShaveBeardController.cs" />
     <Compile Include="Controllers\SproutingSeedController.cs" />
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\FaceCreamsController.cs" />
@@ -407,6 +408,11 @@
     <Content Include="Views\Lotion\DetailsLotion.cshtml" />
     <Content Include="Views\Lotion\EditLotion.cshtml" />
     <Content Include="Views\Lotion\DeleteLotion.cshtml" />
+    <Content Include="Views\ShaveBeard\Index.cshtml" />
+    <Content Include="Views\ShaveBeard\AddShaveBeard.cshtml" />
+    <Content Include="Views\ShaveBeard\DetailsShaveBeard.cshtml" />
+    <Content Include="Views\ShaveBeard\EditShaveBeard.cshtml" />
+    <Content Include="Views\ShaveBeard\DeleteShaveBeard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
