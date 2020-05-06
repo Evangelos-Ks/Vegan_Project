@@ -184,13 +184,18 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FoodHerbController.cs" />
     <Compile Include="Controllers\HairController.cs" />
+    <Compile Include="Controllers\HomeCleaningController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KitchenController.cs" />
     <Compile Include="Controllers\LotionController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PowerHealthController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\SaltController.cs" />
     <Compile Include="Controllers\ShaveBeardController.cs" />
+    <Compile Include="Controllers\SpiceController.cs" />
     <Compile Include="Controllers\SproutingSeedController.cs" />
     <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\FaceCreamsController.cs" />
@@ -413,6 +418,27 @@
     <Content Include="Views\ShaveBeard\DetailsShaveBeard.cshtml" />
     <Content Include="Views\ShaveBeard\EditShaveBeard.cshtml" />
     <Content Include="Views\ShaveBeard\DeleteShaveBeard.cshtml" />
+    <Content Include="Views\FoodHerb\Index.cshtml" />
+    <Content Include="Views\Salt\Index.cshtml" />
+    <Content Include="Views\Salt\AddSalt.cshtml" />
+    <Content Include="Views\Salt\DetailsSalt.cshtml" />
+    <Content Include="Views\Salt\EditSalt.cshtml" />
+    <Content Include="Views\Salt\DeleteSalt.cshtml" />
+    <Content Include="Views\Spice\Index.cshtml" />
+    <Content Include="Views\Spice\AddSpice.cshtml" />
+    <Content Include="Views\Spice\DetailsSpice.cshtml" />
+    <Content Include="Views\Spice\EditSpice.cshtml" />
+    <Content Include="Views\Spice\DeleteSpice.cshtml" />
+    <Content Include="Views\HomeCleaning\Index.cshtml" />
+    <Content Include="Views\HomeCleaning\AddHomeCleaning.cshtml" />
+    <Content Include="Views\HomeCleaning\DetailsHomeCleaning.cshtml" />
+    <Content Include="Views\HomeCleaning\EditHomeCleaning.cshtml" />
+    <Content Include="Views\HomeCleaning\DeleteHomeCleaning.cshtml" />
+    <Content Include="Views\Kitchen\Index.cshtml" />
+    <Content Include="Views\Kitchen\AddKitchen.cshtml" />
+    <Content Include="Views\Kitchen\DetailsKitchen.cshtml" />
+    <Content Include="Views\Kitchen\EditKitchen.cshtml" />
+    <Content Include="Views\Kitchen\DeleteKitchen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
