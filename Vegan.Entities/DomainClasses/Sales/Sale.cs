@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace Vegan.Entities.DomainClasses
     {
         //====================================== Fields ========================================================
 
-        protected int SaleId;
+        public int SaleId { get; set; }
         protected decimal paymentAmount;
         public int PaymentChoice { get; set; }
 
