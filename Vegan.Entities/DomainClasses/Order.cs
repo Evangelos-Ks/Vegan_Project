@@ -38,9 +38,9 @@ namespace Vegan.Entities
 
 
         //Calculates the total price of the Order
-        public decimal CalculateTotal(IEnumerable<Product> products)
+        public decimal CalculateTotal()
         {
-            decimal totalPrice = products.Sum(product => product.Price);
+            decimal totalPrice = this.Products.Sum(product => product.Price);
             return totalPrice;
         }
 
