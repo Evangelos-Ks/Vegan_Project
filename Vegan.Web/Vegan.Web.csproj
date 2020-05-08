@@ -184,7 +184,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CareVegan\CareController.cs" />
+    <Compile Include="Controllers\CareController.cs" />
     <Compile Include="Controllers\FoodHerbController.cs" />
     <Compile Include="Controllers\HairController.cs" />
     <Compile Include="Controllers\HomeCleaningController.cs" />
@@ -199,7 +199,6 @@
     <Compile Include="Controllers\SpiceController.cs" />
     <Compile Include="Controllers\SproutingSeedController.cs" />
     <Compile Include="Controllers\SuperFoodController.cs" />
-    <Compile Include="Controllers\TestControllers\TestUCareController.cs" />
     <Compile Include="Controllers\FaceCreamsController.cs" />
     <Compile Include="Controllers\EssentialOilController.cs" />
     <Compile Include="Controllers\TeaController.cs" />
@@ -451,8 +450,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\CareVegan\Care\" />
-    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

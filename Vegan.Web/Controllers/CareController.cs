@@ -26,26 +26,5 @@ namespace Vegan.Web.Controllers.CareVegan
             return View(unitOfWork.Cares.GetById(productId));
         }
 
-        [HttpGet]
-        public ActionResult Edit(int productId)
-        {
-            return View(unitOfWork.Cares.GetById(productId));
-        }
-
-        [HttpPost]
-        public ActionResult Edit(Care model)
-        {
-            if (ModelState.IsValid)
-            {
-                unitOfWork.Cares.Edit(model);
-                unitOfWork.Complete();
-                unitOfWork.Dispose();
-                return RedirectToAction("Index", "EssentialOil");
-            }
-            else
-            {
-                return View(model);
-            }
-        }
     }
 }
