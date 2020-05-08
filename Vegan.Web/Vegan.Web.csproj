@@ -184,6 +184,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CareVegan\CareController.cs" />
     <Compile Include="Controllers\FoodHerbController.cs" />
     <Compile Include="Controllers\HairController.cs" />
     <Compile Include="Controllers\HomeCleaningController.cs" />
@@ -445,9 +446,12 @@
     <Content Include="Views\SuperFood\DetailsSuperFood.cshtml" />
     <Content Include="Views\SuperFood\EditSuperFood.cshtml" />
     <Content Include="Views\SuperFood\DeleteSuperFood.cshtml" />
+    <Content Include="Views\Care\Details.cshtml" />
+    <Content Include="Views\Care\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CareVegan\Care\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
