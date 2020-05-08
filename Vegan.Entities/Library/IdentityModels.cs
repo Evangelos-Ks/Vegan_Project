@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
 
 namespace Vegan.Entities.Library
 {
@@ -17,9 +18,11 @@ namespace Vegan.Entities.Library
             return userIdentity;
         }
 
+        public string Address { get; set; }
+
         //~~~~~~~~~~~~~~~~~~~~ Navigation Property Relationships with
         // Order --> one to zero
-        public virtual Order Order { get; set; }
+        public virtual List<Order> Orders { get; set; }
 
     }
 
