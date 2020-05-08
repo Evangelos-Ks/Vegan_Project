@@ -10,6 +10,8 @@ namespace Vegan.Entities
 {
     public class Order
     {
+        //====================================== Properties ====================================================
+
         [Display(Name = "Order ID")]
         public int OrderId { get; set; }
         [Display(Name = "Order stamp")]

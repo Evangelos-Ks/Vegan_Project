@@ -96,6 +96,10 @@
     <Compile Include="DomainClasses\Home\HomeCleaning.cs" />
     <Compile Include="DomainClasses\Home\Kitchen.cs" />
     <Compile Include="DomainClasses\Home\BottleSize.cs" />
+    <Compile Include="DomainClasses\Sales\Cash.cs" />
+    <Compile Include="DomainClasses\Sales\PaymentMethod.cs" />
+    <Compile Include="DomainClasses\Sales\PayPal.cs" />
+    <Compile Include="DomainClasses\Sales\Sale.cs" />
     <Compile Include="Interfaces\CareInterfaces\ICare.cs" />
     <Compile Include="Interfaces\CareInterfaces\IFaceCream.cs" />
     <Compile Include="Interfaces\CareInterfaces\IHair.cs" />
@@ -120,7 +124,7 @@
     <Compile Include="Interfaces\SupplementInterfaces\ISuperFood.cs" />
     <Compile Include="Interfaces\SupplementInterfaces\ISupplement.cs" />
     <Compile Include="Library\IdentityModels.cs" />
-    <Compile Include="DomainClasses\Order.cs" />
+    <Compile Include="DomainClasses\Sales\Order.cs" />
     <Compile Include="DomainClasses\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DomainClasses\Supplement\PowerHealth.cs" />

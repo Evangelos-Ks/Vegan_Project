@@ -20,8 +20,7 @@ namespace Vegan.Entities.Library
 
         public string Address { get; set; }
 
-        //~~~~~~~~~~~~~~~~~~~~ Navigation Property Relationships with
-        // Order --> one to zero
+        //============================= Navigation Property ============================================
         public virtual List<Order> Orders { get; set; }
 
     }
