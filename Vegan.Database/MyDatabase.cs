@@ -26,7 +26,7 @@ namespace Vegan.Database
 
         //====================== Sales ==================
         public DbSet<Order> Orders { get; set; }
-        public DbSet<Sale> Sales { get; set; }
+        //public DbSet<Sale> Sales { get; set; }
 
         //====================== Care =====================
         public DbSet<Care> Cares { get; set; }
