@@ -1,13 +1,13 @@
-﻿@model Vegan.Entities.FoodHerb.SproutingSeed
+﻿@model Vegan.Entities.Care.Lotion
 
 @{
-    ViewBag.Title = "DetailsSproutingSeed";
+    ViewBag.Title = "DetailsLotion";
 }
 
-<h2>DetailsSproutingSeed</h2>
+<h2>DetailsLotion</h2>
 
 <div>
-    <h4>SproutingSeed</h4>
+    <h4>Lotion</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -43,11 +43,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Information)
+            @Html.DisplayNameFor(model => model.Directions)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Information)
+            @Html.DisplayFor(model => model.Directions)
         </dd>
 
         <dt>
@@ -68,8 +68,7 @@
 
     </dl>
 </div>
-
 <p>
-    @Html.ActionLink("Edit", "EditSproutingSeed", new { productId = Model.Id }) |
+    @Html.ActionLink("Edit", "EditLotion", new { productId = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

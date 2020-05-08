@@ -1,13 +1,14 @@
-﻿@model Vegan.Entities.FoodHerb.SproutingSeed
+﻿@model Vegan.Entities.Care.Lotion
 
 @{
-    ViewBag.Title = "DetailsSproutingSeed";
+    ViewBag.Title = "DeleteLotion";
 }
 
-<h2>DetailsSproutingSeed</h2>
+<h2>DeleteLotion</h2>
 
+<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>SproutingSeed</h4>
+    <h4>Lotion</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -43,11 +44,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Information)
+            @Html.DisplayNameFor(model => model.Directions)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Information)
+            @Html.DisplayFor(model => model.Directions)
         </dd>
 
         <dt>
@@ -67,9 +68,13 @@
         </dd>
 
     </dl>
-</div>
 
-<p>
-    @Html.ActionLink("Edit", "EditSproutingSeed", new { productId = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

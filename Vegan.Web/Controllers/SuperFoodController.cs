@@ -4,50 +4,50 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vegan.Database;
-using Vegan.Entities.FoodHerb;
+using Vegan.Entities.Supplement;
 using Vegan.Services;
 using System.ComponentModel.DataAnnotations;
 
 namespace Vegan.Web.Controllers.TestControllers
 {
-    public class SproutingSeedController : Controller
+    public class SuperFoodController : Controller
     {
         //===================================== Fields =====================================================================
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
 
-        //private GenericRepository<SproutingSeed> repository;
+        //private GenericRepository<SuperFood> repository;
 
         //===================================== Constructor ================================================================
-        //public SproutingSeedController()
+        //public SuperFoodController()
         //{
-        //    repository = new GenericRepository<SproutingSeed>(unitOfWork);
+        //    repository = new GenericRepository<SuperFood>(unitOfWork);
         //}
 
         //===================================== Methods ====================================================================
         [HttpGet]
         public ActionResult Index()
         {
-            return View(unitOfWork.SproutingSeeds.GetAll());
+            return View(unitOfWork.SuperFoods.GetAll());
         }
 
         [HttpGet]
-        public ActionResult AddSproutingSeed()
+        public ActionResult AddSuperFood()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddSproutingSeed(SproutingSeed model)
+        public ActionResult AddSuperFood(SuperFood model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    unitOfWork.SproutingSeeds.Add(model);
+                    unitOfWork.SuperFoods.Add(model);
                     unitOfWork.Complete();
                     unitOfWork.Dispose();
-                    return RedirectToAction("Index", "SproutingSeed");
+                    return RedirectToAction("Index", "SuperFood");
                 }
             }
             catch (Exception ex)
@@ -58,26 +58,26 @@ namespace Vegan.Web.Controllers.TestControllers
             return View();
         }
 
-        public ActionResult DetailsSproutingSeed(int productId)
+        public ActionResult DetailsSuperFood(int productId)
         {
-            return View(unitOfWork.SproutingSeeds.GetById(productId));
+            return View(unitOfWork.SuperFoods.GetById(productId));
         }
 
         [HttpGet]
-        public ActionResult EditSproutingSeed(int productId)
+        public ActionResult EditSuperFood(int productId)
         {
-            return View(unitOfWork.SproutingSeeds.GetById(productId));
+            return View(unitOfWork.SuperFoods.GetById(productId));
         }
 
         [HttpPost]
-        public ActionResult EditSproutingSeed(SproutingSeed model)
+        public ActionResult EditSuperFood(SuperFood model)
         {
             if (ModelState.IsValid)
             {
-                unitOfWork.SproutingSeeds.Edit(model);
+                unitOfWork.SuperFoods.Edit(model);
                 unitOfWork.Complete();
                 unitOfWork.Dispose();
-                return RedirectToAction("Index", "SproutingSeed");
+                return RedirectToAction("Index", "SuperFood");
             }
             else
             {
@@ -86,20 +86,20 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
-        public ActionResult DeleteSproutingSeed(int productId)
+        public ActionResult DeleteSuperFood(int productId)
         {
-            return View(unitOfWork.SproutingSeeds.GetById(productId));
+            return View(unitOfWork.SuperFoods.GetById(productId));
         }
 
-        [HttpPost, ActionName("DeleteSproutingSeed")]
+        [HttpPost, ActionName("DeleteSuperFood")]
         public ActionResult Delete(int productId)
         {
 
-            var product = unitOfWork.SproutingSeeds.GetById(productId);
-            unitOfWork.SproutingSeeds.Delete(product);
+            var product = unitOfWork.SuperFoods.GetById(productId);
+            unitOfWork.SuperFoods.Delete(product);
             unitOfWork.Complete();
             unitOfWork.Dispose();
-            return RedirectToAction("Index", "SproutingSeed");
+            return RedirectToAction("Index", "SuperFood");
         }
     }
 }

@@ -10,44 +10,44 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Vegan.Web.Controllers.TestControllers
 {
-    public class SproutingSeedController : Controller
+    public class SpiceController : Controller
     {
         //===================================== Fields =====================================================================
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
 
-        //private GenericRepository<SproutingSeed> repository;
+        //private GenericRepository<Spice> repository;
 
         //===================================== Constructor ================================================================
-        //public SproutingSeedController()
+        //public SpiceController()
         //{
-        //    repository = new GenericRepository<SproutingSeed>(unitOfWork);
+        //    repository = new GenericRepository<Spice>(unitOfWork);
         //}
 
         //===================================== Methods ====================================================================
         [HttpGet]
         public ActionResult Index()
         {
-            return View(unitOfWork.SproutingSeeds.GetAll());
+            return View(unitOfWork.Spices.GetAll());
         }
 
         [HttpGet]
-        public ActionResult AddSproutingSeed()
+        public ActionResult AddSpice()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddSproutingSeed(SproutingSeed model)
+        public ActionResult AddSpice(Spice model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    unitOfWork.SproutingSeeds.Add(model);
+                    unitOfWork.Spices.Add(model);
                     unitOfWork.Complete();
                     unitOfWork.Dispose();
-                    return RedirectToAction("Index", "SproutingSeed");
+                    return RedirectToAction("Index", "Spice");
                 }
             }
             catch (Exception ex)
@@ -58,26 +58,26 @@ namespace Vegan.Web.Controllers.TestControllers
             return View();
         }
 
-        public ActionResult DetailsSproutingSeed(int productId)
+        public ActionResult DetailsSpice(int productId)
         {
-            return View(unitOfWork.SproutingSeeds.GetById(productId));
+            return View(unitOfWork.Spices.GetById(productId));
         }
 
         [HttpGet]
-        public ActionResult EditSproutingSeed(int productId)
+        public ActionResult EditSpice(int productId)
         {
-            return View(unitOfWork.SproutingSeeds.GetById(productId));
+            return View(unitOfWork.Spices.GetById(productId));
         }
 
         [HttpPost]
-        public ActionResult EditSproutingSeed(SproutingSeed model)
+        public ActionResult EditSpice(Spice model)
         {
             if (ModelState.IsValid)
             {
-                unitOfWork.SproutingSeeds.Edit(model);
+                unitOfWork.Spices.Edit(model);
                 unitOfWork.Complete();
                 unitOfWork.Dispose();
-                return RedirectToAction("Index", "SproutingSeed");
+                return RedirectToAction("Index", "Spice");
             }
             else
             {
@@ -86,20 +86,20 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
-        public ActionResult DeleteSproutingSeed(int productId)
+        public ActionResult DeleteSpice(int productId)
         {
-            return View(unitOfWork.SproutingSeeds.GetById(productId));
+            return View(unitOfWork.Spices.GetById(productId));
         }
 
-        [HttpPost, ActionName("DeleteSproutingSeed")]
+        [HttpPost, ActionName("DeleteSpice")]
         public ActionResult Delete(int productId)
         {
 
-            var product = unitOfWork.SproutingSeeds.GetById(productId);
-            unitOfWork.SproutingSeeds.Delete(product);
+            var product = unitOfWork.Spices.GetById(productId);
+            unitOfWork.Spices.Delete(product);
             unitOfWork.Complete();
             unitOfWork.Dispose();
-            return RedirectToAction("Index", "SproutingSeed");
+            return RedirectToAction("Index", "Spice");
         }
     }
 }

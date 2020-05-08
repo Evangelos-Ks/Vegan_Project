@@ -4,50 +4,50 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vegan.Database;
-using Vegan.Entities.FoodHerb;
+using Vegan.Entities.Home;
 using Vegan.Services;
 using System.ComponentModel.DataAnnotations;
 
 namespace Vegan.Web.Controllers.TestControllers
 {
-    public class SproutingSeedController : Controller
+    public class HomeCleaningController : Controller
     {
         //===================================== Fields =====================================================================
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
 
-        //private GenericRepository<SproutingSeed> repository;
+        //private GenericRepository<HomeCleaning> repository;
 
         //===================================== Constructor ================================================================
-        //public SproutingSeedController()
+        //public HomeCleaningController()
         //{
-        //    repository = new GenericRepository<SproutingSeed>(unitOfWork);
+        //    repository = new GenericRepository<HomeCleaning>(unitOfWork);
         //}
 
         //===================================== Methods ====================================================================
         [HttpGet]
         public ActionResult Index()
         {
-            return View(unitOfWork.SproutingSeeds.GetAll());
+            return View(unitOfWork.HomeCleanings.GetAll());
         }
 
         [HttpGet]
-        public ActionResult AddSproutingSeed()
+        public ActionResult AddHomeCleaning()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddSproutingSeed(SproutingSeed model)
+        public ActionResult AddHomeCleaning(HomeCleaning model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    unitOfWork.SproutingSeeds.Add(model);
+                    unitOfWork.HomeCleanings.Add(model);
                     unitOfWork.Complete();
                     unitOfWork.Dispose();
-                    return RedirectToAction("Index", "SproutingSeed");
+                    return RedirectToAction("Index", "HomeCleaning");
                 }
             }
             catch (Exception ex)
@@ -58,26 +58,26 @@ namespace Vegan.Web.Controllers.TestControllers
             return View();
         }
 
-        public ActionResult DetailsSproutingSeed(int productId)
+        public ActionResult DetailsHomeCleaning(int productId)
         {
-            return View(unitOfWork.SproutingSeeds.GetById(productId));
+            return View(unitOfWork.HomeCleanings.GetById(productId));
         }
 
         [HttpGet]
-        public ActionResult EditSproutingSeed(int productId)
+        public ActionResult EditHomeCleaning(int productId)
         {
-            return View(unitOfWork.SproutingSeeds.GetById(productId));
+            return View(unitOfWork.HomeCleanings.GetById(productId));
         }
 
         [HttpPost]
-        public ActionResult EditSproutingSeed(SproutingSeed model)
+        public ActionResult EditHomeCleaning(HomeCleaning model)
         {
             if (ModelState.IsValid)
             {
-                unitOfWork.SproutingSeeds.Edit(model);
+                unitOfWork.HomeCleanings.Edit(model);
                 unitOfWork.Complete();
                 unitOfWork.Dispose();
-                return RedirectToAction("Index", "SproutingSeed");
+                return RedirectToAction("Index", "HomeCleaning");
             }
             else
             {
@@ -86,20 +86,20 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
-        public ActionResult DeleteSproutingSeed(int productId)
+        public ActionResult DeleteHomeCleaning(int productId)
         {
-            return View(unitOfWork.SproutingSeeds.GetById(productId));
+            return View(unitOfWork.HomeCleanings.GetById(productId));
         }
 
-        [HttpPost, ActionName("DeleteSproutingSeed")]
+        [HttpPost, ActionName("DeleteHomeCleaning")]
         public ActionResult Delete(int productId)
         {
 
-            var product = unitOfWork.SproutingSeeds.GetById(productId);
-            unitOfWork.SproutingSeeds.Delete(product);
+            var product = unitOfWork.HomeCleanings.GetById(productId);
+            unitOfWork.HomeCleanings.Delete(product);
             unitOfWork.Complete();
             unitOfWork.Dispose();
-            return RedirectToAction("Index", "SproutingSeed");
+            return RedirectToAction("Index", "HomeCleaning");
         }
     }
 }

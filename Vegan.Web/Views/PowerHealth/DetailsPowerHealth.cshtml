@@ -1,13 +1,13 @@
-﻿@model Vegan.Entities.FoodHerb.SproutingSeed
+﻿@model Vegan.Entities.Supplement.PowerHealth
 
 @{
-    ViewBag.Title = "DetailsSproutingSeed";
+    ViewBag.Title = "DetailsPowerHealth";
 }
 
-<h2>DetailsSproutingSeed</h2>
+<h2>DetailsPowerHealth</h2>
 
 <div>
-    <h4>SproutingSeed</h4>
+    <h4>PowerHealth</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -31,7 +31,7 @@
         </dt>
 
         <dd>
-            <img src="@Html.DisplayFor(model => model.ImageURL)" width="100" height="100" alt="@Html.DisplayFor(model => model.Title)" />
+            <img src=" @Html.DisplayFor(model => model.ImageURL)" width='100px' height='100px' alt=" @Html.DisplayFor(model => model.Title)" />
         </dd>
 
         <dt>
@@ -66,10 +66,17 @@
             @Html.DisplayFor(model => model.ValueOfIngredient)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.UseInstruction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UseInstruction)
+        </dd>
+
     </dl>
 </div>
-
 <p>
-    @Html.ActionLink("Edit", "EditSproutingSeed", new { productId = Model.Id }) |
+    @Html.ActionLink("Edit", "EditPowerHealth", new { productId = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

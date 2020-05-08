@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Vegan.Entities.CustomValidations;
 
 namespace Vegan.Entities
 {
@@ -12,7 +13,7 @@ namespace Vegan.Entities
     {
         [Display(Name = "Product ID")]
         public int Id { get; set; }
-        
+        [CustomValidation(typeof(PriceValidation), "ValidationGreaterOrEqualToZero")]
         public decimal Price { get; set; }
         [Required, MaxLength(150), MinLength(2)]
         public string Title { get; set; }
