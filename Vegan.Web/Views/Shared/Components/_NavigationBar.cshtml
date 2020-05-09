@@ -1,27 +1,39 @@
 ﻿
 <nav class="navbar navbar-expand-sm bg-dark navbar-inverse fixed-top">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav">
-                <li class="active">
-                    <a class="nav-link" href="/Product/Index">Products</a>
-                </li>
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="active">
+                <a class="nav-link" href="/Product/Index">Products</a>
+            </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Care
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/Care/Index">Care</a>
-                        <a class="dropdown-item" href="/FaceCreams/Index">Face creams</a>
-                        <a class="dropdown-item" href="/Hair/Index">Hair</a>
-                        <a class="dropdown-item" href="/Lotion/Index">Lotions</a>
-                        <a class="dropdown-item" href="/ShaveBeard/Index">Shave Beard</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Care
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/Care/Index">Care</a>
+                    <a class="dropdown-item" href="/FaceCreams/Index">Face creams</a>
+                    <a class="dropdown-item" href="/Hair/Index">Hair</a>
+                    <a class="dropdown-item" href="/Lotion/Index">Lotions</a>
+                    <a class="dropdown-item" href="/ShaveBeard/Index">Shave Beard</a>
 
-                    </div>
-                </li>
-            </ul>
-            @Html.Partial("_LoginPartial")
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Food-Herb
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/FoodHerb/Index">Food-Herb</a>
+                    <a class="dropdown-item" href="/Salt/Index">Salts</a>
+                    <a class="dropdown-item" href="/Spice/Index">Spices</a>
+                    <a class="dropdown-item" href="/SproutingSeed/Index">Sprouting seeds</a>
+                    <a class="dropdown-item" href="/Tea/Index">Teas</a>
+                </div>
+            </li>
+        </ul>
+        @Html.Partial("_LoginPartial")
 
-        </div>
-    </nav>
+    </div>
+</nav>
 

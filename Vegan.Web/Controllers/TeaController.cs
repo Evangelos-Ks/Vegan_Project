@@ -15,15 +15,6 @@ namespace Vegan.Web.Controllers.TestControllers
         //===================================== Fields =====================================================================
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
-
-        //private GenericRepository<Tea> repository;
-
-        //===================================== Constructor ================================================================
-        //public TeaController()
-        //{
-        //    repository = new GenericRepository<Tea>(unitOfWork);
-        //}
-
         //===================================== Methods ====================================================================
         [HttpGet]
         public ActionResult Index()

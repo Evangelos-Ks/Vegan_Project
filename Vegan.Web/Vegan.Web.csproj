@@ -419,7 +419,6 @@
     <Content Include="Views\ShaveBeard\DetailsShaveBeard.cshtml" />
     <Content Include="Views\ShaveBeard\EditShaveBeard.cshtml" />
     <Content Include="Views\ShaveBeard\DeleteShaveBeard.cshtml" />
-    <Content Include="Views\FoodHerb\Index.cshtml" />
     <Content Include="Views\Salt\Index.cshtml" />
     <Content Include="Views\Salt\AddSalt.cshtml" />
     <Content Include="Views\Salt\DetailsSalt.cshtml" />
@@ -447,6 +446,8 @@
     <Content Include="Views\SuperFood\DeleteSuperFood.cshtml" />
     <Content Include="Views\Care\Details.cshtml" />
     <Content Include="Views\Care\Index.cshtml" />
+    <Content Include="Views\FoodHerb\Index.cshtml" />
+    <Content Include="Views\FoodHerb\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
