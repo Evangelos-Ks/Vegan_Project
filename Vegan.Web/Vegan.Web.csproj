@@ -203,6 +203,7 @@
     <Compile Include="Controllers\SuperFoodController.cs" />
     <Compile Include="Controllers\FaceCreamsController.cs" />
     <Compile Include="Controllers\EssentialOilController.cs" />
+    <Compile Include="Controllers\SupplementController.cs" />
     <Compile Include="Controllers\TeaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -457,6 +458,8 @@
     <Content Include="Views\Candle\Delete.cshtml" />
     <Content Include="Views\HomeVegan\Index.cshtml" />
     <Content Include="Views\HomeVegan\Details.cshtml" />
+    <Content Include="Views\Supplement\Index.cshtml" />
+    <Content Include="Views\Supplement\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

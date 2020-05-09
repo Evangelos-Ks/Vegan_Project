@@ -3,26 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Vegan.Database;
-using Vegan.Entities.Care;
 using Vegan.Services;
+using Vegan.Database;
 
-namespace Vegan.Web.Controllers.CareVegan
+namespace Vegan.Web.Controllers
 {
-    public class CareController : Controller
+    public class SupplementController : Controller
     {
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: Care
         public ActionResult Index()
         {
-            return View( unitOfWork.Cares.GetAll());
+            return View(unitOfWork.Supplements.GetAll());
         }
 
         public ActionResult Details(int productId)
         {
-            return View(unitOfWork.Cares.GetById(productId));
+            return View(unitOfWork.Supplements.GetById(productId));
         }
-
     }
 }
