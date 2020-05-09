@@ -184,6 +184,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CandleController.cs" />
     <Compile Include="Controllers\CareController.cs" />
     <Compile Include="Controllers\FoodHerbController.cs" />
     <Compile Include="Controllers\HairController.cs" />
@@ -448,6 +449,11 @@
     <Content Include="Views\Care\Index.cshtml" />
     <Content Include="Views\FoodHerb\Index.cshtml" />
     <Content Include="Views\FoodHerb\Details.cshtml" />
+    <Content Include="Views\Candle\Index.cshtml" />
+    <Content Include="Views\Candle\Add.cshtml" />
+    <Content Include="Views\Candle\Details.cshtml" />
+    <Content Include="Views\Candle\Edit.cshtml" />
+    <Content Include="Views\Candle\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
