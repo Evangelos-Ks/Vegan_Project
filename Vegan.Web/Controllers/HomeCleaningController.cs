@@ -15,15 +15,6 @@ namespace Vegan.Web.Controllers.TestControllers
         //===================================== Fields =====================================================================
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
-
-        //private GenericRepository<HomeCleaning> repository;
-
-        //===================================== Constructor ================================================================
-        //public HomeCleaningController()
-        //{
-        //    repository = new GenericRepository<HomeCleaning>(unitOfWork);
-        //}
-
         //===================================== Methods ====================================================================
         [HttpGet]
         public ActionResult Index()

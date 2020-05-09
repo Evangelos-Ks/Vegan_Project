@@ -1,10 +1,11 @@
-﻿@model IEnumerable<Vegan.Entities.FoodHerb.FoodHerb>
+﻿@model IEnumerable<Vegan.Entities.Home.Home>
 
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+
 
 <table class="table">
     <tr>
@@ -19,9 +20,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BulkPricing)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Information)
@@ -43,9 +41,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BulkPricing)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Information)
