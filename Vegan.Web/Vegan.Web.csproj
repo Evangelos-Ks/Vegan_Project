@@ -190,6 +190,7 @@
     <Compile Include="Controllers\HairController.cs" />
     <Compile Include="Controllers\HomeCleaningController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeVeganController.cs" />
     <Compile Include="Controllers\KitchenController.cs" />
     <Compile Include="Controllers\LotionController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -454,6 +455,8 @@
     <Content Include="Views\Candle\Details.cshtml" />
     <Content Include="Views\Candle\Edit.cshtml" />
     <Content Include="Views\Candle\Delete.cshtml" />
+    <Content Include="Views\HomeVegan\Index.cshtml" />
+    <Content Include="Views\HomeVegan\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

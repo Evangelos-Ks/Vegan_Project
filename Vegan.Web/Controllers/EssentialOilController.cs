@@ -15,15 +15,6 @@ namespace Vegan.Web.Controllers.TestControllers
         //===================================== Fields =====================================================================
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
-
-        //private GenericRepository<EssentialOil> repository;
-
-        //===================================== Constructor ================================================================
-        //public EssentialOilController()
-        //{
-        //    repository = new GenericRepository<EssentialOil>(unitOfWork);
-        //}
-
         //===================================== Methods ====================================================================
         [HttpGet]
         public ActionResult Index()
