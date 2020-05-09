@@ -15,15 +15,6 @@ namespace Vegan.Web.Controllers.TestControllers
         //===================================== Fields =====================================================================
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
-
-        //private GenericRepository<PowerHealth> repository;
-
-        //===================================== Constructor ================================================================
-        //public PowerHealthController()
-        //{
-        //    repository = new GenericRepository<PowerHealth>(unitOfWork);
-        //}
-
         //===================================== Methods ====================================================================
         [HttpGet]
         public ActionResult Index()
