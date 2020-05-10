@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vegan.Entities.CustomValidations;
 
 namespace Vegan.Entities.DomainClasses.Sales
 {
@@ -12,10 +14,13 @@ namespace Vegan.Entities.DomainClasses.Sales
         public int PaymentMethodId { get; set; }
         public abstract string Name { get; }
 
-       // protected decimal paymentAmount = Order.CalculateTotal(); // O constructor doesnt get a payment amount as a param, but it creates it throught the Order
+        [Display(Name = "Payment choice")]
         protected int PaymentChoice { get; set; }
-        public abstract bool Pay(decimal amount);
 
+        [Display(Name = "Total amount")]
+
+        [CustomValidation(typeof(PriceValidation), "ValidationGreaterOrEqualToZero")]
+        protected decimal PaymentAmount { get; set; }
 
         public static List<PaymentMethod> paymentMethods = new List<PaymentMethod>()
         {

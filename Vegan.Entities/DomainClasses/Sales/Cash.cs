@@ -12,10 +12,6 @@ namespace Vegan.Entities.DomainClasses.Sales
         public override string Name { get; } = "Cash";
 
         //========================= Methods ===========================================
-        public override bool Pay(decimal amount)
-        {
-            if (amount <= 0) return false;
-            else return true;
-        }
+        
     }
 }
