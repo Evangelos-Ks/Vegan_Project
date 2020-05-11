@@ -15,15 +15,6 @@ namespace Vegan.Web.Controllers.TestControllers
         //===================================== Fields =====================================================================
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
-
-        //private GenericRepository<FaceCream> repository;
-
-        //===================================== Constructor ================================================================
-        //public FaceCreamController()
-        //{
-        //    repository = new GenericRepository<FaceCream>(unitOfWork);
-        //}
-
         //===================================== Methods ====================================================================
         [HttpGet]
         public ActionResult Index()

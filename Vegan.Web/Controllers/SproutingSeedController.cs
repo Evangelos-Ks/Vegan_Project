@@ -15,15 +15,6 @@ namespace Vegan.Web.Controllers.TestControllers
         //===================================== Fields =====================================================================
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
-
-        //private GenericRepository<SproutingSeed> repository;
-
-        //===================================== Constructor ================================================================
-        //public SproutingSeedController()
-        //{
-        //    repository = new GenericRepository<SproutingSeed>(unitOfWork);
-        //}
-
         //===================================== Methods ====================================================================
         [HttpGet]
         public ActionResult Index()

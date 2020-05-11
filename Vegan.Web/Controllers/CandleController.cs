@@ -4,13 +4,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vegan.Database;
-using Vegan.Entities.Supplement;
+using Vegan.Entities.Home;
 using Vegan.Services;
-using System.ComponentModel.DataAnnotations;
 
-namespace Vegan.Web.Controllers.TestControllers
+namespace Vegan.Web.Controllers
 {
-    public class PowerHealthController : Controller
+    public class CandleController : Controller
     {
         //===================================== Fields =====================================================================
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
@@ -19,26 +18,26 @@ namespace Vegan.Web.Controllers.TestControllers
         [HttpGet]
         public ActionResult Index()
         {
-            return View(unitOfWork.PowerHealths.GetAll());
+            return View(unitOfWork.Candles.GetAll());
         }
 
         [HttpGet]
-        public ActionResult AddPowerHealth()
+        public ActionResult Add()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddPowerHealth(PowerHealth model)
+        public ActionResult Add(Candle model)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    unitOfWork.PowerHealths.Add(model);
+                    unitOfWork.Candles.Add(model);
                     unitOfWork.Complete();
                     unitOfWork.Dispose();
-                    return RedirectToAction("Index", "PowerHealth");
+                    return RedirectToAction("Index", "Candle");
                 }
             }
             catch (Exception ex)
@@ -49,26 +48,26 @@ namespace Vegan.Web.Controllers.TestControllers
             return View();
         }
 
-        public ActionResult DetailsPowerHealth(int productId)
+        public ActionResult Details(int productId)
         {
-            return View(unitOfWork.PowerHealths.GetById(productId));
+            return View(unitOfWork.Candles.GetById(productId));
         }
 
         [HttpGet]
-        public ActionResult EditPowerHealth(int productId)
+        public ActionResult Edit(int productId)
         {
-            return View(unitOfWork.PowerHealths.GetById(productId));
+            return View(unitOfWork.Candles.GetById(productId));
         }
 
         [HttpPost]
-        public ActionResult EditPowerHealth(PowerHealth model)
+        public ActionResult Edit(Candle model)
         {
             if (ModelState.IsValid)
             {
-                unitOfWork.PowerHealths.Edit(model);
+                unitOfWork.Candles.Edit(model);
                 unitOfWork.Complete();
                 unitOfWork.Dispose();
-                return RedirectToAction("Index", "PowerHealth");
+                return RedirectToAction("Index", "Candle");
             }
             else
             {
@@ -77,20 +76,20 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
-        public ActionResult DeletePowerHealth(int productId)
-        {
-            return View(unitOfWork.PowerHealths.GetById(productId));
-        }
-
-        [HttpPost, ActionName("DeletePowerHealth")]
         public ActionResult Delete(int productId)
         {
+            return View(unitOfWork.Candles.GetById(productId));
+        }
 
-            var product = unitOfWork.PowerHealths.GetById(productId);
-            unitOfWork.PowerHealths.Delete(product);
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeletePost(int productId)
+        {
+
+            var product = unitOfWork.Candles.GetById(productId);
+            unitOfWork.Candles.Delete(product);
             unitOfWork.Complete();
             unitOfWork.Dispose();
-            return RedirectToAction("Index", "PowerHealth");
+            return RedirectToAction("Index", "Candle");
         }
     }
 }
