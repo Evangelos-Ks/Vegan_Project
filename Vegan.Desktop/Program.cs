@@ -124,11 +124,21 @@ namespace Vegan.Desktop
             MyDatabase db = new MyDatabase();
             var or1 = db.Orders.ToList().Find(x => x.OrderId == 1);
             var or2 = db.Orders.ToList().Find(x => x.OrderId == 2);
+            var or3 = db.Orders.ToList().Find(x => x.OrderId == 3);
+            var orders = db.Orders;
+
+            //var users = db.Users.ToList();
+
+            //foreach (var item in users)
+            //{
+            //    Console.WriteLine(item.Address);
+            //}
 
             Order order = new Order();
 
             Console.WriteLine(or1.CalculateTotal());
             Console.WriteLine(or2.CalculateTotal());
+            Console.WriteLine(or3.CalculateTotal());
 
 
             Console.Read();

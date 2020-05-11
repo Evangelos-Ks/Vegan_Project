@@ -225,17 +225,19 @@
             #endregion
 
             //=================================================== Order ==============================================
-            Order or1 = new Order() { OrderStamp = new DateTime(2020, 02, 02), Products = new List<Product> { h1, f1, s1, sb1 }, OrderId = 1 };
+            //TODO: make over 20 Orders. NOTE: every DateTime should be different from each other. 
+            Order or1 = new Order() {  OrderStamp = new DateTime(2020, 02, 02), Products = new List<Product> { h1, f1, s1, sb1 }, OrderId = 1 };
             Order or2 = new Order() { OrderStamp = new DateTime(2019, 03, 03), Products = new List<Product> { h2, f2, s2, sb2 }, OrderId = 2 };
+            Order or3 = new Order() { OrderStamp = new DateTime(2018, 02, 04), Products = new List<Product> { h2, f3 }, OrderId = 3 };
 
             //=================================================== user1 ==============================================
-            //TODO Plus all fields.
-            ApplicationUser user1 = new ApplicationUser() { UserName = "Eleni", Email = "123@parisi.com", Orders = new List<Order> { or1, or2 } };
+            //TODO Add more users that have several orders. Each email should be different
+            ApplicationUser user1 = new ApplicationUser() { UserName = "Eleni Parisi", Email = "eleni@parisi.com",  Orders = new List<Order> { or1, or2 },  Address = "Kala Nera, Volos, Notio Pelion", PhoneNumber = "6971234567"};
 
 
 
             //*************************************************** Order ***************************************************
-            context.Orders.AddOrUpdate(x => x.OrderStamp, or1, or2);
+            context.Orders.AddOrUpdate(x => x.OrderStamp, or1, or2, or3);
             //*************************************************** User ***************************************************
             context.Users.AddOrUpdate(x => x.Email, user1);
             //*************************************************** Care ***************************************************
