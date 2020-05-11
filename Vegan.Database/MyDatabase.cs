@@ -10,7 +10,7 @@ using Vegan.Entities.Care;
 using Vegan.Entities.FoodHerb;
 using Vegan.Entities.Supplement;
 using Vegan.Entities.Library;
-
+using Vegan.Entities.DomainClasses;
 
 namespace Vegan.Database
 {
@@ -24,8 +24,9 @@ namespace Vegan.Database
         //====================== Product ==================
         public DbSet<Product> Products { get; set; }
 
-        //====================== Order ==================
+        //====================== Sales ==================
         public DbSet<Order> Orders { get; set; }
+        //public DbSet<Sale> Sales { get; set; }
 
         //====================== Care =====================
         public DbSet<Care> Cares { get; set; }
