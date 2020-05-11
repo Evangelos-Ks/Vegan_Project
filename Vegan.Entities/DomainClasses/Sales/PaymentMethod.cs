@@ -18,7 +18,6 @@ namespace Vegan.Entities.DomainClasses.Sales
         protected int PaymentChoice { get; set; }
 
         [Display(Name = "Total amount")]
-
         [CustomValidation(typeof(PriceValidation), "ValidationGreaterOrEqualToZero")]
         protected decimal PaymentAmount { get; set; }
 

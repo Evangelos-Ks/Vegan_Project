@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vegan.Database;
+using Vegan.Entities;
 using Vegan.Entities.Supplement;
 
 namespace Vegan.Desktop
@@ -95,33 +96,41 @@ namespace Vegan.Desktop
 
 
             //Example for the ingredients
-            MyDatabase myDatabase = new MyDatabase();
-            string[] names;
-            string[] values;
-
-            
-            foreach (var item in myDatabase.SuperFoods)
-            {
-                var name = item.NameOfIngredient.Split(',');
-                names = new string[name.Length];
-                names = name;
+            //MyDatabase myDatabase = new MyDatabase();
+            //string[] names;
+            //string[] values;
 
 
-                var value = item.ValueOfIngredient.Split(',');
-                values = new string[value.Length];
-                values = value;
+            //foreach (var item in myDatabase.SuperFoods)
+            //{
+            //    var name = item.NameOfIngredient.Split(',');
+            //    names = new string[name.Length];
+            //    names = name;
 
-                if (item.ValueOfIngredient.Length > 0)
-                {
-                    for (int i = 0; i < names.Length; i++)
-                    {
-                        Console.WriteLine(names[i] + " " + values[i]);
-                    }
-                }
-                
-            }
-            
-              
+
+            //    var value = item.ValueOfIngredient.Split(',');
+            //    values = new string[value.Length];
+            //    values = value;
+
+            //    if (item.ValueOfIngredient.Length > 0)
+            //    {
+            //        for (int i = 0; i < names.Length; i++)
+            //        {
+            //            Console.WriteLine(names[i] + " " + values[i]);
+            //        }
+            //    }
+
+            //}
+            MyDatabase db = new MyDatabase();
+            var or1 = db.Orders.ToList().Find(x => x.OrderId == 1);
+            var or2 = db.Orders.ToList().Find(x => x.OrderId == 2);
+
+            Order order = new Order();
+
+            Console.WriteLine(or1.CalculateTotal());
+            Console.WriteLine(or2.CalculateTotal());
+
+
             Console.Read();
         }
     }
