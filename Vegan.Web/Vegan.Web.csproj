@@ -340,7 +340,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Components\Admin\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -390,8 +390,8 @@
     <Content Include="Views\Product\DetailsProduct.cshtml" />
     <Content Include="Views\Product\EditProduct.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Shared\Components\_Footer.cshtml" />
-    <Content Include="Views\Shared\Components\_NavigationBar.cshtml" />
+    <Content Include="Views\Shared\Components\Admin\_Footer.cshtml" />
+    <Content Include="Views\Shared\Components\Admin\_NavigationBar.cshtml" />
     <Content Include="Views\SproutingSeed\Index.cshtml" />
     <Content Include="Views\SproutingSeed\AddSproutingSeed.cshtml" />
     <Content Include="Views\SproutingSeed\DetailsSproutingSeed.cshtml" />
@@ -460,11 +460,12 @@
     <Content Include="Views\HomeVegan\Details.cshtml" />
     <Content Include="Views\Supplement\Index.cshtml" />
     <Content Include="Views\Supplement\Details.cshtml" />
+    <Content Include="Views\Shared\Components\User\_Footer.cshtml" />
+    <Content Include="Views\Shared\Components\User\_NavigationBar.cshtml" />
+    <Content Include="Views\Shared\Components\User\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Shared\Components\Admin\" />
-    <Folder Include="Views\Shared\Components\User\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
