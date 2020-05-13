@@ -9,10 +9,20 @@
     @Scripts.Render("~/bundle/modernizr")
 </head>
 <body>
+
+    @*<nav>
+            @RenderPage("_NavigationBar.cshtml")
+        </nav>*@
+
+
     <div>
         @RenderBody()
     </div>
 
+
+    <footer>
+        @RenderPage("_Footer.cshtml")
+    </footer>
 
 
     @Scripts.Render("~/bundles/jquery")

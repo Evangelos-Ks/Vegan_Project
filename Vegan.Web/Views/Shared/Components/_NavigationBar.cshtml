@@ -31,18 +31,7 @@
                     <a class="dropdown-item" href="/Tea/Index">Teas</a>
                 </div>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    Home
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/HomeVegan/Index">Home</a>
-                    <a class="dropdown-item" href="/Candle/Index">Candles</a>
-                    <a class="dropdown-item" href="/EssentialOil/Index">Essential Oils</a>
-                    <a class="dropdown-item" href="/HomeCleaning/Index">Home cleaning</a>
-                    <a class="dropdown-item" href="/Kitchen/Index">Kitchen</a>
-                </div>
-            </li>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                     Supplement
@@ -54,44 +43,285 @@
                 </div>
             </li>
         </ul>
-       
+
 
     </div>
 </nav>
 
 
 
-<nav id="nav-utils">
-    <ul>
-        <li id="nav-utils-home"><a href=""><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a></li>
-        <li id="nav-utils-search"><a href="search.asp"><i class="fa fa-search" aria-hidden="true"></i> <span>Search</span></a></li>
-    </ul>
-    <div id="nav-search">
-        <div id="searchBox">
-            <form method="get" name="searchForm" action="search.asp">
-                <input type="text" name="keyword" id="searchlight" class="search-text" placeholder="start typing product name">
-                <input class="btn btn-big" type="submit" name="search" id="searchbutton" value="Search">
-            </form>
+
+
+
+
+
+
+@*====================================*@
+<!doctype html>
+<html class="no-js" lang="en-GB" x-ms-format-detection="none">
+
+<head>
+
+    @*TODO    check which scripts - links  are usefull in all head --- check for folders which from the scripts read from========*@
+    <script type="text/javascript" src="Content/assets/templates/common/js/jquery.min.js?vcart=10.1.4"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <META NAME="KEYWORDS" CONTENT="zero waste, essential, oils, cosmetics natural, wellness, pure, vegan">
+    <link rel="apple-touch-icon" sizes="180x180" href="Content/assets/templates/vegan2020/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="Content/assets/templates/vegan2020/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="Content/assets/templates/vegan2020/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="Content/assets/templates/vegan2020/favicons/manifest.json?vcart=10.1.4">
+    <link rel="mask-icon" href="Content/assets/templates/vegan2020/favicons/safari-pinned-tab.svg" color="#9b9388">
+    <link rel="shortcut icon" href="Content/assets/templates/vegan2020/favicons/favicon.ico">
+    <meta name="msapplication-config" content="Content/assets/templates/vegan2020/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#fdf7ed">
+
+
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cardo|Roboto+Condensed:400,400i,700,700i|Roboto:100,900" type="text/css" media="all" />
+    <link rel="stylesheet" href="Content/assets/templates/vegan2020/css/font-awesome.css?vcart=10.1.4" type="text/css" media="screen" />
+    <link rel="stylesheet" href="Content/assets/templates/vegan2020/css/main.css?vcart=10.1.4" type="text/css" media="screen" />
+    <link rel="stylesheet" href="Content/assets/templates/vegan2020/css/print.css?vcart=10.1.4" type="text/css" media="print" />
+    <link rel="stylesheet" href="Content/assets/templates/vegan2020/css/messagebar.min.css?vcart=10.1.4" type="text/css" media="screen" />
+
+
+
+
+    <link href="~/Content/assets/templates/vegan2020/css/main.css" rel="stylesheet" />
+
+
+
+
+    <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {
+            document.write("<script type=\"text/javascript\" src=\"Content/assets/templates/vegan2020/js/jquery-1.11.1.min.js?vcart=10.1.4\"></" + "script>");
+        }
+    </script>
+
+
+    <script type="text/javascript" src="Content/assets/templates/vegan2020/js/gambit-smoothscroll-min.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="Content/assets/templates/vegan2020/js/pxl.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="Content/assets/templates/common-html5/js/utilities.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="Content/assets/templates/common-html5/js/functions.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="Content/assets/templates/vegan2020/js/jquery.quicksearch.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="Content/assets/templates/vegan2020/js/jquery.simplemodal.min.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="Content/assets/templates/vegan2020/js/messagebar.min.js?vcart=10.1.4"></script>
+
+    <script type="text/javascript">
+        jQuery(function () {
+            jQuery('#searchlight').searchlight('/search_quick.asp');
+        });
+    </script>
+    <script type="text/javascript">
+        new GambitSmoothScroll({
+            amount: 150, // The scroll amount
+            speed: 900 // The scroll speed
+        });
+    </script>
+    <script type="text/javascript">
+        (function ($) {
+
+            var ThisDocURL;
+            var ThisDocURLenc;
+            $(document).ready(function () {
+                ThisDocURL = '[product_url]';
+                ThisDocURLenc = encodeURIComponent(ThisDocURL);
+            });
+
+        })(jQuery);
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-48564345-1']);
+        _gaq.push(['_addDevId', '5Fyti']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+<body>
+    <div id="top" pxlurl="[product_url]">
+        <div id="curtain"></div>
+        <div class="headerbox-wrapper">
+            <div class="headerbox">
+                <div id="topbar">
+                    <div>
+                        <nav id="nav-utils">
+                            <ul>
+                                <li id="nav-utils-home"><a href=""><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a></li>
+                                <li id="nav-utils-search"><a href="search.asp"><i class="fa fa-search" aria-hidden="true"></i> <span>Search</span></a></li>
+                            </ul>
+                            <div id="nav-search">
+                                <div id="searchBox">
+                                    <form method="get" name="searchForm" action="search.asp">
+                                        <input type="text" name="keyword" id="searchlight" class="search-text" placeholder="start typing product name">
+                                        <input class="btn btn-big" type="submit" name="search" id="searchbutton" value="Search">
+                                    </form>
+                                </div>
+                            </div>
+                        </nav>
+                        <nav id="nav-tools">
+                            <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                            <div class="nav-sub">
+                                <ul>
+                                    <li><a href="~/Content/Views/Home/Contact.cshtml"><i class="fa fa-fw fa-circle" aria-hidden="true"></i>Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+
+                        <nav id="nav-store">
+                            <ul id="nav-store-icons">
+                                <li id="nav-store-login"><a href="myaccount.asp"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Login</span></a></li>
+                                <li id="nav-store-cart"><a href="view_cart.asp"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart</span> <strong>$0</strong></a></li>
+                            </ul>
+                        </nav>
+
+
+                    </div>
+                </div>
+                <div id="logo">
+                    <header>
+                        <a href="/">
+                            <img src="~/Content/assets/templates/vegan2020/images/img160x104floral.png" alt="The Vegan Shop" />
+                            <label style="display:block; font-size:xx-large;">The Vegan Shop</label>
+                        </a>
+                    </header>
+                </div>
+                <div id="mainmenu">
+                    <div>
+                        <nav id="nav-categories">
+                            <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i> Shop</span>
+
+                            <ul id="desktopMenu" class="categories">
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                                        Home
+                                    </a>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="">Home</a>
+                                        <a class="dropdown-item" href="/Candle/Index">Candles</a>
+                                        <a class="dropdown-item" href="/EssentialOil/Index">Essential Oils</a>
+                                        <a class="dropdown-item" href="/HomeCleaning/Index">Home cleaning</a>
+                                        <a class="dropdown-item" href="/Kitchen/Index">Kitchen</a>
+                                    </div>
+                                </li>
+
+
+                                <li>
+                                    <a href="@*Shop-By-Brand_c_211.html*@" class="cat">Home products</a>
+                                    <ul class="subMenu">
+                                        <li><a href="All-Things-Jill_c_234.html" class="subcat"> Candles </a></li>
+                                        <li><a href="Bambu_c_306.html" class="subcat">Bambu</a></li>
+                                        <li><a href="Bkind-natural-nail-care" class="subcat">BKind</a></li>
+                                        <li><a href="Cha-Tea_c_310.html" class="subcat">Ch'a Tea</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="bulk-Culinary-dry-goods_c_265.html" class="cat">Food Herb  to be constructed</a>
+                                    <ul class="subMenu">
+                                        <li><a href="Gum_c_271.html" class="subcat">Gum</a></li>
+                                        <li><a href="/" class="subcat">Herbs</a></li>
+                                        <li><a href="Peppers_c_295.html" class="subcat">Peppers</a></li>
+                                        <li><a href="Salts_c_294.html" class="subcat">Salts</a></li>
+                                        <li><a href="Soups_c_299.html" class="subcat">Soups</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="Zero-Waste-Lifestyle_c_183.html" class="cat">Supplement  to be constructed</a>
+                                    <ul class="subMenu">
+                                        <li><a href="Zero-Waste-Home-Cleaning" class="subcat">Cleaning</a></li>
+                                        <li><a href="Containers-and-Wraps_c_311.html" class="subcat">Containers and Wraps</a></li>
+                                        <li><a href="Face-Body_c_195.html" class="subcat">Face & Body</a></li>
+                                        <li><a href="First-Aid_c_210.html" class="subcat">First Aid</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="Personal-Care_c_245.html" class="cat">Care  to be constructed</a>
+                                    <ul class="subMenu">
+                                        <li><a href="Bath-Shower_c_29.html" class="subcat">Bath & Shower</a></li>
+                                        <li><a href="Lotions-Body-Treatments_c_249.html" class="subcat">Lotions + Body Treatments</a></li>
+                                        <li><a href="Deodorant_c_119.html" class="subcat">Deodorant</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</nav>
-<nav id="nav-tools">
-    <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></span>
-    <div class="nav-sub">
-        <ul>
-            <li><a href="~/Content/Views/Home/Contact.cshtml"><i class="fa fa-fw fa-circle" aria-hidden="true"></i>Contact Us</a></li>
+    <nav id="nav-store">
+
+        @Html.Partial("_LoginPartial")
+
+
+        <ul id="nav-store-icons">
+            <li id="nav-store-login"><a href="myaccount.asp"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Login</span></a></li>
+            <li id="nav-store-cart"><a href="view_cart.asp"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart</span> <strong>$0</strong></a></li>
         </ul>
+    </nav>
+
+    <div class="stats">
+        <script type="text/javascript">
+            //<![CDATA[
+            var file = '/stats/count.asp';
+            var stats_d = new Date();
+            var stats_s = stats_d.getSeconds();
+            var stats_m = stats_d.getMinutes();
+            var stats_x = stats_s * stats_m;
+            var prdID = '[catalogid]';
+            var catID = '[catid]';
+            stats_f = '' + escape(document.referrer);
+            stats_f = stats_f.replace('_', '----');
+            if (navigator.appName == 'Netscape') {
+                stats_b = 'NS';
+            }
+            if (navigator.appName == 'Microsoft Internet Explorer') {
+                stats_b = 'MSIE';
+            }
+            if (navigator.appVersion.indexOf('MSIE 3') > 0) {
+                stats_b = 'MSIE';
+            }
+            stats_u = '' + escape(document.URL);
+            stats_u = stats_u.replace('_', '----');
+            stats_w = screen.width;
+            stats_h = screen.height;
+            stats_v = navigator.appName;
+            stats_fs = window.screen.fontSmoothingEnabled;
+            if (stats_v != 'Netscape') {
+                stats_c = screen.colorDepth;
+            } else {
+                stats_c = screen.pixelDepth;
+            }
+            stats_j = navigator.javaEnabled();
+            info = 'w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u=' + stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
+            document.write('<img src="' + file + '?' + info + '" width="1" height="1" border="0" alt="stats" />');
+            //]]>
+        </script>
+        <noscript>
+            <img src="/stats/count.asp" width="90" height="30" alt="" />
+        </noscript>
+
     </div>
-</nav>
+    <script type="text/javascript">
+        var _cart_secure_url = "/"
+    </script>
+    <script>
+        (new Image()).src = '/'
+    </script>
 
-<nav id="nav-store">
+</body>
 
-    @Html.Partial("_LoginPartial")
+</html>
 
-
-    <ul id="nav-store-icons">
-        <li id="nav-store-login"><a href="myaccount.asp"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Login</span></a></li>
-        <li id="nav-store-cart"><a href="view_cart.asp"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart</span> <strong>$0</strong></a></li>
-    </ul>
-</nav>
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/assets/templates/vegan2020/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
@@ -38,7 +38,7 @@
         </div>*@
 
     <div class="container-fluid">
-
+        @*<a href="~/Views/Shared/Components/User/_NavigationBar.cshtml">~/Views/Shared/Components/User/_NavigationBar.cshtml</a>*@
         <nav>
             @RenderPage("_NavigationBar.cshtml")
         </nav>
