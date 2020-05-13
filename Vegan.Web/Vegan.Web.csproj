@@ -463,6 +463,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Shared\Components\Admin\" />
+    <Folder Include="Views\Shared\Components\User\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
