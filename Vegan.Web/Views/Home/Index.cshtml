@@ -3,39 +3,550 @@
     Layout = "~/Views/Shared/Components/_LayoutHome.cshtml";
 }
 
-
-<div class="row">
-    <div class="col-md-4">
-        TESTING
+<style>
+    div {
+        background-color: aqua;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            TESTING div Go to admin area
+        </div>
+        <div class="col-md-4">
+            TESTING div  go to user area
+        </div>
+        <div class="col-md-4">
+            TESTING div
+        </div>
     </div>
 </div>
 
 
 
-        @*<div class="jumbotron">
-                <h1>ASP.NET</h1>
-                <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-                <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-            </div>
+@*<div class="jumbotron">
+        <h1>ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    </div>
 
-            <div class="row">
-                <div class="col-md-4">
-                    <h2>Getting started</h2>
-                    <p>
-                        ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                        enables a clean separation of concerns and gives you full control over markup
-                        for enjoyable, agile development.
-                    </p>
-                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+    </div>*@
+
+
+
+
+@*Original code of the Apothecary.ca ===================================================================================*@
+
+
+
+<!doctype html>
+<html class="no-js" lang="en-GB" x-ms-format-detection="none">
+
+<head>
+
+    @*TODO    check which scripts - links  are usefull in all head --- check for folders which from the scripts read from========*@
+    <script type="text/javascript" src="assets/templates/common/js/jquery.min.js?vcart=10.1.4"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <META NAME="DESCRIPTION" CONTENT="Zero Waste Home, Refillery, Pure Essential Oils, Organic Natural Wellness Products | Calgary, Alberta, Canada">
+    <META NAME="ABSTRACT" CONTENT="">
+    <META NAME="KEYWORDS" CONTENT="zero waste, essential, oils, cosmetics natural, wellness, pure, sustainable, therapeutic, body care, organic, refill, refillery, soap, zerowaste">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/templates/apothecary2017/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="assets/templates/apothecary2017/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/templates/apothecary2017/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="assets/templates/apothecary2017/favicons/manifest.json?vcart=10.1.4">
+    <link rel="mask-icon" href="assets/templates/apothecary2017/favicons/safari-pinned-tab.svg" color="#9b9388">
+    <link rel="shortcut icon" href="assets/templates/apothecary2017/favicons/favicon.ico">
+    <meta name="msapplication-config" content="assets/templates/apothecary2017/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#fdf7ed">
+    <title>Welcome to The Apothecary in Inglewood - Pure essential oils, zero waste home, natural, organic bath, body, wellness & #Refillery | Calgary, Alberta</title>
+    <link rel="canonical" href="https://www.the-apothecary.ca" />
+
+
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cardo|Roboto+Condensed:400,400i,700,700i|Roboto:100,900" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/templates/apothecary2017/css/font-awesome.css?vcart=10.1.4" type="text/css" media="screen" />
+    <link rel="stylesheet" href="assets/templates/apothecary2017/css/main.css?vcart=10.1.4" type="text/css" media="screen" />
+    <link rel="stylesheet" href="assets/templates/apothecary2017/css/print.css?vcart=10.1.4" type="text/css" media="print" />
+    <link rel="stylesheet" href="assets/templates/apothecary2017/css/messagebar.min.css?vcart=10.1.4" type="text/css" media="screen" />
+
+    <link rel="alternate" type="application/rss+xml" title="Featured Items (RSS 2.0)" href="https://www.the-apothecary.ca/rss.asp?type=home" />
+    <link rel="alternate" type="application/rss+xml" title="Products On Sale (RSS 2.0)" href="https://www.the-apothecary.ca/rss.asp?type=onsale" />
+    <link rel="alternate" type="application/rss+xml" title="New Releases (RSS 2.0)" href="https://www.the-apothecary.ca/rss.asp?type=newreleases" />
+    <link rel="alternate" type="application/rss+xml" title="Best Sellers (RSS 2.0)" href="https://www.the-apothecary.ca/rss.asp?type=bestsellers" />
+    <link rel="alternate" type="application/rss+xml" title="Latest Blog Posts (RSS 2.0)" href="https://www.the-apothecary.ca/rss.asp?type=blog" />
+
+
+
+
+    <style>
+       /*TODO address css*/
+    </style>
+
+
+
+
+    <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {
+            document.write("<script type=\"text/javascript\" src=\"assets/templates/apothecary2017/js/jquery-1.11.1.min.js?vcart=10.1.4\"></" + "script>");
+        }
+    </script>
+
+
+    <script type="text/javascript" src="assets/templates/apothecary2017/js/gambit-smoothscroll-min.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="assets/templates/apothecary2017/js/pxl.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="assets/templates/common-html5/js/utilities.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="assets/templates/common-html5/js/functions.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="assets/templates/apothecary2017/js/jquery.quicksearch.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="assets/templates/apothecary2017/js/jquery.simplemodal.min.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="assets/templates/apothecary2017/js/messagebar.min.js?vcart=10.1.4"></script>
+
+    <script type="text/javascript">
+        jQuery(function () {
+            jQuery('#searchlight').searchlight('/search_quick.asp');
+        });
+    </script>
+    <script type="text/javascript">
+        new GambitSmoothScroll({
+            amount: 150, // The scroll amount
+            speed: 900 // The scroll speed
+        });
+    </script>
+    <script type="text/javascript">
+        (function ($) {
+
+            var ThisDocURL;
+            var ThisDocURLenc;
+            $(document).ready(function () {
+                ThisDocURL = '[product_url]';
+                ThisDocURLenc = encodeURIComponent(ThisDocURL);
+            });
+
+        })(jQuery);
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-48564345-1']);
+        _gaq.push(['_addDevId', '5Fyti']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</head>
+
+<body>
+    <div id="top" pxlurl="[product_url]">
+
+        <div id="curtain"></div>
+        <div class="headerbox-wrapper">
+            <div class="headerbox">
+                <div id="topbar">
+                    <div>
+                        <nav id="nav-utils">
+                            <ul>
+                                <li id="nav-utils-home"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a></li>
+                                <li id="nav-utils-search"><a href="search.asp"><i class="fa fa-search" aria-hidden="true"></i> <span>Search</span></a></li>
+                            </ul>
+                            <div id="nav-search">
+                                <div id="searchBox">
+                                    <form method="get" name="searchForm" action="search.asp">
+                                        <input type="text" name="keyword" id="searchlight" class="search-text" placeholder="start typing product name">
+                                        <input class="btn btn-big" type="submit" name="search" id="searchbutton" value="Search">
+                                    </form>
+                                </div>
+                            </div>
+                        </nav>
+                        <nav id="nav-tools">
+                            <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                            <div class="nav-sub">
+                                <ul>
+                                    <li class="sub">
+                                        <a href="faq.html"><i class="fa fa-fw fa-chevron-circle-right" aria-hidden="true"></i>Customer Care</a>
+                                        <ul>
+                                            <li><a href="faq.html">FAQ</a></li>
+                                            <li><a href="The-Refillery_ep_56-1.html">The Refillery</a></li>
+                                            <li><a href="refills-delivered">Mobile Refillery</a></li>
+                                            <li><a href="Join-the-AromaticLife-_ep_59-1.html">Join the #AromaticLife</a></li>
+                                            <li><a href="shipping_information.html">Shipping Information</a></li>
+                                            <li><a href="return_policy.html">Return Policy</a></li>
+                                            <li><a href="store_hours.html">Store Hours</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="crm.asp?action=contactus"><i class="fa fa-fw fa-circle" aria-hidden="true"></i>Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+
+                        <nav id="nav-store">
+                            <ul id="nav-store-icons">
+                                <li id="nav-store-login"><a href="myaccount.asp"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Login</span></a></li>
+                                <li id="nav-store-cart"><a href="view_cart.asp"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart</span> <strong>$0</strong></a></li>
+                            </ul>
+                        </nav>
+
+
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <h2>Get more libraries</h2>
-                    <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+                <div id="logo">
+                    <header>
+                        <a href="/"><img src="assets/templates/apothecary2017/images/logo280x70apothecary.png" alt="The Apothecary in Inglewood - Pure essential oils, zero waste home, natural, organic bath, body, wellness & #Refillery | Calgary, Alberta"></a>
+                    </header>
                 </div>
-                <div class="col-md-4">
-                    <h2>Web Hosting</h2>
-                    <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+                <div id="mainmenu">
+                    <div>
+                        <nav id="nav-categories">
+                            <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i> Shop</span>
+
+                            <ul id="desktopMenu" class="categories">
+                                <li>
+                                    <a href="Shop-By-Brand_c_211.html" class="cat">Shop By Brand</a>
+                                    <ul class="subMenu">
+                                        <li><a href="All-Things-Jill_c_234.html" class="subcat">All Things Jill</a></li>
+                                        <li><a href="Bambu_c_306.html" class="subcat">Bambu</a></li>
+                                        <li><a href="Bkind-natural-nail-care" class="subcat">BKind</a></li>
+                                        <li><a href="Cha-Tea_c_310.html" class="subcat">Ch'a Tea</a></li>
+                                        <li><a href="cocoon-apothecary" class="subcat">Cocoon Apothecary</a></li>
+                                        <li><a href="CoffeeSock_c_309.html" class="subcat">CoffeeSock</a></li>
+                                        <li><a href="colibri-bags" class="subcat">Colibri</a></li>
+                                        <li><a href="Credobags_c_232.html" class="subcat">Credobags</a></li>
+                                        <li><a href="DivaCup_c_255.html" class="subcat">DivaCup</a></li>
+                                        <li><a href="ECOBAGS_c_307.html" class="subcat">ECOBAGS</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="bulk-Culinary-dry-goods_c_265.html" class="cat">bulk Culinary + dry goods</a>
+                                    <ul class="subMenu">
+                                        <li><a href="Gum_c_271.html" class="subcat">Gum</a></li>
+                                        <li><a href="https://www.the-apothecary.ca/Bulk-Herbs_c_71.html" class="subcat">Herbs</a></li>
+                                        <li><a href="Peppers_c_295.html" class="subcat">Peppers</a></li>
+                                        <li><a href="Salts_c_294.html" class="subcat">Salts</a></li>
+                                        <li><a href="Soups_c_299.html" class="subcat">Soups</a></li>
+                                        <li><a href="Spices-Seasonings_c_293.html" class="subcat">Spices + Seasonings</a></li>
+                                        <li><a href="organic-sprouting-seeds" class="subcat">Sprouting Seeds</a></li>
+                                        <li><a href="bulk-natural-tea" class="subcat">Tea</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="curated-kits" class="cat">Curated Kits</a>
+                                    <ul class="subMenu">
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="Zero-Waste-Lifestyle_c_183.html" class="cat">Zero Waste Lifestyle</a>
+                                    <ul class="subMenu">
+                                        <li><a href="Zero-Waste-Home-Cleaning" class="subcat">Cleaning</a></li>
+                                        <li><a href="Containers-and-Wraps_c_311.html" class="subcat">Containers and Wraps</a></li>
+                                        <li><a href="Face-Body_c_195.html" class="subcat">Face & Body</a></li>
+                                        <li><a href="First-Aid_c_210.html" class="subcat">First Aid</a></li>
+                                        <li><a href="zero-waste-kitchen" class="subcat">Kitchen</a></li>
+                                        <li><a href="zero-waste-laundry" class="subcat">Laundry</a></li>
+                                        <li><a href="Mason_c_188.html" class="subcat">Mason</a></li>
+                                        <li><a href="Menstrual-Products_c_194.html" class="subcat">Menstrual Products</a></li>
+                                        <li><a href="On-the-Go_c_270.html" class="subcat">On the Go</a></li>
+                                        <li><a href="Reusable-Bags_c_312.html" class="subcat">Reusable Bags</a></li>
+                                        <li><a href="Straws_c_187.html" class="subcat">Straws</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="Personal-Care_c_245.html" class="cat">Personal Care</a>
+                                    <ul class="subMenu">
+                                        <li><a href="Bath-Shower_c_29.html" class="subcat">Bath & Shower</a></li>
+                                        <li><a href="Lotions-Body-Treatments_c_249.html" class="subcat">Lotions + Body Treatments</a></li>
+                                        <li><a href="Deodorant_c_119.html" class="subcat">Deodorant</a></li>
+                                        <li><a href="Hair-Care_c_182.html" class="subcat">Hair Care</a></li>
+                                        <li><a href="Teeth_c_181.html" class="subcat">Teeth</a></li>
+                                        <li><a href="Outdoors-Sun-Care_c_67.html" class="subcat">Outdoors + Sun Care</a></li>
+                                        <li><a href="For-Men-Shave-Beard_c_54.html" class="subcat">For Men (Shave & Beard)</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="Skincare-Cosmetics_c_248.html" class="cat">Skincare + Cosmetics</a>
+                                    <ul class="subMenu">
+                                        <li><a href="SkinCare_c_26.html" class="subcat">SkinCare</a></li>
+                                        <li><a href="Make-Up-Cosmetics_c_199.html" class="subcat">Make Up / Cosmetics</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="Essential-Oils-Aromatherapy_c_14.html" class="cat">Essential Oils + Aromatherapy</a>
+                                    <ul class="subMenu">
+                                        <li><a href="A--D_c_15.html" class="subcat">A - D</a></li>
+                                        <li><a href="E--L_c_16.html" class="subcat">E - L</a></li>
+                                        <li><a href="M--P_c_17.html" class="subcat">M - P</a></li>
+                                        <li><a href="Q--Z_c_18.html" class="subcat">Q - Z</a></li>
+                                        <li><a href="Synergies-Blends_c_19.html" class="subcat">Synergies / Blends</a></li>
+                                        <li><a href="Diffusers_c_147.html" class="subcat">Diffusers</a></li>
+                                        <li><a href="Absolutes_c_20.html" class="subcat">Absolutes</a></li>
+                                        <li><a href="Aromatic-Roll-Ons_c_176.html" class="subcat">Aromatic Roll Ons</a></li>
+                                        <li><a href="Single-Note-10-Dilutions_c_22.html" class="subcat">Single Note 10% Dilutions</a></li>
+                                        <li><a href="Soap-Grade_c_23.html" class="subcat">Soap Grade</a></li>
+                                        <li><a href="Hydrosols_c_138.html" class="subcat">Hydrosols</a></li>
+                                        <li><a href="Collections-Kits_c_24.html" class="subcat">Collections & Kits</a></li>
+                                        <li><a href="Jewelry_c_192.html" class="subcat">Jewelry</a></li>
+                                        <li><a href="Essential-Oil-Cases_c_25.html" class="subcat">Essential Oil Cases</a></li>
+                                        <li><a href="Books_c_93.html" class="subcat">Books</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="Home-Environment_c_34.html" class="cat">Home + Environment</a>
+                                    <ul class="subMenu">
+                                        <li><a href="Candles_c_37.html" class="subcat">Candles</a></li>
+                                        <li><a href="https://www.the-apothecary.ca/Cleaning_c_189.html" class="subcat">Home Cleaning</a></li>
+                                        <li><a href="https://www.the-apothecary.ca/Kitchen_c_263.html" class="subcat">Kitchen</a></li>
+                                        <li><a href="https://www.the-apothecary.ca/Laundry_c_264.html" class="subcat">Laundry</a></li>
+                                        <li><a href="Room-Mists_c_38.html" class="subcat">Room Mists</a></li>
+                                        <li><a href="Yoga_c_57.html" class="subcat">Yoga</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </nav>
+                    </div>
                 </div>
-            </div>*@
+            </div>
+        </div>
+        <div class="contentbox-wrapper">
+            <div class="contentbox">
+
+
+
+
+                <div id="slider" class="slider-wrapper theme-default">
+
+                    <link rel="stylesheet" href="/assets/templates/common-html5/css/flexslider.css?vcart=10.1.4" type="text/css" media="screen" />
+                    <script type="text/javascript" src="/assets/templates/common-html5/js/jquery.flexslider-min.js?vcart=10.1.4"></script>
+                    <div id="homeCarousel" class="flexslider">
+                        <ul class="slides">
+
+                            <li><a href="http://www.the-apothecary.ca/Elate-Cosmetics_c_227.html"><img src="assets/images/HomePageCarousel/your-green-kitchen-sale-banner.jpg" alt="" /></a></li>
+                            <li><a href="http://www.the-apothecary.ca/refills-delivered"><img src="assets/images/HomePageCarousel/closure-banner-2020.jpg" alt="" /></a></li>
+                            <li><a href="http://www.the-apothecary.ca/Zero-Waste-Lifestyle_c_183.html"><img src="assets/images/zw-living-2020-1.jpg" alt="" /></a></li>
+
+                        </ul>
+                    </div>
+                    <script type="text/javascript" charset="utf-8">
+                        jQuery(document).ready(function () {
+                            jQuery('#homeCarousel').flexslider({
+                                animation: "fade",
+                                slideshowSpeed: 6000,
+                                controlNav: false,
+                                keyboard: false
+                            });
+                        });
+                    </script>
+
+                </div>
+
+
+                <div id="quickinfo" class="docsection-wrapper ">
+                    <div class="docsection boxed">
+                        <div class="content-wrapper clearfix">
+                            <div class="floral-l"></div>
+                            <div class="floral-r"></div>
+                            <div class="content">
+                                <section>
+                                    <p><em>Flat rate shipping in Canada:</em> <span><strong>Now $7.50</strong> on all orders</span> | <span><strong>FREE SHIPPING</strong> on orders over $100</span> </p>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="banners" class="docsection-wrapper">
+                    <div class="docsection boxed">
+                        <div class="banner-wrapper clearfix">
+                            <div id="ban-thin" class="banner"><a href="http://www.the-apothecary.ca/"><img src="assets/images/thin-reduced-waste-lifestyle.jpg" alt="Your One Stop Reduced Waste Lifestyle Shoppe"></a></div>
+                        </div>
+                        <div class="banner-wrapper clearfix">
+                            <div id="ban-left" class="banner"><a href="https://www.the-apothecary.ca/Naturel-Tea_c_276.html"><img src="assets/images/trio-naturel-tea.jpg" alt="Bulk Loose Leaf Organic Tea"></a></div>
+                            <div id="ban-right" class="banner"><a href="https://www.the-apothecary.ca/Essential-Oils-Aromatherapy_c_14.html"><img src="assets/images/trio-essential-oils.jpg" alt="Pure Essential Oils"></a></div>
+                            <div id="ban-middle" class="banner"><a href="https://www.the-apothecary.ca/Zero-Waste-Lifestyle_c_183.html"><img src="assets/images/trio-wide-zero-waste-home.jpg" alt="Zero Waste Lifestyle"></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="banners" class="docsection-wrapper">
+                    <div class="docsection boxed">
+                        <div class="banner-wrapper clearfix">
+                            <div id="ban-thin" class="banner"><a href="http://www.the-apothecary.ca/"><img src="assets/images/thin-what-were-up-to.jpg" alt="What's Going on at The Apothecary"></a></div>
+                        </div>
+                        <div class="banner-wrapper clearfix">
+                            <div id="ban-left" class="banner"><a href="https://www.the-apothecary.ca/Brewing-an-Ethical-Cup-of-Coffee-With-Devil%E2%80%99s-Head_b_132.html"><img src="assets/images/trio-devils-head.jpg" alt="Brewing Ethical Coffee with Devils Head"></a></div>
+                            <div id="ban-right" class="banner"><a href="https://www.the-apothecary.ca/Rosewood-White-Sage-Vanilla-What-You-Need-to-Know-About-Over-Harvesting_b_129.html"><img src="assets/images/trio-over-harvesting.jpg" alt="Over Harvesting of Essential Oils"></a></div>
+                            <div id="ban-middle" class="banner"><a href="https://www.the-apothecary.ca/5-Awesome-Things-About-Living-in-a-Small-Home_b_127.html"><img src="assets/images/trio-living-small-home.jpg" alt="Five Awesome Things About Living in a Small Home"></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="intro" class="docsection-wrapper">
+                    <div class="line"></div>
+                    <div class="docsection boxed">
+                        <div class="content-wrapper clearfix">
+                            <div class="content">
+                                <section>
+                                    <p>
+                                        Welcome to The Apothecary in Inglewood! We are Calgary's premiere destination for zero waste goodies, refillery, pure essential oils, and natural and organic wellness. We are a proud importer and bottler of our own
+                                        brand of essential oils, and carry the full line of All Things Jill products; we are certain that you'll find the wellness products you need when you shop here!
+                                    </p>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*TODO check this*@
+                <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
+                <script type="text/javascript">
+                    require(["mojo/signup-forms/Loader"], function (L) {
+                        L.start({
+                            "baseUrl": "mc.us5.list-manage.com",
+                            "uuid": "b779fe6af514f6d1bc0f3d51a",
+                            "lid": "50cb3243c6"
+                        })
+                    })
+                </script>
+
+
+
+
+
+            </div>
+        </div>
+        <div class="footerbox-wrapper">
+            <div class="footerbox">
+                <div id="footernav">
+                    <div class="boxed">
+                        <ul class="pages">
+                            <li>
+                                <span><i class="fa fa-fw fa-chevron-circle-right" aria-hidden="true"></i>CUSTOMER SERVICE</span>
+                                <ul>
+                                    <li><a href="shipping_information.html">Shipping Information</a></li>
+                                    <li><a href="return_policy.html">Return Policy</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="Gift-Certificates_p_12.html">Gift Certificates</a></li>
+                                    <li><a href="crm.asp?action=contactus">Contact Us</a></li>
+                                    <li><a href="store_hours.html">Store Hours</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <span><i class="fa fa-fw fa-chevron-circle-right" aria-hidden="true"></i>ACCOUNT</span>
+                                <ul>
+                                    <li><a href="myaccount.asp">Login</a></li>
+                                    <li><a href="myaccount.asp">Dashboard</a></li>
+                                    <li><a href="ordertracking.asp">Recent Orders</a></li>
+                                    <li><a href="view_wishlist.asp">Wish List</a></li>
+                                    <li><a href="gc_view.asp">Gift Certificates</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="footerbar">
+                    <div class="boxed">
+                        <a class="phone" href="callto:+14034530313"><i class="fa fa-phone-square" aria-hidden="true"></i> 403-453-0313</a>
+                        <ul class="social">
+                            <li><a href="http://www.facebook.com/apothecary.inglewood" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i> <span>Facebook</span></a></li>
+                            <li><a href="http://twitter.com/ApothecaryYYC" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> <span>Twitter</span></a></li>
+                            <li><a href="http://www.instagram.com/apothecaryyyc/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> <span>Instagram</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="disclaimer">
+                    <div class="boxed">
+                        <footer>
+
+                            <p>
+                                <strong>Disclaimer:</strong> The Apothecary in Inglewood is not a pharmacy, nor does it offer any pharmacy related services. The information provided here is for educational purposes only and is not intended as diagnosis, treatment,
+                                cure or prescription of any kind. The decision to use, or not to use, any information is the sole responsibility of you, the individual. We recommend that you consult your primary health care provider before using alternative
+                                healing methods or products.
+                            </p>
+                            <p>Zero waste home, Refillery, Pure Essential Oils, Bath & Body, Wellness Products in Calgary, Alberta, Canada</p>
+                            <p>
+                                <i class="fa fa-copyright"></i> Copyright
+                                <script type="text/javascript" language="javascript">
+                                    var date = new Date();
+                                    document.write(date.getFullYear())
+                                </script> The Apothecary in Inglewood. All Rights Reserved. <span>Web Design by <a href="http://pixelscience.ca" target="_blank">Pixel Science</a></span>
+                            </p>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="stats">
+
+        <script type="text/javascript">
+            //<![CDATA[
+            var file = '/stats/count.asp';
+            var stats_d = new Date();
+            var stats_s = stats_d.getSeconds();
+            var stats_m = stats_d.getMinutes();
+            var stats_x = stats_s * stats_m;
+            var prdID = '[catalogid]';
+            var catID = '[catid]';
+            stats_f = '' + escape(document.referrer);
+            stats_f = stats_f.replace('_', '----');
+            if (navigator.appName == 'Netscape') {
+                stats_b = 'NS';
+            }
+            if (navigator.appName == 'Microsoft Internet Explorer') {
+                stats_b = 'MSIE';
+            }
+            if (navigator.appVersion.indexOf('MSIE 3') > 0) {
+                stats_b = 'MSIE';
+            }
+            stats_u = '' + escape(document.URL);
+            stats_u = stats_u.replace('_', '----');
+            stats_w = screen.width;
+            stats_h = screen.height;
+            stats_v = navigator.appName;
+            stats_fs = window.screen.fontSmoothingEnabled;
+            if (stats_v != 'Netscape') {
+                stats_c = screen.colorDepth;
+            } else {
+                stats_c = screen.pixelDepth;
+            }
+            stats_j = navigator.javaEnabled();
+            info = 'w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u=' + stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
+            document.write('<img src="' + file + '?' + info + '" width="1" height="1" border="0" alt="stats" />');
+            //]]>
+        </script>
+        <noscript>
+            <img src="/stats/count.asp" width="90" height="30" alt="" />
+        </noscript>
+
+    </div>
+    <script type="text/javascript">
+        var _cart_secure_url = "https://www.the-apothecary.ca"
+    </script>
+    <script>
+        (new Image()).src = 'https://www.the-apothecary.ca/3dvisit.asp'
+    </script>
+</body>
+
+</html>
