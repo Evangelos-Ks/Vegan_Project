@@ -463,6 +463,7 @@
     <Content Include="Views\Shared\Components\User\_Footer.cshtml" />
     <Content Include="Views\Shared\Components\User\_NavigationBar.cshtml" />
     <Content Include="Views\Shared\Components\User\_Layout.cshtml" />
+    <Content Include="Views\Shared\Components\_LayoutHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
