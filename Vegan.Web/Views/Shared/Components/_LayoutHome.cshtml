@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Content/assets/templates/vegan2020/css")
+    @Scripts.Render("~/bundle/modernizr")
+</head>
+<body>
+
+    <nav>
+        @RenderPage("_NavigationBar.cshtml")
+    </nav>
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+    <footer>
+        @RenderPage("_Footer.cshtml")
+    </footer>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
