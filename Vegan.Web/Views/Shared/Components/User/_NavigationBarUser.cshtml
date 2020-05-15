@@ -1,0 +1,172 @@
+﻿<!doctype html>
+    <html class="no-js" lang="en-GB" x-ms-format-detection="none">
+
+
+    <body>
+        <div id="top" pxlurl="[product_url]">
+            <div id="curtain"></div>
+            <div class="headerbox-wrapper">
+                <div class="headerbox">
+                    <div id="topbar">
+                        <div>
+                            <nav id="nav-utils">
+                                <ul>
+                                    <li id="nav-utils-home"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a></li>
+                                    <li id="nav-utils-search"><a href="search.asp"><i class="fa fa-search" aria-hidden="true"></i> <span>Search</span></a></li>
+                                </ul>
+                                <div id="nav-search">
+                                    <div id="searchBox">
+                                        <form method="get" name="searchForm" action="search.asp">
+                                            <input type="text" name="keyword" id="searchlight" class="search-text" placeholder="start typing product name">
+                                            <input class="btn btn-big" type="submit" name="search" id="searchbutton" value="Search">
+                                        </form>
+                                    </div>
+                                </div>
+                            </nav>
+                            <nav id="nav-tools">
+                                <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                                <div class="nav-sub">
+                                    <ul>
+                                        <li><a href="~/Content/Views/Home/Contact.cshtml"><i class="fa fa-fw fa-circle" aria-hidden="true"></i>Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+
+                            <nav id="nav-store">
+                                <ul id="nav-store-icons">
+                                    <li id="nav-store-login"><a href="myaccount.asp"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Login</span></a></li>
+                                    <li id="nav-store-cart"><a href="view_cart.asp"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart</span> <strong>$0</strong></a></li>
+                                </ul>
+                            </nav>
+
+
+                        </div>
+                    </div>
+                    <div id="logo">
+                        <header>
+                            <a href="/">
+                                <img src="~/Content/assets/templates/vegan2020/images/img160x104floral.png" alt="The Vegan Shop" />
+                                <label style="display:block; font-size:xx-large;">The Vegan Shop</label>
+                            </a>
+                        </header>
+                    </div>
+                    <div id="mainmenu">
+                        <div>
+                            <nav id="nav-categories">
+                                <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i> Shop</span>
+
+                                <ul id="desktopMenu" class="categories">
+                                    <li>
+                                        <a href="/Product/Index" class="cat">All products</a>
+                                    </li>
+                                    <li>
+                                        <a href="/" class="cat">Home products</a>
+                                        <ul class="subMenu">
+                                            <li><a href="/Candle/Index" class="subcat"> Candles </a></li>
+                                            <li><a href="/EssentialOil/Index" class="subcat">Essential Oils</a></li>
+                                            <li><a href="/HomeCleaning/Index" class="subcat">Home cleaning</a></li>
+                                            <li><a href="/Kitchen/Index" class="subcat">Kitchen</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/FoodHerb/Index" class="cat">Dry Food & Herbs</a>
+                                        <ul class="subMenu">
+                                            <li><a href="Gum_c_271.html" class="subcat">Salts</a></li>
+                                            <li><a href="/Salt/Index" class="subcat">Herbs</a></li>
+                                            <li><a href="/Spice/Index" class="subcat">Spices</a></li>
+                                            <li><a href="/SproutingSeed/Index" class="subcat">Sprouting seeds</a></li>
+                                            <li><a href="/Tea/Index" class="subcat">Tea</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/Supplement/Index" class="cat">Supplemens</a>
+                                        <ul class="subMenu">
+                                            <li><a href="/Supplement/Index" class="subcat">Cleaning</a></li>
+                                            <li><a href="/PowerHealth/Index" class="subcat">Power Health</a></li>
+                                            <li><a href="/SuperFood/Index" class="subcat">Super Foods</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/Care/Index" class="cat">Care</a>
+                                        <ul class="subMenu">
+                                            <li><a href="/FaceCreams/Index" class="subcat">Face creams</a></li>
+                                            <li><a href="/Hair/Index" class="subcat">Hair</a></li>
+                                            <li><a href="/Lotion/Index" class="subcat">Lotions</a></li>
+                                            <li><a href="/ShaveBeard/Index" class="subcat">Shave Beard</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav id="nav-store">
+
+
+            @Html.Partial("_LoginPartial")
+
+
+            <ul id="nav-store-icons">
+                <li id="nav-store-login"><a href="myaccount.asp"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Login</span></a></li>
+                <li id="nav-store-cart"><a href="view_cart.asp"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart</span> <strong>$0</strong></a></li>
+            </ul>
+        </nav>
+
+        <div class="stats">
+            <script type="text/javascript">
+                //<![CDATA[
+                var file = '/stats/count.asp';
+                var stats_d = new Date();
+                var stats_s = stats_d.getSeconds();
+                var stats_m = stats_d.getMinutes();
+                var stats_x = stats_s * stats_m;
+                var prdID = '[catalogid]';
+                var catID = '[catid]';
+                stats_f = '' + escape(document.referrer);
+                stats_f = stats_f.replace('_', '----');
+                if (navigator.appName == 'Netscape') {
+                    stats_b = 'NS';
+                }
+                if (navigator.appName == 'Microsoft Internet Explorer') {
+                    stats_b = 'MSIE';
+                }
+                if (navigator.appVersion.indexOf('MSIE 3') > 0) {
+                    stats_b = 'MSIE';
+                }
+                stats_u = '' + escape(document.URL);
+                stats_u = stats_u.replace('_', '----');
+                stats_w = screen.width;
+                stats_h = screen.height;
+                stats_v = navigator.appName;
+                stats_fs = window.screen.fontSmoothingEnabled;
+                if (stats_v != 'Netscape') {
+                    stats_c = screen.colorDepth;
+                } else {
+                    stats_c = screen.pixelDepth;
+                }
+                stats_j = navigator.javaEnabled();
+                info = 'w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u=' + stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
+                document.write('<img src="' + file + '?' + info + '" width="1" height="1" border="0" alt="stats" />');
+                //]]>
+            </script>
+            <noscript>
+                <img src="/stats/count.asp" width="90" height="30" alt="" />
+                You need to enable JavaScript to run this app.
+            </noscript>
+
+        </div>
+        <script type="text/javascript">
+            var _cart_secure_url = "/"
+        </script>
+        <script>
+            (new Image()).src = '/'
+        </script>
+
+    </body>
+
+    </html>
+
+

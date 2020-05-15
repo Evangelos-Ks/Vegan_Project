@@ -377,7 +377,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\Components\Admin\_Layout.cshtml" />
+    <Content Include="Views\Shared\Components\Admin\_LayoutAdmin.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -427,8 +427,8 @@
     <Content Include="Views\Product\DetailsProduct.cshtml" />
     <Content Include="Views\Product\EditProduct.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Shared\Components\Admin\_Footer.cshtml" />
-    <Content Include="Views\Shared\Components\Admin\_NavigationBar.cshtml" />
+    <Content Include="Views\Shared\Components\Admin\_FooterAdmin.cshtml" />
+    <Content Include="Views\Shared\Components\Admin\_NavigationBarAdmin.cshtml" />
     <Content Include="Views\SproutingSeed\Index.cshtml" />
     <Content Include="Views\SproutingSeed\AddSproutingSeed.cshtml" />
     <Content Include="Views\SproutingSeed\DetailsSproutingSeed.cshtml" />
@@ -501,6 +501,9 @@
     <Content Include="Views\Shared\Components\_NavigationBar.cshtml" />
     <Content Include="Views\Shared\Components\_Layout.cshtml" />
     <Content Include="Views\Shared\Components\_LayoutHome.cshtml" />
+    <Content Include="Views\Shared\Components\User\_FooterUser.cshtml" />
+    <Content Include="Views\Shared\Components\User\_LayoutUser.cshtml" />
+    <Content Include="Views\Shared\Components\User\_NavigationBarUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
