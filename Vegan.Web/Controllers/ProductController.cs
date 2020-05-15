@@ -32,7 +32,6 @@ namespace Vegan.Web.Controllers.TestControllers
             return View(unitOfWork.Products.GetAll());
         }
 
-        [Authorize(Roles = "Subscribers")]
         [HttpGet]
         public ActionResult IndexUser()
         {

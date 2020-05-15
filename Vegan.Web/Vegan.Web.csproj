@@ -503,6 +503,8 @@
     <Content Include="Views\Shared\Components\User\_LayoutUser.cshtml" />
     <Content Include="Views\Shared\Components\User\_NavigationBarUser.cshtml" />
     <Content Include="Views\Product\IndexUser.cshtml" />
+    <Content Include="Views\Candle\IndexUser.cshtml" />
+    <Content Include="Views\Care\IndexUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

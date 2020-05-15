@@ -15,11 +15,25 @@ namespace Vegan.Web.Controllers
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         //===================================== Methods ====================================================================
+        [Authorize(Roles = "Admins, Supervisors")]
         [HttpGet]
         public ActionResult Index()
         {
             return View(unitOfWork.Candles.GetAll());
         }
+
+        [HttpGet]
+        public ActionResult IndexUser()
+        {
+            return View(unitOfWork.Candles.GetAll());
+        }
+
+        [HttpGet]
+        public ActionResult AddProduct()
+        {
+            return View();
+        }
+
 
         [HttpGet]
         public ActionResult Add()

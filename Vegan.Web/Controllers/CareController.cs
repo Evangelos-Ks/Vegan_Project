@@ -17,6 +17,12 @@ namespace Vegan.Web.Controllers.CareVegan
         public ActionResult Index()
         {
             return View( unitOfWork.Cares.GetAll());
+        } 
+        
+        // GET: Care for all users
+        public ActionResult IndexUser()
+        {
+            return View( unitOfWork.Cares.GetAll());
         }
 
         public ActionResult Details(int productId)
