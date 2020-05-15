@@ -497,9 +497,7 @@
     <Content Include="Views\HomeVegan\Details.cshtml" />
     <Content Include="Views\Supplement\Index.cshtml" />
     <Content Include="Views\Supplement\Details.cshtml" />
-    <Content Include="Views\Shared\Components\_Footer.cshtml" />
-    <Content Include="Views\Shared\Components\_NavigationBar.cshtml" />
-    <Content Include="Views\Shared\Components\_Layout.cshtml" />
+    <Content Include="Views\Shared\Components\_LayoutTEST.cshtml" />
     <Content Include="Views\Shared\Components\_LayoutHome.cshtml" />
     <Content Include="Views\Shared\Components\User\_FooterUser.cshtml" />
     <Content Include="Views\Shared\Components\User\_LayoutUser.cshtml" />
