@@ -14,8 +14,8 @@ namespace Vegan.Web.Controllers.TestControllers
     {
         //===================================== Fields =====================================================================
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
-        
-        
+
+
         //private GenericRepository<Product> repository;
 
         //===================================== Constructor ================================================================
@@ -25,8 +25,16 @@ namespace Vegan.Web.Controllers.TestControllers
         //}
 
         //===================================== Methods ====================================================================
+        [Authorize(Roles = "Admins, Supervisors")]
         [HttpGet]
         public ActionResult Index()
+        {
+            return View(unitOfWork.Products.GetAll());
+        }
+
+        [Authorize(Roles = "Subscribers")]
+        [HttpGet]
+        public ActionResult IndexUser()
         {
             return View(unitOfWork.Products.GetAll());
         }
