@@ -14,6 +14,7 @@ namespace Vegan.Web.Controllers.CareVegan
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: Care
+        [Authorize(Roles = "Admins, Supervisors")]
         public ActionResult Index()
         {
             return View( unitOfWork.Cares.GetAll());
@@ -24,6 +25,7 @@ namespace Vegan.Web.Controllers.CareVegan
         {
             return View( unitOfWork.Cares.GetAll());
         }
+
 
         public ActionResult Details(int productId)
         {

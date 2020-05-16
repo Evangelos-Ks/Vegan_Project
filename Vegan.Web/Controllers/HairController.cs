@@ -16,8 +16,14 @@ namespace Vegan.Web.Controllers.TestControllers
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         //===================================== Methods ====================================================================
+        [Authorize(Roles = "Admins, Supervisors")]
         [HttpGet]
         public ActionResult Index()
+        {
+            return View(unitOfWork.Hairs.GetAll());
+        }   
+        [HttpGet]
+        public ActionResult IndexUser()
         {
             return View(unitOfWork.Hairs.GetAll());
         }
