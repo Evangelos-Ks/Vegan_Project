@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* NORMALIZE ------------------------------------------------------------------ */
 
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
@@ -7620,7 +7620,7 @@ only screen and (min-device-pixel-ratio: 2) {}
 }
 
 #footernav ul.pages>li {
-    padding: 8px 0;
+    padding: 8px 0px;
     border-bottom: solid 1px #9b9388;
     font-size: 2rem;
 }

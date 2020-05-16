@@ -14,10 +14,18 @@ namespace Vegan.Web.Controllers.CareVegan
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: Care
+        [Authorize(Roles = "Admins, Supervisors")]
         public ActionResult Index()
         {
             return View( unitOfWork.Cares.GetAll());
+        } 
+        
+        // GET: Care for all users
+        public ActionResult IndexUser()
+        {
+            return View( unitOfWork.Cares.GetAll());
         }
+
 
         public ActionResult Details(int productId)
         {

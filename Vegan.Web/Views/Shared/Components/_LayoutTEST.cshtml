@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿@*<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body>*@
     @*<div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -37,9 +37,9 @@
             </footer>
         </div>*@
 
-    <div class="container-fluid">
+    @*<div class="container-fluid">*@
         @*<a href="~/Views/Shared/Components/User/_NavigationBar.cshtml">~/Views/Shared/Components/User/_NavigationBar.cshtml</a>*@
-        <nav>
+        @*<nav>
             @RenderPage("_NavigationBar.cshtml")
         </nav>
 
@@ -48,7 +48,7 @@
             @RenderBody()
         </div>
 
-        <footer>
+        <footer class="container-fluid">
             @RenderPage("_Footer.cshtml")
         </footer>
 
@@ -58,4 +58,4 @@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
-</html>
+</html>*@

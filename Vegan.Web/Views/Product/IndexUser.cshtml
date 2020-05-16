@@ -1,0 +1,461 @@
+﻿@model IEnumerable<Vegan.Entities.Product>
+
+@{
+    ViewBag.Title = "Shop - All Products";
+    Layout = "~/Views/Shared/Components/User/_LayoutUser.cshtml";
+}
+
+<body>
+
+     @*TODO clean this code*@
+    <div id="top" pxlurl="[product_url]">
+                <div id="pageheader" class="docsection-wrapper">
+                    <div class="docsection boxed">
+                        <div class="breadcrumbs-wrapper clearfix">
+                            <div class="breadcrumbs">
+                                <section>
+                                    <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href='~/Views/Product/IndexUser.cshtml'>All Products</a></p>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="title-wrapper clearfix">
+                            <div class="title">
+                                <head>
+                                    <h1>All Products</h1>
+                                </head>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="categoryproducts" class="productlist docsection-wrapper">
+                    <div class="docsection boxed">
+                        <form action="view_category.asp?cat=189" method="post" name="frmsortby" id="frmsortby">
+                            <div class="header-wrapper clearfix">
+                                <div class="header">
+                                    <header>                           @*TODO*@
+                                        <h2>Products <small>Total Items: 16 TODO</small> <select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle"><option value="1">Price: Low to High</option><option value="2">Price: High to Low</option><option value="3" selected>Name</option><option value="4">Newest</option><option value="13">Avg Review</option><option value="14">Review Count</option><option value="15">Free Shipping</option><option value="16">On Sale</option></select></h2>
+                                     </header>
+                                </div>
+                            </div>
+                            <div class="content-wrapper clearfix">
+                                <div class="content">
+                                    <section>
+                                        <script class="slick-cloned" type="text/javascript">if (typeof _3d_items_collection === "undefined") { window._3d_items_collection = {}; }</script>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/thumbnails/Caboo_BambooToiletPaper_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Caboo Bamboo Toilet Paper" id="qv_1429"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="Caboo-Bamboo-Toilet-Paper_p_1429.html" class="btn">Read More</a></div>
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$1.85</strong></span>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="Caboo-Bamboo-Toilet-Paper_p_1429.html"><span><span>Caboo Bamboo Toilet Paper<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/thumbnails/LiquidCastilleSoap_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Liquid Castile Soap Base (Organic)" id="qv_189"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="Liquid-Castile-Soap-Base-Organic_p_189.html" class="btn">Read More</a></div>
+                                                            <div class="price">
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=189" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="Liquid-Castile-Soap-Base-Organic_p_189.html"><span><span>Liquid Castile Soap Base (Organic)<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/redecker/thumbnails/Redecker_BBQBrush_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Redecker BBQ Brush" id="qv_1206"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="redecker-bbq-brush" class="btn">Read More</a></div>
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$8.00</strong></span>
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1206" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="redecker-bbq-brush"><span><span>Redecker BBQ Brush<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/redecker/thumbnails/Redecker_CelluloseCloths_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Redecker Cellulose Dish Cloth" id="qv_1215"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="Redecker-Cellulose-Dish-Cloth_p_1215.html" class="btn">Read More</a></div>
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$3.50</strong></span>
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1215" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="Redecker-Cellulose-Dish-Cloth_p_1215.html"><span><span>Redecker Cellulose Dish Cloth<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/redecker/thumbnails/Redecker_HorsehairHandBrush_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Redecker Hand Brush" id="qv_1208"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="redecker-pot-brush" class="btn">Read More</a></div>
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$9.00</strong></span>
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1208" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="redecker-pot-brush"><span><span>Redecker Hand Brush<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/redecker/thumbnails/Redecker_LintBrush_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Redecker Lint Brush" id="qv_1212"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="Redecker-Lint-Brush_p_1212.html" class="btn">Read More</a></div>
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$22.50</strong></span>
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1212" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="Redecker-Lint-Brush_p_1212.html"><span><span>Redecker Lint Brush<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/redecker/thumbnails/Redecker_NailBrush_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Redecker Nail Brush" id="qv_1213"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="Redecker-Nail-Brush_p_1213.html" class="btn">Read More</a></div>
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$6.00</strong></span>
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1213" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="Redecker-Nail-Brush_p_1213.html"><span><span>Redecker Nail Brush<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/redecker/thumbnails/Redecker_OstritchDuster_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Redecker Ostrich Feather Duster" id="qv_1222"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="Redecker-Ostrich-Feather-Duster_p_1222.html" class="btn">Read More</a></div>
+
+
+                                                            <img class="rating" src="assets/templates/vegan2020/images/star5.png" alt="Average Rating" border="0" />
+
+
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$19.75</strong></span>
+
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1222" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="Redecker-Ostrich-Feather-Duster_p_1222.html"><span><span>Redecker Ostrich Feather Duster<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/redecker/thumbnails/Redecker_RiceStrawHandBrush_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Redecker Rice Straw Hand Brush" id="qv_1211"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="Redecker-Rice-Straw-Hand-Brush_p_1211.html" class="btn">Read More</a></div>
+
+
+                                                            <img class="rating" src="assets/templates/vegan2020/images/star5.png" alt="Average Rating" border="0" />
+
+
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$16.00</strong></span>
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1211" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="Redecker-Rice-Straw-Hand-Brush_p_1211.html"><span><span>Redecker Rice Straw Hand Brush<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/redecker/thumbnails/Redecker_ScrubBrush_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Redecker Scrub Brush" id="qv_1214"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="Redecker-Scrub-Brush_p_1214.html" class="btn">Read More</a></div>
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$6.00</strong></span>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="Redecker-Scrub-Brush_p_1214.html"><span><span>Redecker Scrub Brush<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/thumbnails/Redecker_SoapPouch_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Redecker Soap Saver Pouch" id="qv_1739"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="redecker-soap-saver-pouch" class="btn">Read More</a></div>
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$23.00</strong></span>
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1739" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="redecker-soap-saver-pouch"><span><span>Redecker Soap Saver Pouch<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/sayula/thumbnails/Sayula_agaveScouringCloth_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Sayula Agave Scouring Cloth" id="qv_1299"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="sayula-scouring-clothing" class="btn">Read More</a></div>
+
+
+                                                            <img class="rating" src="assets/templates/vegan2020/images/star5.png" alt="Average Rating" border="0" />
+
+
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$9.00</strong></span>
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1299" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="sayula-scouring-clothing"><span><span>Sayula Agave Scouring Cloth<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/thumbnails/carpetsoda_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Shakin' All Over Carpet Soda" id="qv_324"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="carpet-soda" class="btn">Read More</a></div>
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$11.95</strong></span>
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=324" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="carpet-soda"><span><span>Shakin' All Over Carpet Soda<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/thumbnails/skoy_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Skoy 4 Pack Sponge Cloths" id="qv_947"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="skoy-4pack-sponge" class="btn">Read More</a></div>
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$10.50</strong></span>
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=947" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="skoy-4pack-sponge"><span><span>Skoy 4 Pack Sponge Cloths<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/thumbnails/Skoy_Scrub1_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="Skoy Scrub" id="qv_1705"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="skoy-scrub" class="btn">Read More</a></div>
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$10.50</strong></span>
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1705" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="skoy-scrub"><span><span>Skoy Scrub<span><span></a></h3>
+                                        </div>
+                                        <div class="product">
+                                            <div class="image" style="background-image: url(assets/images/thumbnails/naturally-clean-home_thumbnail.jpg);"><img src="assets/templates/vegan2020/images/img10x10blank.png" alt="The Naturally Clean Home: 150 Super-Easy Herbal Formulas for Green Cleaning " id="qv_74"></div>
+                                            <div class="frame"></div>
+                                            <div class="info">
+                                                <div class="info-data">
+                                                    <div>
+                                                        <div>
+                                                            <div class="morebutton"><a href="TheNaturallyCleanHome" class="btn">Read More</a></div>
+                                                            <div class="price">
+
+                                                                <span class="yourprice">Your Price: <strong>$16.95</strong></span>
+
+                                                            </div>
+
+                                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=74" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h3><a href="TheNaturallyCleanHome"><span><span>The Naturally Clean Home: 150 Super-Easy Herbal Formulas for Green Cleaning <span><span></a></h3>
+                                        </div>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                    </section>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+    </div>
+    <div class="stats">
+
+
+</body>
+
+
+@*================================================================ TODO --- Present with use of ANGULAR  ================================================================================================================*@
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageURL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+      
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageURL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+        </tr>
+    }
+
+</table>
