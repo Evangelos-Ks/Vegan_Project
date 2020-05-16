@@ -43,7 +43,7 @@
                             <div class="header">
                                 <header>
                                     <h2>
-                                        Products <small>Total Items: TODO=> number of total</small>
+                                         <small>Total Items: TODO=> number of total</small>
                                         <select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle">
                                             <option value="1">
                                                 Price: Low to High
@@ -55,11 +55,22 @@
                                             <option value="4">Newest</option>
                                             <option value="13">Avg Review</option>
                                             <option value="14">Review Count</option>
-                                            <option value="15">Free Shipping</option>
-                                            <option value="16">On Sale</option>
                                         </select>
                                     </h2>
                                     <div class="pager">
+
+                                        <a href="/"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous Page</a>
+                                        <a href="/">1</a>
+                                        <a href="/l">2</a>
+                                        <strong>3</strong>
+                                        @*<a href="Zero-Waste-Lifestyle_c_183-4.html">4</a>
+                                        <a href="Zero-Waste-Lifestyle_c_183-5.html">5</a>
+                                        <a href="Zero-Waste-Lifestyle_c_183-10.html">10</a>*@
+
+
+                                        <a href="@*Zero-Waste-Lifestyle_c_183-4.html*@">Next Page <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
+                                        <a href="@*view_category.asp?viewall=1&amp;cat=183*@">View All</a>
+
 
 
                                     </div>
@@ -74,80 +85,45 @@
                         <div class="content-wrapper clearfix">
                             <div class="content">
 
-
-
                                 @foreach (var item in Model)
                                 {
-
+                                    //TODO fix height to be equal for each picture
 
                                     <div class="product">
-                                        <div class="image" style="background-image: url(assets/images/thumbnails/HoneyCandles_SmallPillarCandle_thumbnail.jpg);"><img src="/" alt="" id="qv_1617"></div>
+                                        <div class="image" style="background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));;"><img src=" @Html.DisplayFor(modelItem => item.ImageURL)" alt="candle" ></div>
                                         <div class="frame"></div>
                                         <div class="info">
                                             <div class="info-data">
                                                 <div>
                                                     <div>
-                                                        <div class="morebutton"><a href="TODO" class="btn">Read More</a></div>
+                                                        <div class="morebutton"><a href="/" class="btn">Read More</a></div>
                                                         <div class="price">
-
                                                             <span class="yourprice">Your Price: <strong>$ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-
                                                         </div>
-
                                                         <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1617" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
-
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <h3><a href="small-pillar-candle"> @Html.DisplayFor(modelItem => item.Title)</a></h3>
+                                        <h3><a href="@Html.DisplayFor(modelItem => item.Title)"> @Html.DisplayFor(modelItem => item.Title)</a></h3>
                                     </div>
-
-
-                                    @*<tr>
-                        <td>
-
-                        </td>
-                        <td>
-
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.ImageURL)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Description)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Information)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Instructions)
-                        </td>
-                    </tr>*@
                                 }
 
+                                    @*<tr>
+                <td>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Information)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Instructions)
+                </td>
+            </tr>*@
+                               
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                </section>
                             </div>
                         </div>
                     </form>
