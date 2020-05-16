@@ -26,5 +26,14 @@ namespace Vegan.Web.Controllers
 
             return View();
         }
+
+        public ActionResult Shipping()
+        {
+            ViewBag.Message = "Your Shipping page.";
+
+            return View();
+        }
+
+        
     }
 }

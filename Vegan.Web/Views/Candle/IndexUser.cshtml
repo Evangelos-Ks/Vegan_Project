@@ -21,9 +21,9 @@
                     </div>
                     <div class="title-wrapper clearfix">
                         <div class="title">
-                            <head>
+                            <header>
                                 <h1>Candles</h1>
-                            </head>
+                            </header>
                         </div>
                     </div>
                     <div class="content-wrapper clearfix">
@@ -97,6 +97,9 @@
                                                 <div>
                                                     <div>
                                                         <div class="morebutton"><a href="/" class="btn">Read More</a></div>
+                                                        @Html.ActionLink("Read More", "Details", new { productId = item.Id })
+
+
                                                         <div class="price">
                                                             <span class="yourprice">Your Price: <strong>$ @Html.DisplayFor(modelItem => item.Price) </strong></span>
                                                         </div>

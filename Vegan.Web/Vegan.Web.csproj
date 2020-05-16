@@ -184,6 +184,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\CandleController.cs" />
     <Compile Include="Controllers\CareController.cs" />
     <Compile Include="Controllers\FoodHerbController.cs" />
@@ -498,7 +499,6 @@
     <Content Include="Views\Supplement\Index.cshtml" />
     <Content Include="Views\Supplement\Details.cshtml" />
     <Content Include="Views\Shared\Components\_LayoutTEST.cshtml" />
-    <Content Include="Views\Shared\Components\_LayoutHome.cshtml" />
     <Content Include="Views\Shared\Components\User\_FooterUser.cshtml" />
     <Content Include="Views\Shared\Components\User\_LayoutUser.cshtml" />
     <Content Include="Views\Shared\Components\User\_NavigationBarUser.cshtml" />
@@ -520,6 +520,10 @@
     <Content Include="Views\SuperFood\IndexUser.cshtml" />
     <Content Include="Views\Supplement\IndexUSer.cshtml" />
     <Content Include="Views\Tea\IndexUser.cshtml" />
+    <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Administrator\Index.cshtml" />
+    <Content Include="Views\Home\Shipping.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
