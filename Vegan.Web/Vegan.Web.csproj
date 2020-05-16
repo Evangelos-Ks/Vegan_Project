@@ -505,6 +505,21 @@
     <Content Include="Views\Product\IndexUser.cshtml" />
     <Content Include="Views\Candle\IndexUser.cshtml" />
     <Content Include="Views\Care\IndexUser.cshtml" />
+    <Content Include="Views\EssentialOil\IndexUser.cshtml" />
+    <Content Include="Views\FaceCreams\IndexUser.cshtml" />
+    <Content Include="Views\FoodHerb\IndexUser.cshtml" />
+    <Content Include="Views\Hair\IndexUser.cshtml" />
+    <Content Include="Views\HomeCleaning\IndexUser.cshtml" />
+    <Content Include="Views\Kitchen\IndexUser.cshtml" />
+    <Content Include="Views\Lotion\IndexUser.cshtml" />
+    <Content Include="Views\PowerHealth\IndexUser.cshtml" />
+    <Content Include="Views\Salt\IndexUser.cshtml" />
+    <Content Include="Views\ShaveBeard\IndexUser.cshtml" />
+    <Content Include="Views\Spice\IndexUser.cshtml" />
+    <Content Include="Views\SproutingSeed\IndexUser.cshtml" />
+    <Content Include="Views\SuperFood\IndexUser.cshtml" />
+    <Content Include="Views\Supplement\IndexUSer.cshtml" />
+    <Content Include="Views\Tea\IndexUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

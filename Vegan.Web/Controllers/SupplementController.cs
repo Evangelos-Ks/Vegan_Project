@@ -19,7 +19,7 @@ namespace Vegan.Web.Controllers
             return View(unitOfWork.Supplements.GetAll());
         }
         
-        // GET: Care
+        // GET: Supplement
         public ActionResult IndexUSer()
         {
             return View(unitOfWork.Supplements.GetAll());
