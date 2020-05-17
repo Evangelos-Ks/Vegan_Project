@@ -215,17 +215,15 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\assets\images\bg2000x780footer2.jpg" />
     <Content Include="Content\assets\images\HomePageCarousel\closure-banner-2020.jpg" />
     <Content Include="Content\assets\images\HomePageCarousel\your-green-kitchen-sale-banner.jpg" />
     <Content Include="Content\assets\images\thin-reduced-waste-lifestyle.jpg" />
     <Content Include="Content\assets\images\thin-what-were-up-to.jpg" />
-    <Content Include="Content\assets\images\trio-devils-head.jpg" />
     <Content Include="Content\assets\images\trio-essential-oils.jpg" />
     <Content Include="Content\assets\images\trio-living-small-home.jpg" />
     <Content Include="Content\assets\images\trio-naturel-tea.jpg" />
-    <Content Include="Content\assets\images\trio-over-harvesting.jpg" />
     <Content Include="Content\assets\images\trio-wide-zero-waste-home.jpg" />
+    <Content Include="Content\assets\images\wood.jpg" />
     <Content Include="Content\assets\images\zw-living-2020-1.jpg" />
     <Content Include="Content\assets\templates\common-html5\css\flexslider.css" />
     <Content Include="Content\assets\templates\common-html5\js\functions.js" />
