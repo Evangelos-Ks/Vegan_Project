@@ -670,6 +670,7 @@
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Administrator\Index.cshtml" />
     <Content Include="Views\Home\Shipping.cshtml" />
+    <Content Include="Views\HomeVegan\IndexUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

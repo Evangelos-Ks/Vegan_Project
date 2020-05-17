@@ -3356,8 +3356,8 @@ table.searchlight-results span.search-price {
 }
 
 .productlist .content .product .image img {
-    width: 100%;
-    height: auto;
+    width: 300px;
+    height: 300px;
     margin: 0;
     padding: 0;
     border: none;
