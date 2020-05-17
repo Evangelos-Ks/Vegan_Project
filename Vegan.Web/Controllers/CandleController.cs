@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Vegan.Database;
 using Vegan.Entities.Home;
 using Vegan.Services;
+using PagedList;
 
 namespace Vegan.Web.Controllers
 {
