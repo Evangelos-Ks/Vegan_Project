@@ -630,10 +630,10 @@
     <Content Include="Views\FoodHerb\Index.cshtml" />
     <Content Include="Views\FoodHerb\Details.cshtml" />
     <Content Include="Views\Candle\Index.cshtml" />
-    <Content Include="Views\Candle\Add.cshtml" />
-    <Content Include="Views\Candle\Details.cshtml" />
-    <Content Include="Views\Candle\Edit.cshtml" />
-    <Content Include="Views\Candle\Delete.cshtml" />
+    <Content Include="Views\Candle\AddCandle.cshtml" />
+    <Content Include="Views\Candle\DetailsCandle.cshtml" />
+    <Content Include="Views\Candle\EditCandle.cshtml" />
+    <Content Include="Views\Candle\DeleteCandle.cshtml" />
     <Content Include="Views\HomeVegan\Index.cshtml" />
     <Content Include="Views\HomeVegan\Details.cshtml" />
     <Content Include="Views\Supplement\Index.cshtml" />
