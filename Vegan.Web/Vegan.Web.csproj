@@ -85,6 +85,12 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -215,17 +221,15 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\assets\images\bg2000x780footer2.jpg" />
     <Content Include="Content\assets\images\HomePageCarousel\closure-banner-2020.jpg" />
     <Content Include="Content\assets\images\HomePageCarousel\your-green-kitchen-sale-banner.jpg" />
     <Content Include="Content\assets\images\thin-reduced-waste-lifestyle.jpg" />
     <Content Include="Content\assets\images\thin-what-were-up-to.jpg" />
-    <Content Include="Content\assets\images\trio-devils-head.jpg" />
     <Content Include="Content\assets\images\trio-essential-oils.jpg" />
     <Content Include="Content\assets\images\trio-living-small-home.jpg" />
     <Content Include="Content\assets\images\trio-naturel-tea.jpg" />
-    <Content Include="Content\assets\images\trio-over-harvesting.jpg" />
     <Content Include="Content\assets\images\trio-wide-zero-waste-home.jpg" />
+    <Content Include="Content\assets\images\wood.jpg" />
     <Content Include="Content\assets\images\zw-living-2020-1.jpg" />
     <Content Include="Content\assets\templates\common-html5\css\flexslider.css" />
     <Content Include="Content\assets\templates\common-html5\js\functions.js" />
@@ -256,6 +260,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\ThemeAdmin\dist\css\adminlte.css" />
     <Content Include="Content\ThemeAdmin\dist\css\adminlte.min.css" />
     <Content Include="Content\ThemeAdmin\dist\css\alt\adminlte.components.css" />
@@ -636,7 +641,7 @@
     <Content Include="Views\Candle\EditCandle.cshtml" />
     <Content Include="Views\Candle\DeleteCandle.cshtml" />
     <Content Include="Views\HomeVegan\Index.cshtml" />
-    <Content Include="Views\HomeVegan\Details.cshtml" />
+    <Content Include="Views\HomeVegan\DetailsHomeVegan.cshtml" />
     <Content Include="Views\Supplement\Index.cshtml" />
     <Content Include="Views\Supplement\Details.cshtml" />
     <Content Include="Views\Shared\Components\_LayoutTEST.cshtml" />
@@ -665,6 +670,7 @@
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Administrator\Index.cshtml" />
     <Content Include="Views\Home\Shipping.cshtml" />
+    <Content Include="Views\HomeVegan\IndexUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

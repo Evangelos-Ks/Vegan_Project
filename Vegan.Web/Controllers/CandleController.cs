@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using Vegan.Database;
 using Vegan.Entities.Home;
 using Vegan.Services;
+using PagedList;
+
 
 namespace Vegan.Web.Controllers
 {
@@ -64,12 +66,18 @@ namespace Vegan.Web.Controllers
 
         public ActionResult DetailsCandle(int productId)
         {
+
             return View(unitOfWork.Candles.GetById(productId));
         }
 
         [HttpGet]
         public ActionResult EditCandle(int productId)
         {
+
+
+
+
+
             return View(unitOfWork.Candles.GetById(productId));
         }
 

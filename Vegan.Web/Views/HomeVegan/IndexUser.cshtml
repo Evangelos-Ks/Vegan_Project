@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Vegan.Entities.Home.Home>
+
+@{
+    ViewBag.Title = "Home Vegan Products";
+}
+
+<div id="subcategories" class="othercategories docsection-wrapper">
+    <div class="docsection boxed">
+
+        <div id="pageheader" class="docsection-wrapper">
+            <div class="docsection boxed">
+                <div class="breadcrumbs-wrapper clearfix">
+                    <div class="breadcrumbs">
+                        <section>
+                            <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/HomeVegan/IndexUser">Home Products</a></p>
+                        </section>
+                    </div>
+                </div>
+                <div class="title-wrapper clearfix">
+                    <div class="title">
+                        <header>
+                            <h1>Home Vegan Products</h1>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="top" pxlurl="[product_url]">
+            <div class="contentbox-wrapper">
+                <div class="contentbox">
+
+                    <div class="productlist docsection-wrapper">
+                        <div class="docsection boxed">
+
+                            <div class="content-wrapper clearfix">
+                                <div class="content">
+                                    <div class="subcats-wrapper clearfix">
+                                        <div class="header-wrapper clearfix">
+                                            <div class="header">
+                                                <header>
+                                                    <h2>
+                                                        <small>Total Items of all categories: @Model.ToList().Count() </small>
+                                                    </h2>
+                                                </header>
+                                            </div>
+                                        </div>
+                                        <ul class="columns-5">
+                                            <div class="subcats">
+                                                <section>
+                                                    <ul style="list-style: none;">
+                                                        <li><a href="/Candle/IndexUser"><span><span> Candles</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                            <div class="subcats">
+                                                <section>
+                                                    <ul>
+                                                        <li><a href="/EssentialOil/IndexUser"><span><span>Essential Oils</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                            <div class="subcats">
+                                                <section>
+                                                    <ul>
+                                                        <li><a href="/HomeCleaning/IndexUser"><span><span>Home cleaning</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                            <div class="subcats">
+                                                <section>
+                                                    <ul>
+                                                        <li><a href="/Kitchen/IndexUser"><span><span>Kitchen</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
