@@ -4208,7 +4208,7 @@ table.searchlight-results span.search-price {
 
 @media only screen and (min-width: 1920px) {}
 
-/* PRODUCT REVIEWS ------------------------------------------------------------------ */
+/*PRODUCT REVIEWS ------------------------------------------------------------------
 
 .simplemodal-overlay {
     background-color: #1e150c;
@@ -4329,11 +4329,11 @@ table.searchlight-results span.search-price {
     content: "";
     display: table;
     clear: both;
-}
+}*/
 
 /* clearfix */
 
-#productreviews .header h2 {
+/*#productreviews .header h2 {
     float: left;
     display: block;
     margin: 0 0 10px 0;
@@ -4416,16 +4416,16 @@ table.searchlight-results span.search-price {
     margin: 10px 0;
     padding: 0;
     font-size: 1.6rem;
-}
+}*/
 
-/* small screens */
 
-@media only screen and (min-width: 480px) {
+
+/*@media only screen and (min-width: 480px) {
     #productreviews .review h3,
     #productreviews .review p {}
 }
 
-/* medium screens */
+
 
 @media only screen and (min-width: 768px) {
     #productreviews .review {
@@ -4442,7 +4442,6 @@ table.searchlight-results span.search-price {
     }
 }
 
-/* big screens */
 
 @media only screen and (min-width: 1024px) {
     #productreviews .review {
@@ -4456,9 +4455,9 @@ table.searchlight-results span.search-price {
     #productreviews .review:nth-child(even) {}
 }
 
-/* large screens */
 
-@media only screen and (min-width: 1220px) {}
+
+@media only screen and (min-width: 1220px) {}*/
 
 /* humungous screens */
 
@@ -7591,7 +7590,10 @@ only screen and (min-device-pixel-ratio: 2) {}
 
 .footerbox-wrapper {
     margin-top: -2px;
+    text-align: center;
 }
+
+
 
 .footerbox-wrapper:after {
     content: "";
@@ -7609,7 +7611,8 @@ only screen and (min-device-pixel-ratio: 2) {}
 
 #footernav {
     padding: 20px 0;
-    background: #444039 url(../images/bg2000x780footer.jpg) no-repeat center center;
+    /*background: #444039 url(../images/bg2000x780footer.jpg) no-repeat center center;*/
+    background: #444039 url(~/images/bg2000x780footer2.jpg) repeat center center;
     background-size: 1200px auto;
 }
 
@@ -7619,16 +7622,17 @@ only screen and (min-device-pixel-ratio: 2) {}
     color: #dad5c9;
 }
 
-#footernav ul.pages>li {
-    padding: 8px 0px;
-    border-bottom: solid 1px #9b9388;
-    font-size: 2rem;
-}
+    #footernav ul.pages > li {
+        padding: 8px 0px;
+        border-bottom: solid 1px #9b9388;
+        font-size: 2rem;
+        position: relative; left: 30%;
+    }
 
-#footernav ul.pages>li span:hover {
+/*#footernav ul.pages>li span:hover {
     color: #cf8a2b;
     cursor: pointer;
-}
+}*/
 
 #footernav ul.pages>li .fa-fw {
     width: 30px;

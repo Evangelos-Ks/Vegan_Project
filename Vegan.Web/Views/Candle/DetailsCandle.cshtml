@@ -1,0 +1,87 @@
+﻿@model Vegan.Entities.Home.Candle
+
+@{
+    ViewBag.Title = "Candle details";
+}
+    <div class="contentbox-wrapper dl-horizontal">
+        <div id="pageheader" class="docsection-wrapper">
+            <div class="docsection boxed">
+                <div class="breadcrumbs-wrapper clearfix">
+                    <div class="breadcrumbs">
+                        <section>
+                            <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href='/Candle/IndexUser'>Candles</a> >  @Html.DisplayFor(model => model.Title) </p>
+                        </section>
+                    </div>
+                </div>
+                <div class="title-wrapper clearfix">
+                    <div class="title">
+                        <head>
+                            <h1> @Html.DisplayFor(model => model.Title) </h1>
+                        </head>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="productdetails" class="docsection-wrapper" itemscope itemtype="/">
+            <div class="docsection boxed">
+                <form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add">
+                    <div class="content-wrapper clearfix">
+                        <div id="productimage-wrapper">
+                            <div id="productimage">
+                                <img src="@Html.DisplayFor(model => model.ImageURL)" width="100" height="100" alt="@Html.DisplayFor(model => model.Title)" />
+                                <div class="image image1" style="background-image: url( @Html.DisplayFor(model => model.ImageURL) />);"></div>
+                            </div>
+                        </div>
+                        <div id="productinfo" class="content">
+                            <section>
+                                <div id="productdesription" itemprop="description">
+
+                                    <p> @Html.DisplayFor(model => model.Description)</p>
+                                    <dl>
+                                        @*<dt>   @Html.DisplayNameFor(model => model.Information)</dt>
+
+                                        <dd> 
+                                        <p> @Html.DisplayFor(model => model.Information) </p> 
+                                        </dd>*@
+
+                                        <dt>  @Html.DisplayNameFor(model => model.Instructions)</dt>
+                                        <dd>
+                                            <p>  @Html.DisplayFor(model => model.Instructions)</p>
+                                        </dd>
+                                    </dl>
+                                </div>
+
+                                <div id="productavailability">Availability: <span>In Stock</span></div>
+
+                                <div class="dottedbox">
+                                    <div id="productprice" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                        <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition">
+                                        <meta itemprop="availability" href="http://schema.org/InStock">
+                                        <meta itemprop="priceCurrency" content="CAD">
+                                        <div class="price">
+                                            <span class="yourprice">Your @Html.DisplayNameFor(model => model.Price): <strong><div itemprop="price" id="price" class="price" style="display: inline;">$ @Html.DisplayFor(model => model.Price)</div></strong></span>
+
+                                        </div>
+                                    </div>
+                                    <div id="productcart">
+                                        <div class="addToCartBlock">
+                                            <div class="qtybox-addcart">
+
+                                                <label>Quantity</label>
+                                                <input type="text" size="3" name="qty-0" value="1" onchange="validateValues(document.add,1);" class="txtBoxStyle" />
+                                                <button type="button" id="Add" class="btn" onclick="check_and_add(document.add,1);"><i class="icon-basket"></i> Add to Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p>
+
+                                    @Html.ActionLink("Back to List", "IndexUser")
+                                </p>
+                            </section>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

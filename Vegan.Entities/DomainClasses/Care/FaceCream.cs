@@ -9,6 +9,5 @@ namespace Vegan.Entities.Care
     public class FaceCream : Care
     {
 
-        //https://www.the-apothecary.ca/honey-therapy-body-lotion
     }
 }

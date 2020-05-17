@@ -36,13 +36,13 @@ namespace Vegan.Web.Controllers
 
 
         [HttpGet]
-        public ActionResult Add()
+        public ActionResult AddCandle()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Add(Candle model)
+        public ActionResult AddCandle(Candle model)
         {
             try
             {
@@ -62,13 +62,13 @@ namespace Vegan.Web.Controllers
             return View();
         }
 
-        public ActionResult Details(int productId)
+        public ActionResult DetailsCandle(int productId)
         {
             return View(unitOfWork.Candles.GetById(productId));
         }
 
         [HttpGet]
-        public ActionResult Edit(int productId)
+        public ActionResult EditCandle(int productId)
         {
             return View(unitOfWork.Candles.GetById(productId));
         }
@@ -90,7 +90,7 @@ namespace Vegan.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult Delete(int productId)
+        public ActionResult DeleteCandle(int productId)
         {
             return View(unitOfWork.Candles.GetById(productId));
         }
