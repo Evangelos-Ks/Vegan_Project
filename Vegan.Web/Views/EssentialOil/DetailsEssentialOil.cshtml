@@ -1,83 +1,7 @@
 ﻿@model Vegan.Entities.Home.EssentialOil
 
 @{
-    ViewBag.Title = "DetailsEssentialOil";
-}
-
-<h2>DetailsEssentialOil</h2>
-
-<div>
-    <h4>EssentialOil</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </dt>
-
-        <dd>
-            <img src="@Html.DisplayFor(model => model.ImageURL)" width="100" height="100" alt="@Html.DisplayFor(model => model.Title)" />
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Information)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Information)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NameOfIngredientEssentOil)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NameOfIngredientEssentOil)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ValueOfIngredientEssentOil)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ValueOfIngredientEssentOil)
-        </dd>
-
-    </dl>
-</div>
-<p>
-  
-    @Html.ActionLink("Back to List", "Index")
-</p>
-
-
-@model Vegan.Entities.Home.EssentialOil
-
-@{
-    ViewBag.Title = "EssentialOil details";
+    ViewBag.Title = "Essential Oil details";
 }
 <div class="contentbox-wrapper dl-horizontal">
     <div id="pageheader" class="docsection-wrapper">
@@ -104,29 +28,19 @@
                 <div class="content-wrapper clearfix">
                     <div id="productimage-wrapper">
                         <div id="productimage">
-
-
                             <img src="@Html.DisplayFor(model => model.ImageURL)" width="100" height="100" alt="@Html.DisplayFor(model => model.Title)" />
-
                             <div class="image image1" style="background-image: url( @Html.DisplayFor(model => model.ImageURL) />);"></div>
                         </div>
                     </div>
                     <div id="productinfo" class="content">
                         <section>
-
                             <div id="productdesription" itemprop="description">
 
                                 <p> @Html.DisplayFor(model => model.Description)</p>
                                 <dl>
-                                    @*<dt>   @Html.DisplayNameFor(model => model.Information)</dt>
-
-                                        <dd>
-                                        <p> @Html.DisplayFor(model => model.Information) </p>
-                                        </dd>*@
-
-                                    <dt>  @Html.DisplayNameFor(model => model.Instructions)</dt>
+                                    <dt>   @Html.DisplayNameFor(model => model.Information)</dt>
                                     <dd>
-                                        <p>  @Html.DisplayFor(model => model.Instructions)</p>
+                                        <p>   @Html.DisplayFor(model => model.Information)</p>
                                     </dd>
                                 </dl>
                             </div>
@@ -134,13 +48,16 @@
                             <div id="productavailability">Availability: <span>In Stock</span></div>
 
                             <div class="dottedbox">
-                                <div id="productprice" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                    <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition">
-                                    <meta itemprop="availability" href="http://schema.org/InStock">
-                                    <meta itemprop="priceCurrency" content="CAD">
+                                <div id="productprice">
                                     <div class="price">
-                                        <span class="yourprice">Your @Html.DisplayNameFor(model => model.Price): <strong><div itemprop="price" id="price" class="price" style="display: inline;">$ @Html.DisplayFor(model => model.Price)</div></strong></span>
-
+                                        <span class="yourprice">
+                                            Your @Html.DisplayNameFor(model => model.Price):
+                                            <strong>
+                                                <div itemprop="price" id="price" class="price" style="display: inline;">
+                                                    € @Html.DisplayFor(model => model.Price)
+                                                </div>
+                                            </strong>
+                                        </span>
                                     </div>
                                 </div>
                                 <div id="productcart">
@@ -165,3 +82,5 @@
         </div>
     </div>
 </div>
+
+

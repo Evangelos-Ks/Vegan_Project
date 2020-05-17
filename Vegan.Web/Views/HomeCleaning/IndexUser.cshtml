@@ -7,9 +7,9 @@
 
 <div id="top" pxlurl="[product_url]">
     <div class="contentbox-wrapper">
-        <div class="contentbox">
-            <div id="pageheader" class="docsection-wrapper">
-                <div class="docsection boxed">
+        <div class="contentbox docsection boxed productlist">
+            <div id="pageheader" class="docsection-wrapper ">
+                <div class="">
                     <div class="breadcrumbs-wrapper clearfix">
                         <div class="breadcrumbs">
                             <section>
@@ -26,50 +26,46 @@
                     </div>
                 </div>
             </div>
-            <div class="productlist docsection-wrapper">
+            <div class="header-wrapper clearfix">
+                <div class="header">
+                    <header>
+                        <h2>
+                            <small>Total Items: @Model.ToList().Count() </small>
+                        </h2>
+                    </header>
+                </div>
+            </div>
+            <div id="subcategories" class="othercategories docsection-wrapper">
                 <div class="docsection boxed">
-                    <div class="header-wrapper clearfix">
-                        <div class="header">
-                            <header>
-                                <h2>
-                                    <small>Total Items: @Model.ToList().Count() </small>
-                                </h2>
-                            </header>
-                        </div>
-                    </div>
-                    <div id="subcategories" class="othercategories docsection-wrapper">
-                        <div class="docsection boxed">
-                            @*Empty div that gives nice space*@
-                        </div>
-                    </div>
-                    <div class="content-wrapper clearfix">
-                        <div class="content">
-                            @foreach (var item in Model)
-                            {
-                                <div class="product">
-                                    <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)"></div>
-                                    <div class="frame"></div>
-                                    <div class="info">
-                                        <div class="info-data">
-                                            <div>
-                                                <div>
-                                                    @Html.ActionLink("Read More", "DetailsHomeCleaning", new { productId = item.Id })
-                                                    <div class="price">
-                                                        <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-                                                    </div>
-                                                </div>
+                    @*Empty div that gives nice space*@
+                </div>
+            </div>
+            <div class="content-wrapper clearfix">
+                <div class="content">
+                    @foreach (var item in Model)
+                    {
+                        <div class="product">
+                            <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)"></div>
+                            <div class="frame"></div>
+                            <div class="info">
+                                <div class="info-data">
+                                    <div>
+                                        <div>
+                                            @Html.ActionLink("Read More", "DetailsHomeCleaning", new { productId = item.Id })
+                                            <div class="price">
+                                                <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
                                             </div>
                                         </div>
                                     </div>
-                                    @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
-                                    <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsHomeCleaning", new { productId = item.Id })</h3>
                                 </div>
-                            }
+                            </div>
+                            @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
+                            <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsHomeCleaning", new { productId = item.Id })</h3>
                         </div>
-                    </div>
-
+                    }
                 </div>
             </div>
+
         </div>
     </div>
 </div>
