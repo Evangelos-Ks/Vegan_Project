@@ -641,7 +641,7 @@
     <Content Include="Views\Candle\EditCandle.cshtml" />
     <Content Include="Views\Candle\DeleteCandle.cshtml" />
     <Content Include="Views\HomeVegan\Index.cshtml" />
-    <Content Include="Views\HomeVegan\Details.cshtml" />
+    <Content Include="Views\HomeVegan\DetailsHomeVegan.cshtml" />
     <Content Include="Views\Supplement\Index.cshtml" />
     <Content Include="Views\Supplement\Details.cshtml" />
     <Content Include="Views\Shared\Components\_LayoutTEST.cshtml" />

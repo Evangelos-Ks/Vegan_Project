@@ -25,7 +25,7 @@ namespace Vegan.Web.Controllers
             return View(unitOfWork.Homes.GetAll());
         }
 
-        public ActionResult Details(int productId)
+        public ActionResult DetailsHomeVegan(int productId)
         {
             return View(unitOfWork.Homes.GetById(productId));
         }

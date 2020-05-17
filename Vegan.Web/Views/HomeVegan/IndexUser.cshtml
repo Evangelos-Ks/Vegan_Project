@@ -1,75 +1,101 @@
 ﻿@model IEnumerable<Vegan.Entities.Home.Home>
 
 @{
-    ViewBag.Title = "IndexUser";
+    ViewBag.Title = "Home Vegan Products";
 }
 
-<h2>IndexUser</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Instructions)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Information)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NameOfIngredientEssentOil)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ValueOfIngredientEssentOil)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageURL)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Instructions)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Information)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NameOfIngredientEssentOil)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ValueOfIngredientEssentOil)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+<div id="subcategories" class="othercategories docsection-wrapper">
+    <div class="docsection boxed">
 
-</table>
+        <div id="pageheader" class="docsection-wrapper">
+            <div class="docsection boxed">
+                <div class="breadcrumbs-wrapper clearfix">
+                    <div class="breadcrumbs">
+                        <section>
+                            <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/HomeVegan/IndexUser">Home Products</a></p>
+                        </section>
+                    </div>
+                </div>
+                <div class="title-wrapper clearfix">
+                    <div class="title">
+                        <header>
+                            <h1>Home Vegan Products</h1>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-wrapper clearfix">
+            <div class="header">
+                <header>
+                    <h2>
+                        <small>Total Items of all categories: @Model.ToList().Count() </small>
+                    </h2>
+                </header>
+            </div>
+        </div>
+
+
+
+        <div id="top" pxlurl="[product_url]">
+            <div class="contentbox-wrapper">
+                <div class="contentbox">
+
+                    <div class="productlist docsection-wrapper">
+                        <div class="docsection boxed">
+
+                            <div class="content-wrapper clearfix">
+                                <div class="content">
+                                    <div class="subcats-wrapper clearfix">
+
+                                        <ul class="columns-5">
+
+
+
+                                            <div class="subcats">
+                                                <section>
+                                                    <ul style="list-style: none;">
+                                                        <li><a href="/Candle/IndexUser"><span><span> Candles</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                            <div class="subcats">
+                                                <section>
+                                                    <ul>
+                                                        <li><a href="/EssentialOil/IndexUser"><span><span>Essential Oils</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                            <div class="subcats">
+                                                <section>
+                                                    <ul>
+                                                        <li><a href="/HomeCleaning/IndexUser"><span><span>Home cleaning</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                            <div class="subcats">
+                                                <section>
+                                                    <ul>
+                                                        <li><a href="/Kitchen/IndexUser"><span><span>Kitchen</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                        </ul>
+
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
