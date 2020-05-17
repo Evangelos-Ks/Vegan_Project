@@ -1,102 +1,108 @@
-﻿
-        <div id="top" pxlurl="[product_url]">
-            <div id="curtain"></div>
-            <div class="headerbox-wrapper">
-                <div class="headerbox">
-                    <div id="topbar">
-                        <div>
-                            <nav id="nav-utils">
-                                <ul>
-                                    <li id="nav-utils-home"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a></li>
-                                    <li id="nav-utils-search"><a href="search.asp"><i class="fa fa-search" aria-hidden="true"></i> <span>Search</span></a></li>
-                                </ul>
-                                <div id="nav-search">
-                                    <div id="searchBox">
-                                        <form method="get" name="searchForm" action="search.asp">
-                                            <input type="text" name="keyword" id="searchlight" class="search-text" placeholder="start typing product name">
-                                            <input class="btn btn-big" type="submit" name="search" id="searchbutton" value="Search">
-                                        </form>
-                                    </div>
-                                </div>
-                            </nav>
-                            <nav id="nav-tools">
-                                <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></span>
-                                <div class="nav-sub">
-                                    <ul>
-                                        <li><a href="~/Content/Views/Home/Contact.cshtml"><i class="fa fa-fw fa-circle" aria-hidden="true"></i>Contact Us</a></li>
-                                    </ul>
-                                </div>
-                            </nav>
-
-                            <nav id="nav-store">
-                                <ul id="nav-store-icons">
-                                    <li id="nav-store-login"><a href="myaccount.asp"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Login</span></a></li>
-                                    <li id="nav-store-cart"><a href="view_cart.asp"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart</span> <strong>$0</strong></a></li>
-                                </ul>
-                                @Html.Partial("_LoginPartial")
-                            </nav>
-
-
+﻿<div id="top" pxlurl="[product_url]">
+    <div id="curtain"></div>
+    <div class="headerbox-wrapper">
+        <div class="headerbox">
+            <div id="topbar">
+                <div>
+                    <nav id="nav-utils">
+                        <ul>
+                            <li id="nav-utils-home"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a></li>
+                            <li id="nav-utils-search"><a href="search.asp"><i class="fa fa-search" aria-hidden="true"></i> <span>Search</span></a></li>
+                        </ul>
+                        <div id="nav-search">
+                            <div id="searchBox">
+                                <form method="get" name="searchForm" action="search.asp">
+                                    <input type="text" name="keyword" id="searchlight" class="search-text" placeholder="start typing product name">
+                                    <input class="btn btn-big" type="submit" name="search" id="searchbutton" value="Search">
+                                </form>
+                            </div>
                         </div>
-                    </div>
-                    <div id="logo">
-                        <header>
-                            <a href="/">
-                                <img src="~/Content/assets/templates/vegan2020/images/img160x104floral.png" alt="The Vegan Shop" />
-                                <label style="display:block; font-size:xx-large;">The Vegan Shop</label>
-                            </a>
-                        </header>
-                    </div>
-                    <div id="mainmenu">
-                        <div>
-                            <nav id="nav-categories">
-                                <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i>Shop</span>
+                    </nav>
+                    <nav id="nav-tools">
+                        <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></span>
+                        <div class="nav-sub">
+                            <ul>
+                                <li><a href="/Home/Contact"><i class="fa fa-fw fa-circle" aria-hidden="true"></i>Contact</a></li>
 
-                                <ul id="desktopMenu" class="categories">
-                                    <li>
-                                        <a href="/Product/IndexUser" class="cat">All products</a>
-                                    </li>
-                                    <li>
-                                        <a href="/" class="cat">Home products</a>
-                                        <ul class="subMenu">
-                                            <li><a href="/Candle/IndexUser" class="subcat"> Candles </a></li>
-                                            <li><a href="/EssentialOil/IndexUser" class="subcat">Essential Oils</a></li>
-                                            <li><a href="/HomeCleaning/IndexUser" class="subcat">Home cleaning</a></li>
-                                            <li><a href="/Kitchen/IndexUser" class="subcat">Kitchen</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="/FoodHerb/IndexUser" class="cat">Dry Food & Herbs</a>
-                                        <ul class="subMenu">
-                                            <li><a href="/Salt/IndexUser" class="subcat">Salts</a></li>
-                                            <li><a href="/Spice/IndexUser" class="subcat">Spices</a></li>
-                                            <li><a href="/SproutingSeed/IndexUser" class="subcat">Sprouting seeds</a></li>
-                                            <li><a href="/Tea/IndexUser" class="subcat">Tea</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="/Supplement/IndexUser" class="cat">Supplemens</a>
-                                        <ul class="subMenu">
-                                            <li><a href="/Supplement/IndexUser" class="subcat">Cleaning</a></li>
-                                            <li><a href="/PowerHealth/IndexUser" class="subcat">Power Health</a></li>
-                                            <li><a href="/SuperFood/IndexUser" class="subcat">Super Foods</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="/Care/IndexUser" class="cat">Care</a>
-                                        <ul class="subMenu">
-                                            <li><a href="/FaceCreams/IndexUser" class="subcat">Face creams</a></li>
-                                            <li><a href="/Hair/IndexUser" class="subcat">Hair</a></li>
-                                            <li><a href="/Lotion/IndexUser" class="subcat">Lotions</a></li>
-                                            <li><a href="/ShaveBeard/IndexUser" class="subcat">Shave Beard</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                @if (User.IsInRole("Admins"))
+                                {
+                                    <li><a href="/Administrator/index"><i class="fa fa-fw fa-circle" aria-hidden="true"></i>Admin Area</a></li>
+                                }
 
-                            </nav>
+
+                            </ul>
                         </div>
-                    </div>
+                    </nav>
+
+                    <nav id="nav-store">
+                        <ul id="nav-store-icons">
+                          
+                            @RenderPage("~/Views/Shared/_LoginPartial.cshtml")
+                            <li id="nav-store-cart"><a href="view_cart.asp"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart</span> <strong>$0</strong></a></li>
+                        </ul>
+
+                    </nav>
+
+
+                </div>
+            </div>
+            <div id="logo">
+                <header>
+                    <a href="/">
+                        <img src="~/Content/assets/templates/vegan2020/images/img160x104floral.png" alt="The Vegan Shop" />
+                        <label style="display:block; font-size:xx-large;">The Vegan Shop</label>
+                    </a>
+                </header>
+            </div>
+            <div id="mainmenu">
+                <div>
+                    <nav id="nav-categories">
+                        <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i>Shop</span>
+
+                        <ul id="desktopMenu" class="categories">
+                            <li>
+                                <a href="/Product/IndexUser" class="cat">All products</a>
+                            </li>
+                            <li>
+                                <a href="/" class="cat">Home products</a>
+                                <ul class="subMenu">
+                                    <li><a href="/Candle/IndexUser" class="subcat"> Candles </a></li>
+                                    <li><a href="/EssentialOil/IndexUser" class="subcat">Essential Oils</a></li>
+                                    <li><a href="/HomeCleaning/IndexUser" class="subcat">Home cleaning</a></li>
+                                    <li><a href="/Kitchen/IndexUser" class="subcat">Kitchen</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/FoodHerb/IndexUser" class="cat">Dry Food & Herbs</a>
+                                <ul class="subMenu">
+                                    <li><a href="/Salt/IndexUser" class="subcat">Salts</a></li>
+                                    <li><a href="/Spice/IndexUser" class="subcat">Spices</a></li>
+                                    <li><a href="/SproutingSeed/IndexUser" class="subcat">Sprouting seeds</a></li>
+                                    <li><a href="/Tea/IndexUser" class="subcat">Tea</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/Supplement/IndexUser" class="cat">Supplemens</a>
+                                <ul class="subMenu">
+                                    <li><a href="/Supplement/IndexUser" class="subcat">Cleaning</a></li>
+                                    <li><a href="/PowerHealth/IndexUser" class="subcat">Power Health</a></li>
+                                    <li><a href="/SuperFood/IndexUser" class="subcat">Super Foods</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/Care/IndexUser" class="cat">Care</a>
+                                <ul class="subMenu">
+                                    <li><a href="/FaceCreams/IndexUser" class="subcat">Face creams</a></li>
+                                    <li><a href="/Hair/IndexUser" class="subcat">Hair</a></li>
+                                    <li><a href="/Lotion/IndexUser" class="subcat">Lotions</a></li>
+                                    <li><a href="/ShaveBeard/IndexUser" class="subcat">Shave Beard</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </nav>
                 </div>
             </div>
         </div>
-
+    </div>
+</div>
