@@ -8,7 +8,6 @@ namespace Vegan.Entities.Home
 {
     public class HomeCleaning : Home
     {
-        public string About { get; set; }
-        //https://www.the-apothecary.ca/Zero-Waste-Home-Cleaning
+       
     }
 }
