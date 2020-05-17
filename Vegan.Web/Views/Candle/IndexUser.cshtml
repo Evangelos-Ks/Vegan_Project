@@ -43,90 +43,53 @@
                             <div class="header">
                                 <header>
                                     <h2>
-                                         <small>Total Items: TODO=> number of total</small>
+                                         <small>Total Items: @Model.ToList().Count() </small>
                                         <select name="sortby" onchange="frmsortby.submit();" class="txtBoxStyle">
-                                            <option value="1">
-                                                Price: Low to High
-                                            </option>
-                                            <option value="2">
-                                                Price: High to Low
-                                            </option>
+                                            <option value="1"> Price: Low to High</option>
+                                            <option value="2"> Price: High to Low  </option>
                                             <option value="3" selected>Name</option>
-                                            <option value="4">Newest</option>
-                                            <option value="13">Avg Review</option>
-                                            <option value="14">Review Count</option>
                                         </select>
                                     </h2>
+
                                     <div class="pager">
-
                                         <a href="/"><i class="fa fa-chevron-left" aria-hidden="true"></i> Previous Page</a>
-                                        <a href="/">1</a>
-                                        <a href="/l">2</a>
-                                        <strong>3</strong>
-                                        @*<a href="Zero-Waste-Lifestyle_c_183-4.html">4</a>
-                                        <a href="Zero-Waste-Lifestyle_c_183-5.html">5</a>
-                                        <a href="Zero-Waste-Lifestyle_c_183-10.html">10</a>*@
-
-
-                                        <a href="@*Zero-Waste-Lifestyle_c_183-4.html*@">Next Page <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
-                                        <a href="@*view_category.asp?viewall=1&amp;cat=183*@">View All</a>
-
-
-
+                                        @*<a href="/">1</a>
+                                        <a href="/l">2</a>*@
+                                        <strong>1</strong>
+                                        <a href="/">Next Page <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                                     </div>
                                 </header>
                             </div>
                         </div>
                         <div id="subcategories" class="othercategories docsection-wrapper">
                             <div class="docsection boxed">
-
+                                @*Empty div that gives nice space*@
                             </div>
                         </div>
                         <div class="content-wrapper clearfix">
                             <div class="content">
-
                                 @foreach (var item in Model)
                                 {
-                                    //TODO fix height to be equal for each picture
-
-                                    <div class="product">
-                                        <div class="image" style="background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));;"><img src=" @Html.DisplayFor(modelItem => item.ImageURL)" alt="candle" ></div>
-                                        <div class="frame"></div>
-                                        <div class="info">
-                                            <div class="info-data">
+                                <div class="product">
+                                    <div class="image" style=" height:350px; background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)" alt="candle" ></div>
+                                    <div class="frame"></div>
+                                    <div class="info">
+                                        <div class="info-data">
+                                            <div>
                                                 <div>
-                                                    <div>
-                                                        <div class="morebutton"><a href="/" class="btn">Read More</a></div>
-                                                        @Html.ActionLink("Read More", "DetailsCandle", new { productId = item.Id })
-
-
-                                                        <div class="price">
-                                                            <span class="yourprice">Your Price: <strong>$ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-                                                        </div>
-                                                        <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1617" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+                                                      @Html.ActionLink("Read More", "DetailsCandle", new { productId = item.Id })
+                                                    <div class="price">
+                                                        <span class="yourprice">Your Price: <strong>$ @Html.DisplayFor(modelItem => item.Price) </strong></span>
                                                     </div>
+                                                    <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1617" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <h3><a href="@Html.DisplayFor(modelItem => item.Title)"> @Html.DisplayFor(modelItem => item.Title)</a></h3>
                                     </div>
+                                    @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
+                                    <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsCandle", new { productId = item.Id })</h3>
+                                </div>
                                 }
-
-                                    @*<tr>
-                <td>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Information)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Instructions)
-                </td>
-            </tr>*@
-                               
-
                             </div>
                         </div>
                     </form>

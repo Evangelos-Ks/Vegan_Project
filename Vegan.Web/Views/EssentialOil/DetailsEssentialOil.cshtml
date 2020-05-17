@@ -69,15 +69,15 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "EditEssentialOil", new { productId = Model.Id }) |
+  
     @Html.ActionLink("Back to List", "Index")
 </p>
 
 
-@model Vegan.Entities.Home.Candle
+@model Vegan.Entities.Home.EssentialOil
 
 @{
-    ViewBag.Title = "Candle details";
+    ViewBag.Title = "EssentialOil details";
 }
 <div class="contentbox-wrapper dl-horizontal">
     <div id="pageheader" class="docsection-wrapper">
@@ -85,7 +85,7 @@
             <div class="breadcrumbs-wrapper clearfix">
                 <div class="breadcrumbs">
                     <section>
-                        <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href='/Candle/IndexUser'>Candles</a> >  @Html.DisplayFor(model => model.Title) </p>
+                        <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href='/EssentialOil/IndexUser'>EssentialOils</a> >  @Html.DisplayFor(model => model.Title) </p>
                     </section>
                 </div>
             </div>
