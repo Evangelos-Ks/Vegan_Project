@@ -1,64 +1,137 @@
 ﻿@model IEnumerable<Vegan.Entities.Home.Candle>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Candles";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+
+<div class="wrapper ">
+
+    <div class="panel-header panel-header-sm">
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"> Candles Table</h4>
+                    </div>
+                   
+                    <div class="card-body">
+                        <div class="table-responsive container">
+                            <table class="table">
+                                <div class="text-right">
+                                    @Html.ActionLink("Add Candle", "AddCandle")<span style="color:orangered"> |</span>
+                                    <hr />
+                                </div>
+                                <thead class=" text-primary">
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Title)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ImageURL)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Description)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Information)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instructions)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Price)
+                                </th>
+                                <th class="text-right">
+                                    Action
+                                </th>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Title)
+                                            </td>
+                                            <td>
+                                                <img src="@item.ImageURL" width="70" height="70" alt="@item.Title" />
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Description)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Information)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Instructions)
+                                            </td>
+                                            <td>
+                                                € @Html.DisplayFor(modelItem => item.Price)
+                                            </td>
+
+
+                                            <td class="text-right">
+
+                                                @Html.ActionLink("Edit", "EditCandle", new { productId = item.Id })<span style="color:orangered"> |</span>
+                                                <hr />
+                                                @Html.ActionLink("User | View", "DetailsCandle", new { productId = item.Id })<span style="color:orangered"> |</span>
+                                                <hr />
+                                                @Html.ActionLink("Delete", "DeleteCandle", new { productId = item.Id })<span style="color:orangered"> |</span>
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class=" container-fluid ">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.creative-tim.com">
+                            Creative Tim
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://presentation.creative-tim.com">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://blog.creative-tim.com">
+                            Blog
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright" id="copyright">
+               
+                &copy;
+                <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+            </div>
+        </div>
+    </footer>
+</div>
+    </div>
+
 
 <p>
     @Html.ActionLink("Create new candle", "Add")
 </p>
-<table class="table">
+<table class="table container">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Information)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Instructions)
-        </th>
-        <th></th>
+       
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                <img src="@item.ImageURL" width="100" height="100" alt="@item.Title" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Information)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Instructions)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { productId = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { productId = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { productId = item.Id })
-            </td>
-        </tr>
-    }
+ 
 
 </table>
