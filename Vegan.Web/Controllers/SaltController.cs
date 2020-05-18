@@ -17,7 +17,7 @@ namespace Vegan.Web.Controllers.TestControllers
 
         //===================================== Methods ====================================================================
         [HttpGet]
-        [Authorize(Roles = "Admins, Supervisors")]
+     // [Authorize(Roles = "Admins, Supervisors")]
         public ActionResult Index()
         {
             return View(unitOfWork.Salts.GetAll());

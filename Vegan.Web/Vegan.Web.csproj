@@ -664,7 +664,7 @@
     <Content Include="Views\Spice\IndexUser.cshtml" />
     <Content Include="Views\SproutingSeed\IndexUser.cshtml" />
     <Content Include="Views\SuperFood\IndexUser.cshtml" />
-    <Content Include="Views\Supplement\IndexUSer.cshtml" />
+    <Content Include="Views\Supplement\IndexUser.cshtml" />
     <Content Include="Views\Tea\IndexUser.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />

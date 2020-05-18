@@ -13,7 +13,7 @@ namespace Vegan.Web.Controllers
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         [HttpGet]
-        [Authorize(Roles = "Admins, Supervisors")]
+     // [Authorize(Roles = "Admins, Supervisors")]
         public ActionResult Index()
         {
             return View(unitOfWork.Supplements.GetAll());
