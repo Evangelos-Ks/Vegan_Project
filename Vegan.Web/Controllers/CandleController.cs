@@ -17,7 +17,7 @@ namespace Vegan.Web.Controllers
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         //===================================== Methods ====================================================================
-        [Authorize(Roles = "Admins, Supervisors")]
+     // [Authorize(Roles = "Admins, Supervisors")]
         [HttpGet]
         public ActionResult Index()
         {

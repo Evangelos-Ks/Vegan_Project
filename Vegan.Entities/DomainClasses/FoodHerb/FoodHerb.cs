@@ -13,6 +13,11 @@ namespace Vegan.Entities.FoodHerb
         public string BulkPricing { get; set; }
 
         public string Information { get; set; }
-        //Review
+
+        [Display(Name = "Ingredients")]
+        public string NameOfIngredient { get; set; }
+        [Display(Name = "Ingredients' values")]
+        public string ValueOfIngredient { get; set; }
+     
     }
 }
