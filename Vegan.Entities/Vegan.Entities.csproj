@@ -143,7 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\PagedList.css" />
-    <Content Include="Content\VeganLifePictures\Candle\190x190\Honey Candles 12 Taper Beeswax Candle190x190.jpg" />
+    <Content Include="Content\VeganLifePictures\Candle\190x190\HoneyCandles12TaperBeeswaxCandle190x190.jpg" />
     <Content Include="Content\VeganLifePictures\Candle\190x190\Honey Candles 3x3 Pillar Beeswax Candle190x190.jpg" />
     <Content Include="Content\VeganLifePictures\Candle\190x190\Honey Candles 5x3 Pillar Beeswax Candle190x190.jpg" />
     <Content Include="Content\VeganLifePictures\Candle\190x190\Honey Candles 6 Natural Column Beeswax Candle190x190.jpg" />
