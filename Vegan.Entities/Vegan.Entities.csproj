@@ -90,7 +90,6 @@
     <Compile Include="DomainClasses\Care\Hair.cs" />
     <Compile Include="DomainClasses\Care\Lotion.cs" />
     <Compile Include="DomainClasses\Care\ShaveBeard.cs" />
-    <Compile Include="DomainClasses\Care\Size.cs" />
     <Compile Include="DomainClasses\FoodHerb\FoodHerb.cs" />
     <Compile Include="DomainClasses\FoodHerb\Salt.cs" />
     <Compile Include="DomainClasses\FoodHerb\Spice.cs" />

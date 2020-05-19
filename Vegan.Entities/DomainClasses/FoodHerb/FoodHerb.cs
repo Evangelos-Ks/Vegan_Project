@@ -16,8 +16,6 @@ namespace Vegan.Entities.FoodHerb
 
         [Display(Name = "Ingredients")]
         public string NameOfIngredient { get; set; }
-        [Display(Name = "Ingredients' values")]
-        public string ValueOfIngredient { get; set; }
-     
+
     }
 }

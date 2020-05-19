@@ -2,6 +2,7 @@
 
 @{
     ViewBag.Title = "EditPowerHealth";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <h2>EditPowerHealth</h2>
@@ -10,7 +11,7 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
+    <div class="form-horizontal container">
         <h4>PowerHealth</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
