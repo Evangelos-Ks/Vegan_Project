@@ -13,11 +13,7 @@ namespace Vegan.Entities.Care
         public string Directions { get; set; }
         [Display(Name = "Ingredients")]
         public string NameOfIngredient { get; set; }
-        [Display(Name = "Ingredients' values")]
-        public string ValueOfIngredient { get; set; }
         public string Information { get; set; }
-        [Display(Name = "Details")]
-        public string Detail { get; set; }
 
     }
 }

@@ -15,8 +15,7 @@ namespace Vegan.Entities.Home
         public string Information { get; set; }
         [Display(Name = "Incredients")]
         public string NameOfIngredientEssentOil { get; set; }
-        [Display(Name = "Incredients' values")]
-        public string ValueOfIngredientEssentOil { get; set; }
+
 
 
     }
