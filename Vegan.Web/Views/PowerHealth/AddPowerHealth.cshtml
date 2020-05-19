@@ -1,16 +1,17 @@
 ﻿@model Vegan.Entities.Supplement.PowerHealth
 
 @{
-    ViewBag.Title = "AddPowerHealth";
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <h2>AddPowerHealth</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
+
+    <div class="form-horizontal container">
         <h4>PowerHealth</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })

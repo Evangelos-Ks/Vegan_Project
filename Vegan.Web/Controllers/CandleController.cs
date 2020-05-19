@@ -74,15 +74,11 @@ namespace Vegan.Web.Controllers
         public ActionResult EditCandle(int productId)
         {
 
-
-
-
-
             return View(unitOfWork.Candles.GetById(productId));
         }
 
         [HttpPost]
-        public ActionResult Edit(Candle model)
+        public ActionResult EditCandle(Candle model)
         {
             if (ModelState.IsValid)
             {
@@ -97,13 +93,15 @@ namespace Vegan.Web.Controllers
             }
         }
 
+    
+
         [HttpGet]
         public ActionResult DeleteCandle(int productId)
         {
             return View(unitOfWork.Candles.GetById(productId));
         }
 
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("DeleteCandle")]
         public ActionResult DeletePost(int productId)
         {
 
