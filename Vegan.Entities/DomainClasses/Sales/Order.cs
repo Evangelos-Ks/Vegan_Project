@@ -28,7 +28,7 @@ namespace Vegan.Entities
 
         public Order()
         {
-
+             
         }
         public Order(DateTime orderStamp, ICollection<Product> products)
         {
