@@ -3,7 +3,13 @@
 @{
     ViewBag.Title = "Log in";
 }
-
+<style>
+    .displayed {
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%
+    }
+</style>
 <h2>@ViewBag.Title.</h2>
 <div class="row">
     <div class="col-md-8">
@@ -11,9 +17,15 @@
             @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
                 @Html.AntiForgeryToken()
+
+
+
                 <h4>Use a local account to log in.</h4>
                 <hr />
+
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
                 <div class="form-group">
                     @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
@@ -44,10 +56,39 @@
                 <p>
                     @Html.ActionLink("Register as a new user", "Register")
                 </p>
-                @* Enable this once you have account confirmation enabled for password reset functionality
-                    <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             }
         </section>
     </div>
@@ -61,3 +102,250 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+@*============================================================================================================================================*@
+
+
+
+
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-CA"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en-CA"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en-CA"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-CA" x-ms-format-detection="none">
+<!--<![endif]-->
+<head>
+    <script type="text/javascript" src="~/Content/assets/templates/common/js/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    @*<link rel="apple-touch-icon" sizes="180x180" href="assets/templates/apothecary2017/favicons/apple-touch-icon.png">*@
+    @*<link rel="icon" type="image/png" href="assets/templates/apothecary2017/favicons/favicon-32x32.png" sizes="32x32">*@
+    @*<link rel="icon" type="image/png" href="assets/templates/apothecary2017/favicons/favicon-16x16.png" sizes="16x16">*@
+    <link rel="manifest" href="~/Content/assets/templates/vegan2020/favicons/manifest.json">
+    @*<link rel="mask-icon" href="assets/templates/apothecary2017/favicons/safari-pinned-tab.svg" color="#9b9388">*@
+    <link rel="shortcut icon" href="~/Content/assets/templates/vegan2020/favicons/favicon.ico">
+    @*<meta name="msapplication-config" content="assets/templates/apothecary2017/favicons/browserconfig.xml">*@
+    <meta name="theme-color" content="#fdf7ed">
+    <title>Welcome to Vegan project</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cardo|Roboto+Condensed:400,400i,700,700i|Roboto:100,900" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/font-awesome.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/main.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/print.css" type="text/css" media="print" />
+    <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/messagebar.min.css" type="text/css" media="screen" />
+
+
+    @*<script type="text/javascript">
+        if (typeof jQuery == 'undefined') {
+            document.write("<script type=\"text/javascript\" src=\"~/assets/templates/apothecary2017/js/jquery-1.11.1.min.js?vcart=10.1.4\"></" + "script>");
+        }
+        </script>*@
+
+    <script type="text/javascript" src="~/Content/assets/templates/vegan2020/js/gambit-smoothscroll-min.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="~/Content/assets/templates/vegan2020/js/pxl.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="~/Content/assets/templates/common-html5/js/utilities.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="~/Content/assets/templates/common-html5/js/functions.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="~/Content/assets/templates/vegan2020/js/jquery.quicksearch.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="~/Content/assets/templates/vegan2020/js/jquery.simplemodal.min.js?vcart=10.1.4"></script>
+    <script type="text/javascript" src="~/Content/assets/templates/vegan2020/js/messagebar.min.js?vcart=10.1.4"></script>
+
+    <script type="text/javascript">
+        jQuery(function () {
+            jQuery('#searchlight').searchlight('/search_quick.asp');
+        });
+    </script>
+
+    <script type="text/javascript">
+        new GambitSmoothScroll({
+            amount: 150, // The scroll amount
+            speed: 900 // The scroll speed
+        });
+    </script>
+    <script type="text/javascript">
+        (function ($) {
+
+            var ThisDocURL;
+            var ThisDocURLenc;
+            $(document).ready(function () {
+                ThisDocURL = '[product_url]';
+                ThisDocURLenc = encodeURIComponent(ThisDocURL);
+            });
+
+        })(jQuery);
+    </script>
+    <script type="text/javascript">var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-48564345-1']); _gaq.push(['_addDevId', '5Fyti']); _gaq.push(['_trackPageview']); (function () { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>
+</head>
+<body>
+    <div id="top" pxlurl="[product_url]">
+        @*<div id="logo">
+                <header>
+                </header>
+            </div>*@
+
+        <div class="contentbox-wrapper">
+            <div class="contentbox">
+
+
+
+
+                <div id="pageheader" class="docsection-wrapper">
+                    <div class="docsection boxed">
+                        <div class="breadcrumbs-wrapper clearfix">
+                            <div class="breadcrumbs">
+                                <section>
+                                    <p><a href="/">Home</a> > <a href="myaccount.asp">My Account</a></p>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="title-wrapper clearfix">
+                            <div class="title">
+                                <div>
+                                    <h1>My Account</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="accountlogin" class="docsection-wrapper">
+                    <div class="docsection boxed">
+                        <section id="loginAccount" class="clearfix">
+                            <div id="accountlogin-returning">
+                                <div class="dottedbox">
+                                    <h3>Returning Customers</h3>
+                                    <p>Please log in to your account.</p>
+                                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                                        <input type="hidden" name="catalogid" value="0" />
+                                        <div class="loginFields">
+                                            <div class="loginField">
+                                                @Html.TextBoxFor(m => m.Email, new { placeholder = "Email", @class = "form-control" })
+                                                @*@Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })*@
+                                            </div>
+                                            <div class="loginField">
+                                                @Html.PasswordFor(m => m.Password, new { placeholder = "Password", @class = "form-control" })
+                                                @*@Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })*@
+                                            </div>
+                                        </div>
+                                        <div class="loginField">
+                                            <button type="submit" value="Log in" class="btn"><i class="icon-login"></i> <i class="fa fa-sign-in" aria-hidden="true"></i> Login</button>
+                                        </div>
+                                    }
+                                    <div  class="displayed">
+                                        <p>
+                                            Use another service to log in.
+                                        </p>
+                                        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                                    </div>
+
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div id="accountlogin-reset">
+                                    <div class="linedbox">
+                                        <h3>Forgot your password?</h3>
+                                        <p>To Reset your password, please click "Reset my password" button below</p>
+                                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                        {
+                                            @Html.AntiForgeryToken()
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            <div class="loginField">
+                                                @Html.ActionLink("Reset my password", "ForgotPassword", null, new { @class = "btn resetpass-link" })
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                                <div id="accountlogin-new">
+                                    <div class="linedbox">
+                                        <h3>New Customers</h3>
+                                        <p>
+                                            If you don't have an account, please proceed by clicking the following button to continue first-time registration.
+                                        </p>
+                                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                        {
+                                            <div class="loginField">
+                                                @Html.ActionLink("Create Account", "Register", null, new { @class = "btn" })
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
