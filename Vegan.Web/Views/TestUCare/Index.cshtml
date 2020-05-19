@@ -34,7 +34,7 @@
             if (Model.Select(x => x.ValueOfIngredient.Length) == 0)
             {*@
         @*<th>
-                @Html.DisplayNameFor(model => model.ValueOfIngredient)
+                
             </th>*@
         @*}
             }*@
@@ -66,7 +66,7 @@
                 if (!string.IsNullOrWhiteSpace(item.ValueOfIngredient))
                 {
                     <td>
-                        @Html.DisplayFor(modelItem => item.ValueOfIngredient)
+                        
                     </td>
                 }
             }
