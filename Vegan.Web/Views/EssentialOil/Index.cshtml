@@ -1,90 +1,136 @@
 ﻿@model IEnumerable<Vegan.Entities.Home.EssentialOil>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "EssentialOils";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+
+<div class="wrapper ">
+
+    <div class="panel-header panel-header-sm">
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"> EssentialOils Table</h4>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive container">
+                            <table class="table">
+                                <div class="text-right">
+                                    @Html.ActionLink("Add Essential Oil", "AddEssentialOil")<span style="color:orangered"> |</span>
+                                    <hr />
+                                </div>
+                                <thead class=" text-primary">
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Title)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ImageURL)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Description)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Information)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Instructions)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Price)
+                                </th>
+                                <th class="text-right">
+                                    Action
+                                </th>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Title)
+                                            </td>
+                                            <td>
+                                                <img src="@item.ImageURL" width="70" height="70" alt="@item.Title" />
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Description)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Information)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Instructions)
+                                            </td>
+                                            <td>
+                                                € @Html.DisplayFor(modelItem => item.Price)
+                                            </td>
+
+
+                                            <td class="text-right">
+
+                                                @Html.ActionLink("Edit", "EditEssentialOil", new { productId = item.Id })<span style="color:orangered"> |</span>
+                                                <hr />
+                                                @Html.ActionLink("User | View", "DetailsEssentialOil", new { productId = item.Id })<span style="color:orangered"> |</span>
+                                                <hr />
+                                                @Html.ActionLink("Delete", "DeleteEssentialOil", new { productId = item.Id })<span style="color:orangered"> |</span>
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class=" container-fluid ">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.creative-tim.com">
+                            Creative Tim
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://presentation.creative-tim.com">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://blog.creative-tim.com">
+                            Blog
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright" id="copyright">
+
+                &copy;
+                <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+            </div>
+        </div>
+    </footer>
+</div>
+    </div>
+
 
 <p>
-    @Html.ActionLink("Add Essential Oil", "AddEssentialOil")
+    @Html.ActionLink("Create new candle", "Add")
 </p>
-<table class="table">
+<table class="table container">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NameOfIngredientEssentOil)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ValueOfIngredientEssentOil)
-        </th>
-        @{
-            bool includedValuOfIngredient = false;
-            foreach (var item in Model)
-            {
-                if (string.IsNullOrWhiteSpace(item.ValueOfIngredientEssentOil))
-                {
-                    includedValuOfIngredient = false;
-
-                }
-                else
-                {
-                    includedValuOfIngredient = true;
-
-                }
-            }
-
-            if (includedValuOfIngredient)
-            {
-                <th>
-                    @Html.DisplayNameFor(model => model.ValueOfIngredientEssentOil)
-                </th>
-            }
-        }
-        <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-               <img src="@Html.DisplayFor(modelItem => item.ImageURL)"  width ="100" height="100" alt="@Html.DisplayFor(modelItem => item.ImageURL)">
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Information)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NameOfIngredientEssentOil)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValueOfIngredientEssentOil)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditEssentialOil", new { productId = item.Id }) |
-                @Html.ActionLink("Details", "DetailsEssentialOil", new { productId = item.Id }) |
-                @Html.ActionLink("Delete", "DeleteEssentialOil", new { productId = item.Id })
-            </td>
-        </tr>
-    }
+
 
 </table>

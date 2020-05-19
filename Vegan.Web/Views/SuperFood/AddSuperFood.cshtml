@@ -1,15 +1,16 @@
 ﻿@model Vegan.Entities.Supplement.SuperFood
 
 @{
-    ViewBag.Title = "AddSuperFood";
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <h2>AddSuperFood</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>SuperFood</h4>
         <hr />

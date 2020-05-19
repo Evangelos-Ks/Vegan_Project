@@ -1,16 +1,17 @@
 ﻿@model Vegan.Entities.FoodHerb.Salt
 
 @{
-    ViewBag.Title = "AddSalt";
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 <h2>AddSalt</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
+
+    <div class="form-horizontal container">
         <h4>Salt</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
