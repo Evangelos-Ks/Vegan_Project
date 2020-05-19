@@ -1,12 +1,10 @@
 ﻿@model IEnumerable<Vegan.Entities.FoodHerb.SproutingSeed>
 
 @{
-    ViewBag.Title = "IndexUser";
-}
-@{
     ViewBag.Title = "Vegan Sprouting Seeds";
-    Layout = "~/Views/Shared/Components/User/_LayoutUser.cshtml";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
+
 
 
 <div id="top" pxlurl="[product_url]">
@@ -93,7 +91,7 @@
                                     //TODO fix height to be equal for each picture
 
                                     <div class="product">
-                                        <div class="image" style="background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));;"><img src=" @Html.DisplayFor(modelItem => item.ImageURL)" alt="candle"></div>
+                                        <div class="image" style="background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));;"><img src=" @Html.DisplayFor(modelItem => item.ImageURL)" ></div>
                                         <div class="frame"></div>
                                         <div class="info">
                                             <div class="info-data">
@@ -120,68 +118,3 @@
         </div>
     </div>
 </div>
-
-@*<table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageURL)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.BulkPricing)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Information)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NameOfIngredient)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ValueOfIngredient)
-            </th>
-            <th></th>
-        </tr>
-
-    @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageURL)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BulkPricing)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Information)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NameOfIngredient)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ValueOfIngredient)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-            </td>
-        </tr>
-    }
-
-    </table>*@
