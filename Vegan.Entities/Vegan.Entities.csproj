@@ -101,7 +101,6 @@
     <Compile Include="DomainClasses\Home\Home.cs" />
     <Compile Include="DomainClasses\Home\HomeCleaning.cs" />
     <Compile Include="DomainClasses\Home\Kitchen.cs" />
-    <Compile Include="DomainClasses\Home\BottleSize.cs" />
     <Compile Include="DomainClasses\Sales\Cash.cs" />
     <Compile Include="DomainClasses\Sales\PaymentMethod.cs" />
     <Compile Include="DomainClasses\Sales\PayPal.cs" />
