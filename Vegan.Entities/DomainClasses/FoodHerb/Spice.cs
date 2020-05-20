@@ -11,6 +11,5 @@ namespace Vegan.Entities.FoodHerb
     {
         
 
-        //https://www.the-apothecary.ca/cajun-seasoning 
     }
 }

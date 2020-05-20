@@ -3359,8 +3359,8 @@ table.searchlight-results span.search-price {
 }
 
 .productlist .content .product .image img {
-    width: 100%;
-    height: auto;
+    width: 300px;
+    height: 300px;
     margin: 0;
     padding: 0;
     border: none;
@@ -7614,22 +7614,31 @@ only screen and (min-device-pixel-ratio: 2) {}
 
 #footernav {
     padding: 20px 0;
-    /*background: #444039 url(../images/bg2000x780footer.jpg) no-repeat center center;*/
-    background: #444039 url(~/images/bg2000x780footer2.jpg) repeat center center;
+    background: #444039 url('../../../images/wood.jpg') repeat center center;
     background-size: 1200px auto;
 }
 
-#footernav ul.pages {
+/*#footernav ul.pages {
     width: 240px;
     margin: 0 auto;
-    color: #dad5c9;
-}
+    color: 
+}*/
+
+
+    #footernav > div > ul > li:nth-child(1) > a {
+        color: #dad5c9;
+        
+    }
+    #footernav > div > ul > li:nth-child(2) > a {
+        color: #dad5c9;
+    }
 
     #footernav ul.pages > li {
         padding: 8px 0px;
         border-bottom: solid 1px #9b9388;
         font-size: 2rem;
-        position: relative; left: 30%;
+        position: relative;
+        left: 30%;
     }
 
 /*#footernav ul.pages>li span:hover {

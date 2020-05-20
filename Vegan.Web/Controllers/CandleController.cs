@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using Vegan.Database;
 using Vegan.Entities.Home;
 using Vegan.Services;
+using PagedList;
+
 
 namespace Vegan.Web.Controllers
 {
@@ -15,7 +17,7 @@ namespace Vegan.Web.Controllers
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         //===================================== Methods ====================================================================
-        [Authorize(Roles = "Admins, Supervisors")]
+     // [Authorize(Roles = "Admins, Supervisors")]
         [HttpGet]
         public ActionResult Index()
         {
@@ -64,17 +66,19 @@ namespace Vegan.Web.Controllers
 
         public ActionResult DetailsCandle(int productId)
         {
+
             return View(unitOfWork.Candles.GetById(productId));
         }
 
         [HttpGet]
         public ActionResult EditCandle(int productId)
         {
+
             return View(unitOfWork.Candles.GetById(productId));
         }
 
         [HttpPost]
-        public ActionResult Edit(Candle model)
+        public ActionResult EditCandle(Candle model)
         {
             if (ModelState.IsValid)
             {
@@ -89,13 +93,15 @@ namespace Vegan.Web.Controllers
             }
         }
 
+    
+
         [HttpGet]
         public ActionResult DeleteCandle(int productId)
         {
             return View(unitOfWork.Candles.GetById(productId));
         }
 
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("DeleteCandle")]
         public ActionResult DeletePost(int productId)
         {
 

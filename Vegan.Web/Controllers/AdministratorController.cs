@@ -13,5 +13,11 @@ namespace Vegan.Web.Controllers
         {
             return View();
         }
+        
+        // GET: Administrator
+        public ActionResult Map()
+        {
+            return View();
+        }
     }
 }

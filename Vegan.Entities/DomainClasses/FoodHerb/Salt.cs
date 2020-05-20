@@ -9,7 +9,5 @@ namespace Vegan.Entities.FoodHerb
 {
     public class Salt : FoodHerb
     {
-       
-        //https://www.the-apothecary.ca/Salts_c_294.html
     }
 }

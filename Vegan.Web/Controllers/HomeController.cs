@@ -12,6 +12,7 @@ namespace Vegan.Web.Controllers
         {
             return View();
         }
+        
 
         public ActionResult About()
         {

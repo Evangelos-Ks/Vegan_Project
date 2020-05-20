@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Vegan.Database;
 using Vegan.Services;
+using Vegan.Entities.Home;
 
 namespace Vegan.Web.Controllers
 {
@@ -14,7 +15,7 @@ namespace Vegan.Web.Controllers
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: Care
-        [Authorize(Roles = "Admins, Supervisors")]
+     // [Authorize(Roles = "Admins, Supervisors")]
         public ActionResult Index()
         {
             return View(unitOfWork.Homes.GetAll());
@@ -25,9 +26,87 @@ namespace Vegan.Web.Controllers
             return View(unitOfWork.Homes.GetAll());
         }
 
-        public ActionResult Details(int productId)
+
+
+
+        [HttpGet]
+        public ActionResult AddHomeVegan()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddHomeVegan(Home model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    unitOfWork.Homes.Add(model);
+                    unitOfWork.Complete();
+                    unitOfWork.Dispose();
+                    return RedirectToAction("Index", "HomeVegan");
+                }
+            }
+            catch (Exception ex)
+            {
+                //TODO: We want to show an error message
+                return View();
+            }
+            return View();
+        }
+
+
+        public ActionResult DetailsHomeVegan(int productId)
         {
             return View(unitOfWork.Homes.GetById(productId));
         }
+
+        [HttpGet]
+        public ActionResult EditHomeVegan(int productId)
+        {
+            return View(unitOfWork.Homes.GetById(productId));
+        }
+
+        [HttpPost]
+        public ActionResult EditHomeVegan(Candle model)
+        {
+            if (ModelState.IsValid)
+            {
+                unitOfWork.Homes.Edit(model);
+                unitOfWork.Complete();
+                unitOfWork.Dispose();
+                return RedirectToAction("Index", "HomeVegan");
+            }
+            else
+            {
+                return View(model);
+            }
+        }
+
+      
+
+        [HttpGet]
+        public ActionResult DeleteHomeVegan(int productId)
+        {
+            return View(unitOfWork.Homes.GetById(productId));
+        }
+
+        [HttpPost, ActionName("DeleteHomeVegan")]
+        public ActionResult Delete(int productId)
+        {
+
+            var product = unitOfWork.Homes.GetById(productId);
+            unitOfWork.Homes.Delete(product);
+            unitOfWork.Complete();
+            unitOfWork.Dispose();
+            return RedirectToAction("Index", "HomeVegan");
+        }
+
+
+
+
     }
 }
+
+

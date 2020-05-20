@@ -38,11 +38,6 @@
 
                                     <p> @Html.DisplayFor(model => model.Description)</p>
                                     <dl>
-                                        @*<dt>   @Html.DisplayNameFor(model => model.Information)</dt>
-
-                                        <dd> 
-                                        <p> @Html.DisplayFor(model => model.Information) </p> 
-                                        </dd>*@
 
                                         <dt>  @Html.DisplayNameFor(model => model.Instructions)</dt>
                                         <dd>
@@ -54,13 +49,16 @@
                                 <div id="productavailability">Availability: <span>In Stock</span></div>
 
                                 <div class="dottedbox">
-                                    <div id="productprice" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-                                        <meta itemprop="itemCondition" itemtype="http://schema.org/OfferItemCondition" content="http://schema.org/NewCondition">
-                                        <meta itemprop="availability" href="http://schema.org/InStock">
-                                        <meta itemprop="priceCurrency" content="CAD">
+                                    <div id="productprice" >
                                         <div class="price">
-                                            <span class="yourprice">Your @Html.DisplayNameFor(model => model.Price): <strong><div itemprop="price" id="price" class="price" style="display: inline;">$ @Html.DisplayFor(model => model.Price)</div></strong></span>
-
+                                            <span class="yourprice">
+                                                Your @Html.DisplayNameFor(model => model.Price):
+                                                <strong>
+                                                    <div itemprop="price" id="price" class="price" style="display: inline;">
+                                                        € @Html.DisplayFor(model => model.Price)
+                                                    </div>
+                                                </strong>
+                                            </span>
                                         </div>
                                     </div>
                                     <div id="productcart">

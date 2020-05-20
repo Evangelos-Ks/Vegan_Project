@@ -2,15 +2,18 @@
 
 @{
     ViewBag.Title = "DeleteHair";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+<div class="container">
 
-<h2>DeleteHair</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
+
+    <h2>Delete Hair Product</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
     <h4>Hair</h4>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal container">
         <dt>
             @Html.DisplayNameFor(model => model.Price)
         </dt>
@@ -60,24 +63,18 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ValueOfIngredient)
+            @Html.DisplayNameFor(model => model.Information)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ValueOfIngredient)
+            @Html.DisplayFor(model => model.Information)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Detail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Detail)
-        </dd>
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
