@@ -24,7 +24,7 @@
             @RenderPage("~/Views/Shared/Components/Admin/_NavigationBarAdmin.cshtml")
         </nav>
 
-        <div >
+        <div>
             @RenderBody()
         </div>
 
@@ -64,6 +64,102 @@
 
     <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
     @*<script src="~/Content/now-ui-dashboard-master/assets/js/now-ui-dashboard.js"  type="text/javascript"></script>*@
+
+
+
+
+    <!-- ======================== Scripts regarding the Maps ========================== -->
+    <!-- create the callback -->
+    <script>
+
+        function initMap() {
+            // Map options
+            var options = {
+                zoom: 3,
+                center: { lat: 39.322709, lng: 23.134256 }
+            }
+
+            // New map
+            var map = new google.maps.Map(document.getElementById('map'), options);
+
+
+            // // Listen for click on map
+            // google.maps.event.addListener(map, 'click', function(event){
+            //   // Add marker
+            //   addMarker({coords:event.latLng});
+            // });
+
+
+            // Array of markers
+            var markers = [
+                {
+                    coords: { lat: 39.322709, lng: 23.134256 },
+                    iconImage: {
+
+                    url: '/Content/now-ui-dashboard-master/assets/img/tea-map-pin.png', // url
+                        scaledSize: new google.maps.Size(50, 50)
+                    },
+                    content: "<h3 style='color:blue'>Mountain Pelion Tea, Greece</h3>"
+                },
+                {
+                    coords: { lat: 51.536936, lng: -1.022447 },
+                    iconImage: {
+                        url: '/Content/now-ui-dashboard-master/assets/img/tea-map-pin.png', // url
+                        scaledSize: new google.maps.Size(50, 50)
+                    },
+                    content: '<h3>Pure London Tea, UK</h3>'
+                },
+                {
+                    coords: { lat: 59.957143, lng: 10.574013 },
+                    iconImage: {
+                        url: '/Content/now-ui-dashboard-master/assets/img/tea-map-pin.png', // url
+                        scaledSize: new google.maps.Size(50, 50)
+                    },
+                    content: '<h3>Oslo Mist Tea, Norway</h3>'
+                }
+            ];
+
+            // Loop through markers
+            for (var i = 0; i < markers.length; i++) {
+                // Add marker
+                addMarker(markers[i]);
+            }
+
+            // Add Marker Function
+            function addMarker(props) {
+                var marker = new google.maps.Marker({
+                    position: props.coords,
+                    map: map,
+                    //icon:props.iconImage
+                });
+
+                // Check for customicon
+                if (props.iconImage) {
+                    // Set icon image
+                    marker.setIcon(props.iconImage);
+                }
+
+                // Check content
+                if (props.content) {
+                    var infoWindow = new google.maps.InfoWindow({
+                        content: props.content
+                    });
+
+                    marker.addListener('click', function () {
+                        infoWindow.open(map, marker);
+                    });
+                }
+            }
+        }
+    </script>
+    <!-- Google API -->
+    <script async
+            defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHNiTylNx0_UHPKggRbDpmc1JEj6D8zmM&callback=initMap"></script>
+
+
+
+
 
 </body>
 
