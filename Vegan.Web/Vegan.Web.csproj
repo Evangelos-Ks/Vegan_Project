@@ -273,6 +273,7 @@
     <Content Include="Content\now-ui-dashboard-master\assets\img\mike.jpg" />
     <Content Include="Content\now-ui-dashboard-master\assets\img\now-logo.png" />
     <Content Include="Content\now-ui-dashboard-master\assets\img\now-ui-dashboard.gif" />
+    <Content Include="Content\now-ui-dashboard-master\assets\img\tea-map-pin.png" />
     <Content Include="Content\now-ui-dashboard-master\assets\js\core\bootstrap.min.js" />
     <Content Include="Content\now-ui-dashboard-master\assets\js\core\jquery.min.js" />
     <Content Include="Content\now-ui-dashboard-master\assets\js\core\popper.min.js" />
@@ -1075,6 +1076,7 @@
     <Content Include="Views\HomeVegan\IndexUser.cshtml" />
     <Content Include="Views\Shared\TESTview.cshtml" />
     <Content Include="Views\HomeVegan\EditHomeVegan.cshtml" />
+    <Content Include="Views\Administrator\Map.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
