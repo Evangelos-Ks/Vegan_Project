@@ -1636,13 +1636,12 @@ table.searchlight-results span.search-price {
 
 #nav-store a {
     color: #1e150c;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     text-decoration: none;
     font-size: 1.6rem;
     font-weight: 400;
 }
-
-#nav-store-icons>li {
+#nav-store-icons > li {
     position: absolute;
     top: 0;
 }
@@ -1651,7 +1650,11 @@ table.searchlight-results span.search-price {
     right: 128px;
 }
 
-#nav-store-icons>li#nav-store-logout {
+#nav-store-account {
+    right: 128px;
+}
+
+#nav-store-icons > li#nav-store-logout {
     right: 82px;
 }
 

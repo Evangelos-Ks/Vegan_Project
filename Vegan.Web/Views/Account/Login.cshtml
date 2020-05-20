@@ -1,41 +1,6 @@
 ﻿@using Vegan.Web.Models
 @model LoginViewModel
-
-
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
-
-
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-@*============================================================================================================================================*@
-
-
-
-
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-CA"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en-CA"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en-CA"> <![endif]-->
-<!--[if gt IE 8]><!-->
 <html class="no-js" lang="en-CA" x-ms-format-detection="none">
 <!--<![endif]-->
 <head>
@@ -43,13 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-    @*<link rel="apple-touch-icon" sizes="180x180" href="assets/templates/apothecary2017/favicons/apple-touch-icon.png">*@
-    @*<link rel="icon" type="image/png" href="assets/templates/apothecary2017/favicons/favicon-32x32.png" sizes="32x32">*@
-    @*<link rel="icon" type="image/png" href="assets/templates/apothecary2017/favicons/favicon-16x16.png" sizes="16x16">*@
     <link rel="manifest" href="~/Content/assets/templates/vegan2020/favicons/manifest.json">
-    @*<link rel="mask-icon" href="assets/templates/apothecary2017/favicons/safari-pinned-tab.svg" color="#9b9388">*@
     <link rel="shortcut icon" href="~/Content/assets/templates/vegan2020/favicons/favicon.ico">
-    @*<meta name="msapplication-config" content="assets/templates/apothecary2017/favicons/browserconfig.xml">*@
     <meta name="theme-color" content="#fdf7ed">
     <title>Welcome to Vegan project</title>
 
@@ -58,13 +18,6 @@
     <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/main.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/print.css" type="text/css" media="print" />
     <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/messagebar.min.css" type="text/css" media="screen" />
-
-
-    @*<script type="text/javascript">
-        if (typeof jQuery == 'undefined') {
-            document.write("<script type=\"text/javascript\" src=\"~/assets/templates/apothecary2017/js/jquery-1.11.1.min.js?vcart=10.1.4\"></" + "script>");
-        }
-        </script>*@
 
     <script type="text/javascript" src="~/Content/assets/templates/vegan2020/js/gambit-smoothscroll-min.js?vcart=10.1.4"></script>
     <script type="text/javascript" src="~/Content/assets/templates/vegan2020/js/pxl.js?vcart=10.1.4"></script>
@@ -102,17 +55,8 @@
 </head>
 <body>
     <div id="top" pxlurl="[product_url]">
-        @*<div id="logo">
-                <header>
-                </header>
-            </div>*@
-
         <div class="contentbox-wrapper">
             <div class="contentbox">
-
-                @*<a href="~/Views/Account/Login.cshtml">~/Views/Account/Login.cshtml</a>*@
-
-
                 <div id="pageheader" class="docsection-wrapper">
                     <div class="docsection boxed">
                         <div class="breadcrumbs-wrapper clearfix">
@@ -142,16 +86,16 @@
                                     {
                                         @Html.AntiForgeryToken()
                                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
                                         <input type="hidden" name="catalogid" value="0" />
                                         <div class="loginFields">
                                             <div class="loginField">
                                                 @Html.TextBoxFor(m => m.Email, new { tabindex = "1", placeholder = "Email", @class = "txtBoxStyle form-control" })
                                                 @Html.PasswordFor(m => m.Password, new { tabindex = "2", placeholder = "Password", @class = "txtBoxStyle form-control" })
-
                                             </div>
-                                            <div class="loginField">
+                                            <div >
                                                 @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                            </div>
+                                            <div >
                                                 @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
@@ -161,7 +105,7 @@
                                     }
                                 </div>
                                 <div class="dottedbox">
-                                    <div  id="loginSocialParagraph">
+                                    <div id="loginSocialParagraph">
                                         <p>
                                             Use another service to log in.
                                         </p>
@@ -170,31 +114,6 @@
                                         @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
                                     </div>
                                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                                 <div id="accountlogin-reset">
                                     <div class="linedbox">
                                         <h3>Forgot your password?</h3>
@@ -229,28 +148,8 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
 </body>
 </html>
