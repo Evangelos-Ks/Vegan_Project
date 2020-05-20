@@ -92,10 +92,10 @@
                                                 @Html.TextBoxFor(m => m.Email, new { tabindex = "1", placeholder = "Email", @class = "txtBoxStyle form-control" })
                                                 @Html.PasswordFor(m => m.Password, new { tabindex = "2", placeholder = "Password", @class = "txtBoxStyle form-control" })
                                             </div>
-                                            <div >
+                                            <div>
                                                 @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                             </div>
-                                            <div >
+                                            <div>
                                                 @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
