@@ -8215,4 +8215,10 @@ body>div.stats {
 
 /* ------------------------------------------------------------------ */
 
-/* © PIXEL SCIENCE */
+.loginSocial {
+    margin-left: 11.05%;
+}
+
+#loginSocialParagraph {
+    margin-left: 35%;
+}

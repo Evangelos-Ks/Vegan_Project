@@ -1,103 +1,7 @@
 ﻿@using Vegan.Web.Models
 @model LoginViewModel
-@{
-    ViewBag.Title = "Log in";
-}
-<style>
-    .displayed {
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%
-    }
-</style>
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
 
 
-
-                <h4>Use a local account to log in.</h4>
-                <hr />
-
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" />
-                    </div>
-                </div>
-                <p>
-                    @Html.ActionLink("Register as a new user", "Register")
-                </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            }
-        </section>
-    </div>
-    <div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
@@ -206,7 +110,7 @@
         <div class="contentbox-wrapper">
             <div class="contentbox">
 
-
+                @*<a href="~/Views/Account/Login.cshtml">~/Views/Account/Login.cshtml</a>*@
 
 
                 <div id="pageheader" class="docsection-wrapper">
@@ -214,7 +118,7 @@
                         <div class="breadcrumbs-wrapper clearfix">
                             <div class="breadcrumbs">
                                 <section>
-                                    <p><a href="/">Home</a> > <a href="myaccount.asp">My Account</a></p>
+                                    <p><a href="/">Home</a> > <a href="~/Account/Login">My Account</a></p>
                                 </section>
                             </div>
                         </div>
@@ -242,28 +146,30 @@
                                         <input type="hidden" name="catalogid" value="0" />
                                         <div class="loginFields">
                                             <div class="loginField">
-                                                @Html.TextBoxFor(m => m.Email, new { placeholder = "Email", @class = "form-control" })
-                                                @*@Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })*@
+                                                @Html.TextBoxFor(m => m.Email, new { tabindex = "1", placeholder = "Email", @class = "txtBoxStyle form-control" })
+                                                @Html.PasswordFor(m => m.Password, new { tabindex = "2", placeholder = "Password", @class = "txtBoxStyle form-control" })
+
                                             </div>
                                             <div class="loginField">
-                                                @Html.PasswordFor(m => m.Password, new { placeholder = "Password", @class = "form-control" })
-                                                @*@Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })*@
+                                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                             </div>
                                         </div>
                                         <div class="loginField">
                                             <button type="submit" value="Log in" class="btn"><i class="icon-login"></i> <i class="fa fa-sign-in" aria-hidden="true"></i> Login</button>
                                         </div>
                                     }
-                                    <div  class="displayed">
+                                </div>
+                                <div class="dottedbox">
+                                    <div  id="loginSocialParagraph">
                                         <p>
                                             Use another service to log in.
                                         </p>
+                                    </div>
+                                    <div class="displayed loginSocial">
                                         @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
                                     </div>
-
                                 </div>
-
-
 
 
 
@@ -296,7 +202,6 @@
                                         @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                                         {
                                             @Html.AntiForgeryToken()
-                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                                             <div class="loginField">
                                                 @Html.ActionLink("Reset my password", "ForgotPassword", null, new { @class = "btn resetpass-link" })
                                             </div>
