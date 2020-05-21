@@ -243,6 +243,7 @@
     <Content Include="Content\assets\templates\vegan2020\favicons\favicon.ico" />
     <Content Include="Content\assets\templates\vegan2020\images\bg1500x440head.jpg" />
     <Content Include="Content\assets\templates\vegan2020\images\bg2000x780footer.jpg" />
+    <Content Include="Content\assets\templates\vegan2020\images\ico12x12star.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img160x104floral.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img52x80floral-l.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img52x80floral-r.png" />
@@ -1048,7 +1049,6 @@
     <Content Include="Views\Supplement\Details.cshtml" />
     <Content Include="Views\Shared\TestLayoutTEST.cshtml" />
     <Content Include="Views\Shared\Components\User\_FooterUser.cshtml" />
-    <Content Include="Views\Shared\Components\User\_LayoutUser.cshtml" />
     <Content Include="Views\Shared\Components\User\_NavigationBarUser.cshtml" />
     <Content Include="Views\Product\IndexUser.cshtml" />
     <Content Include="Views\Candle\IndexUser.cshtml" />

@@ -53,6 +53,5 @@ namespace Vegan.Database
         public DbSet<PowerHealth> PowerHealths { get; set; }
         public DbSet<SuperFood> SuperFoods { get; set; }
 
-        public System.Data.Entity.DbSet<Vegan.Entities.Library.ApplicationUser> ApplicationUsers { get; set; }
     }
 }

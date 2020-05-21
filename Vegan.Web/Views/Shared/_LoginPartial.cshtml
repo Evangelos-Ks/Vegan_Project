@@ -6,7 +6,6 @@
         @Html.AntiForgeryToken()
 
         var identity = "Hello " + @User.Identity.GetUserName() + "!";
-
         <ul id="nav-store-icons">
             <li><a href="/Manage/Index"><span>@identity</span> </a></li>
             <li id="nav-store-logout"><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>LOG OFF</span> </a></li>

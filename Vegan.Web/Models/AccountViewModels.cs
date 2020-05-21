@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Vegan.Entities.Enums;
 
 namespace Vegan.Web.Models
 {
@@ -77,7 +78,7 @@ namespace Vegan.Web.Models
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Confirm")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
@@ -98,7 +99,7 @@ namespace Vegan.Web.Models
 
         [Required]
         [Display(Name = "Country")]
-        public string Country { get; set; }
+        public Countries? Country { get; set; }
 
         [Required]
         [Display(Name = "City")]

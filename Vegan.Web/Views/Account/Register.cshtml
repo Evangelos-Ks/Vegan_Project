@@ -4,556 +4,138 @@
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 
 }
-
-<h2>@ViewBag.Title.</h2>
-
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
-}
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
-
-
-
-
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-@*======================================================================================================================================*@
-
-
-
-
-
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en-CA"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang="en-CA"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en-CA"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="en-CA" x-ms-format-detection="none">
-<!--<![endif]-->
-
-<head>
-    <script type="text/javascript" src="assets/templates/common/js/jquery.min.js?vcart=10.1.5"></script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/templates/apothecary2017/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="assets/templates/apothecary2017/favicons/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="assets/templates/apothecary2017/favicons/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="assets/templates/apothecary2017/favicons/manifest.json?vcart=10.1.5">
-    <link rel="mask-icon" href="assets/templates/apothecary2017/favicons/safari-pinned-tab.svg" color="#9b9388">
-    <link rel="shortcut icon" href="assets/templates/apothecary2017/favicons/favicon.ico">
-    <meta name="msapplication-config" content="assets/templates/apothecary2017/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#fdf7ed">
-    <title>Welcome to The Apothecary in Inglewood  - Pure essential oils, zero waste home, natural, organic bath, body, wellness & #Refillery | Calgary, Alberta</title>
-
-
-
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cardo|Roboto+Condensed:400,400i,700,700i|Roboto:100,900" type="text/css" media="all" />
-    <link rel="stylesheet" href="assets/templates/apothecary2017/css/font-awesome.css?vcart=10.1.5" type="text/css" media="screen" />
-    <link rel="stylesheet" href="assets/templates/apothecary2017/css/main.css?vcart=10.1.5" type="text/css" media="screen" />
-    <link rel="stylesheet" href="assets/templates/apothecary2017/css/print.css?vcart=10.1.5" type="text/css" media="print" />
-    <link rel="stylesheet" href="assets/templates/apothecary2017/css/messagebar.min.css?vcart=10.1.5" type="text/css" media="screen" />
-
-    <link rel="alternate" type="application/rss+xml" title="Featured Items (RSS 2.0)" href="https://www.the-apothecary.ca/rss.asp?type=home" />
-    <link rel="alternate" type="application/rss+xml" title="Products On Sale (RSS 2.0)" href="https://www.the-apothecary.ca/rss.asp?type=onsale" />
-    <link rel="alternate" type="application/rss+xml" title="New Releases (RSS 2.0)" href="https://www.the-apothecary.ca/rss.asp?type=newreleases" />
-    <link rel="alternate" type="application/rss+xml" title="Best Sellers (RSS 2.0)" href="https://www.the-apothecary.ca/rss.asp?type=bestsellers" />
-    <link rel="alternate" type="application/rss+xml" title="Latest Blog Posts (RSS 2.0)" href="https://www.the-apothecary.ca/rss.asp?type=blog" />
-
-    <script type="text/javascript">
-	if (typeof jQuery == 'undefined') {
-		document.write("<script type=\"text/javascript\" src=\"assets/templates/apothecary2017/js/jquery-1.11.1.min.js?vcart=10.1.5\"></" + "script>");
-	}
-    </script>
-
-
-    <script type="text/javascript" src="assets/templates/apothecary2017/js/gambit-smoothscroll-min.js?vcart=10.1.5"></script>
-    <script type="text/javascript" src="assets/templates/apothecary2017/js/pxl.js?vcart=10.1.5"></script>
-    <script type="text/javascript" src="assets/templates/common-html5/js/utilities.js?vcart=10.1.5"></script>
-    <script type="text/javascript" src="assets/templates/common-html5/js/functions.js?vcart=10.1.5"></script>
-    <script type="text/javascript" src="assets/templates/apothecary2017/js/jquery.quicksearch.js?vcart=10.1.5"></script>
-    <script type="text/javascript" src="assets/templates/apothecary2017/js/jquery.simplemodal.min.js?vcart=10.1.5"></script>
-    <script type="text/javascript" src="assets/templates/apothecary2017/js/messagebar.min.js?vcart=10.1.5"></script>
-
-    <script type="text/javascript">
-	jQuery(function() {
-		jQuery('#searchlight').searchlight('/search_quick.asp');
-	});
-    </script>
-    <script type="text/javascript">
-	new GambitSmoothScroll({
-		amount: 150, // The scroll amount
-		speed: 900 // The scroll speed
-	});
-    </script>
-    <script type="text/javascript">
-	( function($) {
-
-	var ThisDocURL;
-	var ThisDocURLenc;
-	$(document).ready(function() {
-		ThisDocURL = '[product_url]';
-		ThisDocURLenc = encodeURIComponent(ThisDocURL);
-	});
-
-	} ) ( jQuery );
-    </script>
-    <script type="text/javascript">var _gaq = _gaq || [];  _gaq.push(['_setAccount', 'UA-48564345-1']);  _gaq.push(['_addDevId', '5Fyti']); _gaq.push(['_trackPageview']);  (function() {    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);  })();</script>
-</head>
-<body>
-    <div id="top" pxlurl="[product_url]">
-
-        <div id="curtain"></div>
-        <div class="headerbox-wrapper">
-            <div class="headerbox">
-                <div id="topbar">
-                    <div>
-                        <nav id="nav-utils">
-                            <ul>
-                                <li id="nav-utils-home"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a></li>
-                                <li id="nav-utils-search"><a href="search.asp"><i class="fa fa-search" aria-hidden="true"></i> <span>Search</span></a></li>
-                            </ul>
-                            <div id="nav-search">
-                                <div id="searchBox">
-                                    <form method="get" name="searchForm" action="search.asp">
-                                        <input type="text" name="keyword" id="searchlight" class="search-text" placeholder="start typing product name">
-                                        <input class="btn btn-big" type="submit" name="search" id="searchbutton" value="Search">
-                                    </form>
-                                </div>
-                            </div>
-                        </nav>
-                        <nav id="nav-tools">
-                            <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></span>
-                            <div class="nav-sub">
-                                <ul>
-                                    <li class="sub">
-                                        <a href="meet-our-team.html"><i class="fa fa-fw fa-chevron-circle-right" aria-hidden="true"></i>Our Story</a>
-                                        <ul>
-                                            <li><a href="meet-our-team.html">Meet Our Team</a></li>
-                                            <li><a href="mission_statement.html">Mission Statement</a></li>
-                                            <li><a href="employment.html">Employment</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="sub">
-                                        <a href="faq.html"><i class="fa fa-fw fa-chevron-circle-right" aria-hidden="true"></i>Customer Care</a>
-                                        <ul>
-                                            <li><a href="faq.html">FAQ</a></li>
-                                            <li><a href="The-Refillery_ep_56-1.html">The Refillery</a></li>
-                                            <li><a href="refills-delivered">Curbside + Refill Delivery</a></li>
-                                            <li><a href="Join-the-AromaticLife-_ep_59-1.html">Join the #AromaticLife</a></li>
-                                            <li><a href="shipping_information.html">Shipping + Delivery Info</a></li>
-                                            <li><a href="return_policy.html">Return Policy</a></li>
-                                            <li><a href="store_hours.html">Store Hours</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="crm.asp?action=contactus"><i class="fa fa-fw fa-circle" aria-hidden="true"></i>Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-
-                        <nav id="nav-store">
-                            <ul id="nav-store-icons">
-                                <li id="nav-store-login"><a href="myaccount.asp"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Login</span></a></li>
-                                <li id="nav-store-cart"><a href="view_cart.asp"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart</span> <strong>$0</strong></a></li>
-                            </ul>
-                        </nav>
-
-
+<div class="contentbox-wrapper">
+    <div class="contentbox">
+        <script type="text/javascript">
+            useAddressValidator = "";
+            var emailReq = 0;
+            var passwordReq = 0;
+        </script>
+        <div id="pageheader" class="docsection-wrapper">
+            <div class="docsection boxed">
+                <div class="breadcrumbs-wrapper clearfix">
+                    <div class="breadcrumbs">
+                        <section>
+                            <p><a href="/">Home</a> > New Account</p>
+                        </section>
                     </div>
                 </div>
-                <div id="logo">
-                    <header>
-                        <a href="/"><img src="assets/templates/apothecary2017/images/logo280x70apothecary.png" alt="The Apothecary in Inglewood - Pure essential oils, zero waste home, natural, organic bath, body, wellness & #Refillery | Calgary, Alberta"></a>
-                    </header>
-                </div>
-                <div id="mainmenu">
-                    <div>
-                        <nav id="nav-categories">
-                            <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i> Shop</span>
-
-                            <ul id="desktopMenu" class="categories">
-                                <li>
-                                    <a href="Shop-By-Brand_c_211.html" class="cat">Shop By Brand</a>
-                                    <ul class="subMenu">
-                                        <li><a href="All-Things-Jill_c_234.html" class="subcat">All Things Jill</a></li>
-                                        <li><a href="Bambu_c_306.html" class="subcat">Bambu</a></li>
-                                        <li><a href="Bkind-natural-nail-care" class="subcat">BKind</a></li>
-                                        <li><a href="Cha-Tea_c_310.html" class="subcat">Ch'a Tea</a></li>
-                                        <li><a href="cocoon-apothecary" class="subcat">Cocoon Apothecary</a></li>
-                                        <li><a href="CoffeeSock_c_309.html" class="subcat">CoffeeSock</a></li>
-                                        <li><a href="colibri-bags" class="subcat">Colibri</a></li>
-                                        <li><a href="Credobags_c_232.html" class="subcat">Credobags</a></li>
-                                        <li><a href="DivaCup_c_255.html" class="subcat">DivaCup</a></li>
-                                        <li><a href="ECOBAGS_c_307.html" class="subcat">ECOBAGS</a></li>
-                                        <li><a href="Elate-Cosmetics_c_227.html" class="subcat">Elate Cosmetics</a></li>
-                                        <li><a href="Harmonic-Arts_c_220.html" class="subcat">Harmonic Arts</a></li>
-                                        <li><a href="Honey-Candles_c_313.html" class="subcat">Honey Candles</a></li>
-                                        <li><a href="Jarmazing_c_228.html" class="subcat">Jarmazing</a></li>
-                                        <li><a href="Joco_c_300.html" class="subcat">Joco</a></li>
-                                        <li><a href="Kooshoo_c_213.html" class="subcat">Kooshoo</a></li>
-                                        <li><a href="LUUMI_c_224.html" class="subcat">LUUMI</a></li>
-                                        <li><a href="Masontops_c_316.html" class="subcat">Masontops</a></li>
-                                        <li><a href="Naturel-Tea_c_276.html" class="subcat">Natur'el Tea</a></li>
-                                        <li><a href="Nellies_c_250.html" class="subcat">Nellie's</a></li>
-                                        <li><a href="Nelson-Naturals_c_231.html" class="subcat">Nelson Naturals</a></li>
-                                        <li><a href="Pura_c_298.html" class="subcat">Pura</a></li>
-                                        <li><a href="Redecker_c_212.html" class="subcat">Redecker</a></li>
-                                        <li><a href="Routine_c_238.html" class="subcat">Routine</a></li>
-                                        <li><a href="Sayula_c_251.html" class="subcat">Sayula</a></li>
-                                        <li><a href="Soma_c_301.html" class="subcat">Soma</a></li>
-                                        <li><a href="Splat-and-Co_c_226.html" class="subcat">Splat and Co</a></li>
-                                        <li><a href="Stasher_c_214.html" class="subcat">Stasher</a></li>
-                                        <li><a href="Stretch-Creations_c_256.html" class="subcat">Stretch Creations</a></li>
-                                        <li><a href="Tru-Earth_c_242.html" class="subcat">Tru Earth</a></li>
-                                        <li><a href="U-Konserve_c_304.html" class="subcat">U-Konserve</a></li>
-                                        <li><a href="Well-Kept_c_239.html" class="subcat">Well Kept</a></li>
-                                        <li><a href="Your-Green-Kitchen_c_315.html" class="subcat">Your Green Kitchen</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="bulk-Culinary-dry-goods_c_265.html" class="cat">bulk Culinary + dry goods</a>
-                                    <ul class="subMenu">
-                                        <li><a href="Gum_c_271.html" class="subcat">Gum</a></li>
-                                        <li><a href="https://www.the-apothecary.ca/Bulk-Herbs_c_71.html" class="subcat">Herbs</a></li>
-                                        <li><a href="Peppers_c_295.html" class="subcat">Peppers</a></li>
-                                        <li><a href="Salts_c_294.html" class="subcat">Salts</a></li>
-                                        <li><a href="Soups_c_299.html" class="subcat">Soups</a></li>
-                                        <li><a href="Spices-Seasonings_c_293.html" class="subcat">Spices + Seasonings</a></li>
-                                        <li><a href="organic-sprouting-seeds" class="subcat">Sprouting Seeds</a></li>
-                                        <li><a href="bulk-natural-tea" class="subcat">Tea</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="curated-kits" class="cat">Curated Kits</a>
-                                    <ul class="subMenu">
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="Zero-Waste-Lifestyle_c_183.html" class="cat">Zero Waste Lifestyle</a>
-                                    <ul class="subMenu">
-                                        <li><a href="Zero-Waste-Home-Cleaning" class="subcat">Cleaning</a></li>
-                                        <li><a href="Containers-and-Wraps_c_311.html" class="subcat">Containers and Wraps</a></li>
-                                        <li><a href="Face-Body_c_195.html" class="subcat">Face & Body</a></li>
-                                        <li><a href="First-Aid_c_210.html" class="subcat">First Aid</a></li>
-                                        <li><a href="zero-waste-kitchen" class="subcat">Kitchen</a></li>
-                                        <li><a href="zero-waste-laundry" class="subcat">Laundry</a></li>
-                                        <li><a href="Mason_c_188.html" class="subcat">Mason</a></li>
-                                        <li><a href="Menstrual-Products_c_194.html" class="subcat">Menstrual Products</a></li>
-                                        <li><a href="On-the-Go_c_270.html" class="subcat">On the Go</a></li>
-                                        <li><a href="Reusable-Bags_c_312.html" class="subcat">Reusable Bags</a></li>
-                                        <li><a href="Straws_c_187.html" class="subcat">Straws</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="Personal-Care_c_245.html" class="cat">Personal Care</a>
-                                    <ul class="subMenu">
-                                        <li><a href="Bath-Shower_c_29.html" class="subcat">Bath & Shower</a></li>
-                                        <li><a href="Lotions-Body-Treatments_c_249.html" class="subcat">Lotions + Body Treatments</a></li>
-                                        <li><a href="Deodorant_c_119.html" class="subcat">Deodorant</a></li>
-                                        <li><a href="Hair-Care_c_182.html" class="subcat">Hair Care</a></li>
-                                        <li><a href="Teeth_c_181.html" class="subcat">Teeth</a></li>
-                                        <li><a href="Outdoors-Sun-Care_c_67.html" class="subcat">Outdoors + Sun Care</a></li>
-                                        <li><a href="For-Men-Shave-Beard_c_54.html" class="subcat">For Men (Shave & Beard)</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="Skincare-Cosmetics_c_248.html" class="cat">Skincare + Cosmetics</a>
-                                    <ul class="subMenu">
-                                        <li><a href="SkinCare_c_26.html" class="subcat">SkinCare</a></li>
-                                        <li><a href="Make-Up-Cosmetics_c_199.html" class="subcat">Make Up / Cosmetics</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="Baby-Mama_c_49.html" class="cat">Baby & Mama</a>
-                                    <ul class="subMenu">
-                                        <li><a href="For-Baby_c_50.html" class="subcat">For Baby</a></li>
-                                        <li><a href="For-Mama_c_51.html" class="subcat">For Mama</a></li>
-                                        <li><a href="Gifts_c_53.html" class="subcat">Gifts</a></li>
-                                        <li><a href="Wellness_c_52.html" class="subcat">Wellness</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="Chic-Puppy_c_58.html" class="cat">Chic Puppy</a>
-                                    <ul class="subMenu">
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="Essential-Oils-Aromatherapy_c_14.html" class="cat">Essential Oils + Aromatherapy</a>
-                                    <ul class="subMenu">
-                                        <li><a href="A--D_c_15.html" class="subcat">A - D</a></li>
-                                        <li><a href="E--L_c_16.html" class="subcat">E - L</a></li>
-                                        <li><a href="M--P_c_17.html" class="subcat">M - P</a></li>
-                                        <li><a href="Q--Z_c_18.html" class="subcat">Q - Z</a></li>
-                                        <li><a href="Synergies-Blends_c_19.html" class="subcat">Synergies / Blends</a></li>
-                                        <li><a href="Diffusers_c_147.html" class="subcat">Diffusers</a></li>
-                                        <li><a href="Absolutes_c_20.html" class="subcat">Absolutes</a></li>
-                                        <li><a href="Aromatic-Roll-Ons_c_176.html" class="subcat">Aromatic Roll Ons</a></li>
-                                        <li><a href="Single-Note-10-Dilutions_c_22.html" class="subcat">Single Note 10% Dilutions</a></li>
-                                        <li><a href="Soap-Grade_c_23.html" class="subcat">Soap Grade</a></li>
-                                        <li><a href="Hydrosols_c_138.html" class="subcat">Hydrosols</a></li>
-                                        <li><a href="Collections-Kits_c_24.html" class="subcat">Collections & Kits</a></li>
-                                        <li><a href="Jewelry_c_192.html" class="subcat">Jewelry</a></li>
-                                        <li><a href="Essential-Oil-Cases_c_25.html" class="subcat">Essential Oil Cases</a></li>
-                                        <li><a href="Books_c_93.html" class="subcat">Books</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="Home-Environment_c_34.html" class="cat">Home + Environment</a>
-                                    <ul class="subMenu">
-                                        <li><a href="Candles_c_37.html" class="subcat">Candles</a></li>
-                                        <li><a href="https://www.the-apothecary.ca/Cleaning_c_189.html" class="subcat">Home Cleaning</a></li>
-                                        <li><a href="https://www.the-apothecary.ca/Kitchen_c_263.html" class="subcat">Kitchen</a></li>
-                                        <li><a href="https://www.the-apothecary.ca/Laundry_c_264.html" class="subcat">Laundry</a></li>
-                                        <li><a href="Room-Mists_c_38.html" class="subcat">Room Mists</a></li>
-                                        <li><a href="Yoga_c_57.html" class="subcat">Yoga</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="Raw-Materials-DIY_c_69.html" class="cat">Raw Materials + DIY</a>
-                                    <ul class="subMenu">
-                                        <li><a href="Carrier-Oils_c_70.html" class="subcat">Carrier Oils</a></li>
-                                        <li><a href="Bulk-Herbs_c_71.html" class="subcat">Bulk Herbs</a></li>
-                                        <li><a href="Nut-Butters_c_73.html" class="subcat">Nut Butters</a></li>
-                                        <li><a href="Packaging_c_74.html" class="subcat">Packaging</a></li>
-                                        <li><a href="Salts_c_75.html" class="subcat">Salts</a></li>
-                                        <li><a href="Specialty_c_76.html" class="subcat">Specialty</a></li>
-                                        <li><a href="Waxes_c_77.html" class="subcat">Waxes</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="Remedies_c_40.html" class="cat">Remedies</a>
-                                    <ul class="subMenu">
-                                        <li><a href="Tinctures-and-Elixirs_c_219.html" class="subcat">Tinctures and Elixirs</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="Books-Classes-Workshops_c_92.html" class="cat">Books + Classes + Workshops</a>
-                                    <ul class="subMenu">
-                                        <li><a href="Books_c_186.html" class="subcat">Books</a></li>
-                                        <li><a href="Classes-by-NameTitle_c_253.html" class="subcat">Classes by Name/Title</a></li>
-                                        <li><a href="Cancellation-Policy_c_142.html" class="subcat">Cancellation Policy</a></li>
-                                        <li><a href="A-Note-on-Certification_c_175.html" class="subcat">A Note on Certification</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="Gift-Certificates_c_241.html" class="cat">Gift Certificates</a>
-                                    <ul class="subMenu">
-                                    </ul>
-                                </li>
-                            </ul>
-
-                        </nav>
-                        <nav id="nav-learn">
-                            <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i> Learn</span>
-                            <ul>
-
-                                <li><a href="Aromatherapy-101_ep_3.html" class="menu" target="_self">Aromatherapy 101</a></li>
-                                <li><a href="Classes-Workshops_c_92.html" class="menu" target="_self">Classes + Workshops</a></li>
-                                <li><a href="Recipes_ep_52.html" class="menu" target="_self">Recipes</a></li>
-                                <li><a href="blog.asp" class="menu" target="_self">Blog</a></li>
-
-                            </ul>
-                        </nav>
+                <div class="title-wrapper clearfix">
+                    <div class="title">
+                        <div>
+                            <h1>Create an Account</h1>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="contentbox-wrapper">
-            <div class="contentbox">
-
-
-
-
-                <script type="text/javascript" src="state_countryjs.asp"></script>
-                <script type="text/javascript" src="assets/templates/common/js/address_validator.js?vcart=10.1.5"></script>
-                <script type="text/javascript">
-    useAddressValidator = "";
-	var emailReq = 0;
-	var passwordReq = 0;
-                </script>
-                <div id="pageheader" class="docsection-wrapper">
-                    <div class="docsection boxed">
-                        <div class="breadcrumbs-wrapper clearfix">
-                            <div class="breadcrumbs">
-                                <section>
-                                    <p><a href="/">Home</a> > New Account</p>
-                                </section>
+        <div id="registration" class="docsection-wrapper">
+            <div class="docsection boxed">
+                <section id="registration0">
+                    <input type="hidden" name="view_cart" value="0" />
+                    <input type="hidden" name="catalogid" value="0" />
+                    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "registrationform", @class = "form-horizontal", role = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="catalogid" value="0" />
+                        <div class="accountRegForm pad10 boxShadow">
+                            <div class="header">
+                                <h3>New Customers</h3>
+                            </div>
+                            <div class="loginField">
+                                @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                                @Html.TextBoxFor(m => m.Email, new { size = "25", maxlength = "100", tabindex = "1", @class = "form-control txtBoxStyle" })
+                                <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
+                            </div>
+                            <div class="loginField">
+                                @Html.ValidationMessageFor(m => m.Email, "", new { style = "color:tomato;font-size:9px;"})
+                            </div>
+                            <div class="loginField">
+                                @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                                @Html.PasswordFor(m => m.Password, new { size = "12", tabindex = "2", @class = "form-control txtBoxStyle" })
+                                <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
+                            </div>
+                            <div class="loginField">
+                                @Html.ValidationMessageFor(m => m.Password, "", new { style = "color:tomato;font-size:9px;"})
+                            </div>
+                            <div class="loginField">
+                                @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+                                @Html.PasswordFor(m => m.ConfirmPassword, new { placeholder = "Confirm password", size = "12", tabindex = "3", @class = "form-control txtBoxStyle" })
+                                <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
+                            </div>
+                            <div class="loginField">
+                                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { style = "color:tomato;font-size:9px;"})
                             </div>
                         </div>
-                        <div class="title-wrapper clearfix">
-                            <div class="title">
-                                <head>
-                                    <h1>Create an Account</h1>
-                                </head>
+                        <div class="accountRegForm pad10 boxShadow">
+                            <div class="header">
+                                <h3>Customer Information</h3>
+                            </div>
+                            <div class="loginField">
+                                @Html.LabelFor(m => m.FirstName, new { @class = "control-label" })
+                                @Html.TextBoxFor(m => m.FirstName, new { size = "15", tabindex = "4", @class = "form-control txtBoxStyle" })
+                                <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
+                            </div>
+                            <div class="loginField">
+                                @Html.ValidationMessageFor(m => m.FirstName, "", new { style = "color:tomato;font-size:9px;"})
+                            </div>
+                            <div class="loginField">
+                                @Html.LabelFor(m => m.LastName, new { @class = "control-label" })
+                                @Html.TextBoxFor(m => m.LastName, new { size = "15", tabindex = "5", @class = "form-control txtBoxStyle" })
+                                <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
+                            </div>
+                            <div class="loginField">
+                                @Html.ValidationMessageFor(m => m.LastName, "", new { style = "color:tomato;font-size:9px;"})
+                            </div>
+                            <div class="loginField">
+                                @Html.LabelFor(m => m.PhoneNumber, new { @class = "control-label" })
+                                @Html.TextBoxFor(m => m.PhoneNumber, new { size = "25", tabindex = "6", @class = "form-control txtBoxStyle" })
+                                <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
+                            </div>
+                            <div class="loginField">
+                                @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { style = "color:tomato;font-size:9px;"})
+                            </div>
+                            <div class="loginField">
+                                @Html.LabelFor(m => m.Country, new { @class = "control-label" })
+                                @Html.EnumDropDownListFor(m => m.Country, "", new { size = "1", tabindex = "8", @class = "form-control txtBoxStyle" })
+                                <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
+                            </div>
+                            <div class="loginField">
+                                @Html.ValidationMessageFor(m => m.Country, "", new { style = "color:tomato;font-size:9px;"})
+                            </div>
+                            <div class="loginField">
+                                @Html.LabelFor(m => m.City, new { @class = "control-label" })
+                                @Html.TextBoxFor(m => m.City, new { size = "25", tabindex = "9", @class = "form-control txtBoxStyle" })
+                                <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
+                            </div>
+                            <div class="loginField">
+                                @Html.ValidationMessageFor(m => m.City, "", new { style = "color:tomato;font-size:9px;"})
+                            </div>
+                            <div class="loginField">
+                                @Html.LabelFor(m => m.Address, new { @class = "control-label" })
+                                @Html.TextBoxFor(m => m.Address, new { size = "25", tabindex = "10", @class = "form-control txtBoxStyle" })
+                                <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
+                            </div>
+                            <div class="loginField">
+                                @Html.ValidationMessageFor(m => m.Address, "", new { style = "color:tomato;font-size:9px;"})
+                            </div>
+                            <div class="loginField">
+                                @Html.LabelFor(m => m.PostCode, new { @class = "control-label" })
+                                @Html.TextBoxFor(m => m.PostCode, new { size = "10", tabindex = "10", @class = "form-control txtBoxStyle" })
+                                <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
+                            </div>
+                            <div class="loginField">
+                                @Html.ValidationMessageFor(m => m.PostCode, "", new { style = "color:tomato;font-size:9px;" })
+                            </div>
+                            <div class="loginField">
+                                @Html.ValidationSummary(true, "", new { style = "color:tomato;font-size:14px;" })
+                            </div>
+                            <div class="submit-button">
+                                <input type="submit" class="btn btn-default" data-dismiss="alert" value="Register" />
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div id="registration" class="docsection-wrapper">
-                    <div class="docsection boxed">
-                        <section id="registration0">
-                            <form action="register.asp?action=register" method="post" name="registrationform" id="registrationform">
-                                <input type="hidden" name="view_cart" value="0" />
-                                <input type="hidden" name="catalogid" value="0" />
-                                <div class="group-message"></div>
-                                <div class="accountRegForm pad10 boxShadow">
-                                    <div class="header">
-                                        <h3>New Customers</h3>
-                                    </div>
-                                    <div class="loginField">
-                                        <label for="email">Email:</label>
-                                        <input type="text" size="25" name="email" maxlength="100" tabindex="1" class="txtBoxStyle" />
-
-
-                                        <script type="text/javascript">emailReq = 1;</script>
-                                        <div class="error-img"><img src="assets/templates/apothecary2017/images/ico12x12star.png" width="12" height="12" alt="" /></div>
-
-
-                                    </div>
-                                    <div class="loginField">
-                                        <label for="pass">Password:</label>
-                                        <input type="password" size="12" name="pass" maxlength="16" tabindex="2" class="txtBoxStyle" />
-
-
-                                        <script type="text/javascript">passwordReq = 1;</script>
-                                        <div class="error-img"><img src="assets/templates/apothecary2017/images/ico12x12star.png" width="12" height="12" alt="" /></div>
-
-
-                                    </div>
-
-
-                                    <input type=hidden name=discount value=0>
-                                </div>
-
-                                <div class="accountRegForm pad10 boxShadow">
-                                    <div class="header">
-                                        <h3>Customer Information</h3>
-                                    </div>
-                                    <div class="loginField">
-                                        <label for="shipping_firstname">First Name</label>
-                                        <input name="shipping_firstname" type="text" id="shipping_firstname" maxlength="100" size="15" tabindex="4" class="txtBoxStyle" />
-
-                                        <div class="error-img"><img src="assets/templates/apothecary2017/images/ico12x12star.png" width="12" height="12" alt="" /></div>
-
-                                    </div>
-                                    <div class="loginField">
-                                        <label for="shipping_lastname">Last Name</label>
-                                        <input name="shipping_lastname" type="text" id="shipping_lastname" maxlength="100" size="15" tabindex="5" class="txtBoxStyle" />
-
-                                        <div class="error-img"><img src="assets/templates/apothecary2017/images/ico12x12star.png" width="12" height="12" alt="" /></div>
-
-                                    </div>
-                                    <div class="loginField">
-                                        <label for="">Company</label>
-                                        <input name="shipping_company" type="text" id="shipping_company" maxlength="255" size="25" tabindex="6" class="txtBoxStyle" />
-                                    </div>
-                                    <div class="loginField">
-                                        <label for="shipping_phone">Phone</label>
-                                        <input name="shipping_phone" type="text" id="shipping_phone" maxlength="50" size="25" tabindex="8" class="txtBoxStyle" />
-
-                                        <div class="error-img"><img src="assets/templates/apothecary2017/images/ico12x12star.png" width="12" height="12" alt="" /></div>
-
-                                    </div>
-                                    <div class="loginField">
-                                        <label for="shipping_address">Address</label>
-                                        <input name="shipping_address" type="text" id="shipping_address" maxlength="255" size="25" tabindex="9" class="txtBoxStyle" />
-
-                                        <div class="error-img"><img src="assets/templates/apothecary2017/images/ico12x12star.png" width="12" height="12" alt="" /></div>
-
-                                    </div>
-                                    <div class="loginField">
-                                        <label for="shipping_address2">Suite / Apt #</label>
-                                        <input name="shipping_address2" type="text" id="shipping_address2" maxlength="50" size="25" tabindex="9" class="txtBoxStyle" />
-                                    </div>
-                                    <div class="loginField">
-                                        <label for="shipping_city">City</label>
-                                        <input name="shipping_city" type="text" id="shipping_city" size="25" maxlength="100" tabindex="10" class="txtBoxStyle" />
-
-                                        <div class="error-img"><img src="assets/templates/apothecary2017/images/ico12x12star.png" width="12" height="12" alt="" /></div>
-
-                                    </div>
-                                    <div class="loginField">
-                                        <label for="shipping_country">Country</label>
-                                        <select name="shipping_country" onchange="populateState('shipping_state','shipping_country', '', undefined, '');" tabindex="11" class="txtBoxStyle">
-                                        </select>
-
-                                        <div class="error-img"><img src="assets/templates/apothecary2017/images/ico12x12star.png" width="12" height="12" alt="" /></div>
-
-                                    </div>
-                                    <div class="loginField">
-                                        <label for="shipping_state">Province</label>
-                                        <span name="spanState" id="spanState">
-                                            <select name="shipping_state" maxlength="100" tabindex="12" class="txtBoxStyle">
-                                            </select>
-                                        </span>
-
-                                        <div class="error-img"><img src="assets/templates/apothecary2017/images/ico12x12star.png" width="12" height="12" alt="" /></div>
-
-                                    </div>
-                                    <div class="loginField">
-                                        <label for="shipping_zip">Postal Code</label>
-                                        <input name="shipping_zip" type="text" size="10" maxlength="20" tabindex="13" class="txtBoxStyle" />
-
-                                        <div class="error-img"><img src="assets/templates/apothecary2017/images/ico12x12star.png" width="12" height="12" alt="" /></div>
-
-                                    </div>
-                                    <div class="loginField">
-                                        <label for="comments">Comments</label>
-<textarea name="comments" tabindex="14"></textarea>
-                                    </div>
-                                </div>
-                                <div class="accountRegForm pad10 boxShadow">
-                                    <div class="header">
+                        @*<div class="accountRegForm pad10 boxShadow">
+                                <div class="header">
                                         <h3>Verification</h3>
                                     </div>
 
@@ -567,278 +149,15 @@
                                     </div>
 
 
-                                    <div class="submit-button">
-                                        <button type="button" onclick="javascript:doRegister(this.form);" class="btn"><i class="icon-ok"></i> Register</button>
-                                    </div>
+                                <div class="submit-button">
+                                    <button type="button" onclick="javascript:doRegister(this.form);" class="btn"><i class="icon-ok"></i> Register</button>
                                 </div>
-                            </form>
-                        </section>
-                    </div>
-                </div>
-                <input type="hidden" name="hdnAddrressValidatorResult" id="hdnAddrressValidatorResult" value="" />
-                <div id="divAddrressValidator" style="display:none;">
-
-                    <div style="background-color: #FFF; padding: 30px;">
-
-                        <div>[result_msg]</div>
-
-
-                        <div>
-                            [result_msg]
-
-                            <br />
-                            <br />
-                            <strong></strong> <a style="text-decoration:underline;" href="javascript:void(0);" onclick="javascript:selectAddress('[AddrressValidator_address1]', '[AddrressValidator_address2]', '[AddrressValidator_city]', '[AddrressValidator_state]', '[AddrressValidator_zip]', 'shipping_address', 'shipping_address2', 'shipping_city', 'shipping_state', 'shipping_zip');doRegister(document.registrationform);">[AddrressValidator_address], [AddrressValidator_city], [AddrressValidator_state], [AddrressValidator_zip]</a>
-
-                        </div>
-
-
-                        <br />
-                        <a style="text-decoration:underline;" href="javascript:void(0);" onclick="javascript:addressValidatorContinue('[AddrressValidator_addresstype]');"></a> <br />
-
-                        <br />
-                        <a style="text-decoration:underline;" href="javascript:void(0);" onclick="javascript:closeAddressValidatorModal();"><i class="icon-cancel"></i></a>
-                    </div>
-
-                </div>
-                <script type="text/javascript">
-    initCountry('CA', '', 'shipping_state', 'shipping_country', '');
-
-    function doRegister(objForm) {
-        var strMsg = "";
-
-        if (emailReq == 1) {
-            if (objForm.email.value.trim() == "" || !validateEmail(objForm.email.value.trim()))
-                strMsg += " - Please enter a valid Email.\n";
-            if (objForm.email.value.length > 100)
-                strMsg += " - Max length for Email is 50.\n";
-        }
-
-        if (passwordReq == 1) {
-            if (objForm.pass.value.trim() == "")
-                strMsg += " - Please enter your Password.\n";
-            else if (objForm.pass.value.length < 8)
-                strMsg += " - Mininimum length for Password is 8.\n";
-            else if (objForm.pass.value.length > 16)
-                strMsg += " - Max length for Password is 16.\n";
-            else if (!objForm.pass.value.match(/(?=^.{8,16}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$/) && '' == '1')
-                strMsg += " - Password must be at least 8 characters long and must contain at least one number [0-9], one uppercase letter [A-Z] and one lowercase letter [a-z]. does not match the password policy.\n";
-        }
-
-        if (objForm.shipping_firstname.value.trim() == "")
-            strMsg += " - Please enter your First Name.\n";
-        if (objForm.shipping_firstname.value.length > 100)
-        	strMsg += " - Max length for First Name is 100.\n";
-
-        if (objForm.shipping_lastname.value.trim() == "")
-            strMsg += " - Please enter your Last Name.\n";
-        if (objForm.shipping_lastname.value.length > 100)
-        	strMsg += " - Max length for Last Name is 100.\n";
-
-        if (objForm.shipping_phone.value.trim() == "")
-            strMsg += " - Please enter your Phone.\n";
-        if (objForm.shipping_phone.value.length > 50)
-            strMsg += " - Max length for Phone is 50.\n";
-
-        if (objForm.shipping_address.value.trim() == "")
-            strMsg += " - Please enter your Address.\n";
-        if (objForm.shipping_address.value.length > 255)
-            strMsg += " - Max length for Address is 255.\n";
-
-        if (objForm.shipping_city.value.trim() == "")
-            strMsg += " - Please enter your City.\n";
-        if (objForm.shipping_city.value.length > 100)
-            strMsg += " - Max length for City is 100.\n";
-
-        if (objForm.shipping_state.value.trim() == "")
-            strMsg += " - Please enter your Province.\n";
-        if (objForm.shipping_state.value.length > 100)
-            strMsg += " - Max length for Province is 100.\n";
-
-        if (objForm.shipping_zip.value.trim() == "")
-            strMsg += " - Please enter your Postal Code.\n";
-        if (objForm.shipping_zip.value.length > 20)
-            strMsg += " - Max length for Postal Code is 20.\n";
-
-        if (objForm.randomWord && objForm.randomWord.value.trim() == "")
-            strMsg += " - Please enter the Verification.\n";
-
-        if (strMsg != "") {
-            alert(strMsg);
-            return false;
-        }
-
-        var company = get_Element('shipping_company').value;
-        var address1 = get_Element('shipping_address').value;
-        var address2 = get_Element('shipping_address2').value;
-        var city = get_Element('shipping_city').value;
-        var state = get_Element('shipping_state').value;
-        var country = get_Element('shipping_country').value;
-        var zip = get_Element('shipping_zip').value;
-
-        if (useAddressValidator == "1" && country == "US"){
-            verify_address(address1, address2, city, state, country, zip, company, 'register');
-        }
-        else {
-            objForm.submit();
-        }
-    }
-
-    function submitCheckoutFormPos() {
-        objForm = document.registrationform;
-        if (jQuery('#hdnAddrressValidatorResult').val() == '1') {
-            objForm.submit();
-            return;
-        }
-        else {
-            jQuery('#divAddrressValidator').modal({ containerCss: { borderWidth: '1px', width: '602px', height: '212px' } });
-            document.body.style.cursor = '';
-        }
-    }
-
-    function addressValidatorContinue(type) {
-        useAddressValidator = '';
-        doRegister(document.registrationform);
-        jQuery.modal.close();
-    }
-
-    String.prototype.trim = function () {
-        return this.replace(/^\s+|\s+$/g, "");
-    }
-    function IsNumeric(strString) {
-        var strValidChars = "0123456789.-";
-        var strChar;
-        var blnResult = true;
-
-        if (strString.length == 0) return false;
-        //  test strString consists of valid characters listed above
-        for (i = 0; i < strString.length && blnResult == true; i++) {
-            strChar = strString.charAt(i);
-            if (strValidChars.indexOf(strChar) == -1) {
-                blnResult = false;
-            }
-        }
-        return blnResult;
-    }
-                </script>
-
-
-
-            </div>
-        </div>
-        <div class="footerbox-wrapper">
-            <div class="footerbox">
-                <div id="footernav">
-                    <div class="boxed">
-                        <ul class="pages">
-                            <li>
-                                <span><i class="fa fa-fw fa-chevron-circle-right" aria-hidden="true"></i>OUR STORY</span>
-                                <ul>
-                                    <li><a href="meet-our-team.html">Meet Our Team</a></li>
-                                    <li><a href="mission_statement.html">Mission Statement</a></li>
-                                    <li><a href="employment.html">Employment</a></li>
-                                    <li class="news"><a href="blog.asp">Blog</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span><i class="fa fa-fw fa-chevron-circle-right" aria-hidden="true"></i>KNOWLEDGE</span>
-                                <ul>
-                                    <li><a href="Classes_c_92.html">Classes</a></li>
-                                    <li><a href="Books_c_93.html">Books</a></li>
-                                    <li><a href="What-is-Aromatherapy_ep_46.html">What is Aromatherapy</a></li>
-                                    <li><a href="What-is-an-Essential-Oil_ep_47.html">What is an Essential Oil</a></li>
-                                    <li><a href="therapeutic-grade-defined_ep_50.html">Therapeutic Grade Defined</a></li>
-                                    <li><a href="Storing-Essential-Oils_ep_48.html">Storing Essential Oils</a></li>
-                                    <li><a href="Uses-of-Essential-Oils_ep_44.html">Uses of Essential Oils</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span><i class="fa fa-fw fa-chevron-circle-right" aria-hidden="true"></i>CUSTOMER SERVICE</span>
-                                <ul>
-                                    <li><a href="shipping_information.html">Shipping Information</a></li>
-                                    <li><a href="return_policy.html">Return Policy</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="Gift-Certificates_p_12.html">Gift Certificates</a></li>
-                                    <li><a href="crm.asp?action=contactus">Contact Us</a></li>
-                                    <li><a href="store_hours.html">Store Hours</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <span><i class="fa fa-fw fa-chevron-circle-right" aria-hidden="true"></i>ACCOUNT</span>
-                                <ul>
-                                    <li><a href="myaccount.asp">Login</a></li>
-                                    <li><a href="myaccount.asp">Dashboard</a></li>
-                                    <li><a href="ordertracking.asp">Recent Orders</a></li>
-                                    <li><a href="view_wishlist.asp">Wish List</a></li>
-                                    <li><a href="gc_view.asp">Gift Certificates</a></li>
-
-                                </ul>
-                            </li>
-                            <li>
-                                <span><i class="fa fa-fw fa-chevron-circle-right" aria-hidden="true"></i>WHOLESALE</span>
-                                <ul>
-                                    <li><a href="https://wholesale.allthingsjill.ca">Become a Wholesaler</a></li>
-                                    <li><a href="https://wholesale.allthingsjill.ca">Wholesale Login</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div id="footerbar">
-                    <div class="boxed">
-                        <a class="phone" href="callto:+14034530313"><i class="fa fa-phone-square" aria-hidden="true"></i> 403-453-0313</a>
-                        <ul class="social">
-                            <li><a href="http://www.facebook.com/apothecary.inglewood" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i> <span>Facebook</span></a></li>
-                            <li><a href="http://twitter.com/ApothecaryYYC" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> <span>Twitter</span></a></li>
-                            <li><a href="http://www.instagram.com/apothecaryyyc/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> <span>Instagram</span></a></li>
-                        </ul>
-                        <a class="newsletter" href="https://www.the-apothecary.ca/Join-the-AromaticLife-_ep_59-1.html"><i class="fa fa-paper-plane" aria-hidden="true"></i> <strong>SUBSCRIBE</strong> TO THE <span>#AromaticLife</span> NEWSLETTER</a>
-                    </div>
-                </div>
-                <div id="disclaimer">
-                    <div class="boxed">
-                        <footer>
-
-                            <p><strong>Disclaimer:</strong> The Apothecary in Inglewood is not a pharmacy, nor does it offer any pharmacy related services. The information provided here is for educational purposes only and is not intended as diagnosis, treatment, cure or prescription of any kind. The decision to use, or not to use, any information is the sole responsibility of you, the individual. We recommend that you consult your primary health care provider before using alternative healing methods or products.</p><p>Zero waste home, Refillery, Pure Essential Oils, Bath & Body, Wellness Products in Calgary, Alberta, Canada</p>
-                            <p><i class="fa fa-copyright"></i> Copyright
-                            <script type="text/javascript" language="javascript">var date = new Date(); document.write(date.getFullYear())</script> The Apothecary in Inglewood. All Rights Reserved. <span>Web Design by <a href="http://pixelscience.ca" target="_blank">Pixel Science</a></span></p>
-                        </footer>
-                    </div>
-                </div>
+                            </div>*@
+                    }
+                </section>
             </div>
         </div>
     </div>
-    <div class="stats">
+</div>
 
-        <script type="text/javascript">
-//<![CDATA[
-var file='/stats/count.asp';
-var stats_d=new Date();
-var stats_s=stats_d.getSeconds();
-var stats_m=stats_d.getMinutes();
-var stats_x=stats_s*stats_m;
-var prdID = '0';
-var catID = '[catid]';
-stats_f='' + escape(document.referrer); stats_f=stats_f.replace('_','----');
-if (navigator.appName=='Netscape'){stats_b='NS';}
-if (navigator.appName=='Microsoft Internet Explorer'){stats_b='MSIE';}
-if (navigator.appVersion.indexOf('MSIE 3')>0) {stats_b='MSIE';}
-stats_u='' + escape(document.URL); stats_u=stats_u.replace('_','----'); stats_w=screen.width; stats_h=screen.height;
-stats_v=navigator.appName;
-stats_fs = window.screen.fontSmoothingEnabled;
-if (stats_v != 'Netscape') {stats_c=screen.colorDepth;}
-else {stats_c=screen.pixelDepth;}
-stats_j=navigator.javaEnabled();
-info='w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u='+ stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
-document.write('<img src="' + file + '?'+info+ '" width="1" height="1" border="0" alt="stats" />');
-//]]>
-        </script>
-        <noscript>
-            <img src="/stats/count.asp" width="90" height="30" alt="" />
-        </noscript>
 
-    </div>
-    <script type="text/javascript">var _cart_secure_url = "https://www.the-apothecary.ca"</script>
-    <script>(new Image()).src = 'https://www.the-apothecary.ca/3dvisit.asp'</script>
-</body>
-</html>

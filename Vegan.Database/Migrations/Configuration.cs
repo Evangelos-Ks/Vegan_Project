@@ -13,6 +13,7 @@
     using Microsoft.AspNet.Identity;
     using Vegan.Entities.Library;
     using Vegan.Entities;
+    using Vegan.Entities.Enums;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Vegan.Database.MyDatabase>
     {
@@ -281,12 +282,6 @@
                 {
                     UserName = "admin@admin.net",
                     Email = "admin@admin.net",
-                    //Country = "",
-                    City="",
-                    Address = "",
-                    PostCode = "",
-                    FirstName= "Admin's first name",
-                    LastName="Admin's last name",
 
                     PasswordHash = PasswordHash.HashPassword("Admin1!")
                 };
@@ -304,12 +299,6 @@
                 {
                     UserName = "visor@visor.net",
                     Email = "visor@visor.net",
-                    Country = "",
-                    City = "",
-                    Address = "",
-                    PostCode = "",
-                    FirstName = "Supervisor's first name",
-                    LastName = "Supervisor's last name",
 
                     PasswordHash = PasswordHash.HashPassword("Visor1!")
                 };
@@ -326,12 +315,6 @@
                 {
                     UserName = "Sub@Sub.net",
                     Email = "Sub@Sub.net",
-                    Country = "",
-                    City = "",
-                    Address = "",
-                    PostCode = "",
-                    FirstName = "Subscriber's first name",
-                    LastName = "Subscriber's last name",
                     PasswordHash = PasswordHash.HashPassword("Sub1!Sub")
                 };
 
@@ -378,8 +361,8 @@
 
             //=================================================== users ==============================================
 
-            ApplicationUser user1 = new ApplicationUser() { UserName = "Eleni Parisi", Email = "eleni@parisi.com", Orders = new List<Order> { or1, or2 }, Address = "Kala Nera", PhoneNumber = "6971234567", Country="Greece" , City="Volos", PostCode= "370 10", FirstName= "Eleni", LastName= "Parisi" };
-            ApplicationUser user2 = new ApplicationUser() { UserName = "Xenophon Vlachogiannis", Email = "xeno@vlachogiannis.com", Orders = new List<Order> { or13, or14, or29 }, Address = "Kamatero", PhoneNumber = "6973132456", Country = "Greece", City = "Kamatero", PostCode = "134 51", FirstName = "Xenophon", LastName = "Vlachogiannis"  };
+            ApplicationUser user1 = new ApplicationUser() { UserName = "Eleni Parisi", Email = "eleni@parisi.com", Orders = new List<Order> { or1, or2 }, Address = "Kala Nera", PhoneNumber = "6971234567", Country = Countries.Greece  , City="Volos", PostCode= "370 10", FirstName= "Eleni", LastName= "Parisi" };
+            ApplicationUser user2 = new ApplicationUser() { UserName = "Xenophon Vlachogiannis", Email = "xeno@vlachogiannis.com", Orders = new List<Order> { or13, or14, or29 }, Address = "Kamatero", PhoneNumber = "6973132456", Country = Countries.Greece, City = "Kamatero", PostCode = "134 51", FirstName = "Xenophon", LastName = "Vlachogiannis"  };
             //ApplicationUser user3 = new ApplicationUser() { UserName = "George Poulakos", Email = "george@poulakos.com", Orders = new List<Order> { or29, or30, or15 }, Address = "Mavrovouni, Gytheio, Lakonia", PhoneNumber = "6994567832" };
             //ApplicationUser user4 = new ApplicationUser() { UserName = "Stathis Kanellis", Email = "stathis@kanellis.com", Orders = new List<Order> { or3, or14, or27 }, Address = "Ilioupoli, Athina, Attiki", PhoneNumber = "6902245672" };
             //ApplicationUser user5 = new ApplicationUser() { UserName = "Evangelos Koutsogiorgos", Email = "evangelo@koutsogiorgos.com", Orders = new List<Order> { or5, or6, or7 }, Address = "Socho, London, United Kingdom", PhoneNumber = "6998765432" };

@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Vegan.Web.Models;
 using Vegan.Entities.Library;
+using Vegan.Entities.Enums;
 
 namespace Vegan.Web.Controllers
 {
@@ -150,6 +151,7 @@ namespace Vegan.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            ViewBag.Countries = new SelectList(Enum.GetValues(typeof(Countries)));
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser

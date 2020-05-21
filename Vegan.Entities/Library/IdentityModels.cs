@@ -5,6 +5,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Vegan.Entities.Enums;
 
 namespace Vegan.Entities.Library
 {
@@ -12,7 +13,7 @@ namespace Vegan.Entities.Library
     public class ApplicationUser : IdentityUser
     {
         //============================= Extra Properties ===============================================
-        public string Country { get; set; }
+        public Countries? Country { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
         public string PostCode { get; set; }
