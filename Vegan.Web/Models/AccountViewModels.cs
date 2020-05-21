@@ -94,11 +94,11 @@ namespace Vegan.Web.Models
         [Required]
         [DataType(DataType.PhoneNumber)]
         [Display(Name = "Phone")]
-        public string Phone { get; set; }
+        public string PhoneNumber { get; set; }
 
         [Required]
         [Display(Name = "Country")]
-        public string Coutry { get; set; }
+        public string Country { get; set; }
 
         [Required]
         [Display(Name = "City")]
