@@ -14,77 +14,80 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title"> FaceCreams Table</h4>
+                        <h4 class="card-title"> Face Creams Table</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive container">
+                            <div class="text-right">
+                                @Html.ActionLink("Add Face Cream", "AddFaceCream")
+                                <span style="color:orangered"></span>
+                                <hr />
+                            </div>
                             <table class="table">
-                                <div class="text-right">
-                                    @Html.ActionLink("Add Face Cream", "AddFaceCream")<span style="color:orangered"> |</span>
-                                    <hr />
-                                </div>
                                 <thead class=" text-primary">
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Title)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ImageURL)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Description)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Directions)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Information)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.NameOfIngredient)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Price)
-                                </th>
-                                <th class="text-right">
-                                    Action
-                                </th>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Title)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ImageURL)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Description)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Directions)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Information)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.NameOfIngredient)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Price)
+                                        </th>
+                                        <th class="text-right">
+                                            Action
+                                        </th>
+                                    </tr>
                                 </thead>
 
 
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Title)
-                                        </td>
-                                        <td>
-                                            <img src="@item.ImageURL" width="70" height="70" alt="@item.Title" />
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Description)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Directions)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Information)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.NameOfIngredient)
-                                        </td>
-                                        <td>
-                                            € @Html.DisplayFor(modelItem => item.Price)
-                                        </td>
-                                        <td class="text-right">
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Title)
+                                            </td>
+                                            <td>
+                                                <img src="@item.ImageURL" width="70" height="70" alt="@item.Title" />
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Description)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Directions)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Information)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NameOfIngredient)
+                                            </td>
+                                            <td>
+                                                € @Html.DisplayFor(modelItem => item.Price)
+                                            </td>
+                                            <td class="text-right">
 
-                                            @Html.ActionLink("Edit", "EditFaceCream", new { productId = item.Id })<span style="color:orangered"> |</span>
-                                            <hr />
-                                            @Html.ActionLink("User | View", "DetailsFaceCream", new { productId = item.Id })<span style="color:orangered"> |</span>
-                                            <hr />
-                                            @Html.ActionLink("Delete", "DeleteFaceCream", new { productId = item.Id })<span style="color:orangered"> |</span>
-                                        </td>
-                                    </tr>
+                                                @Html.ActionLink("Edit", "EditFaceCream", new { productId = item.Id })<span style="color:orangered"></span>
+                                                <hr />
+                                                @Html.ActionLink("User View", "DetailsFaceCream", new { productId = item.Id })<span style="color:orangered"></span>
+                                                <hr />
+                                                @Html.ActionLink("Delete", "DeleteFaceCream", new { productId = item.Id })<span style="color:orangered"></span>
+                                            </td>
+                                        </tr>
                                     }
                                 </tbody>
                             </table>

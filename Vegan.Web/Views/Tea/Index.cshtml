@@ -1,96 +1,101 @@
 ﻿@model IEnumerable<Vegan.Entities.FoodHerb.Tea>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Teas";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<div class="wrapper ">
 
-<p>
-    @Html.ActionLink("Add New Tea", "AddTea")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Title)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Information)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NameOfIngredient)
-        </th>
-        @{
-            bool includedValuOfIngredient = false;
-            foreach (var item in Model)
-            {
-                if (string.IsNullOrWhiteSpace(item.ValueOfIngredient))
-                {
-                    includedValuOfIngredient = false;
+    <div class="panel-header panel-header-sm">
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title"> Teas Table</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive container">
+                            <div class="text-right">
+                                @Html.ActionLink("Add Tea", "AddTea")
+                                <span style="color:orangered"></span>
+                                <hr />
+                            </div>
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Title)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ImageURL)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Description)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.BulkPricing)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Information)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.NameOfIngredient)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Price)
+                                        </th>
+                                        <th class="text-right">
+                                            Action
+                                        </th>
+                                    </tr>
 
-                }
-                else
-                {
-                    includedValuOfIngredient = true;
+                                </thead>
 
-                }
-            }
 
-            if (includedValuOfIngredient)
-            {
-                <th>
-                    
-                </th>
-            }
-        }
-        <th>
-            @Html.DisplayNameFor(model => model.BulkPricing)
-        </th>
-        <th></th>
-    </tr>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Title)
+                                            </td>
+                                            <td>
+                                                <img src="@item.ImageURL" width="70" height="70" alt="@item.Title" />
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Description)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.BulkPricing)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Information)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NameOfIngredient)
+                                            </td>
+                                            <td>
+                                                € @Html.DisplayFor(modelItem => item.Price)
+                                            </td>
+                                            <td class="text-right">
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Price)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Title)
-    </td>
-    <td>
-        <img src="@item.ImageURL" width="100" height="100" alt="@item.Title" />
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Description)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Information)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.NameOfIngredient)
-    </td>
-    <td>
-        
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.BulkPricing)
-    </td>
-
-    <td>
-        @Html.ActionLink("Edit", "EditTea", new { productId = item.Id }) |
-        @Html.ActionLink("Details", "DetailsTea", new { productId = item.Id }) |
-        @Html.ActionLink("Delete", "DeleteTea", new { productId = item.Id })
-    </td>
-</tr>
-}
-
-</table>
+                                                @Html.ActionLink("Edit", "EditTea", new { productId = item.Id })<span style="color:orangered"></span>
+                                                <hr />
+                                                @Html.ActionLink("User View", "DetailsTea", new { productId = item.Id })<span style="color:orangered"></span>
+                                                <hr />
+                                                @Html.ActionLink("Delete", "DeleteTea", new { productId = item.Id })<span style="color:orangered"></span>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

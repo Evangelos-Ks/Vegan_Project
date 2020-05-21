@@ -1,87 +1,82 @@
 ﻿@model Vegan.Entities.Care.ShaveBeard
 
 @{
-    ViewBag.Title = "Delete"; Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "DeleteLotion"; Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-    <div class="container">
+<div class="container">
 
+    <h2>Delete</h2>
 
-        <h2>Delete</h2>
+    <h3>Are you sure you want to delete this?</h3>
 
-        <h3>Are you sure you want to delete this?</h3>
+    <h4>ShaveBeard</h4>
+    <hr />
+    <dl class="dl-horizontal container">
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
 
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
 
-        <h4>Shave Beard</h4>
-        <hr />
-        <dl class="dl-horizontal container">
-            <dt>
-                @Html.DisplayNameFor(model => model.Price)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Price)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Title)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageURL)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Title)
-            </dd>
+        <dd>
+            <img src="@Html.DisplayFor(model => model.ImageURL)" width="100" height="100" alt="@Html.DisplayFor(model => model.Title)" />
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.ImageURL)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
 
-            <dd>
-                <img src="@Html.DisplayFor(model => model.ImageURL)" height="100" width="100" alt="@Html.DisplayFor(model => model.Title)" />
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Directions)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Directions)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Directions)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.NameOfIngredient)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.Directions)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.NameOfIngredient)
+        </dd>
 
-            <dt>
-                @Html.DisplayNameFor(model => model.NameOfIngredient)
-            </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Information)
+        </dt>
 
-            <dd>
-                @Html.DisplayFor(model => model.NameOfIngredient)
-            </dd>
+        <dd>
+            @Html.DisplayFor(model => model.Information)
+        </dd>
+    </dl>
 
-            
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
 
-            <dt>
-                @Html.DisplayNameFor(model => model.Information)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Information)
-            </dd>
-
-        </dl>
-
-        @using (Html.BeginForm())
-        {
-            @Html.AntiForgeryToken()
-
-            <div class="form-actions no-color">
-                <input type="submit" value="Delete" class="btn btn-default" /> |
-                @Html.ActionLink("Back to List", "Index")
-            </div>
-        }
-    </div>
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
