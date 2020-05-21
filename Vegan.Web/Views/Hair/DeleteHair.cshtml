@@ -4,11 +4,10 @@
     ViewBag.Title = "DeleteHair";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
+
+
 <div class="container">
-
-
-
-    <h2>Delete Hair Product</h2>
+    <h2>Delete</h2>
 
     <h3>Are you sure you want to delete this?</h3>
     <h4>Hair</h4>
@@ -34,8 +33,9 @@
             @Html.DisplayNameFor(model => model.ImageURL)
         </dt>
 
+
         <dd>
-            <img src="@Html.DisplayFor(model => model.ImageURL)" width="100" height="100" alt="@Html.DisplayFor(model => model.Title)" />
+            <img src="@Html.DisplayFor(model => model.ImageURL)" height="100" width="100" alt="@Html.DisplayFor(model => model.Title)" />
         </dd>
 
         <dt>

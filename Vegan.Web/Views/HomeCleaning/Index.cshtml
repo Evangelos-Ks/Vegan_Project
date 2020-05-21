@@ -1,12 +1,17 @@
 ﻿@model IEnumerable<Vegan.Entities.Home.HomeCleaning>
 
+
+
 @{
     ViewBag.Title = "HomeCleanings";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
 
+
 <div class="wrapper ">
+
+
 
     <div class="panel-header panel-header-sm">
     </div>
@@ -15,39 +20,43 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title"> HomeCleanings Table</h4>
+                        <h4 class="card-title"> Home Cleanings Table</h4>
                     </div>
-
                     <div class="card-body">
                         <div class="table-responsive container">
+                            <div class="text-right">
+                                @Html.ActionLink("Add HomeCleaning", "AddHomeCleaning")<span style="color:orangered"></span>
+                                <hr />
+                            </div>
                             <table class="table">
-                                <div class="text-right">
-                                    @Html.ActionLink("Add Cleaning Product", "AddHomeCleaning")<span style="color:orangered"> |</span>
-                                    <hr />
-                                </div>
                                 <thead class=" text-primary">
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Title)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.ImageURL)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Description)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Information)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Instructions)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.Price)
-                                </th>
-                                <th class="text-right">
-                                    Action
-                                </th>
+                                    <tr>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Title)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ImageURL)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Description)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Information)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Instructions)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Price)
+                                        </th>
+                                        <th class="text-right">
+                                            Action
+                                        </th>
+                                    </tr>
                                 </thead>
+
+
+
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
@@ -70,20 +79,18 @@
                                             <td>
                                                 € @Html.DisplayFor(modelItem => item.Price)
                                             </td>
-
-
                                             <td class="text-right">
 
-                                                @Html.ActionLink("Edit", "EditHomeCleaning", new { productId = item.Id })<span style="color:orangered"> |</span>
+
+
+                                                @Html.ActionLink("Edit", "EditHomeCleaning", new { productId = item.Id })<span style="color:orangered"></span>
                                                 <hr />
-                                                @Html.ActionLink("User | View", "DetailsHomeCleaning", new { productId = item.Id })<span style="color:orangered"> |</span>
+                                                @Html.ActionLink("User View", "DetailsHomeCleaning", new { productId = item.Id })<span style="color:orangered"></span>
                                                 <hr />
-                                                @Html.ActionLink("Delete", "DeleteHomeCleaning", new { productId = item.Id })<span style="color:orangered"> |</span>
+                                                @Html.ActionLink("Delete", "DeleteHomeCleaning", new { productId = item.Id })<span style="color:orangered"></span>
                                             </td>
                                         </tr>
                                     }
-
-
                                 </tbody>
                             </table>
                         </div>
@@ -92,45 +99,4 @@
             </div>
         </div>
     </div>
-    <footer class="footer">
-        <div class=" container-fluid ">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="https://www.creative-tim.com">
-                            Creative Tim
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://presentation.creative-tim.com">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://blog.creative-tim.com">
-                            Blog
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="copyright" id="copyright">
-
-                &copy;
-                <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-            </div>
-        </div>
-    </footer>
 </div>
-    </div>
-
-
-<p>
-    @Html.ActionLink("Create new candle", "Add")
-</p>
-<table class="table container">
-    <tr>
-    </tr>
-
-
-
-</table>
