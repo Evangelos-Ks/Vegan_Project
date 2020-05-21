@@ -15,11 +15,8 @@ namespace Vegan.Entities.Library
         public string Country { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
-        [Display(Name = "Post code")]
         public string PostCode { get; set; }
-        [Display(Name = "First name")]
         public string FirstName { get; set; }
-        [Display(Name = "Last name")]
         public string LastName { get; set; }
 
         //============================= Navigation Property ============================================
