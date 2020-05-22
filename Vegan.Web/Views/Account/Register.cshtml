@@ -48,7 +48,7 @@
                                 <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
                             </div>
                             <div class="loginField">
-                                @Html.ValidationMessageFor(m => m.Email, "", new { style = "color:tomato;font-size:9px;"})
+                                @Html.ValidationMessageFor(m => m.Email, "", new { style = "color:tomato;font-size:9px;" })
                             </div>
                             <div class="loginField">
                                 @Html.LabelFor(m => m.Password, new { @class = "control-label" })
@@ -56,7 +56,7 @@
                                 <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
                             </div>
                             <div class="loginField">
-                                @Html.ValidationMessageFor(m => m.Password, "", new { style = "color:tomato;font-size:9px;"})
+                                @Html.ValidationMessageFor(m => m.Password, "", new { style = "color:tomato;font-size:9px;" })
                             </div>
                             <div class="loginField">
                                 @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
@@ -64,7 +64,7 @@
                                 <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
                             </div>
                             <div class="loginField">
-                                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { style = "color:tomato;font-size:9px;"})
+                                @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { style = "color:tomato;font-size:9px;" })
                             </div>
                         </div>
                         <div class="accountRegForm pad10 boxShadow">
@@ -77,7 +77,7 @@
                                 <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
                             </div>
                             <div class="loginField">
-                                @Html.ValidationMessageFor(m => m.FirstName, "", new { style = "color:tomato;font-size:9px;"})
+                                @Html.ValidationMessageFor(m => m.FirstName, "", new { style = "color:tomato;font-size:9px;" })
                             </div>
                             <div class="loginField">
                                 @Html.LabelFor(m => m.LastName, new { @class = "control-label" })
@@ -85,7 +85,7 @@
                                 <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
                             </div>
                             <div class="loginField">
-                                @Html.ValidationMessageFor(m => m.LastName, "", new { style = "color:tomato;font-size:9px;"})
+                                @Html.ValidationMessageFor(m => m.LastName, "", new { style = "color:tomato;font-size:9px;" })
                             </div>
                             <div class="loginField">
                                 @Html.LabelFor(m => m.PhoneNumber, new { @class = "control-label" })
@@ -93,7 +93,7 @@
                                 <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
                             </div>
                             <div class="loginField">
-                                @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { style = "color:tomato;font-size:9px;"})
+                                @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { style = "color:tomato;font-size:9px;" })
                             </div>
                             <div class="loginField">
                                 @Html.LabelFor(m => m.Country, new { @class = "control-label" })
@@ -101,7 +101,7 @@
                                 <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
                             </div>
                             <div class="loginField">
-                                @Html.ValidationMessageFor(m => m.Country, "", new { style = "color:tomato;font-size:9px;"})
+                                @Html.ValidationMessageFor(m => m.Country, "", new { style = "color:tomato;font-size:9px;" })
                             </div>
                             <div class="loginField">
                                 @Html.LabelFor(m => m.City, new { @class = "control-label" })
@@ -109,7 +109,7 @@
                                 <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
                             </div>
                             <div class="loginField">
-                                @Html.ValidationMessageFor(m => m.City, "", new { style = "color:tomato;font-size:9px;"})
+                                @Html.ValidationMessageFor(m => m.City, "", new { style = "color:tomato;font-size:9px;" })
                             </div>
                             <div class="loginField">
                                 @Html.LabelFor(m => m.Address, new { @class = "control-label" })
@@ -117,7 +117,7 @@
                                 <div class="error-img"><img src="~/Content/assets/templates/vegan2020/images/ico12x12star.png" width="12" height="12" alt="" /></div>
                             </div>
                             <div class="loginField">
-                                @Html.ValidationMessageFor(m => m.Address, "", new { style = "color:tomato;font-size:9px;"})
+                                @Html.ValidationMessageFor(m => m.Address, "", new { style = "color:tomato;font-size:9px;" })
                             </div>
                             <div class="loginField">
                                 @Html.LabelFor(m => m.PostCode, new { @class = "control-label" })
@@ -134,25 +134,6 @@
                                 <input type="submit" class="btn btn-default" data-dismiss="alert" value="Register" />
                             </div>
                         </div>
-                        @*<div class="accountRegForm pad10 boxShadow">
-                                <div class="header">
-                                        <h3>Verification</h3>
-                                    </div>
-
-                                    <div class="loginField">
-                                        <label for="randomWord">Verification:</label>
-                                        <div class="captcha">
-                                            <img src="admin/image_pw.asp" width="148" />
-                                            <div class="captcha-text">Type the word above…</div>
-                                            <input type="text" name="randomWord" id="randomWord" autocomplete="off" value="" size="25" maxlength="30" tabindex="15" class="txtBoxStyle" />
-                                        </div>
-                                    </div>
-
-
-                                <div class="submit-button">
-                                    <button type="button" onclick="javascript:doRegister(this.form);" class="btn"><i class="icon-ok"></i> Register</button>
-                                </div>
-                            </div>*@
                     }
                 </section>
             </div>

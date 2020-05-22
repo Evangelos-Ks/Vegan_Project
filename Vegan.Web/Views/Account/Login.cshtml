@@ -1,59 +1,5 @@
 ﻿@using Vegan.Web.Models
 @model LoginViewModel
-<!doctype html>
-<html class="no-js" lang="en-CA" x-ms-format-detection="none">
-<!--<![endif]-->
-<head>
-    <script type="text/javascript" src="~/Content/assets/templates/common/js/jquery.min.js"></script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-    <link rel="manifest" href="~/Content/assets/templates/vegan2020/favicons/manifest.json">
-    <link rel="shortcut icon" href="~/Content/assets/templates/vegan2020/favicons/favicon.ico">
-    <meta name="theme-color" content="#fdf7ed">
-    <title>Welcome to Vegan project</title>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cardo|Roboto+Condensed:400,400i,700,700i|Roboto:100,900" type="text/css" media="all" />
-    <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/font-awesome.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/main.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/print.css" type="text/css" media="print" />
-    <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/messagebar.min.css" type="text/css" media="screen" />
-
-    <script type="text/javascript" src="~/Content/assets/templates/vegan2020/js/gambit-smoothscroll-min.js?vcart=10.1.4"></script>
-    <script type="text/javascript" src="~/Content/assets/templates/vegan2020/js/pxl.js?vcart=10.1.4"></script>
-    <script type="text/javascript" src="~/Content/assets/templates/common-html5/js/utilities.js?vcart=10.1.4"></script>
-    <script type="text/javascript" src="~/Content/assets/templates/common-html5/js/functions.js?vcart=10.1.4"></script>
-    <script type="text/javascript" src="~/Content/assets/templates/vegan2020/js/jquery.quicksearch.js?vcart=10.1.4"></script>
-    <script type="text/javascript" src="~/Content/assets/templates/vegan2020/js/jquery.simplemodal.min.js?vcart=10.1.4"></script>
-    <script type="text/javascript" src="~/Content/assets/templates/vegan2020/js/messagebar.min.js?vcart=10.1.4"></script>
-
-    <script type="text/javascript">
-        jQuery(function () {
-            jQuery('#searchlight').searchlight('/search_quick.asp');
-        });
-    </script>
-
-    <script type="text/javascript">
-        new GambitSmoothScroll({
-            amount: 150, // The scroll amount
-            speed: 900 // The scroll speed
-        });
-    </script>
-    <script type="text/javascript">
-        (function ($) {
-
-            var ThisDocURL;
-            var ThisDocURLenc;
-            $(document).ready(function () {
-                ThisDocURL = '[product_url]';
-                ThisDocURLenc = encodeURIComponent(ThisDocURL);
-            });
-
-        })(jQuery);
-    </script>
-    <script type="text/javascript">var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-48564345-1']); _gaq.push(['_addDevId', '5Fyti']); _gaq.push(['_trackPageview']); (function () { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();</script>
-</head>
-<body>
     <div id="top" pxlurl="[product_url]">
         <div class="contentbox-wrapper">
             <div class="contentbox">
@@ -151,5 +97,3 @@
     @section Scripts {
         @Scripts.Render("~/bundles/jqueryval")
     }
-</body>
-</html>
