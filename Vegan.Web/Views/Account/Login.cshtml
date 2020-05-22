@@ -1,99 +1,99 @@
 ﻿@using Vegan.Web.Models
 @model LoginViewModel
-    <div id="top" pxlurl="[product_url]">
-        <div class="contentbox-wrapper">
-            <div class="contentbox">
-                <div id="pageheader" class="docsection-wrapper">
-                    <div class="docsection boxed">
-                        <div class="breadcrumbs-wrapper clearfix">
-                            <div class="breadcrumbs">
-                                <section>
-                                    <p><a href="/">Home</a> > <a href="#">My Account</a></p>
-                                </section>
-                            </div>
+<div id="top" pxlurl="[product_url]">
+    <div class="contentbox-wrapper">
+        <div class="contentbox">
+            <div id="pageheader" class="docsection-wrapper">
+                <div class="docsection boxed">
+                    <div class="breadcrumbs-wrapper clearfix">
+                        <div class="breadcrumbs">
+                            <section>
+                                <p><a href="/">Home</a> > <a href="#">My Account</a></p>
+                            </section>
                         </div>
-                        <div class="title-wrapper clearfix">
-                            <div class="title">
-                                <div>
-                                    <h1>My Account</h1>
-                                </div>
+                    </div>
+                    <div class="title-wrapper clearfix">
+                        <div class="title">
+                            <div>
+                                <h1>My Account</h1>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="accountlogin" class="docsection-wrapper">
-                    <div class="docsection boxed">
-                        <section id="loginAccount" class="clearfix">
-                            <div id="accountlogin-returning">
-                                <div class="dottedbox">
-                                    <h3>Returning Customers</h3>
-                                    <p>Please log in to your account.</p>
+            </div>
+            <div id="accountlogin" class="docsection-wrapper">
+                <div class="docsection boxed">
+                    <section id="loginAccount" class="clearfix">
+                        <div id="accountlogin-returning">
+                            <div class="dottedbox">
+                                <h3>Returning Customers</h3>
+                                <p>Please log in to your account.</p>
+                                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <input type="hidden" name="catalogid" value="0" />
+                                    <div class="loginFields">
+                                        <div class="loginField">
+                                            @Html.TextBoxFor(m => m.Email, new { tabindex = "1", placeholder = "Email", @class = "txtBoxStyle form-control" })
+                                            @Html.PasswordFor(m => m.Password, new { tabindex = "2", placeholder = "Password", @class = "txtBoxStyle form-control" })
+                                        </div>
+                                        <div>
+                                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                        </div>
+                                        <div>
+                                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="loginField">
+                                        <button type="submit" value="Log in" class="btn"><i class="icon-login"></i> <i class="fa fa-sign-in" aria-hidden="true"></i> Login</button>
+                                    </div>
+                                }
+                            </div>
+                            <div class="dottedbox">
+                                <div id="loginSocialParagraph">
+                                    <p>
+                                        Use another service to log in.
+                                    </p>
+                                </div>
+                                <div class="displayed loginSocial">
+                                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                                </div>
+                            </div>
+                            <div id="accountlogin-reset">
+                                <div class="linedbox">
+                                    <h3>Forgot your password?</h3>
+                                    <p>To Reset your password, please click "Reset my password" button below</p>
                                     @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                                     {
                                         @Html.AntiForgeryToken()
-                                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                                        <input type="hidden" name="catalogid" value="0" />
-                                        <div class="loginFields">
-                                            <div class="loginField">
-                                                @Html.TextBoxFor(m => m.Email, new { tabindex = "1", placeholder = "Email", @class = "txtBoxStyle form-control" })
-                                                @Html.PasswordFor(m => m.Password, new { tabindex = "2", placeholder = "Password", @class = "txtBoxStyle form-control" })
-                                            </div>
-                                            <div>
-                                                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                                            </div>
-                                            <div>
-                                                @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                                            </div>
-                                        </div>
                                         <div class="loginField">
-                                            <button type="submit" value="Log in" class="btn"><i class="icon-login"></i> <i class="fa fa-sign-in" aria-hidden="true"></i> Login</button>
+                                            @Html.ActionLink("Reset my password", "ForgotPassword", null, new { @class = "btn resetpass-link" })
                                         </div>
                                     }
                                 </div>
-                                <div class="dottedbox">
-                                    <div id="loginSocialParagraph">
-                                        <p>
-                                            Use another service to log in.
-                                        </p>
-                                    </div>
-                                    <div class="displayed loginSocial">
-                                        @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-                                    </div>
-                                </div>
-                                <div id="accountlogin-reset">
-                                    <div class="linedbox">
-                                        <h3>Forgot your password?</h3>
-                                        <p>To Reset your password, please click "Reset my password" button below</p>
-                                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                                        {
-                                            @Html.AntiForgeryToken()
-                                            <div class="loginField">
-                                                @Html.ActionLink("Reset my password", "ForgotPassword", null, new { @class = "btn resetpass-link" })
-                                            </div>
-                                        }
-                                    </div>
-                                </div>
-                                <div id="accountlogin-new">
-                                    <div class="linedbox">
-                                        <h3>New Customers</h3>
-                                        <p>
-                                            If you don't have an account, please proceed by clicking the following button to continue first-time registration.
-                                        </p>
-                                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                                        {
-                                            <div class="loginField">
-                                                @Html.ActionLink("Create Account", "Register", null, new { @class = "btn" })
-                                            </div>
-                                        }
-                                    </div>
+                            </div>
+                            <div id="accountlogin-new">
+                                <div class="linedbox">
+                                    <h3>New Customers</h3>
+                                    <p>
+                                        If you don't have an account, please proceed by clicking the following button to continue first-time registration.
+                                    </p>
+                                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                    {
+                                        <div class="loginField">
+                                            @Html.ActionLink("Create Account", "Register", null, new { @class = "btn" })
+                                        </div>
+                                    }
                                 </div>
                             </div>
-                        </section>
-                    </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
     </div>
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval")
-    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

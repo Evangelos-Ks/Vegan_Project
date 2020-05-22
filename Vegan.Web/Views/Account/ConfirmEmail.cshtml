@@ -1,10 +1,64 @@
-﻿@{
-    ViewBag.Title = "Confirm Email";
+﻿@model Vegan.Web.Models.ExternalLoginConfirmationViewModel
+@{
+    ViewBag.Title = "Register";
 }
-
-<h2>@ViewBag.Title.</h2>
-<div>
-    <p>
-        Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
-    </p>
+<div id="top" pxlurl="[product_url]">
+    <div class="contentbox-wrapper">
+        <div class="contentbox">
+            <div id="pageheader" class="docsection-wrapper">
+                <div class="docsection boxed">
+                    <div class="breadcrumbs-wrapper clearfix">
+                        <div class="breadcrumbs">
+                            <section>
+                                <p><a href="/">Home</a> > <a href="~/Account/Login">My Account</a> > <a href="#">confirm</a></p>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="title-wrapper clearfix">
+                        <div class="title">
+                            <div>
+                                <h1>confirm</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="accountlogin" class="docsection-wrapper">
+                <div class="docsection boxed">
+                    <section id="loginAccount" class="clearfix">
+                        <div id="accountlogin-returning">
+                            <div class="dottedbox">
+                                <h3>
+                                    You've successfully authenticated with <strong>@ViewBag.LoginProvider</strong>.
+                                </h3>
+                                <p>
+                                    Please confirm your email.
+                                </p>
+                                @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <input type="hidden" name="catalogid" value="0" />
+                                    <div class="loginFields">
+                                        <div class="loginField">
+                                            @Html.TextBoxFor(m => m.Email, new { tabindex = "1", placeholder = "Email", @class = "txtBoxStyle form-control" })
+                                        </div>
+                                        <div>
+                                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="loginField">
+                                        <button type="submit" value="Register" class="btn"><i class="icon-login"></i> <i class="fa fa-check-circle" aria-hidden="true"></i>confirm</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
