@@ -89,7 +89,7 @@ namespace Vegan.Web.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+                    return View("ExternalLoginFailure");
             }
         }
 
