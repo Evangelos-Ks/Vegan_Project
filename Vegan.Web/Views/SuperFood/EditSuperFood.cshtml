@@ -2,15 +2,16 @@
 
 @{
     ViewBag.Title = "EditSuperFood";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>EditSuperFood</h2>
+<h2>Edi</h2>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
+
+    <div class="form-horizontal container">
         <h4>SuperFood</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -69,6 +70,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ValueOfIngredient, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ValueOfIngredient, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UseInstruction, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.UseInstruction, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UseInstruction, "", new { @class = "text-danger" })
             </div>
         </div>
 
