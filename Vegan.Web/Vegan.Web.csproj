@@ -251,6 +251,7 @@
     <Content Include="Content\assets\templates\vegan2020\images\bg1500x440head.jpg" />
     <Content Include="Content\assets\templates\vegan2020\images\bg2000x780footer.jpg" />
     <Content Include="Content\assets\templates\vegan2020\images\img160x104floral.png" />
+    <Content Include="Content\assets\templates\vegan2020\images\img160x104floral.png.ico" />
     <Content Include="Content\assets\templates\vegan2020\images\img52x80floral-l.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img52x80floral-r.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img6x5line-footer.png" />
