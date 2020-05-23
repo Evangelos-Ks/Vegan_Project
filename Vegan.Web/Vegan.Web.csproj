@@ -273,8 +273,6 @@
     <Content Include="Content\now-ui-dashboard-master\assets\css\now-ui-dashboard.min.css" />
     <Content Include="Content\now-ui-dashboard-master\assets\demo\demo.css" />
     <Content Include="Content\now-ui-dashboard-master\assets\demo\demo.js" />
-    <Content Include="Content\now-ui-dashboard-master\assets\img\apple-icon.png" />
-    <Content Include="Content\now-ui-dashboard-master\assets\img\bg5.jpg" />
     <Content Include="Content\now-ui-dashboard-master\assets\img\default-avatar.png" />
     <Content Include="Content\now-ui-dashboard-master\assets\img\favicon.png" />
     <Content Include="Content\now-ui-dashboard-master\assets\img\header.jpg" />
