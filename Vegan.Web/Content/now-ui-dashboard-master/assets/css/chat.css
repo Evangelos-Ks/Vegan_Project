@@ -1,0 +1,80 @@
+﻿.mainChat{
+    background-color: lightgray;
+    font-size: inherit;
+    font-family: inherit;
+    max-width: 400px;
+    position:relative;
+    margin: 5% 0% 5% 40%;
+}
+
+.message ul li {
+    list-style: none;
+}
+
+.message ul {
+    list-style: none;
+}
+
+#discussion{
+    font-size: 18px;
+}
+
+#sendmessage {
+    
+    height: 30px;
+    font-size: 12px;
+}
+
+/* button */
+
+.btn,
+.btn_over {
+    display: inline-block;
+    margin: 0;
+    padding: 0 16px;
+    border: solid 1px #1e150c;
+    background-color: rgba(221, 221, 219, 0.66);
+    color: #1e150c;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    line-height: 32px;
+    white-space: nowrap;
+}
+
+    .btn:hover,
+    .btn_over:hover {
+        background-color: #cf8a2b;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .btn:active,
+    .btn_over:active {
+        background-color: #1e150c;
+        color: #cf8a2b;
+        text-decoration: none;
+    }
+
+    .btn.btn-small {
+        padding: 0 8px;
+        color: #000000;
+        font-family: 'Roboto';
+        font-weight: 900;
+        line-height: 26px;
+    }
+
+        .btn.btn-small:hover {
+            background-color: #cf8a2b;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .btn.btn-small:active {
+            background-color: #1e150c;
+            color: #cf8a2b;
+            text-decoration: none;
+        }

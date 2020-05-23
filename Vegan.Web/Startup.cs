@@ -9,6 +9,11 @@ namespace Vegan.Web
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+
+
+            // Helps the chat function
+            app.MapSignalR();
+
         }
     }
 }
