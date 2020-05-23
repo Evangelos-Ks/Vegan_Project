@@ -114,6 +114,9 @@ namespace Vegan.Web.Models
         [Required]
         [Display(Name = "Post code")]
         public string PostCode { get; set; }
+
+        public string Role { get; set; } = "Subscribers";
+
     }
 
     public class ResetPasswordViewModel
