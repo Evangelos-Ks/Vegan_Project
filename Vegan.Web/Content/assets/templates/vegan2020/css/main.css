@@ -1,7 +1,4 @@
 ﻿@charset "utf-8";
-/* NORMALIZE ------------------------------------------------------------------ */
-
-/* normalize.css v3.0.2 | MIT License | git.io/normalize */
 
 html {
     font-family: sans-serif;
@@ -224,12 +221,6 @@ th {
 
 /* RESET ------------------------------------------------------------------ */
 
-/* Based of fine of Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html */
-
-/* along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/ */
-
-/* and Blueprint http://www.blueprintcss.org/ */
-
 html,
 body,
 div,
@@ -365,190 +356,6 @@ a img {
     border: 0;
 }
 
-/* Text meant only for screen readers */
-
-.screen-reader-text {
-    clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-}
-
-.screen-reader-text:hover,
-.screen-reader-text:active,
-.screen-reader-text:focus {
-    background-color: #f1f1f1;
-    border-radius: 3px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-    clip: auto !important;
-    color: #21759b;
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000;
-    /* Above WP toolbar */
-}
-
-/* ------------------------------------------------------------------ */
-
-.screenMOB,
-.screenSMALL,
-.screenMED,
-.screenBIG,
-.screenLARGE,
-.screenHUMUNGOUS,
-.screenHD {
-    padding: 1px 4px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: yellow;
-    text-align: left;
-    font-size: 12px;
-    font-weight: 700;
-    display: none;
-    position: fixed;
-    z-index: 10000;
-}
-
-.screenMOB,
-.screenSMALL,
-.screenMED,
-.screenBIG,
-.screenLARGE,
-.screenHUMUNGOUS,
-.screenHD {
-    top: 0;
-    right: 0;
-}
-
-/* MOBILE SCREENS */
-
-.screenMOB {
-    display: block;
-}
-
-.screenSMALL,
-.screenMED,
-.screenBIG,
-.screenLARGE,
-.screenHUMUNGOUS,
-.screenHD {
-    display: none;
-}
-
-/* SMALL SCREENS */
-
-@media only screen and (min-width: 480px) {
-    .screenSMALL {
-        display: block;
-    }
-    .screenMOB,
-    .screenMED,
-    .screenBIG,
-    .screenLARGE,
-    .screenHUMUNGOUS,
-    .screenHD {
-        display: none;
-    }
-}
-
-/* MEDIUM SCREENS */
-
-@media only screen and (min-width: 768px) {
-    .screenMED {
-        display: block;
-    }
-    .screenMOB,
-    .screenSMALL,
-    .screenLARGE,
-    .screenHUMUNGOUS,
-    .screenHD {
-        display: none;
-    }
-}
-
-/* BIG SCREENS */
-
-@media only screen and (min-width: 1024px) {
-    .screenBIG {
-        display: block;
-    }
-    .screenMOB,
-    .screenSMALL,
-    .screenMED,
-    .screenLARGE,
-    .screenHUMUNGOUS,
-    .screenHD {
-        display: none;
-    }
-}
-
-/* LARGE SCREENS */
-
-@media only screen and (min-width: 1220px) {
-    .screenLARGE {
-        display: block;
-    }
-    .screenMOB,
-    .screenSMALL,
-    .screenMED,
-    .screenBIG,
-    .screenHUMUNGOUS,
-    .screenHD {
-        display: none;
-    }
-}
-
-/* HUMUNGOUS SCREENS */
-
-@media only screen and (min-width: 1440px) {
-    .screenHUMUNGOUS {
-        display: block;
-    }
-    .screenMOB,
-    .screenSMALL,
-    .screenMED,
-    .screenLARGE,
-    .screenBIG,
-    .screenHD {
-        display: none;
-    }
-}
-
-/* HD SCREENS */
-
-@media only screen and (min-width: 1920px) {
-    .screenHD {
-        display: block;
-    }
-    .screenMOB,
-    .screenSMALL,
-    .screenMED,
-    .screenLARGE,
-    .screenBIG,
-    .screenHUMUNGOUS {
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 320px) {
-    #top {
-        width: 320px;
-    }
-}
-
-@media only screen and (min-width: 321px) {
-    #top {
-        width: 100%;
-    }
-}
 
 /* GENERAL STYLES ------------------------------------------------------------------ */
 
@@ -787,6 +594,8 @@ only screen and (min-device-pixel-ratio: 2) {
     text-decoration: none;
 }
 
+
+
 /* forms */
 
 input[type=text],
@@ -991,34 +800,37 @@ label {
 
 /* humungous screens */
 
-@media only screen and (min-width: 1440px) {
+/*@media only screen and (min-width: 1440px) {
     #topbar>div {
         width: 1300px;
     }
-}
+}*/
 
 /* hd screens */
 
-@media only screen and (min-width: 1920px) {
+/*@media only screen and (min-width: 1920px) {
     #topbar>div {
         width: 1400px;
     }
-}
+}*/
 
-#logo {
+/*#logo {
     min-height: 138px;
     background: url(../images/bg1500x440head.jpg) no-repeat center top -120px;
     background-size: 1100px auto;
-}
+}*/
 
 #logo header {
-    padding: 30px 0 0 0;
+    padding: 10px 0 0 0;
     background: url(../images/img6x9line-top.png) center top repeat-x;
 }
 
-#logo img {
-    width: 200px;
-    height: auto;
+#logo-v {
+    height: 100px;
+    width: 80px;
+   opacity: 0.5;
+    background: url(../images/img6x9line-top.png) center top repeat-x;
+ 
 }
 
 /* small screens */
@@ -1034,33 +846,33 @@ label {
 
 /* medium screens */
 
-@media only screen and (min-width: 768px) {
+/*@media only screen and (min-width: 768px) {
     #logo {
         min-height: 130px;
     }
     #logo header {
-        padding-top: 39px;
+        padding-top: 10px;
     }
     #logo img {
         width: 240px;
     }
-}
+}*/
 
 /* big screens */
 
-@media only screen and (min-width: 1024px) {
+/*@media only screen and (min-width: 1024px) {
     #logo {
         min-height: 183px;
         background-position: center top -160px;
         background-size: 1500px auto;
     }
     #logo header {
-        padding-top: 55px;
+        padding-top: 10px;
     }
     #logo img {
         width: 280px;
     }
-}
+}*/
 
 /* large screens */
 
