@@ -14,8 +14,14 @@ namespace Vegan.Web.Controllers
             return View();
         }
         
-        // GET: Administrator
+        // Map
         public ActionResult Map()
+        {
+            return View();
+        }
+        
+        // Live Chat
+        public ActionResult Chat()
         {
             return View();
         }
