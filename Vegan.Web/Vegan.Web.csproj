@@ -1129,6 +1129,7 @@
     <Content Include="Views\HomeVegan\EditHomeVegan.cshtml" />
     <Content Include="Views\Administrator\Map.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ConfirmEmailView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
