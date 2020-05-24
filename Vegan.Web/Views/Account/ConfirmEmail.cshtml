@@ -32,7 +32,7 @@
                                     You've successfully authenticated with <strong>@ViewBag.LoginProvider</strong>.
                                 </h3>
                                 <p>
-                                    Please confirm your email.
+                                    Please confirm your email and create an account.
                                 </p>
                                 @using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                                 {
