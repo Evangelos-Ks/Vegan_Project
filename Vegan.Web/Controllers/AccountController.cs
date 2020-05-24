@@ -175,7 +175,7 @@ namespace Vegan.Web.Controllers
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                    var callbackUrl = Url.Action("ConfirmEmailView", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     await UserManager.SendEmailAsync(user.Id, "Wellcome to Vegan!!", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
                     return RedirectToAction("Index", "Home");
                    
@@ -200,6 +200,16 @@ namespace Vegan.Web.Controllers
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
         }
 
+        [AllowAnonymous]
+        public async Task<ActionResult> ConfirmEmailView(string userId, string code)
+        {
+            if (userId == null || code == null)
+            {
+                return View("Error");
+            }
+            var result = await UserManager.ConfirmEmailAsync(userId, code);
+            return View(result.Succeeded ? "ConfirmEmailView" : "Error");
+        }
         //
         // GET: /Account/ForgotPassword
         [AllowAnonymous]
@@ -384,6 +394,8 @@ namespace Vegan.Web.Controllers
                 }
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
+                result = await UserManager.AddToRoleAsync(user.Id, "Subscribers");
+
                 if (result.Succeeded)
                 {
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
@@ -410,16 +422,6 @@ namespace Vegan.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        [AllowAnonymous]
-        public async Task<ActionResult> ConfirmEmailView(string userId, string code)
-        {
-            if (userId == null || code == null)
-            {
-                return View("Error");
-            }
-            var result = await UserManager.ConfirmEmailAsync(userId, code);
-            return View(result.Succeeded ? "ConfirmEmail" : "Error");
-        }
         //
         // GET: /Account/ExternalLoginFailure
         [AllowAnonymous]
