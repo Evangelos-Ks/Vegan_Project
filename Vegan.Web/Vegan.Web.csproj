@@ -228,7 +228,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\images\HomePageCarousel\Aloe_Vera.jpg" />
     <Content Include="Content\assets\images\HomePageCarousel\closure-banner-2020.jpg" />
+    <Content Include="Content\assets\images\HomePageCarousel\CosmeticsPicture.jpeg" />
+    <Content Include="Content\assets\images\HomePageCarousel\EcoFriendly_NaturalProduct.jpg" />
+    <Content Include="Content\assets\images\HomePageCarousel\OrganicCosmeticsBanner3.jpeg" />
     <Content Include="Content\assets\images\HomePageCarousel\your-green-kitchen-sale-banner.jpg" />
     <Content Include="Content\assets\images\thin-reduced-waste-lifestyle.jpg" />
     <Content Include="Content\assets\images\thin-what-were-up-to.jpg" />
@@ -237,6 +241,7 @@
     <Content Include="Content\assets\images\trio-naturel-tea.jpg" />
     <Content Include="Content\assets\images\trio-wide-zero-waste-home.jpg" />
     <Content Include="Content\assets\images\wood.jpg" />
+    <Content Include="Content\assets\images\ZeroWaste.jpg" />
     <Content Include="Content\assets\images\zw-living-2020-1.jpg" />
     <Content Include="Content\assets\templates\common-html5\css\flexslider.css" />
     <Content Include="Content\assets\templates\common-html5\js\functions.js" />
@@ -555,7 +560,7 @@
     <Content Include="Content\VeganLifePictures\Hair\700x700\SweetPeaDailyMoisturizingShampoo700x700.jpg" />
     <Content Include="Content\VeganLifePictures\Hair\700x700\SweetPeaExtraGentleShampooforcolortreatedhair700x700.jpg" />
     <Content Include="Content\VeganLifePictures\Hair\700x700\SweetPeaHairSpray700x700.jpg" />
-    <Content Include="Content\VeganLifePictures\HomeCleaning\190x190\Caboo Bamboo Toilet Paper190x190.jpg" />
+    <Content Include="Content\VeganLifePictures\HomeCleaning\190x190\CabooBambooToiletPaper190x190.jpg" />
     <Content Include="Content\VeganLifePictures\HomeCleaning\190x190\liquidcastillesoap190x190.jpg" />
     <Content Include="Content\VeganLifePictures\HomeCleaning\190x190\Redecker BBQ Brush125x190.jpg" />
     <Content Include="Content\VeganLifePictures\HomeCleaning\190x190\Redecker Cellulose Dish Cloths190x160.jpg" />
