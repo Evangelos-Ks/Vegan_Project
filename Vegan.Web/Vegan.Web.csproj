@@ -84,12 +84,17 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <!-- ======================================== ADD =========================================================== -->
+      <Private>True</Private>
     </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
     </Reference>
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -154,9 +159,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
+    <!-- ===================== REMOVE TO FIX ERROR "Newtonsoft.Json_exists_in_both_blend_Newtonsoft.Json.dll_and_solution_packages" ================= -->
+    <!-- <Reference Include="Newtonsoft.Json"> -->
+    <!-- <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath> -->
+    <!-- </Reference> -->
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -193,6 +199,7 @@
     <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\CandleController.cs" />
     <Compile Include="Controllers\CareController.cs" />
+    <Compile Include="Controllers\ECommerceController.cs" />
     <Compile Include="Controllers\FoodHerbController.cs" />
     <Compile Include="Controllers\HairController.cs" />
     <Compile Include="Controllers\HomeCleaningController.cs" />
@@ -212,10 +219,14 @@
     <Compile Include="Controllers\EssentialOilController.cs" />
     <Compile Include="Controllers\SupplementController.cs" />
     <Compile Include="Controllers\TeaController.cs" />
+    <Compile Include="Extras\SimulatableWebhook.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ECommerce\Cart.cs" />
+    <Compile Include="Models\ECommerce\CartItem.cs" />
+    <Compile Include="Models\ECommerce\IndexVm.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -1125,6 +1136,7 @@
     <Content Include="Views\Shared\TESTview.cshtml" />
     <Content Include="Views\HomeVegan\EditHomeVegan.cshtml" />
     <Content Include="Views\Administrator\Map.cshtml" />
+    <Content Include="Views\ECommerce\Cart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

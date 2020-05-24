@@ -41,17 +41,25 @@
                     @foreach (var item in Model)
                     {
                         <div class="product">
-                            <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)" ></div>
+                            <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)"></div>
                             <div class="frame"></div>
                             <div class="info">
                                 <div class="info-data">
                                     <div>
-                                        <div>
-                                            @Html.ActionLink("Read More", "DetailsCandle", new { productId = item.Id })
-                                            <div class="price">
-                                                <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+
+                                        @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
+                                        {
+                                            @Html.Hidden("ProductId", item.Id)
+                                            <div>
+                                                @Html.ActionLink("Read More", "DetailsCandle", new { productId = item.Id })
+                                                <div class="price">
+                                                    <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+                                               
+                                                    <a href="javascript:void(0);" onclick="$(this).closest('form').submit();">Add to cart</a>
+                                                </div>
                                             </div>
-                                        </div>
+                                        }
+
                                     </div>
                                 </div>
                             </div>

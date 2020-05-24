@@ -24,7 +24,7 @@
     </div>
     <div id="productdetails" class="docsection-wrapper" itemscope itemtype="/">
         <div class="docsection boxed">
-            <form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add">
+            <form enctype="multipart/form-data" method="post" action="/ECommerce/Cart" name="add" id="add">
                 <div class="content-wrapper clearfix">
                     <div id="productimage-wrapper">
                         <div id="productimage">
@@ -63,12 +63,20 @@
                                 </div>
                                 <div id="productcart">
                                     <div class="addToCartBlock">
-                                        <div class="qtybox-addcart">
 
-                                            <label>Quantity</label>
-                                            <input type="text" size="3" name="qty-0" value="1" onchange="validateValues(document.add,1);" class="txtBoxStyle" />
-                                            <button type="button" id="Add" class="btn" onclick="check_and_add(document.add,1);"><i class="icon-basket"></i> Add to Cart</button>
-                                        </div>
+                                        @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
+                                        {
+                                            var id = @Html.DisplayFor(model => model.Id);
+                                            @Html.Hidden("ProductId", id);
+                                            <div class="qtybox-addcart">
+
+                                                <label>Quantity</label>
+                                                <input type="text" size="3" name="qty-0" value="1" onchange="validateValues(document.add,1);" class="txtBoxStyle" />
+
+                                                <a href="javascript:void(0);" onclick="$(this).closest('form').submit();"><i class="icon-basket"></i> Add to Cart</a>
+                                            </div>
+                                        }
+
                                     </div>
                                 </div>
                             </div>
