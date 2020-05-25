@@ -250,6 +250,7 @@
     <Content Include="Content\assets\templates\vegan2020\favicons\favicon.ico" />
     <Content Include="Content\assets\templates\vegan2020\images\bg1500x440head.jpg" />
     <Content Include="Content\assets\templates\vegan2020\images\bg2000x780footer.jpg" />
+    <Content Include="Content\assets\templates\vegan2020\images\EleniParisi.jpg" />
     <Content Include="Content\assets\templates\vegan2020\images\logo-v.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img160x104floral.png.ico" />
     <Content Include="Content\assets\templates\vegan2020\images\img52x80floral-l.png" />
