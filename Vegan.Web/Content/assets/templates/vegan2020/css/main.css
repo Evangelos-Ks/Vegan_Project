@@ -3652,7 +3652,7 @@ table.searchlight-results span.search-price {
     cursor: pointer;
 }
 
-#extrapage .content section>dl>dd {
+/*#extrapage .content section>dl>dd {
     display: none;
     padding-left: 24px;
     padding-top: 24px;
@@ -3695,7 +3695,7 @@ table.searchlight-results span.search-price {
     content: "";
     display: table;
     clear: both;
-}
+}*/
 
 /* clearfix */
 
@@ -3704,7 +3704,7 @@ table.searchlight-results span.search-price {
     display: inline-block;
 }
 
-#productgiftregistry button[type=button],
+/*#productgiftregistry button[type=button],
 #productwishlist button[type=button] {
     margin: 0 20px 0 0;
     padding: 0;
@@ -3829,7 +3829,7 @@ table.searchlight-results span.search-price {
     content: "";
     display: table;
     clear: both;
-}
+}*/
 
 /* clearfix */
 
