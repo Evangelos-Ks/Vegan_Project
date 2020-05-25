@@ -357,10 +357,9 @@
             Order or29 = new Order() { OrderStamp = new DateTime(2017, 08, 26), Products = new List<Product> { eo9, eo8, sf3, sf5 }, OrderId = 29 };
             //Order or30 = new Order() { OrderStamp = new DateTime(2017, 01, 01), Products = new List<Product> { ph1, ph3, sf5, k3, t16, t22 }, OrderId = 30 };
 
-            //=================================================== users ==============================================
-
-            ApplicationUser user1 = new ApplicationUser() { UserName = "Eleni Parisi", Email = "eleni@parisi.com", Orders = new List<Order> { or1, or2 }, Address = "Kala Nera", PhoneNumber = "6971234567", Country = Countries.Greece  , City="Volos", PostCode= "370 10", FirstName= "Eleni", LastName= "Parisi" };
-            ApplicationUser user2 = new ApplicationUser() { UserName = "Xenophon Vlachogiannis", Email = "xeno@vlachogiannis.com", Orders = new List<Order> { or13, or14, or29 }, Address = "Kamatero", PhoneNumber = "6973132456", Country = Countries.Greece, City = "Kamatero", PostCode = "134 51", FirstName = "Xenophon", LastName = "Vlachogiannis"  };
+            //=================================================== users ==============================================          
+            ApplicationUser user1 = new ApplicationUser() { UserName = "Eleni Parisi", Email = "eleni@parisi.com", Orders = new List<Order> { or1, or2 }, Address = "Kala Nera", PhoneNumber = "6971234567", Country = Countries.Greece, City = "Volos", PostCode = "370 10", FirstName = "Eleni", LastName = "Parisi", PasswordHash = PasswordHash.HashPassword("Parisi!1") };
+            ApplicationUser user2 = new ApplicationUser() { UserName = "Xenophon Vlachogiannis", Email = "xeno@vlachogiannis.com", Orders = new List<Order> { or13, or14, or29 }, Address = "Kamatero", PhoneNumber = "6973132456", Country = Countries.Greece, City = "Kamatero", PostCode = "134 51", FirstName = "Xenophon", LastName = "Vlachogiannis", PasswordHash = PasswordHash.HashPassword("Vlachogiannis!1") };
             //ApplicationUser user3 = new ApplicationUser() { UserName = "George Poulakos", Email = "george@poulakos.com", Orders = new List<Order> { or29, or30, or15 }, Address = "Mavrovouni, Gytheio, Lakonia", PhoneNumber = "6994567832" };
             //ApplicationUser user4 = new ApplicationUser() { UserName = "Stathis Kanellis", Email = "stathis@kanellis.com", Orders = new List<Order> { or3, or14, or27 }, Address = "Ilioupoli, Athina, Attiki", PhoneNumber = "6902245672" };
             //ApplicationUser user5 = new ApplicationUser() { UserName = "Evangelos Koutsogiorgos", Email = "evangelo@koutsogiorgos.com", Orders = new List<Order> { or5, or6, or7 }, Address = "Socho, London, United Kingdom", PhoneNumber = "6998765432" };
@@ -373,9 +372,7 @@
             //ApplicationUser user11 = new ApplicationUser() { UserName = "Dionysis Pilikas", Email = "dion@pilikas.com", Orders = new List<Order> { or22, or23, or24 }, Address = "Patisia, Athina, Attiki", PhoneNumber = "6956434567" };
             //ApplicationUser user12 = new ApplicationUser() { UserName = "Thanos Christidis", Email = "thanos@christidis.com", Orders = new List<Order> { or25, or26 }, Address = "Vyronas, Athina, Attiki", PhoneNumber = "6971998567" };
             //ApplicationUser user13 = new ApplicationUser() { UserName = "Thanos Kontodimas", Email = "thanos@kontodimas.com", Orders = new List<Order> { or27, or28, or29 }, Address = "Ilion, Athina, Attiki", PhoneNumber = "6971234666" };
-            //ApplicationUser user14 = new ApplicationUser() { UserName = "Albi Alikaj", Email = "albi@alikaj.com", Orders = new List<Order> { or30, or23, or9 }, Address = "Hrakleio, Athina, Attiki", PhoneNumber = "6974554567" };
-
-
+            //ApplicationUser user14 = new ApplicationUser() { UserName = "Albi Alikaj", Email = "albi@alikaj.com", Orders = new List<Order> { or30, or23, or9 }, Address = "Hrakleio, Athina, Attiki", PhoneNumber = "6974554567" };            
             #endregion
 
 
@@ -388,6 +385,12 @@
             //context.Users.AddOrUpdate(x => x.Email, user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12, user13, user14);
             //When we fix the ApplicationUser remove the comments from the above line and delete below
             context.Users.AddOrUpdate(x => x.Email, user1, user2);
+
+            //*************************************************** Add Users to roles ***************************************
+            var manager2 = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+            manager2.AddToRole(user1.Id, "Subscribers");
+            manager2.AddToRole(user2.Id, "Subscribers");
+
 
             //*************************************************** Care ***************************************************
             context.FaceCreams.AddOrUpdate(x => x.Title, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14);
