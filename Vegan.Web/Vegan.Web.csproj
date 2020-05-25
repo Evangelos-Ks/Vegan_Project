@@ -97,9 +97,13 @@
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="SendGrid, Version=9.15.1.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.9.15.1\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -275,6 +279,8 @@
     <Content Include="Content\now-ui-dashboard-master\assets\css\now-ui-dashboard.min.css" />
     <Content Include="Content\now-ui-dashboard-master\assets\demo\demo.css" />
     <Content Include="Content\now-ui-dashboard-master\assets\demo\demo.js" />
+    <Content Include="Content\now-ui-dashboard-master\assets\img\apple-icon.png" />
+    <Content Include="Content\now-ui-dashboard-master\assets\img\bg5.jpg" />
     <Content Include="Content\now-ui-dashboard-master\assets\img\default-avatar.png" />
     <Content Include="Content\now-ui-dashboard-master\assets\img\favicon.png" />
     <Content Include="Content\now-ui-dashboard-master\assets\img\header.jpg" />
@@ -869,7 +875,6 @@
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
@@ -980,7 +985,6 @@
     <Content Include="Views\Supplement\Details.cshtml" />
     <Content Include="Views\Shared\TestLayoutTEST.cshtml" />
     <Content Include="Views\Shared\Components\User\_FooterUser.cshtml" />
-    <Content Include="Views\Shared\Components\User\_LayoutUser.cshtml" />
     <Content Include="Views\Shared\Components\User\_NavigationBarUser.cshtml" />
     <Content Include="Views\Product\IndexUser.cshtml" />
     <Content Include="Views\Candle\IndexUser.cshtml" />
@@ -1015,6 +1019,8 @@
     <Content Include="TheTeaGame\Build\TheTeaGame.wasm.code.unityweb" />
     <Content Include="TheTeaGame\Build\TheTeaGame.wasm.framework.unityweb" />
     <Content Include="TheTeaGame\web.config" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ConfirmEmailView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
