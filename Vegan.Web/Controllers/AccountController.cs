@@ -394,13 +394,13 @@ namespace Vegan.Web.Controllers
                 }
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user);
-                result = await UserManager.AddToRoleAsync(user.Id, "Subscribers");
 
                 if (result.Succeeded)
                 {
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
+                        result = await UserManager.AddToRoleAsync(user.Id, "Subscribers");
                         await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
                         return RedirectToLocal(returnUrl);
                     }
