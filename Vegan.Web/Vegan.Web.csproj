@@ -690,6 +690,7 @@
     <Content Include="Content\VeganLifePictures\TeaPictures\700x634\YerbaMatePeppermint700x634.jpg" />
     <Content Include="Content\VeganLifePictures\TeaPictures\700x634\YerbaSweetGinger700x634.jpg" />
     <Content Include="Content\VeganLifePictures\TeaPictures\700x634\YogaChai700x634.jpg" />
+    <Content Include="Error404.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
