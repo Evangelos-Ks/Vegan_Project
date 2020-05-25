@@ -1,7 +1,66 @@
-﻿@{
-    ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿
+<style>
+    .row {
+        font-size: 28px;
+    }
+    .column {
+        float: left;
+        width: 50%;
+        padding-bottom: 5%;
+     
+    }
 
-<p>Use this area to provide additional information.</p>
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    img {
+        border-radius: 50%; 
+        height: 70px; 
+        width: 50px;
+    }
+
+    h1{
+        font-size: 24px;
+    }
+</style>
+
+<div class="row">
+    <div class="column">
+        <img src="/Content/assets/templates/vegan2020/images/EleniParisi.jpg"  ">
+        <h2>Kanellis Stathis</h2>
+        <p class="title">CEO & Founder---------------------------</p>
+        <p>example@example.com</p>
+        <p>GitHub</p>
+    </div>
+
+    <div class=" column">
+        <h2>Kanellis Stathis</h2>
+        <img src="/Content/assets/templates/vegan2020/images/EleniParisi.jpg">
+        <p class="title">CEO & Founder---------------------------</p>
+        <p>example@example.com</p>
+        <p>GitHub</p>
+    </div>
+</div>
+<div class="row">
+    <h1>The development team</h1>
+    <div class=" column">
+        <img src="/Content/assets/templates/vegan2020/images/EleniParisi.jpg" ">
+        <h2>Parisi Eleni</h2>
+        <p class="title">Software Developer & Educator</p>
+        <p>parisi.code@gmail.com</p>
+        <p>GitHub: elprs</p>
+    </div>
+
+    <div class=" column">
+        <h2>Kanellis Stathis</h2>
+        <img src="/Content/assets/templates/vegan2020/images/EleniParisi.jpg" ">
+        <p class="title">CEO & Founder---------------------------</p>
+        <p>example@example.com</p>
+        <p>GitHub</p>
+    </div>
+</div>
+
