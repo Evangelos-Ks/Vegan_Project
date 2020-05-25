@@ -233,11 +233,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\assets\images\HomePageCarousel\Aloe_Vera.jpg" />
-    <Content Include="Content\assets\images\HomePageCarousel\closure-banner-2020.jpg" />
     <Content Include="Content\assets\images\HomePageCarousel\CosmeticsPicture.jpeg" />
     <Content Include="Content\assets\images\HomePageCarousel\EcoFriendly_NaturalProduct.jpg" />
     <Content Include="Content\assets\images\HomePageCarousel\OrganicCosmeticsBanner3.jpeg" />
-    <Content Include="Content\assets\images\HomePageCarousel\your-green-kitchen-sale-banner.jpg" />
     <Content Include="Content\assets\images\thin-reduced-waste-lifestyle.jpg" />
     <Content Include="Content\assets\images\thin-what-were-up-to.jpg" />
     <Content Include="Content\assets\images\trio-essential-oils.jpg" />
