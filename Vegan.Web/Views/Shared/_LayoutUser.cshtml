@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
 
-    @*@Styles.Render("~/Content/assets/templates/vegan2020/css")
-        @Scripts.Render("~/bundle/modernizr")*@
-
+   @*Tea game Links/scripts*@
+    @*<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="shortcut icon" href="/TemplateData/favicon.ico">
+    <link rel="stylesheet" href="/TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/TheTeaGame.json", { onProgress: UnityProgress });
+    </script>*@
 
     <script type="text/javascript" src="~/Content/assets/templates/common/js/jquery.min.js?vcart=10.1.4"></script>
 
