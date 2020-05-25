@@ -3652,7 +3652,7 @@ table.searchlight-results span.search-price {
     cursor: pointer;
 }
 
-#extrapage .content section>dl>dd {
+/*#extrapage .content section>dl>dd {
     display: none;
     padding-left: 24px;
     padding-top: 24px;
@@ -3695,7 +3695,7 @@ table.searchlight-results span.search-price {
     content: "";
     display: table;
     clear: both;
-}
+}*/
 
 /* clearfix */
 
@@ -3704,7 +3704,7 @@ table.searchlight-results span.search-price {
     display: inline-block;
 }
 
-#productgiftregistry button[type=button],
+/*#productgiftregistry button[type=button],
 #productwishlist button[type=button] {
     margin: 0 20px 0 0;
     padding: 0;
@@ -3747,7 +3747,7 @@ table.searchlight-results span.search-price {
     color: /* #cf8a2b  #d5b6a1 */ #e98747;
 }
 
-#productshare .fa {
+/*#productshare .fa {
     position: relative;
     margin-left: 10px;
     color: #e6e5e4;
@@ -3776,7 +3776,7 @@ table.searchlight-results span.search-price {
 
 #productprice .price .sale.yourprice strong {
     text-decoration: line-through;
-}
+}*/
 
 #productprice .price .sale.saleprice {
     position: relative;
@@ -3802,7 +3802,7 @@ table.searchlight-results span.search-price {
     font-weight: 700;
 }
 
-#dealoftheday b {
+/*#dealoftheday b {
     font-weight: 400;
 }
 
@@ -3829,11 +3829,11 @@ table.searchlight-results span.search-price {
     content: "";
     display: table;
     clear: both;
-}
+}*/*/
 
 /* clearfix */
 
-#divOptionsBlock .container .opt-regular span {
+/*#divOptionsBlock .container .opt-regular span {
     display: inline-block;
     margin-right: 6px;
     min-width: 100px;
@@ -3925,7 +3925,7 @@ table.searchlight-results span.search-price {
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
-}
+}*/
 
 .createFirstReview button[type=button]:hover,
 .createReviewLink button[type=button]:hover {
@@ -3943,7 +3943,7 @@ table.searchlight-results span.search-price {
 
 /* small screens */
 
-@media only screen and (min-width: 480px) {
+/*@media only screen and (min-width: 480px) {
     #productavailability,
     #productfreeshipping {
         display: block;
@@ -3967,11 +3967,11 @@ table.searchlight-results span.search-price {
     #giftcertificate_block>div .info-tip {
         left: 76px;
     }
-}
+}*/
 
 /* medium screens */
 
-@media only screen and (min-width: 768px) {
+/*@media only screen and (min-width: 768px) {
     #productutils {
         float: right;
         padding-bottom: 20px;
@@ -3990,7 +3990,7 @@ table.searchlight-results span.search-price {
     .createReviewLink {
         margin: 40px 0 20px 0;
     }
-}
+}*/
 
 /* big screens */
 
@@ -7424,15 +7424,16 @@ only screen and (min-device-pixel-ratio: 2) {}
 }
 
 #footernav {
-    padding: 20px 0;
+    padding: 10px 0;
     background: #444039 url('../../../images/wood.jpg') repeat center center;
     background-size: 1200px auto;
+   
 }
 
 /*#footernav ul.pages {
     width: 240px;
     margin: 0 auto;
-    color: 
+    color: blue;
 }*/
 
 
@@ -7442,21 +7443,25 @@ only screen and (min-device-pixel-ratio: 2) {}
     #footernav > div > ul > li:nth-child(2) > a {
         color: blanchedalmond;
     }
+    #footernav > div > ul > li > a {
+        color: blanchedalmond;
+    }
 
     #footernav ul.pages > li {
         padding: 8px 0px;
         border-bottom: solid 1px #9b9388;
         font-size: 2rem;
         position: relative;
-        left: 30%;
+        left: 10%;
+        color:blanchedalmond;
     }
 
 /*#footernav ul.pages>li span:hover {
-    color: /* #cf8a2b  #d5b6a1 */ #e98747;
+    color: /* #cf8a2b  #d5b6a1 */ /*#e98747;
     cursor: pointer;
 }*/
 
-#footernav ul.pages>li .fa-fw {
+/*#footernav ul.pages>li .fa-fw {
     width: 30px;
 }
 
@@ -7468,7 +7473,7 @@ only screen and (min-device-pixel-ratio: 2) {}
 #footernav ul.pages>li>ul>li {
     padding-left: 30px;
     font-size: 1.6rem;
-}
+}*/
 
 /*#footernav ul.pages>li>ul>li.news {
     text-transform: uppercase;
@@ -7500,7 +7505,7 @@ only screen and (min-device-pixel-ratio: 2) {}
 }
 
 #footerbar a:hover {
-    color: floralwhite;
+    color: blanchedalmond;
 }
 
 #footerbar .phone {
@@ -7544,7 +7549,7 @@ only screen and (min-device-pixel-ratio: 2) {}
     margin: 10px 0;
     color: #9b9388;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 #disclaimer p a {
