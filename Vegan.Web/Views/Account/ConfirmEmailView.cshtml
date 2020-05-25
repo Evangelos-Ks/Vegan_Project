@@ -1,5 +1,6 @@
-﻿@{
-    ViewBag.Title = "Forgot Password Confirmation";
+﻿
+@{
+    ViewBag.Title = "ConfirmEmailView";
 }
 
 <div id="pageheader" class="docsection-wrapper">
@@ -7,14 +8,14 @@
         <div class="breadcrumbs-wrapper clearfix">
             <div class="breadcrumbs">
                 <section>
-                    <p><a href="/">Home</a> > <a href="~/Account/Login">My account</a> > <a href="#">reset password</a></p>
+                    <p><a href="/">Home</a> > <a href="#">Confirm Email</a></p>
                 </section>
             </div>
         </div>
         <div class="title-wrapper clearfix">
             <div class="title">
                 <div>
-                    <h1>Reset password</h1>
+                    <h1>Confirm Email</h1>
                 </div>
             </div>
         </div>
@@ -24,15 +25,17 @@
     <div class="docsection boxed">
         <section id="message">
             <div class="dottedbox">
-                <form action="~/Account/Login">
-                    <div class="notice">Please check your emai to reset password.</div>
+                <form action="~/Home/Index">
+                    <div class="notice">Your email has confirmed.</div>
 
-                    <button type="submit" value="" class="btn">Go back</button>
+                    <button type="submit" value="" class="btn">Click here to continue</button>
 
                 </form>
             </div>
         </section>
     </div>
 </div>
+
+
 
 

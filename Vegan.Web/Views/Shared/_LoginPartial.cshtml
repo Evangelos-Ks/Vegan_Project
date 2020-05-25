@@ -1,22 +1,22 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm"}))
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
     {
         @Html.AntiForgeryToken()
 
         var identity = "Hello " + @User.Identity.GetUserName() + "!";
-        <li id="registerLink"><a href="/Manage/Index"><i class="fa fa-registered" aria-hidden="true"></i> <span>@identity</span> </a></li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Log off</span> </a></li>
+        <ul id="nav-store-icons">
+            <li><a href="/Manage/Index"><span>@identity</span> </a></li>
+            <li id="nav-store-logout"><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>LOG OFF</span> </a></li>
+            <li id="nav-store-cart"><a href="view_cart.asp"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>CART</span> <strong>$0</strong></a></li>
+        </ul>
     }
 }
 else
 {
-
-
-    <li id="registerLink"><a href="/Account/Register"><i class="fa fa-registered" aria-hidden="true"></i> <span>Register</span> </a></li>
-    <li id="loginLink"><a href="/Account/Login"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Log in</span> </a></li>
-
-
+    <li><a href="/Account/Register"><i class="fa fa-registered" aria-hidden="true"></i> <span>REGISTER</span> </a></li>
+    <li id="nav-store-login"><a href="/Account/Login"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>LOG IN</span> </a></li>
+    <li id="nav-store-cart"><a href="view_cart.asp"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>CART</span> <strong>$0</strong></a></li>
 }
 
