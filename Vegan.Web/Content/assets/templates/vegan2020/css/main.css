@@ -3747,7 +3747,7 @@ table.searchlight-results span.search-price {
     color: /* #cf8a2b  #d5b6a1 */ #e98747;
 }
 
-#productshare .fa {
+/*#productshare .fa {
     position: relative;
     margin-left: 10px;
     color: #e6e5e4;
@@ -3776,7 +3776,7 @@ table.searchlight-results span.search-price {
 
 #productprice .price .sale.yourprice strong {
     text-decoration: line-through;
-}
+}*/
 
 #productprice .price .sale.saleprice {
     position: relative;
@@ -3802,7 +3802,7 @@ table.searchlight-results span.search-price {
     font-weight: 700;
 }
 
-#dealoftheday b {
+/*#dealoftheday b {
     font-weight: 400;
 }
 
@@ -3829,11 +3829,11 @@ table.searchlight-results span.search-price {
     content: "";
     display: table;
     clear: both;
-}*/
+}*/*/
 
 /* clearfix */
 
-#divOptionsBlock .container .opt-regular span {
+/*#divOptionsBlock .container .opt-regular span {
     display: inline-block;
     margin-right: 6px;
     min-width: 100px;
@@ -3925,7 +3925,7 @@ table.searchlight-results span.search-price {
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
-}
+}*/
 
 .createFirstReview button[type=button]:hover,
 .createReviewLink button[type=button]:hover {
@@ -3943,7 +3943,7 @@ table.searchlight-results span.search-price {
 
 /* small screens */
 
-@media only screen and (min-width: 480px) {
+/*@media only screen and (min-width: 480px) {
     #productavailability,
     #productfreeshipping {
         display: block;
@@ -3967,11 +3967,11 @@ table.searchlight-results span.search-price {
     #giftcertificate_block>div .info-tip {
         left: 76px;
     }
-}
+}*/
 
 /* medium screens */
 
-@media only screen and (min-width: 768px) {
+/*@media only screen and (min-width: 768px) {
     #productutils {
         float: right;
         padding-bottom: 20px;
@@ -3990,7 +3990,7 @@ table.searchlight-results span.search-price {
     .createReviewLink {
         margin: 40px 0 20px 0;
     }
-}
+}*/
 
 /* big screens */
 
@@ -7452,7 +7452,7 @@ only screen and (min-device-pixel-ratio: 2) {}
         border-bottom: solid 1px #9b9388;
         font-size: 2rem;
         position: relative;
-        left: 20%;
+        left: 10%;
         color:blanchedalmond;
     }
 
