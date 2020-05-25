@@ -2,7 +2,36 @@
     ViewBag.Title = "Login Failure";
 }
 
-<hgroup>
-    <h2>@ViewBag.Title.</h2>
-    <h3 class="text-danger">Unsuccessful login with service.</h3>
-</hgroup>
+<div id="pageheader" class="docsection-wrapper">
+    <div class="docsection boxed">
+        <div class="breadcrumbs-wrapper clearfix">
+            <div class="breadcrumbs">
+                <section>
+                    <p><a href="/">Home</a> > <a href="#">Login Error</a></p>
+                </section>
+            </div>
+        </div>
+        <div class="title-wrapper clearfix">
+            <div class="title">
+                <div>
+                    <h1>Login Error</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="" class="docsection-wrapper">
+    <div class="docsection boxed">
+        <section id="message">
+            <div class="dottedbox">
+                <form action="~/Account/Login">
+                    <div class="notice">Your email or password are incorrect! If you forgot your password, please visit the forgot your password page.</div>
+                    <button type="submit" value="Register" class="btn">Click here to continue</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+

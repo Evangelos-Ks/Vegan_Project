@@ -96,7 +96,7 @@
                     coords: { lat: 39.322709, lng: 23.134256 },
                     iconImage: {
 
-                    url: '/Content/now-ui-dashboard-master/assets/img/tea-map-pin.png', // url
+                        url: '/Content/now-ui-dashboard-master/assets/img/tea-map-pin.png', // url
                         scaledSize: new google.maps.Size(50, 50)
                     },
                     content: "<h3 style='color:blue'>Mountain Pelion Tea, Greece</h3>"
@@ -155,12 +155,20 @@
     <!-- Google API -->
     <script async
             defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHNiTylNx0_UHPKggRbDpmc1JEj6D8zmM&callback=initMap"></script>
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHNiTylNx0_UHPKggRbDpmc1JEj6D8zmM&callback=initMap">
+
+    </script>
 
 
+    <!--Active class in Admim side bar-->
+    <script>
 
-
-
+        $(document).ready(function () {
+            // get current URL path and assign 'active' class so that the "pressed" area can be assigned white
+            var pathname = window.location.pathname;
+            $('.nav > li > a[href="' + pathname + '"]').parent().addClass('active');
+        })
+    </script>
 </body>
 
 
