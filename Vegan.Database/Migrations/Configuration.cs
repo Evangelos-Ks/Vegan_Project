@@ -169,6 +169,7 @@
 
 
             #endregion
+
             #region Home
             //*************************************************** Home******************************************************
             //=================================================== Candle ===================================================
@@ -239,7 +240,6 @@
             SuperFood sf5 = new SuperFood() { Title = "HIPPOPHAES WOMAN", Price = 19.00m, ImageURL = "/Content/VeganLifePictures/SuperFood/700x700/HippoWOMAN_700x700.jpg", Description = "SUPERFOODS NATURE’S BEST HIPPOPHAES WOMAN is suitable for the women’s needs, it contains a unique combination of Sea buckthorn, Ginger, Black cohosh, Rhodiola, Red clover, Magnesium and Vitamins Α, D, E which contribute to the normal function of the immune system, maintenance of healthy bones and teeth, normal iron metabolism and the protection of cells from oxidative stress.", NameOfIngredient = "Hippophae rhamnoides, Zingiber officinale, Actea racemose L, Rhodiola Rosea radix, Trifolium pretense, Magnesium, Resveratrol, Vitamin E, Vitamin A, Vitamin D3", ValueOfIngredient = "" };
 
             #endregion
-
 
             #region Identity Roles
 
