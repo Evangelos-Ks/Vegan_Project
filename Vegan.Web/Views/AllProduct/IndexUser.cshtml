@@ -4,6 +4,7 @@
 @using PagedList.Mvc;
 
 <link href="~/Content/assets/PagedList.css" rel="stylesheet" />
+
 @{
     ViewBag.Title = "All Products";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
@@ -15,23 +16,21 @@
 <div id="top" pxlurl="[product_url]" class="container-fluid">
     <div class="contentbox-wrapper docsection-wrapper">
         <div class="contentbox docsection boxed productlist">
-            <div id="pageheader" class=" ">
-                <div class="">
-                    <div class="breadcrumbs-wrapper clearfix">
+            <div id="pageheader">
+                 <div class="breadcrumbs-wrapper clearfix">
                         <div class="breadcrumbs">
                             <section>
                                 <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/AllProduct/IndexUser">All Products</a></p>
                             </section>
                         </div>
                     </div>
-                    <div class="title-wrapper clearfix">
+                 <div class="title-wrapper clearfix">
                         <div class="title">
                             <header>
                                 <h1>All Products</h1>
                             </header>
                         </div>
-                    </div>
-                </div>
+              </div>
             </div>
             <div class="header-wrapper clearfix">
                 <div class="header">
@@ -39,7 +38,6 @@
                         <br />
                         <br />
                         <h2>
-
                             Products
                             @*====================================================  Sorting action links ==========================================================================*@
                             <small>
@@ -54,6 +52,7 @@
 
                            }, new { @class = ViewBag.TitleView }) |
 
+
                                 @Html.ActionLink("Price", "IndexUser", "AllProduct", new
                            {
                                sortOrder = ViewBag.PriceSortParam,
@@ -63,8 +62,6 @@
                                pSize = ViewBag.CurrentpSize
 
                            }, new { @class = ViewBag.PriceView }) |
-
-
                             </small>
                         </h2>
                         <h2 class="" style=" float: right;
@@ -82,21 +79,18 @@
                                                              pSize = ViewBag.CurrentpSize
                                                          }))
                             </small>
+
+
                         </h2>
                         <br />
                         <h2>
-
                             @*================================  Drop down items for pagination  ==============================================================================*@
-
-                            <div>
                                 @{
                                     SelectListItem a1 = new SelectListItem() { Text = "3", Value = "3" };
                                     SelectListItem a2 = new SelectListItem() { Text = "10", Value = "10" };
                                     SelectListItem a3 = new SelectListItem() { Text = "25", Value = "25" };
                                     List<SelectListItem> selectItems = new List<SelectListItem>() { a1, a2, a3 };
                                 }
-                            </div>
-
                             @*====================================================  Search form  ==============================================================================*@
 
                             <div class="" style="flex">
@@ -138,27 +132,21 @@
             @foreach (var item in Model.HomeProducts)
             {
                 <div class="product">
-
-
-
                     @{
                         string baseType = item.GetType().BaseType.ToString();
                         var splitBaseType = baseType.Split('.');
                         baseType = splitBaseType[splitBaseType.Length - 1];
-
                     }
-
                     <div class="image"
                          style="
-                         filter:
+                            filter:
                             -webkit-filter: blur(4px);
                             background-position: center;
                             background-repeat: no-repeat;
                             background-size: cover;
-                         background-position: right top;
+                            background-position: right top;
                             background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));
                             max-height: 400px; ">
-
                         <img src="@Html.DisplayFor(modelItem => item.ImageURL)" style="max-height:400px;  filter: blur(0px);">
                     </div>
                     <div class="frame"></div>

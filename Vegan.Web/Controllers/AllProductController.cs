@@ -1,9 +1,11 @@
 ﻿using PagedList;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vegan.Database;
+using Vegan.Entities.Home;
 using Vegan.Services;
 using Vegan.Web.Models;
 
@@ -24,6 +26,7 @@ namespace Vegan.Web.Controllers
             ViewBag.CurrentpSize = pSize;
 
 
+            //ViewBag.CurrentPage = page;
 
             //Viebag that holds the sorting
             ViewBag.TitleSortParam = String.IsNullOrWhiteSpace(sortOrder) ? "TitleDesc" : "";
@@ -64,6 +67,29 @@ namespace Vegan.Web.Controllers
             {
                 homes = homes.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
             }
+            else
+            {
+                homes = unitOfWork.Homes.GetAll();
+            }
+                //Filtering  Price
+                //Filtering  Minimum
+                if (!(searchminPrice is null))
+            {
+                homes = homes.Where(x => x.Price >= searchminPrice);
+            }
+            //Filtering  Maximum
+            if (!(searchmaxPrice is null))
+            {
+                homes = homes.Where(x => x.Price <= searchmaxPrice);
+            }
+            //================================== Filters ====================================
+
+            //Filtering  Title
+            if (!string.IsNullOrWhiteSpace(searchTitle))
+            {
+                homes = homes.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
+            }
+
             //Filtering  Price
             //Filtering  Minimum
             if (!(searchminPrice is null))
@@ -83,6 +109,65 @@ namespace Vegan.Web.Controllers
             allProductVM.SupplementProducts = supplements.ToPagedList(pageNumber, pageSize);
 
             return View(allProductVM);
+
+
+
+            ////================================== Filters ====================================
+
+            ////Filtering  Title
+            //if (!string.IsNullOrWhiteSpace(searchTitle))
+            //{
+            //    supplements = supplements.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
+            //}
+            ////Filtering  Price
+            ////Filtering  Minimum
+            //if (!(searchminPrice is null))
+            //{
+            //    supplements = supplements.Where(x => x.Price >= searchminPrice);
+            //}
+            ////Filtering  Maximum
+            //if (!(searchmaxPrice is null))
+            //{
+            //    supplements = supplements.Where(x => x.Price <= searchmaxPrice);
+            //}
+            ////================================== Filters ====================================
+
+            ////Filtering  Title
+            //if (!string.IsNullOrWhiteSpace(searchTitle))
+            //{
+            //    cares = cares.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
+            //}
+            ////Filtering  Price
+            ////Filtering  Minimum
+            //if (!(searchminPrice is null))
+            //{
+            //    cares = cares.Where(x => x.Price >= searchminPrice);
+            //}
+            ////Filtering  Maximum
+            //if (!(searchmaxPrice is null))
+            //{
+            //    cares = cares.Where(x => x.Price <= searchmaxPrice);
+            //}
+            ////================================== Filters ====================================
+
+            ////Filtering  Title
+            //if (!string.IsNullOrWhiteSpace(searchTitle))
+            //{
+            //    foodHerbs = foodHerbs.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
+            //}
+            ////Filtering  Price
+            ////Filtering  Minimum
+            //if (!(searchminPrice is null))
+            //{
+            //    foodHerbs = foodHerbs.Where(x => x.Price >= searchminPrice);
+            //}
+            ////Filtering  Maximum
+            //if (!(searchmaxPrice is null))
+            //{
+            //    foodHerbs = foodHerbs.Where(x => x.Price <= searchmaxPrice);
+            //}
+
+
         }
 
 
