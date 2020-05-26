@@ -1,6 +1,4 @@
-﻿using Nest;
-using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -16,31 +14,40 @@ using Vegan.Services;
 
 namespace Vegan.Web.API.Controllers
 {
-    public class ProductsController : ApiController
+    public class CategoriesController : ApiController
     {
+        private MyDatabase db = new MyDatabase();
+
+        // GET: api/Categories
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: api/Products
-        public IEnumerable<Product> GetProducts()
+        public IEnumerable<IEnumerable<Product>> GetProducts()
         {
-            return unitOfWork.Products.GetAll();
+            List<IEnumerable<Product>> allCategories = new List<IEnumerable<Product>>();
 
+            allCategories.Add(unitOfWork.Cares.GetAll());
+            allCategories.Add(unitOfWork.FoodHerbs.GetAll());
+            allCategories.Add(unitOfWork.Homes.GetAll());
+            allCategories.Add(unitOfWork.Supplements.GetAll());
+
+            return allCategories;
         }
 
-        // GET: api/Products/5
-        [ResponseType(typeof(Product))]
-        public IHttpActionResult GetProduct(int id)
-        {
-            var product = unitOfWork.Products.GetById(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
+        //// GET: api/Categories/5
+        //[ResponseType(typeof(Product))]
+        //public IHttpActionResult GetProduct(int id)
+        //{
+        //    Product product = db.Products.Find(id);
+        //    if (product == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return Ok(product);
-        }
+        //    return Ok(product);
+        //}
 
-        //// PUT: api/Products/5
+        //// PUT: api/Categories/5
         //[ResponseType(typeof(void))]
         //public IHttpActionResult PutProduct(int id, Product product)
         //{
@@ -75,7 +82,7 @@ namespace Vegan.Web.API.Controllers
         //    return StatusCode(HttpStatusCode.NoContent);
         //}
 
-        //// POST: api/Products
+        //// POST: api/Categories
         //[ResponseType(typeof(Product))]
         //public IHttpActionResult PostProduct(Product product)
         //{
@@ -90,7 +97,7 @@ namespace Vegan.Web.API.Controllers
         //    return CreatedAtRoute("DefaultApi", new { id = product.Id }, product);
         //}
 
-        //// DELETE: api/Products/5
+        //// DELETE: api/Categories/5
         //[ResponseType(typeof(Product))]
         //public IHttpActionResult DeleteProduct(int id)
         //{
