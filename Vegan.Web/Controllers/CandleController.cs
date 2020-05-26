@@ -68,12 +68,6 @@ namespace Vegan.Web.Controllers
             {
                 candles = candles.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
             }
-
-            else if (searchTitle == null )
-            {
-                candles = unitOfWork.Candles.GetAll();
-            }
-
             //-----Filtering  Price------
             //Filtering  Minimum
             if (!(searchminPrice is null))
