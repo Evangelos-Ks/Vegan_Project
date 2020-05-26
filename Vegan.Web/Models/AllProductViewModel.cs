@@ -1,16 +1,28 @@
-﻿using System.Collections.Generic;
-using Vegan.Entities.Care;
-using Vegan.Entities.FoodHerb;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using Vegan.Entities.Home;
+using Vegan.Entities.FoodHerb;
+using Vegan.Entities.Care;
 using Vegan.Entities.Supplement;
+using Vegan.Services.HomeRepository;
+using Vegan.Database;
+using Vegan.Services;
+using PagedList;
 
-namespace Vegan.Web.Controllers
+namespace Vegan.Web.Models
 {
     public class AllProductViewModel
     {
-        public IEnumerable<Home> HomeProducts;
-        public IEnumerable<Care> CareProducts;
-        public IEnumerable<FoodHerb> FoodHerbProducts;
-        public IEnumerable<Supplement> SupplementProducts;
+
+        // ================================ Properties =========================================
+        public IEnumerable<Home> HomeProducts { get; set; }
+        public IEnumerable<FoodHerb> FoodHerbProducts { get; set; }
+        public IEnumerable<Care> CareProducts { get; set; }
+        public IEnumerable<Supplement> SupplementProducts { get; set; }
+
+
     }
+
 }

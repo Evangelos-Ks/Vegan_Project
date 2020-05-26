@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Vegan.Database;
 using Vegan.Services;
+using Vegan.Web.Models;
 
 namespace Vegan.Web.Controllers
 {
