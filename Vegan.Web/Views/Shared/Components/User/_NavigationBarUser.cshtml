@@ -96,37 +96,3 @@
 </div>
 
 
-@*================================  Search form  ==============================================================================*@
-@*<h2>Courses</h2>
-
-    <hr />
-
-    <div class="searchBox" style="display:flex">
-        @using (Html.BeginForm("CourseTables", "Course", FormMethod.Get, new { @class = "form inline" }))
-        {
-            @Html.TextBox("searchTitle", null, new { placeholder = "Search Title" });
-            @Html.TextBox("searchType", null, new { placeholder = "Search Type" });
-            @Html.TextBox("searchStartDate", null, new { placeholder = "Search StartDate" });
-            <br />
-            @Html.TextBox("searchEndDate", null, new { placeholder = "Search EndDate" });
-            <input type="number" name="searchMinFee" value="" placeholder="Search min Fee" />
-            @Html.TextBox("searchMaxFee", null, new { type = "number", placeholder = "Search max fee" });
-            string valueOfViewBag = ViewBag.CurrentSortOrder;
-            @Html.TextBox("sortOrder", valueOfViewBag, new { type = "hidden" });
-            @Html.DropDownList("pSize", dropDownItems)
-
-            <input type="submit" name="SearchBtn" value="Search" class="btn btn-primary" />//+++++++++++++++++++++++++++++++
-        }
-    </div>*@
-
-
-@*=======================================  Sorting Action Links  ========================================================================*@
-@*<div>
-        <em> Sort By : </em>
-        @Html.ActionLink("Title", "CourseTables", "Course", new { sortOrder = ViewBag.TitleSortParam }, new { @class = ViewBag.TiView })
-        @Html.ActionLink("Type", "CourseTables", "Course", new { sortOrder = ViewBag.TypeSortParam }, new { @class = ViewBag.TyView })
-        @Html.ActionLink("Start Date", "CourseTables", "Course", new { sortOrder = ViewBag.StartDateSortParam }, new { @class = ViewBag.SdView })
-        @Html.ActionLink("End Date", "CourseTables", "Course", new { sortOrder = ViewBag.EndDateSortParam }, new { @class = ViewBag.EdView })
-        @Html.ActionLink("Fee", "CourseTables", "Course", new { sortOrder = ViewBag.FeeSortParam }, new { @class = ViewBag.FeView })
-    </div>*@
-

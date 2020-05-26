@@ -762,8 +762,8 @@ label {
     position: relative;
     min-height: 48px;
     padding-top: 48px;
-    /*background-color: #fdf7ed;*/
-    background-color: #fbd8c1;
+    background-color: #fdf7ed;
+    /*background-color: #fbd8c1;*/
 }
 
 #topbar>div {
@@ -799,21 +799,6 @@ label {
     }
 }
 
-/* humungous screens */
-
-/*@media only screen and (min-width: 1440px) {
-    #topbar>div {
-        width: 1300px;
-    }
-}*/
-
-/* hd screens */
-
-/*@media only screen and (min-width: 1920px) {
-    #topbar>div {
-        width: 1400px;
-    }
-}*/
 
 #logo {
     min-height: 138px;
@@ -844,38 +829,6 @@ label {
         padding-top: 33px;
     }
 }
-
-/* medium screens */
-
-/*@media only screen and (min-width: 768px) {
-    #logo {
-        min-height: 130px;
-    }
-    #logo header {
-        padding-top: 10px;
-    }
-    #logo img {
-        width: 240px;
-    }
-}*/
-
-/* big screens */
-
-/*@media only screen and (min-width: 1024px) {
-    #logo {
-        min-height: 183px;
-        background-position: center top -160px;
-        background-size: 1500px auto;
-    }
-    #logo header {
-        padding-top: 10px;
-    }
-    #logo img {
-        width: 280px;
-    }
-}*/
-
-/* large screens */
 
 @media only screen and (min-width: 1220px) {}
 

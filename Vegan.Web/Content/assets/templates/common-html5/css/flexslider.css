@@ -55,10 +55,10 @@
 
 /* Hide the slides before the JS is loaded. Avoids image jumping */
 
-.flexslider .slides img {
-    width: 100%;
-    display: block;
-}
+    .flexslider .slides img {
+        width: 100%;
+        display: block;
+    }
 
 .flex-pauseplay span {
     text-transform: capitalize;
@@ -77,7 +77,7 @@
 
 html[xmlns] .slides {
     display: block;
-}
+    
 
 * html .slides {
     height: 1%;

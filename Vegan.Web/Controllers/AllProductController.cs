@@ -63,35 +63,12 @@ namespace Vegan.Web.Controllers
             //================================== Filters ====================================
 
             //Filtering  Title
-            if (!string.IsNullOrWhiteSpace(searchTitle))
+            if (!(string.IsNullOrWhiteSpace(searchTitle)))
             {
                 homes = homes.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
-            }
-            else
-            {
-                homes = unitOfWork.Homes.GetAll();
             }
                 //Filtering  Price
                 //Filtering  Minimum
-                if (!(searchminPrice is null))
-            {
-                homes = homes.Where(x => x.Price >= searchminPrice);
-            }
-            //Filtering  Maximum
-            if (!(searchmaxPrice is null))
-            {
-                homes = homes.Where(x => x.Price <= searchmaxPrice);
-            }
-            //================================== Filters ====================================
-
-            //Filtering  Title
-            if (!string.IsNullOrWhiteSpace(searchTitle))
-            {
-                homes = homes.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
-            }
-
-            //Filtering  Price
-            //Filtering  Minimum
             if (!(searchminPrice is null))
             {
                 homes = homes.Where(x => x.Price >= searchminPrice);
@@ -101,6 +78,7 @@ namespace Vegan.Web.Controllers
             {
                 homes = homes.Where(x => x.Price <= searchmaxPrice);
             }
+           
 
             // Assign the sorting - searching to the viewModel
             allProductVM.HomeProducts = homes.ToPagedList(pageNumber, pageSize);

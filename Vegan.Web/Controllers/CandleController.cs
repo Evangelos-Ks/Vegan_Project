@@ -64,11 +64,12 @@ namespace Vegan.Web.Controllers
             //================================== Filters ====================================
 
             //------Filtering  Title-----
-            if (!string.IsNullOrWhiteSpace(searchTitle))
+            if (!(string.IsNullOrWhiteSpace(searchTitle)))
             {
                 candles = candles.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
             }
-            else
+
+            else if (searchTitle == null )
             {
                 candles = unitOfWork.Candles.GetAll();
             }

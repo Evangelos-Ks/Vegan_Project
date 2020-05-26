@@ -1022,7 +1022,6 @@
     <Content Include="Views\Administrator\Index.cshtml" />
     <Content Include="Views\Home\Shipping.cshtml" />
     <Content Include="Views\HomeVegan\IndexUser.cshtml" />
-    <Content Include="Views\Shared\TESTview.cshtml" />
     <Content Include="Views\HomeVegan\EditHomeVegan.cshtml" />
     <Content Include="Views\Administrator\Map.cshtml" />
     <Content Include="Views\Administrator\Chat.cshtml" />
