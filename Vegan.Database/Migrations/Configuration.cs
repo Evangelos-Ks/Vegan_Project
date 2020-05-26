@@ -326,71 +326,78 @@
             //=================================================== Orders ==============================================
             Order or1 = new Order() { OrderStamp = new DateTime(2020, 01, 02), Products = new List<Product> { h10, f1, s1, sb1 }, OrderId = 1 };
             Order or2 = new Order() { OrderStamp = new DateTime(2019, 02, 03), Products = new List<Product> { h9, f2, s2, sb2 }, OrderId = 2 };
-            //Order or3 = new Order() { OrderStamp = new DateTime(2018, 03, 04), Products = new List<Product> { h8, f3, l6, l7 }, OrderId = 3 };
-            //Order or4 = new Order() { OrderStamp = new DateTime(2017, 03, 05), Products = new List<Product> { f4, sb1, sb2, h4 }, OrderId = 4 };
-            //Order or5 = new Order() { OrderStamp = new DateTime(2018, 04, 06), Products = new List<Product> { s2, sp2, sp15, ss4, t10, t11 }, OrderId = 5 };
-            //Order or6 = new Order() { OrderStamp = new DateTime(2020, 05, 07), Products = new List<Product> { h16, f6, l6 }, OrderId = 6 };
-            //Order or7 = new Order() { OrderStamp = new DateTime(2019, 06, 08), Products = new List<Product> { c4, eo7, eo2 }, OrderId = 7 };
-            //Order or8 = new Order() { OrderStamp = new DateTime(2018, 07, 09), Products = new List<Product> { hc3, hc1, hc2, hc4 }, OrderId = 8 };
-            //Order or9 = new Order() { OrderStamp = new DateTime(2017, 08, 14), Products = new List<Product> { ph2, sf5 }, OrderId = 9 };
-            //Order or10 = new Order() { OrderStamp = new DateTime(2019, 10, 25), Products = new List<Product> { eo4, eo10, c4, c5 }, OrderId = 10 };
+            Order or3 = new Order() { OrderStamp = new DateTime(2018, 03, 04), Products = new List<Product> { h8, f3, l6, l7 }, OrderId = 3 };
+            Order or4 = new Order() { OrderStamp = new DateTime(2017, 03, 05), Products = new List<Product> { f4, sb1, sb2, h4 }, OrderId = 4 };
+            Order or5 = new Order() { OrderStamp = new DateTime(2018, 04, 06), Products = new List<Product> { s2, sp2, sp15, ss4, t10, t11 }, OrderId = 5 };
+            Order or6 = new Order() { OrderStamp = new DateTime(2020, 05, 07), Products = new List<Product> { h16, f6, l6 }, OrderId = 6 };
+            Order or7 = new Order() { OrderStamp = new DateTime(2019, 06, 08), Products = new List<Product> { c4, eo7, eo2 }, OrderId = 7 };
+            Order or8 = new Order() { OrderStamp = new DateTime(2018, 07, 09), Products = new List<Product> { hc3, hc1, hc2, hc4 }, OrderId = 8 };
+            Order or9 = new Order() { OrderStamp = new DateTime(2017, 08, 14), Products = new List<Product> { ph2, sf5 }, OrderId = 9 };
+            Order or10 = new Order() { OrderStamp = new DateTime(2019, 10, 25), Products = new List<Product> { eo4, eo10, c4, c5 }, OrderId = 10 };
 
-            //Order or11 = new Order() { OrderStamp = new DateTime(2020, 01, 31), Products = new List<Product> { s3, f3, s4, sb2 }, OrderId = 11 };
-            //Order or12 = new Order() { OrderStamp = new DateTime(2020, 04, 13), Products = new List<Product> { h10, f5, h16, sb4 }, OrderId = 12 };
+            Order or11 = new Order() { OrderStamp = new DateTime(2020, 01, 31), Products = new List<Product> { s3, f3, s4, sb2 }, OrderId = 11 };
+            Order or12 = new Order() { OrderStamp = new DateTime(2020, 04, 13), Products = new List<Product> { h10, f5, h16, sb4 }, OrderId = 12 };
             Order or13 = new Order() { OrderStamp = new DateTime(2020, 02, 29), Products = new List<Product> { sb1, sb2, sb3, sb4 }, OrderId = 13 };
             Order or14 = new Order() { OrderStamp = new DateTime(2020, 02, 14), Products = new List<Product> { h2, h3, h4, h5 }, OrderId = 14 };
-            //Order or15 = new Order() { OrderStamp = new DateTime(2020, 05, 10), Products = new List<Product> { sb4, l5, l6, s1 }, OrderId = 15 };
-            //Order or16 = new Order() { OrderStamp = new DateTime(2019, 10, 21), Products = new List<Product> { h1, h2, h3, h15 }, OrderId = 16 };
-            //Order or17 = new Order() { OrderStamp = new DateTime(2019, 12, 12), Products = new List<Product> { t4, t5, t6, t7, t22 }, OrderId = 17 };
-            //Order or18 = new Order() { OrderStamp = new DateTime(2019, 08, 17), Products = new List<Product> { t12, t13, sp1, sp5, sp16, k1 }, OrderId = 18 };
-            //Order or19 = new Order() { OrderStamp = new DateTime(2019, 05, 12), Products = new List<Product> { k2, k3, k1 }, OrderId = 19 };
-            //Order or20 = new Order() { OrderStamp = new DateTime(2019, 07, 28), Products = new List<Product> { sf1, sf2, sf3, sf4 }, OrderId = 20 };
+            Order or15 = new Order() { OrderStamp = new DateTime(2020, 05, 10), Products = new List<Product> { sb4, l5, l6, s1 }, OrderId = 15 };
+            Order or16 = new Order() { OrderStamp = new DateTime(2019, 10, 21), Products = new List<Product> { h1, h2, h3, h15 }, OrderId = 16 };
+            Order or17 = new Order() { OrderStamp = new DateTime(2019, 12, 12), Products = new List<Product> { t4, t5, t6, t7, t22 }, OrderId = 17 };
+            Order or18 = new Order() { OrderStamp = new DateTime(2019, 08, 17), Products = new List<Product> { t12, t13, sp1, sp5, sp16, k1 }, OrderId = 18 };
+            Order or19 = new Order() { OrderStamp = new DateTime(2019, 05, 12), Products = new List<Product> { k2, k3, k1 }, OrderId = 19 };
+            Order or20 = new Order() { OrderStamp = new DateTime(2019, 07, 28), Products = new List<Product> { sf1, sf2, sf3, sf4 }, OrderId = 20 };
 
-            //Order or21 = new Order() { OrderStamp = new DateTime(2018, 12, 06), Products = new List<Product> { ph1, sf1 }, OrderId = 21 };
-            //Order or22 = new Order() { OrderStamp = new DateTime(2018, 03, 09), Products = new List<Product> { h8, h9, s2, k2, k3 }, OrderId = 22 };
-            //Order or23 = new Order() { OrderStamp = new DateTime(2018, 10, 17), Products = new List<Product> { t12, t23, t15 }, OrderId = 23 };
-            //Order or24 = new Order() { OrderStamp = new DateTime(2018, 12, 15), Products = new List<Product> { sp13, sp16 }, OrderId = 24 };
-            //Order or25 = new Order() { OrderStamp = new DateTime(2018, 12, 17), Products = new List<Product> { sb6, h13, f14 }, OrderId = 25 };
-            //Order or26 = new Order() { OrderStamp = new DateTime(2017, 08, 20), Products = new List<Product> { h2, f9 }, OrderId = 26 };
-            //Order or27 = new Order() { OrderStamp = new DateTime(2017, 07, 31), Products = new List<Product> { sb2, l7, sb5 }, OrderId = 27 };
-            //Order or28 = new Order() { OrderStamp = new DateTime(2017, 06, 04), Products = new List<Product> { sp2, sp13, sp16, k1 }, OrderId = 28 };
+            Order or21 = new Order() { OrderStamp = new DateTime(2018, 12, 06), Products = new List<Product> { ph1, sf1 }, OrderId = 21 };
+            Order or22 = new Order() { OrderStamp = new DateTime(2018, 03, 09), Products = new List<Product> { h8, h9, s2, k2, k3 }, OrderId = 22 };
+            Order or23 = new Order() { OrderStamp = new DateTime(2018, 10, 17), Products = new List<Product> { t12, t23, t15 }, OrderId = 23 };
+            Order or24 = new Order() { OrderStamp = new DateTime(2018, 12, 15), Products = new List<Product> { sp13, sp16 }, OrderId = 24 };
+            Order or25 = new Order() { OrderStamp = new DateTime(2018, 12, 17), Products = new List<Product> { sb6, h13, f14 }, OrderId = 25 };
+            Order or26 = new Order() { OrderStamp = new DateTime(2017, 08, 20), Products = new List<Product> { h2, f9 }, OrderId = 26 };
+            Order or27 = new Order() { OrderStamp = new DateTime(2017, 07, 31), Products = new List<Product> { sb2, l7, sb5 }, OrderId = 27 };
+            Order or28 = new Order() { OrderStamp = new DateTime(2017, 06, 04), Products = new List<Product> { sp2, sp13, sp16, k1 }, OrderId = 28 };
             Order or29 = new Order() { OrderStamp = new DateTime(2017, 08, 26), Products = new List<Product> { eo9, eo8, sf3, sf5 }, OrderId = 29 };
-            //Order or30 = new Order() { OrderStamp = new DateTime(2017, 01, 01), Products = new List<Product> { ph1, ph3, sf5, k3, t16, t22 }, OrderId = 30 };
+            Order or30 = new Order() { OrderStamp = new DateTime(2017, 01, 01), Products = new List<Product> { ph1, ph3, sf5, k3, t16, t22 }, OrderId = 30 };
 
             //=================================================== users ==============================================          
             ApplicationUser user1 = new ApplicationUser() { UserName = "Eleni Parisi", Email = "eleni@parisi.com", Orders = new List<Order> { or1, or2 }, Address = "Kala Nera", PhoneNumber = "6971234567", Country = Countries.Greece, City = "Volos", PostCode = "370 10", FirstName = "Eleni", LastName = "Parisi", PasswordHash = PasswordHash.HashPassword("Parisi!1") };
             ApplicationUser user2 = new ApplicationUser() { UserName = "Xenophon Vlachogiannis", Email = "xeno@vlachogiannis.com", Orders = new List<Order> { or13, or14, or29 }, Address = "Kamatero", PhoneNumber = "6973132456", Country = Countries.Greece, City = "Kamatero", PostCode = "134 51", FirstName = "Xenophon", LastName = "Vlachogiannis", PasswordHash = PasswordHash.HashPassword("Vlachogiannis!1") };
-            //ApplicationUser user3 = new ApplicationUser() { UserName = "George Poulakos", Email = "george@poulakos.com", Orders = new List<Order> { or29, or30, or15 }, Address = "Mavrovouni, Gytheio, Lakonia", PhoneNumber = "6994567832" };
-            //ApplicationUser user4 = new ApplicationUser() { UserName = "Stathis Kanellis", Email = "stathis@kanellis.com", Orders = new List<Order> { or3, or14, or27 }, Address = "Ilioupoli, Athina, Attiki", PhoneNumber = "6902245672" };
-            //ApplicationUser user5 = new ApplicationUser() { UserName = "Evangelos Koutsogiorgos", Email = "evangelo@koutsogiorgos.com", Orders = new List<Order> { or5, or6, or7 }, Address = "Socho, London, United Kingdom", PhoneNumber = "6998765432" };
-            //ApplicationUser user6 = new ApplicationUser() { UserName = "Alexandos Perikleous", Email = "alex@perikleous.com", Orders = new List<Order> { or8, or9, or30, or29 }, Address = "Galatsi, Athina, Attiki", PhoneNumber = "6993876782" };
-            //ApplicationUser user7 = new ApplicationUser() { UserName = "Vassilis Theodoropoulos", Email = "vassilis@theodoropoulos.com", Orders = new List<Order> { or21, or10, or11 }, Address = "Aigaleo, Athina, Attiki", PhoneNumber = "6932345673" };
-            //ApplicationUser user8 = new ApplicationUser() { UserName = "Kyriakos Zotiadis", Email = "adam@zotiadis.com", Orders = new List<Order> { or12, or13, or14, or15 }, Address = "Ilion, Athina, Attiki", PhoneNumber = "6947272315" };
-            //ApplicationUser user9 = new ApplicationUser() { UserName = "Thanos Katrakis", Email = "thanos@katrakis.com", Orders = new List<Order> { or13, or16, or17, or18 }, Address = "Penteli, Athina, Attiki", PhoneNumber = "6979898667" };
-            //ApplicationUser user10 = new ApplicationUser() { UserName = "Panagiotis Rizos", Email = "panos@rizos.com", Orders = new List<Order> { or19, or20, or21 }, Address = "Zografou, Athina, Attiki", PhoneNumber = "6971234565" };
-
-            //ApplicationUser user11 = new ApplicationUser() { UserName = "Dionysis Pilikas", Email = "dion@pilikas.com", Orders = new List<Order> { or22, or23, or24 }, Address = "Patisia, Athina, Attiki", PhoneNumber = "6956434567" };
-            //ApplicationUser user12 = new ApplicationUser() { UserName = "Thanos Christidis", Email = "thanos@christidis.com", Orders = new List<Order> { or25, or26 }, Address = "Vyronas, Athina, Attiki", PhoneNumber = "6971998567" };
-            //ApplicationUser user13 = new ApplicationUser() { UserName = "Thanos Kontodimas", Email = "thanos@kontodimas.com", Orders = new List<Order> { or27, or28, or29 }, Address = "Ilion, Athina, Attiki", PhoneNumber = "6971234666" };
-            //ApplicationUser user14 = new ApplicationUser() { UserName = "Albi Alikaj", Email = "albi@alikaj.com", Orders = new List<Order> { or30, or23, or9 }, Address = "Hrakleio, Athina, Attiki", PhoneNumber = "6974554567" };            
+            ApplicationUser user3 = new ApplicationUser() { UserName = "George Poulakos", Email = "george@poulakos.com", Orders = new List<Order> { or29, or30, or15 }, Address = "Mavrovouni", PhoneNumber = "6994567832", Country = Countries.Greece, City = "Gytheio", PostCode = "232 00", FirstName = "George", LastName = "Poulakos", PasswordHash = PasswordHash.HashPassword("Poulakos!1") };
+            ApplicationUser user4 = new ApplicationUser() { UserName = "Stathis Kanellis", Email = "stathis@kanellis.com", Orders = new List<Order> { or3, or14, or27 }, Address = "Ilioupoli", PhoneNumber = "6902245672", Country = Countries.Greece, City = "Athina", PostCode = "163 42", FirstName = "Stathis", LastName = "Kanellis", PasswordHash = PasswordHash.HashPassword("Kanellis!1") };
+            ApplicationUser user5 = new ApplicationUser() { UserName = "Evangelos Koutsogiorgos", Email = "evangelo@koutsogiorgos.com", Orders = new List<Order> { or5, or6, or7 }, Address = "Soho", PhoneNumber = "6998765432", Country = Countries.United_Kingdom, City = "London", PostCode = "W1D 7AU", FirstName = "Evangelos", LastName = "Koutsogiorgos", PasswordHash = PasswordHash.HashPassword("Koutsogiorgos!1") };
+            ApplicationUser user6 = new ApplicationUser() { UserName = "Alexandos Perikleous", Email = "alex@perikleous.com", Orders = new List<Order> { or8, or9, or30, or29 }, Address = "Galatsi", PhoneNumber = "6993876782", Country = Countries.Greece, City = "Athina", PostCode = "111 46", FirstName = "Alexandos", LastName = "Perikleous", PasswordHash = PasswordHash.HashPassword("Perikleous!1") };
+            ApplicationUser user7 = new ApplicationUser() { UserName = "Vassilis Theodoropoulos", Email = "vassilis@theodoropoulos.com", Orders = new List<Order> { or21, or10, or11 }, Address = "Aigaleo", PhoneNumber = "6932345673", Country = Countries.Greece, City = "Athina", PostCode = "122 43", FirstName = "Vassilis", LastName = "Theodoropoulos", PasswordHash = PasswordHash.HashPassword("Theodoropoulos!1") };
+            ApplicationUser user8 = new ApplicationUser() { UserName = "Kyriakos Zotiadis", Email = "adam@zotiadis.com", Orders = new List<Order> { or12, or13, or14, or15 }, Address = "Ilion", PhoneNumber = "6947272315", Country = Countries.Greece, City = "Athina", PostCode = "131 21", FirstName = "Kyriakos", LastName = "Zotiadis", PasswordHash = PasswordHash.HashPassword("Zotiadis!1") };
+            ApplicationUser user9 = new ApplicationUser() { UserName = "Thanos Katrakis", Email = "thanos@katrakis.com", Orders = new List<Order> { or13, or16, or17, or18 }, Address = "Penteli", PhoneNumber = "6979898667", Country = Countries.Greece, City = "Athina", PostCode = "152 36", FirstName = "Thanos", LastName = "Katrakis", PasswordHash = PasswordHash.HashPassword("Katrakis!1") };
+            ApplicationUser user10 = new ApplicationUser() { UserName = "Panagiotis Rizos", Email = "panos@rizos.com", Orders = new List<Order> { or19, or20, or21 }, Address = "Zografou", PhoneNumber = "6971234565", Country = Countries.Greece, City = "Athina", PostCode = "161 22", FirstName = "Panagiotis", LastName = "Rizos", PasswordHash = PasswordHash.HashPassword("Rizos!1") };
+            ApplicationUser user11 = new ApplicationUser() { UserName = "Dionysis Pilikas", Email = "dion@pilikas.com", Orders = new List<Order> { or22, or23, or24 }, Address = "Patisia", PhoneNumber = "6956434567", Country = Countries.Greece, City = "Athina", PostCode = "112 53", FirstName = "Dionysis", LastName = "Pilikas", PasswordHash = PasswordHash.HashPassword("Pilikas!1") };
+            ApplicationUser user12 = new ApplicationUser() { UserName = "Thanos Christidis", Email = "thanos@christidis.com", Orders = new List<Order> { or25, or26 }, Address = "Vyronas", PhoneNumber = "6971998567", Country = Countries.Greece, City = "Athina", PostCode = "162 31", FirstName = "Thanos", LastName = "Christidis", PasswordHash = PasswordHash.HashPassword("Christidis!1") };
+            ApplicationUser user13 = new ApplicationUser() { UserName = "Thanos Kontodimas", Email = "thanos@kontodimas.com", Orders = new List<Order> { or27, or28, or29 }, Address = "Ilion", PhoneNumber = "6971234666", Country = Countries.Greece, City = "Athina", PostCode = "131 21", FirstName = "Thanos", LastName = "Kontodimas", PasswordHash = PasswordHash.HashPassword("Kontodimas!1") };
+            ApplicationUser user14 = new ApplicationUser() { UserName = "Albi Alikaj", Email = "albi@alikaj.com", Orders = new List<Order> { or30, or23, or9 }, Address = "Hrakleio", PhoneNumber = "6974554567", Country = Countries.Greece, City = "Athina", PostCode = "370 10", FirstName = "Albi", LastName = "Alikaj", PasswordHash = PasswordHash.HashPassword("Alikaj!1") };
             #endregion
 
 
 
             //*************************************************** Order ***************************************************
-            //context.Orders.AddOrUpdate(x => x.OrderStamp, or1, or2, or3, or4, or5, or6, or7, or8, or9, or10, or11, or12, or13, or14, or15, or16, or17, or18, or19, or20, or21, or22, or23, or24, or25, or26, or27, or28, or29, or30);
-            context.Orders.AddOrUpdate(x => x.OrderStamp, or1, or2,or13, or14, or29);
+            context.Orders.AddOrUpdate(x => x.OrderStamp, or1, or2, or3, or4, or5, or6, or7, or8, or9, or10, or11, or12, or13, or14, or15, or16, or17, or18, or19, or20, or21, or22, or23, or24, or25, or26, or27, or28, or29, or30);
 
             //*************************************************** User ***************************************************
-            //context.Users.AddOrUpdate(x => x.Email, user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12, user13, user14);
-            //When we fix the ApplicationUser remove the comments from the above line and delete below
-            context.Users.AddOrUpdate(x => x.Email, user1, user2);
+            context.Users.AddOrUpdate(x => x.Email, user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12, user13, user14);
 
             //*************************************************** Add Users to roles ***************************************
             var manager2 = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
             manager2.AddToRole(user1.Id, "Subscribers");
             manager2.AddToRole(user2.Id, "Subscribers");
-
+            manager2.AddToRole(user3.Id, "Subscribers");
+            manager2.AddToRole(user4.Id, "Subscribers");
+            manager2.AddToRole(user5.Id, "Subscribers");
+            manager2.AddToRole(user6.Id, "Subscribers");
+            manager2.AddToRole(user7.Id, "Subscribers");
+            manager2.AddToRole(user8.Id, "Subscribers");
+            manager2.AddToRole(user9.Id, "Subscribers");
+            manager2.AddToRole(user10.Id, "Subscribers");
+            manager2.AddToRole(user11.Id, "Subscribers");
+            manager2.AddToRole(user12.Id, "Subscribers");
+            manager2.AddToRole(user13.Id, "Subscribers");
+            manager2.AddToRole(user14.Id, "Subscribers");
 
             //*************************************************** Care ***************************************************
             context.FaceCreams.AddOrUpdate(x => x.Title, f1, f2, f3, f4, f5, f6, f7, f8, f9, f10, f11, f12, f13, f14);
