@@ -23,12 +23,73 @@ namespace Vegan.Web.Controllers
         {
             return View(unitOfWork.Candles.GetAll());
         }
-
-        [HttpGet]
-        public ActionResult IndexUser()
+        public ActionResult IndexUser(string sortOrder, string searchTitle, int? searchminPrice, int? searchmaxPrice, int? page, int? pSize)
         {
-            return View(unitOfWork.Candles.GetAll());
+            //================================== Viewbags ====================================
+            ViewBag.CurrentTitle = searchTitle;
+            ViewBag.CurrentMinPrice = searchminPrice;
+            ViewBag.CurrentMaxPrice = searchmaxPrice;
+            ViewBag.CurrentSortOrder = sortOrder;
+            ViewBag.CurrentpSize = pSize;
+
+
+            //ViewBag.CurrentPage = page;
+
+            //Viebag that holds the sorting
+            ViewBag.TitleSortParam = String.IsNullOrWhiteSpace(sortOrder) ? "TitleDesc" : "";
+            ViewBag.PriceSortParam = sortOrder == "PriceAsc" ? "PriceDesc" : "PriceAsc";
+
+            ViewBag.TitleView = "badge badge-light";
+            ViewBag.PriceView = "badge badge-light";
+
+            var candles = unitOfWork.Candles.GetAll();
+
+            //================================== Sorting ====================================
+
+
+            //Sorting by title & price
+            switch (sortOrder)
+            {
+                case "TitleDesc": candles = candles.OrderByDescending(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
+                case "TitleAsc": candles = candles.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
+                case "PriceDesc": candles = candles.OrderByDescending(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
+                case "PriceAsc": candles = candles.OrderBy(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
+                default: candles = candles.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
+            }
+            //Pagination
+            int pageSize = pSize ?? 3;
+            int pageNumber = page ?? 1;
+
+
+            //================================== Filters ====================================
+
+            //------Filtering  Title-----
+            if (!(string.IsNullOrWhiteSpace(searchTitle)))
+            {
+                candles = candles.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
+            }
+            //-----Filtering  Price------
+            //Filtering  Minimum
+            if (!(searchminPrice is null))
+            {
+                candles = candles.Where(x => x.Price >= searchminPrice);
+            }
+            //Filtering  Maximum
+            if (!(searchmaxPrice is null))
+            {
+                candles = candles.Where(x => x.Price <= searchmaxPrice);
+            }
+           
+
+            // Assign the sorting - searching to the viewModel
+            candles = candles.ToPagedList(pageNumber, pageSize);
+
+            return View(candles);
+
+
         }
+
+
 
         [HttpGet]
         public ActionResult AddProduct()

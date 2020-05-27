@@ -199,11 +199,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="ChatHub.cs" />
+    <Compile Include="Views\ChatHub\ChatHub.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministratorController.cs" />
+    <Compile Include="Models\AllProductViewModel.cs" />
     <Compile Include="Controllers\CandleController.cs" />
     <Compile Include="Controllers\CareController.cs" />
+    <Compile Include="Controllers\AllProductController.cs" />
     <Compile Include="Controllers\FoodHerbController.cs" />
     <Compile Include="Controllers\HairController.cs" />
     <Compile Include="Controllers\HomeCleaningController.cs" />
@@ -1020,7 +1022,6 @@
     <Content Include="Views\Administrator\Index.cshtml" />
     <Content Include="Views\Home\Shipping.cshtml" />
     <Content Include="Views\HomeVegan\IndexUser.cshtml" />
-    <Content Include="Views\Shared\TESTview.cshtml" />
     <Content Include="Views\HomeVegan\EditHomeVegan.cshtml" />
     <Content Include="Views\Administrator\Map.cshtml" />
     <Content Include="Views\Administrator\Chat.cshtml" />
@@ -1032,9 +1033,11 @@
     <Content Include="TheTeaGame\web.config" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ConfirmEmailView.cshtml" />
+    <Content Include="Views\AllProduct\IndexUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

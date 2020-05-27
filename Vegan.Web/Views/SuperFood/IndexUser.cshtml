@@ -50,7 +50,7 @@
                                 <div class="info-data">
                                     <div>
                                         <div>
-                                            @Html.ActionLink("Read More", "DetailsSuperFood", new { productId = item.Id })
+                                            @Html.ActionLink("Read More", "DetailsSuperFood", new { productId = item.Id }, new { @class = "btn" })
                                             <div class="price">
                                                 <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
                                             </div>
