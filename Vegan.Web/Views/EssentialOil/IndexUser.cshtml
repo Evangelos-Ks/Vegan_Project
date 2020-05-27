@@ -65,9 +65,7 @@
                         </h2>
                         <h2 class="" style=" float: right;
                                                 margin: 0 0 10px;
-                                                line-height: 40px;
-                                                text-align: right;
-                                                background-color: #f1f0ec">
+                                                line-height: 40px;;">
                             <small>
                                 @Html.PagedListPager((IPagedList)Model, x => @Url.Action("IndexUser", "EssentialOil", new
                                                          {
@@ -77,7 +75,8 @@
                                                              searchminPrice = ViewBag.CurrentMinPrice,
                                                              searchmaxPrice = ViewBag.CurrentMaxPrice,
                                                              pSize = ViewBag.CurrentpSize
-                                                         }))
+                                                         }), new PagedListRenderOptions() { LiElementClasses = new List<string> { "pager" } })
+
                             </small>
                         </h2>
                         <br />

@@ -42,15 +42,14 @@
                               
                             </h2>
                             <h2 class="" style=" float: right;
-                                                    margin: 0 0 10px;
-                                                    line-height: 40px;
-                                                    text-align: right;">
-                                <small>
+                                                    margin: 0 0 10px;">
+                                <small style="display:inline; ">
                                     @Html.PagedListPager((IPagedList)Model.HomeProducts, x => @Url.Action("IndexUser", "AllProduct", new
-                                                             {
-                                                                 page = x,
-                                                                 pSize = ViewBag.CurrentpSize
-                                                             }))
+                               {
+                                   page = x,
+                                   pSize = ViewBag.CurrentpSize
+                               }), new PagedListRenderOptions() { LiElementClasses = new List<string> { "pager" }})
+
                                 </small>
                             </h2>
                             <br />
@@ -65,7 +64,6 @@
                                 <div class="" style="flex">
                                     @using (Html.BeginForm("IndexUser", "AllProduct", FormMethod.Get, new { @class = "form-inline" }))
                                     {
-                                        string currentSortOrder = ViewBag.CurrentSortOrder;
                                         <h2><small style="margin: 20px 20px 20px 20px; width : 250px;">@Html.Label("Items of category per page:")</small></h2>
                                         @Html.DropDownList("pSize", selectItems, new { @class = "form-control", style = "margin: 25px 20px 20px 20px; width : 150px; height : 30px;" })
 
