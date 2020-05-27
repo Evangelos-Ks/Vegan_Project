@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vegan.Database;
+using Vegan.Entities;
 using Vegan.Entities.Home;
 using Vegan.Services;
 using Vegan.Web.Models;
@@ -13,6 +14,7 @@ namespace Vegan.Web.Controllers
 {
     public class AllProductController : Controller
     {
+        // GET: Default
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         public ActionResult IndexUser(string sortOrder, string searchTitle, int? searchminPrice, int? searchmaxPrice, int? page, int? pSize)
@@ -42,37 +44,10 @@ namespace Vegan.Web.Controllers
             //================================== Sorting ====================================
 
 
-            //Sorting by title & price
-            switch (sortOrder)
-            {
-                case "TitleDesc": homes = homes.OrderByDescending(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-                case "TitleAsc": homes = homes.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-                case "PriceDesc": homes = homes.OrderByDescending(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
-                case "PriceAsc": homes = homes.OrderBy(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
-                default: homes = homes.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-            }
             //Pagination
             int pageSize = pSize ?? 3;
             int pageNumber = page ?? 1;
 
-
-            //================================== Filters ====================================
-            //Filtering  Title
-            if (!(string.IsNullOrWhiteSpace(searchTitle)))
-            {
-                homes = homes.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
-            }
-            //------Filtering  Price--------
-            // Minimum
-            if (!(searchminPrice is null))
-            {
-                homes = homes.Where(x => x.Price >= searchminPrice);
-            }
-            // Maximum
-            if (!(searchmaxPrice is null))
-            {
-                homes = homes.Where(x => x.Price <= searchmaxPrice);
-            }
 
             // Assign the sorting - searching to the viewModel
             allProductVM.HomeProducts = homes.ToPagedList(pageNumber, pageSize);
