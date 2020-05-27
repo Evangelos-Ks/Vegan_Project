@@ -17,7 +17,7 @@ namespace Vegan.Web.Controllers.TestControllers
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         //===================================== Methods ====================================================================
-     // [Authorize(Roles = "Admins, Supervisors")]
+        // [Authorize(Roles = "Admins, Supervisors")]
         [HttpGet]
         public ActionResult Index()
         {
@@ -25,80 +25,80 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
-       
-            public ActionResult IndexUser(string sortOrder, string searchTitle, int? searchminPrice, int? searchmaxPrice, int? page, int? pSize)
+
+        public ActionResult IndexUser(string sortOrder, string searchTitle, int? searchminPrice, int? searchmaxPrice, int? page, int? pSize)
+        {
+            //================================== Viewbags ====================================
+            ViewBag.CurrentTitle = searchTitle;
+            ViewBag.CurrentMinPrice = searchminPrice;
+            ViewBag.CurrentMaxPrice = searchmaxPrice;
+            ViewBag.CurrentSortOrder = sortOrder;
+            ViewBag.CurrentpSize = pSize;
+
+
+            //ViewBag.CurrentPage = page;
+
+            //Viebag that holds the sorting
+            ViewBag.TitleSortParam = String.IsNullOrWhiteSpace(sortOrder) ? "TitleDesc" : "";
+            ViewBag.PriceSortParam = sortOrder == "PriceAsc" ? "PriceDesc" : "PriceAsc";
+
+            ViewBag.TitleView = "badge badge-light";
+            ViewBag.PriceView = "badge badge-light";
+
+            var essentialOils = unitOfWork.EssentialOils.GetAll();
+
+            //================================== Sorting ====================================
+
+
+            //Sorting by title & price
+            switch (sortOrder)
             {
-                //================================== Viewbags ====================================
-                ViewBag.CurrentTitle = searchTitle;
-                ViewBag.CurrentMinPrice = searchminPrice;
-                ViewBag.CurrentMaxPrice = searchmaxPrice;
-                ViewBag.CurrentSortOrder = sortOrder;
-                ViewBag.CurrentpSize = pSize;
+                case "TitleDesc": essentialOils = essentialOils.OrderByDescending(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
+                case "TitleAsc": essentialOils = essentialOils.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
+                case "PriceDesc": essentialOils = essentialOils.OrderByDescending(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
+                case "PriceAsc": essentialOils = essentialOils.OrderBy(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
+                default: essentialOils = essentialOils.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
+            }
+            //Pagination
+            int pageSize = pSize ?? 3;
+            int pageNumber = page ?? 1;
 
 
-                //ViewBag.CurrentPage = page;
+            //================================== Filters ====================================
 
-                //Viebag that holds the sorting
-                ViewBag.TitleSortParam = String.IsNullOrWhiteSpace(sortOrder) ? "TitleDesc" : "";
-                ViewBag.PriceSortParam = sortOrder == "PriceAsc" ? "PriceDesc" : "PriceAsc";
-
-                ViewBag.TitleView = "badge badge-light";
-                ViewBag.PriceView = "badge badge-light";
-
-                var essentialOils = unitOfWork.EssentialOils.GetAll();
-
-                //================================== Sorting ====================================
-
-
-                //Sorting by title & price
-                switch (sortOrder)
-                {
-                    case "TitleDesc": essentialOils = essentialOils.OrderByDescending(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-                    case "TitleAsc": essentialOils = essentialOils.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-                    case "PriceDesc": essentialOils = essentialOils.OrderByDescending(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
-                    case "PriceAsc": essentialOils = essentialOils.OrderBy(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
-                    default: essentialOils = essentialOils.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-                }
-                //Pagination
-                int pageSize = pSize ?? 3;
-                int pageNumber = page ?? 1;
-
-
-                //================================== Filters ====================================
-
-                //------Filtering  Title-----
-                if (searchTitle == null)
+            //------Filtering  Title-----
+            if (searchTitle == null)
             {
                 essentialOils = unitOfWork.EssentialOils.GetAll();
-                
-                }
-                else if (!(string.IsNullOrWhiteSpace(searchTitle)))
+
+            }
+            else if (!(string.IsNullOrWhiteSpace(searchTitle)))
             {
                 essentialOils = essentialOils.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
             }
-                //-----Filtering  Price------
-                //Filtering  Minimum
-                if (!(searchminPrice is null))
-                {
-                    essentialOils = essentialOils.Where(x => x.Price >= searchminPrice);
-                }
-                //Filtering  Maximum
-                if (!(searchmaxPrice is null))
-                {
-                    essentialOils = essentialOils.Where(x => x.Price <= searchmaxPrice);
-                }
-              
-
-                // Assign the sorting - searching to the viewModel
-                essentialOils = essentialOils.ToPagedList(pageNumber, pageSize);
-
-                return View(essentialOils);
+            //-----Filtering  Price------
+            //Filtering  Minimum
+            if (!(searchminPrice is null))
+            {
+                essentialOils = essentialOils.Where(x => x.Price >= searchminPrice);
+            }
+            //Filtering  Maximum
+            if (!(searchmaxPrice is null))
+            {
+                essentialOils = essentialOils.Where(x => x.Price <= searchmaxPrice);
+            }
 
 
-            
+            // Assign the sorting - searching to the viewModel
+            essentialOils = essentialOils.ToPagedList(pageNumber, pageSize);
+
+            return View(essentialOils);
+
+
+
         }
 
-       
+
         [HttpGet]
         public ActionResult AddEssentialOil()
         {

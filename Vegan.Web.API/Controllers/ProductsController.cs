@@ -24,7 +24,6 @@ namespace Vegan.Web.API.Controllers
         public IEnumerable<Product> GetProducts()
         {
             return unitOfWork.Products.GetAll();
-
         }
 
         // GET: api/Products/5

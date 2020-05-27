@@ -1,4 +1,10 @@
-﻿<div id="top" pxlurl="[product_url]">
+﻿<script src="~/Scripts/angular.js"></script>
+<script src="~/Content/VeganJs/Autocomplete.js"></script>
+<script src="~/Content/VeganJs/Controller.js"></script>
+
+<link href="~/Content/VeganCSS/Autocomplete.css" rel="stylesheet" />
+
+<div ng-app="VeganProject" ng-controller="VeganController" id="top" pxlurl="[product_url]">
     <div id="curtain"></div>
     <div class="headerbox-wrapper">
         <div class="headerbox">
@@ -12,7 +18,7 @@
                         <div id="nav-search">
                             <div id="searchBox">
                                 <form method="get" name="searchForm" action="search.asp">
-                                    <input type="text" name="keyword" id="searchlight" class="search-text" placeholder="start typing product name">
+                                    <input type="text" name="keyword" id="searchlight" class="search-text autocomplete" placeholder="start typing product name">
                                     <input class="btn btn-big" type="submit" name="search" id="searchbutton" value="Search">
                                 </form>
                             </div>
