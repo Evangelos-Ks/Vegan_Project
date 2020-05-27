@@ -16,8 +16,6 @@ namespace Vegan.Web.API.Controllers
 {
     public class CategoriesController : ApiController
     {
-        private MyDatabase db = new MyDatabase();
-
         // GET: api/Categories
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
