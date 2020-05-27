@@ -143,7 +143,6 @@
                                     </div>
                                 </div>
                             </div>
-                            @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
                             <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsCandle", new { productId = item.Id })</h3>
                         </div>
                     }

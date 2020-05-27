@@ -79,25 +79,7 @@ namespace Vegan.Web.Controllers
             {
                 candles = candles.Where(x => x.Price <= searchmaxPrice);
             }
-            //================================== Filters ====================================
-
-            //Filtering  Title
-            if (!string.IsNullOrWhiteSpace(searchTitle))
-            {
-                candles = candles.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
-            }
-
-            //Filtering  Price
-            //Filtering  Minimum
-            if (!(searchminPrice is null))
-            {
-                candles = candles.Where(x => x.Price >= searchminPrice);
-            }
-            //Filtering  Maximum
-            if (!(searchmaxPrice is null))
-            {
-                candles = candles.Where(x => x.Price <= searchmaxPrice);
-            }
+           
 
             // Assign the sorting - searching to the viewModel
             candles = candles.ToPagedList(pageNumber, pageSize);
