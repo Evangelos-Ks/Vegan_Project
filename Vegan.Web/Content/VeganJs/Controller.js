@@ -12,6 +12,11 @@
                     $scope.Homes = response.data[2];
                     $scope.Supplements = response.data[3];
                     $scope.AllProducts = $scope.Care.concat($scope.FoodHerbs).concat($scope.Homes).concat($scope.Supplements);
+                    //console.log($scope.Care);
+                    //console.log($scope.FoodHerbs);
+                    //console.log($scope.Homes);
+                    //console.log($scope.Supplements);
+                    //console.log($scope.AllProducts);
 
                     //autocomplete
                     autocomplete(document.getElementById("searchlight"), AutocompleteItems($scope.AllProducts));
@@ -30,19 +35,27 @@
                                 else {
                                     var controller = $scope.AllProducts[i].SubCategory;
                                 }
+                                //console.log(controller );
                                 var detailsActionMethod = "Details" + $scope.AllProducts[i].SubCategory;
+                                //console.log(detailsActionMethod);
                                 var id = $scope.AllProducts[i].Id;
-                                var url = "/" + controller + "/" + detailsActionMethod + "?" + "productId=" + id;
-
+                                //console.log(id);
+                                var url = "/" + controller + "/" + detailsActionMethod + "?" + "productId=" + id; 
                                 window.location.href = url;
                             }
                         }
+                       
                     });
                 }, function myError(response) {
                     console.log(response);
                 });
+
+           
         }
+
         GetData();
     };
+
     VeganProject.controller("VeganController", VeganController);
+
 })();

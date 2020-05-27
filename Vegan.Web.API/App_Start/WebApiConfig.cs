@@ -12,6 +12,7 @@ namespace Vegan.Web.API
         public static void Register(HttpConfiguration config)
         {
             // Web API configuration and services
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 
@@ -32,4 +33,19 @@ namespace Vegan.Web.API
             config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
         }
     }
+
+    //public class CustomJsonFormatter : JsonMediaTypeFormatter
+    //{
+    //    public CustomJsonFormatter()
+    //    {
+    //        this.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+    //    }
+
+    //    public override void SetDefaultContentHeaders(Type type, HttpContentHeaders headers, MediaTypeHeaderValue mediaType)
+    //    {
+    //        base.SetDefaultContentHeaders(type, headers, mediaType);
+    //        headers.ContentType = new MediaTypeHeaderValue("application/json");
+    //    }
+    //}
+
 }
