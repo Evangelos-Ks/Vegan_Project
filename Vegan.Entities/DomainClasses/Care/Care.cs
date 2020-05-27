@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -14,6 +15,6 @@ namespace Vegan.Entities.Care
         [Display(Name = "Ingredients")]
         public string NameOfIngredient { get; set; }
         public string Information { get; set; }
-
+        public string Category { get; set; } = "Care";
     }
 }

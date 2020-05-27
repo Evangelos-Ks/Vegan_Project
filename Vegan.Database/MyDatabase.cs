@@ -11,10 +11,13 @@ using Vegan.Entities.FoodHerb;
 using Vegan.Entities.Supplement;
 using Vegan.Entities.Library;
 using Vegan.Entities.DomainClasses;
+using Newtonsoft.Json;
+
 
 namespace Vegan.Database
 {
-   public  class MyDatabase : ApplicationDbContext
+
+    public class MyDatabase : ApplicationDbContext
     {
         public MyDatabase() : base()
         {
