@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Vegan.Database;
+using Vegan.Entities;
 using Vegan.Entities.Home;
 using Vegan.Services;
 using Vegan.Web.Models;
@@ -25,9 +26,6 @@ namespace Vegan.Web.Controllers
             ViewBag.CurrentSortOrder = sortOrder;
             ViewBag.CurrentpSize = pSize;
 
-
-            //ViewBag.CurrentPage = page;
-
             //Viebag that holds the sorting
             ViewBag.TitleSortParam = String.IsNullOrWhiteSpace(sortOrder) ? "TitleDesc" : "";
             ViewBag.PriceSortParam = sortOrder == "PriceAsc" ? "PriceDesc" : "PriceAsc";
@@ -46,39 +44,10 @@ namespace Vegan.Web.Controllers
             //================================== Sorting ====================================
 
 
-            //Sorting by title & price
-            switch (sortOrder)
-            {
-                case "TitleDesc": homes = homes.OrderByDescending(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-                case "TitleAsc": homes = homes.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-                case "PriceDesc": homes = homes.OrderByDescending(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
-                case "PriceAsc": homes = homes.OrderBy(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
-                default: homes = homes.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-            }
             //Pagination
             int pageSize = pSize ?? 3;
             int pageNumber = page ?? 1;
 
-
-            //================================== Filters ====================================
-
-            //Filtering  Title
-            if (!(string.IsNullOrWhiteSpace(searchTitle)))
-            {
-                homes = homes.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
-            }
-                //Filtering  Price
-                //Filtering  Minimum
-            if (!(searchminPrice is null))
-            {
-                homes = homes.Where(x => x.Price >= searchminPrice);
-            }
-            //Filtering  Maximum
-            if (!(searchmaxPrice is null))
-            {
-                homes = homes.Where(x => x.Price <= searchmaxPrice);
-            }
-           
 
             // Assign the sorting - searching to the viewModel
             allProductVM.HomeProducts = homes.ToPagedList(pageNumber, pageSize);
@@ -87,68 +56,6 @@ namespace Vegan.Web.Controllers
             allProductVM.SupplementProducts = supplements.ToPagedList(pageNumber, pageSize);
 
             return View(allProductVM);
-
-
-
-            ////================================== Filters ====================================
-
-            ////Filtering  Title
-            //if (!string.IsNullOrWhiteSpace(searchTitle))
-            //{
-            //    supplements = supplements.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
-            //}
-            ////Filtering  Price
-            ////Filtering  Minimum
-            //if (!(searchminPrice is null))
-            //{
-            //    supplements = supplements.Where(x => x.Price >= searchminPrice);
-            //}
-            ////Filtering  Maximum
-            //if (!(searchmaxPrice is null))
-            //{
-            //    supplements = supplements.Where(x => x.Price <= searchmaxPrice);
-            //}
-            ////================================== Filters ====================================
-
-            ////Filtering  Title
-            //if (!string.IsNullOrWhiteSpace(searchTitle))
-            //{
-            //    cares = cares.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
-            //}
-            ////Filtering  Price
-            ////Filtering  Minimum
-            //if (!(searchminPrice is null))
-            //{
-            //    cares = cares.Where(x => x.Price >= searchminPrice);
-            //}
-            ////Filtering  Maximum
-            //if (!(searchmaxPrice is null))
-            //{
-            //    cares = cares.Where(x => x.Price <= searchmaxPrice);
-            //}
-            ////================================== Filters ====================================
-
-            ////Filtering  Title
-            //if (!string.IsNullOrWhiteSpace(searchTitle))
-            //{
-            //    foodHerbs = foodHerbs.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
-            //}
-            ////Filtering  Price
-            ////Filtering  Minimum
-            //if (!(searchminPrice is null))
-            //{
-            //    foodHerbs = foodHerbs.Where(x => x.Price >= searchminPrice);
-            //}
-            ////Filtering  Maximum
-            //if (!(searchmaxPrice is null))
-            //{
-            //    foodHerbs = foodHerbs.Where(x => x.Price <= searchmaxPrice);
-            //}
-
-
         }
-
-
-
     }
 }
