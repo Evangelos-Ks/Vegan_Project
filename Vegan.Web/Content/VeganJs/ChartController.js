@@ -1,30 +1,25 @@
-﻿function myfunction() {
-    var VeganProject = angular.module("VeganProject", []);
+﻿(function myfunction() {
+    var ChartProject = angular.module("ChartProject", []);
     var ordersURL = "https://localhost:44332/api/Orders";
-
-    var VeganController = function ($scope, $http) {
+    var ChartController = function ($scope, $http) {
         var GetData = function () {
             $http.get(ordersURL)
                 .then(function (response) {
-                    $scope.Orders = response.data;
-
-
+                    console.log(response.data[0]);
+                    for (var i = 0; i < response.length - 1; i++) {
+                        $scope.Orders = response.data;  // sosto??
+                        /*  $scope.Orders += response.data[0];*/
+                        console.log(response);
+                    }
                 })
         }
-    }
+        GetData();
+    };
 
+  ChartProject.controller("ChartController", ChartController);
 
-}
+})();
 
-    //(function myfunction() {
-    //    var VeganProject = angular.module("VeganProject", []);
-
-    //    var productsPerCategoryUrl = "https://localhost:44332/api/Categories";
-
-    //    var VeganController = function ($scope, $http) {
-    //        var GetData = function () {
-    //            $http.get(productsPerCategoryUrl)
-    //                .then(function (response) {
     //                    $scope.Care = response.data[0];
     //                    $scope.FoodHerbs = response.data[1];
     //                    $scope.Homes = response.data[2];
@@ -61,11 +56,9 @@
     //                });
 
 
-    //        }
+                                                        //        }
 
-    //        GetData();
-    //    };
+                                                        //        GetData();
+                                                        //    };
 
-    //    VeganProject.controller("VeganController", VeganController);
-
-    //})();
+                                                        //    ChartProject.controller("ChartController", ChartController);
