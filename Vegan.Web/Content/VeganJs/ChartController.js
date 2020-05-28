@@ -38,11 +38,14 @@
                                 yearlyTotal = yearlyTotal + response.data[i].Total;
                             }
                         }
-
                         //Create an array with the totals
                         yearlyTotalArray.push(yearlyTotal);
                     }
                     $scope.totalsPerYear = yearlyTotalArray;
+
+                    demo.initDashboardPageCharts($scope.years, $scope.totalsPerYear);
+
+
                 });
         }
         GetData();
