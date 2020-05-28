@@ -36,22 +36,8 @@
 
                     <nav id="nav-store">
                         <ul id="nav-store-icons">
-
                             @RenderPage("~/Views/Shared/_LoginPartial.cshtml")
-
-                            <li id="nav-store-cart">
-                                <a href="/ECommerce/Cart">
-                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                                    <span>Cart</span>
-                                    <strong>
-                                        @*============ ADD Session Price with Currency Change to Euro ===========================*@
-                                        @string.Format(@System.Globalization.CultureInfo.CurrentCulture = @System.Globalization.CultureInfo.CreateSpecificCulture("gr-GR"), "{0:c2}", Session["Price"])
-                                        
-                                    </strong>
-                                </a>
-                            </li>
                         </ul>
-
                     </nav>
 
 

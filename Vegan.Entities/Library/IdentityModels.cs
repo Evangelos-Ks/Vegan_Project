@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
-using Vegan.Entities.DomainClasses.Sales;
 
 namespace Vegan.Entities.Library
 {

@@ -16,21 +16,22 @@ namespace Vegan.Web.Controllers
 {
     public class ECommerceController : Controller
     {
-        //private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
+        private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
         //private MyDatabase _dbContext => HttpContext.GetOwinContext().Get<MyDatabase>();
-        private ApplicationDbContext _dbContext => HttpContext.GetOwinContext().Get<ApplicationDbContext>();
-        
-        public ActionResult Index()
-        {   
-            var model = new IndexVm()
-            {
-                Products = _dbContext.Products.ToList()
-            };
+        //private MyDatabase _dbContext => HttpContext.GetOwinContext().Get<MyDatabase>();
 
-            return View(model);
-        }
+    //    public ActionResult Index()
+    //    {
+    //        var model = new IndexVm()
+    //        {
+    //            Products = _dbContext.Products.ToList();
 
-        public ActionResult Cart()
+    //    };
+
+    //        return View(model);
+    //}
+
+    public ActionResult Cart()
         {
             var cart = CreateOrGetCart();
 
@@ -40,7 +41,10 @@ namespace Vegan.Web.Controllers
         [HttpPost]
         public ActionResult Add(int ProductId, string quant="1")
         {
-            var product = _dbContext.Products.FirstOrDefault(x => x.Id == ProductId);
+            //var product = _dbContext.Products.FirstOrDefault(x => x.Id == ProductId);
+            //var productList = _dbContext.Products;
+            //var product = productList.Find(x => x.Id == ProductId);
+            var product = unitOfWork.Products.GetById(ProductId);
             var quantity = Convert.ToInt32(quant);
             var cart = CreateOrGetCart();
             var existingItem = cart.CartItems.FirstOrDefault(x => x.ProductId == product.Id);
@@ -73,8 +77,8 @@ namespace Vegan.Web.Controllers
 
         public ActionResult Delete(int ProductId)
         {
-            var product = _dbContext.Products.FirstOrDefault(x => x.Id == ProductId);
-
+            //var product = _dbContext.Products.FirstOrDefault(x => x.Id == ProductId);
+            var product = unitOfWork.Products.GetById(ProductId);
             var cart = CreateOrGetCart();
             var existingItem = cart.CartItems.FirstOrDefault(x => x.ProductId == product.Id);
 
@@ -98,14 +102,6 @@ namespace Vegan.Web.Controllers
         {
             return View();
         }
-
-
-
-
-
-
-
-
         //private MyDatabase _dbContext2 => HttpContext.GetOwinContext().Get<MyDatabase>();
 
         public ActionResult Checkout()
@@ -139,8 +135,9 @@ namespace Vegan.Web.Controllers
                         Quantity = x.Quantity
                     }).ToList()
                 };
-                _dbContext.Orders.Add(order);
-                _dbContext.SaveChanges();
+                //_dbContext.Orders.Add(order);
+                //_dbContext.SaveChanges();
+                unitOfWork.Orders.Add(order);
 
                 // Get PayPal API Context using configuration from web.config
                 var apiContext = GetApiContext();
@@ -194,7 +191,8 @@ namespace Vegan.Web.Controllers
 
                 // Save a reference to the paypal payment
                 order.PayPalReference = createdPayment.id;
-                _dbContext.SaveChanges();
+
+                //_dbContext.SaveChanges();
 
                 // Find the Approval URL to send our user to
                 var approvalUrl =
@@ -211,7 +209,8 @@ namespace Vegan.Web.Controllers
         public ActionResult Return(string payerId, string paymentId)
         {
             // Fetch the existing order
-            var order = _dbContext.Orders.FirstOrDefault(x => x.PayPalReference == paymentId);
+            //var order = _dbContext.Orders.FirstOrDefault(x => x.PayPalReference == paymentId);
+            var order = unitOfWork.Orders.Find(x => x.PayPalReference == paymentId);
 
             // Get PayPal API Context using configuration from web.config
             var apiContext = GetApiContext();
@@ -277,12 +276,5 @@ namespace Vegan.Web.Controllers
             var apiContext = new APIContext(accessToken);
             return apiContext;
         }
-
-
-       
-
-
-
-
     }
 }
