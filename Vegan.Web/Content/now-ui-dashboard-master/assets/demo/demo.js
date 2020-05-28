@@ -1,4 +1,4 @@
-chart = {
+demo = {
   initPickColor: function() {
     $('.pick-class-label').click(function() {
       var new_class = $(this).attr('new-class');
