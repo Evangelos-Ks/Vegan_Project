@@ -12,25 +12,25 @@
                    
                     for (var i = 0; i < response.data.length; i++) {
                         $scope.Orders = response.data;
-                        console.log(response.data);
-                        console.log(response.data[i].Total);
 
                         //Make year into an int
                         var year = yearArray.push(parseInt(response.data[i].OrderStamp.split("-")[0]));
                     }
-                    console.log(yearArray);
 
                     //Find the unique years, put them in an array and sort them
                     function onlyUnique(value, index, self) {
                         return self.indexOf(value) === index;
                     }
+
                     var unique = yearArray.filter(onlyUnique);
                     unique.sort();
                     $scope.years = unique;
 
                     var yearlyTotalArray = [];
+
                     //Check the orders for every year
                     for (var t = 0; t < unique.length; t++) {
+
                         //Calculate the total for every year
                         var yearlyTotal = 0;
                         for (var i = 0; i < response.data.length; i++) {
@@ -38,6 +38,7 @@
                                 yearlyTotal = yearlyTotal + response.data[i].Total;
                             }
                         }
+
                         //Create an array with the totals
                         yearlyTotalArray.push(yearlyTotal);
                     }
