@@ -281,8 +281,8 @@
     <Content Include="Content\now-ui-dashboard-master\assets\css\chat.css" />
     <Content Include="Content\now-ui-dashboard-master\assets\css\now-ui-dashboard.css" />
     <Content Include="Content\now-ui-dashboard-master\assets\css\now-ui-dashboard.min.css" />
-    <Content Include="Content\now-ui-dashboard-master\assets\demo\demo.css" />
-    <Content Include="Content\now-ui-dashboard-master\assets\demo\demo.js" />
+    <Content Include="Content\now-ui-dashboard-master\assets\demo\chart.css" />
+    <Content Include="Content\now-ui-dashboard-master\assets\demo\chart.js" />
     <Content Include="Content\now-ui-dashboard-master\assets\img\apple-icon.png" />
     <Content Include="Content\now-ui-dashboard-master\assets\img\bg5.jpg" />
     <Content Include="Content\now-ui-dashboard-master\assets\img\default-avatar.png" />
