@@ -5,83 +5,412 @@
     ViewBag.Title = "Shopping Cart";
 }
 
-<div class="heads">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2><span>//</span> Shopping Cart</h2>
-            </div>
-        </div>
-    </div>
-</div>
+
+
 
 <div class="page-content">
     <div class="container">
         <div class="row confirm">
             <div class="col-md-12">
-                <table class="table">
-                    <thead class="text-primary">
-                        <tr>
-                            <th>Product</th>
-                            <th class="text-right">Price</th>
-                            <th class="text-right">Quantity</th>
-                            <th class="text-right">Sub Total</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model.CartItems)
-                        {
-                            <tr>
-                                <td>@item.Name</td>
-                                <td class="text-right">$@((item.Price).ToString("0.00"))</td>
-                                <td class="text-right">@item.Quantity</td>
-                                <td class="text-right">$@(((item.Price * item.Quantity)).ToString("0.00"))</td>
-                                <td class="text-right">
-                                    @using (Html.BeginForm("Delete", "ECommerce", FormMethod.Post))
-                                    {
-                                        @Html.Hidden("ProductId", item.ProductId)
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                    }
-                                </td>
-                            </tr>
-                        }
-                        @if (!Model.CartItems.Any())
-                        {
 
+                <div id="top" pxlurl="[product_url]">
+
+                    <div id="pageheader" class="docsection-wrapper">
+                        <div class="docsection boxed">
+                            <div class="breadcrumbs-wrapper clearfix">
+                                <div class="breadcrumbs">
+                                    <section>
+                                        <p><a href="/Home/Index">Home</a> > Shopping Cart</p>
+                                    </section>
+                                </div>
+                            </div>
+                            <div class="title-wrapper clearfix">
+                                <div class="title">
+                                    <head>
+                                        <h1>My Shopping Cart</h1>
+                                    </head>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="updateback" class="docsection-wrapper">
+                        <div class="docsection boxed">
+                            <a href="/Home/Index">Continue Shopping</a>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    <table class="table">
+                        <thead class="text-primary">
                             <tr>
-                                <td colspan="5">No items in shopping cart</td>
+                                <th>Product</th>
+                                <th class="text-right">Price</th>
+                                <th class="text-right">Quantity</th>
+                                <th class="text-right">Sub Total</th>
+                                <th></th>
                             </tr>
-                        }
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="3"><strong>Total</strong></td>
-                            <td class="text-right"><strong>$@((Model.CartItems.Sum(x => x.Price * x.Quantity)).ToString("0.00"))</strong></td>
-                            <td></td>
-                        </tr>
-                    </tfoot>
-                </table>
-                <div class="form-group">
-                    <label>In-line Checkout Experience</label>
-                    <p>
-                        <a href="@Url.Action("Checkout", "ECommerce")" class="btn btn-warning">Checkout with PayPal</a>
-                    </p>
-                </div>
-                <div class="form-group">
-                    <label>Popup Checkout Experience</label>
-                    <form id="myContainer" method="post" action="@Url.Action("Checkout", "ECommerce")"></form>
-                    <script>window.paypalCheckoutReady = function() {
-                            paypal.checkout.setup('BRKKN32NLUD56',
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.CartItems)
                             {
-                                environment: 'sandbox',
-                                container: 'myContainer'
-                            });
-                        };</script>
-                    <script src="//www.paypalobjects.com/api/checkout.js" async></script>
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td class="text-right">$@((item.Price).ToString("0.00"))</td>
+                                    <td class="text-right">@item.Quantity</td>
+                                    <td class="text-right">$@(((item.Price * item.Quantity)).ToString("0.00"))</td>
+                                    <td class="text-right">
+                                        @using (Html.BeginForm("Delete", "ECommerce", FormMethod.Post))
+                                        {
+                                            @Html.Hidden("ProductId", item.ProductId)
+                                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                            @if (!Model.CartItems.Any())
+                            {
+
+                                <tr>
+                                    <td colspan="5">No items in shopping cart</td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3"><strong>Total</strong></td>
+                                <td class="text-right"><strong>$@((Model.CartItems.Sum(x => x.Price * x.Quantity)).ToString("0.00"))</strong></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+
+
+
+
+
+                    <div id="shoppingcart" class="docsection-wrapper">
+                        <div class="docsection boxed">
+                            <section id="viewCart">
+                                <form action="shipquote.asp" method="post" name="shipquote" onSubmit="return submitForm();">
+                                    <input type="hidden" name="thispage" value="" />
+                                    <input type="hidden" name="shipping_zip" value="[shipping_zip]" />
+                                    <script type="text/javascript">document.shipquote.thispage.value = window.location.href;</script>
+                                </form>
+
+                                <div class="shoppingCartItems" id="divshoppingCartItems">
+                                    <div class="titles2">
+                                        <div class="item-info">ITEMS</div>
+                                        <div class="item-qty">QTY</div>
+                                        <div class="item-price">PRICE</div>
+                                        <div class="item-total">SUBTOTAL</div>
+                                        <div class="item-remove"></div>
+                                    </div>
+                                    @foreach (var item in Model.CartItems)
+                                    {
+                                        <div class="row">
+
+                                            <div class="item-info">
+                                                <div class="product-image">
+                                                    @*======== TODO =========*@
+                                                    <a href="https://www.the-apothecary.ca/product.asp?itemid=31"><img src="assets/images/thumbnails/powder-2017-web_thumbnail.jpg" /></a>
+
+
+                                                </div>
+                                                <div class="product-name-options">
+                                                    <div>
+                                                        <div>
+
+                                                            @item.Name
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="item-qty">
+                                                @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
+                                                {
+
+                                                    @Html.Hidden("ProductId", item.ProductId)
+
+                                                    <input type="text" placeholder="@item.Quantity" size="3" name="quant" class="txtBoxStyle" />
+
+                                                    <a href="javascript:void(0);" onclick="$(this).closest('form').submit();"><i class="icon-basket"></i>fdgfds</a>
+                                                }
+                                            </div>
+
+
+                                            @*<div class="item-qty">
+                    <input type="text" name="qty0" value="1" size="3" maxlength="5" class="txtBoxStyle" />
+                    @item.Quantity
+                    <input type="hidden" name="colid0" value="1" size="3" maxlength="5" />
+                </div>*@
+                                            <div class="item-price">
+                                                €@item.Price
+                                            </div>
+                                            <div class="item-total">
+                                                €@(item.Price * item.Quantity)
+                                            </div>
+
+                                            <div class="item-remove">
+                                                @using (Html.BeginForm("Delete", "ECommerce", FormMethod.Post))
+                                                {
+                                                    @Html.Hidden("ProductId", item.ProductId)
+                                                    <button type="submit" class="btn btn-sm"><i class="fa fa-times"></i></button>
+                                                }
+                                            </div>
+
+                                        </div>
+
+                                    }
+                                    @if (!Model.CartItems.Any())
+                                    {
+                                        <script type="text/javascript">
+                                            function load() {
+                                                window.location.href = "https://localhost:44304/ECommerce/EmptyViewCart"
+                                            }
+                                        </script>
+                                        <body onload="load()">
+                                        </body>
+                                        @*@{ Response.Redirect("~/ECommerce/EmptyViewCart");}*@
+
+                                    }
+                                    <div class="updatebtn updatebtn-btm">
+                                        <div><a class="btn btn-small update-qty" href="javascript:void(0);" onclick="$(this).closest('form').submit();">Update Cart</a></div>
+                                    </div>
+                                    <div class="shoppingCartTotal">
+                                        <div class="clearfix">
+
+
+                                            <div class="item-total-label"><strong>TOTAL</strong></div>
+                                            <div class="item-total-value item-total-total"><strong> €@(Model.CartItems.Sum(x => x.Price * x.Quantity))</strong></div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+
+                            </section>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-md-12" style="padding-bottom:5%; ">
+
+                        <div class="form-group">
+                            <label>In-line Checkout Experience</label>
+                            <p>
+                                <a href="@Url.Action("Checkout", "ECommerce")" class="btn btn-warning">Checkout with PayPal</a>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label>Popup Checkout Experience</label>
+                            <form id="myContainer" method="post" action="@Url.Action("Checkout", "ECommerce")"></form>
+                            <script>
+                                window.paypalCheckoutReady = function () {
+                                    paypal.checkout.setup('BRKKN32NLUD56',
+                                        {
+                                            environment: 'sandbox',
+                                            container: 'myContainer'
+                                        });
+                                };</script>
+                            <script src="//www.paypalobjects.com/api/checkout.js" async></script>
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+
+
+
+@*<div class="page-content">
+        <div class="container">
+            <div class="row confirm">
+                <div class="col-md-12">
+
+
+                    <div id="top" pxlurl="[product_url]">
+
+
+
+                        <div class="contentbox-wrapper">
+                            <div class="contentbox">
+
+
+
+
+                                <style type="text/css">
+                                    #simplemodal-container {
+                                        border: none !important;
+                                        background: none !important;
+                                        overflow-y: visible;
+                                    }
+
+                                    #divBusy {
+                                        display: none;
+                                        background-image: url(admin/templates/images/ajax-loader.gif);
+                                        width: 32px;
+                                        height: 32px;
+                                        margin: auto;
+                                        z-index: 999;
+                                        position: absolute;
+                                        top: 40px;
+                                        left: 50%;
+                                    }
+                                </style>
+
+
+                                <div id="shoppingcart" class="docsection-wrapper">
+                                    <div class="docsection boxed">
+                                        <section id="viewCart">
+                                            <form action="shipquote.asp" method="post" name="shipquote" onSubmit="return submitForm();">
+                                                <input type="hidden" name="thispage" value="" />
+                                                <input type="hidden" name="shipping_zip" value="[shipping_zip]" />
+                                                <script type="text/javascript">document.shipquote.thispage.value = window.location.href;</script>
+                                            </form>
+                                            <form action="recalculate.asp" method="post" name="recalculate" id="recalculate">
+
+                                                <div class="updatebtn updatebtn-top">
+                                                    <div style="min-height: 60px;"><a style="display: none;" class="btn btn-small update-qty" href="#" onclick="document.forms['recalculate'].submit();return false;">Update Cart</a></div>
+                                                </div>
+                                                <div class="shoppingCartItems" id="divshoppingCartItems">
+                                                    <div class="titles2">
+                                                        <div class="item-info">ITEMS</div>
+                                                        <div class="item-qty">QTY</div>
+                                                        <div class="item-price">PRICE</div>
+                                                        <div class="item-total">TOTAL</div>
+                                                        <div class="item-remove"></div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="item-info">
+                                                            <div class="product-image">
+
+                                                                <a href="https://www.the-apothecary.ca/product.asp?itemid=31"><img src="assets/images/thumbnails/powder-2017-web_thumbnail.jpg" /></a>
+
+
+                                                            </div>
+                                                            <div class="product-name-options">
+                                                                <div>
+                                                                    <div>
+
+                                                                        <a href="https://www.the-apothecary.ca/product.asp?itemid=31">Sweet Cheeks Baby Bum Powder</a>
+
+
+
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="item-qty">
+                                                            <input type="text" name="qty0" value="1" size="3" maxlength="5" class="txtBoxStyle" />
+                                                            <input type="hidden" name="colid0" value="128139" size="3" maxlength="5" />
+                                                        </div>
+                                                        <div class="item-price">
+                                                            $17.00
+                                                        </div>
+                                                        <div class="item-total">
+                                                            $17.00
+                                                        </div>
+                                                        <div class="item-remove">
+                                                            <a class="btn" href="#" onclick="document.recalculate.qty0.value=0;document.recalculate.submit();"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="updatebtn updatebtn-btm">
+                                                        <div><a class="btn btn-small update-qty" href="#" onclick="document.forms['recalculate'].submit();return false;">Update Cart</a></div>
+                                                    </div>
+                                                    <div class="shoppingCartTotal">
+                                                        <div class="clearfix">
+                                                            <div class="item-total-label">Subtotal</div>
+                                                            <div class="item-total-value">$17.00</div>
+
+                                                            <div class="item-total-label"><strong>TOTAL</strong></div>
+                                                            <div class="item-total-value item-total-total"><strong>$17.00</strong></div>
+                                                        </div>
+
+
+
+
+
+
+
+
+
+                                                        <div id="ChkButtonWrap">
+                    <span id="ChkButton"><button type="button" onclick="window.location='checkout.asp?step=1'" id="vc_ChkButton" class="btn">CHECKOUT</button></span>
+                </div>
+                                                        <span>Note: Total does not include tax, shipping, and handling rates. These will be calculated during check out.</span>
+                                                    </div>
+
+
+
+                                                    <div class="form-group">
+                                                        <label>In-line Checkout Experience</label>
+                                                        <p>
+                                                            <a href="@Url.Action("Checkout", "ECommerce")" class="btn btn-warning">Checkout with PayPal</a>
+                                                        </p>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Popup Checkout Experience</label>
+                                                        <form id="myContainer" method="post" action="@Url.Action("Checkout", "ECommerce")"></form>
+                                                        <script>
+                                                            window.paypalCheckoutReady = function () {
+                                                                paypal.checkout.setup('BRKKN32NLUD56',
+                                                                    {
+                                                                        environment: 'sandbox',
+                                                                        container: 'myContainer'
+                                                                    });
+                                                            };</script>
+                                                        <script src="//www.paypalobjects.com/api/checkout.js" async></script>
+                                                    </div>
+
+
+
+                                                </div>
+                                                <div class="updatebtn updatebtn-btm">
+                                                    <div><a class="btn btn-small update-qty" href="#" onclick="document.forms['recalculate'].submit();return false;">Update Cart</a></div>
+                                                </div>
+
+
+
+
+
+
+
+
+                                            </form>
+
+
+
+
+
+
+                                        </section>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <script type="text/javascript">var _cart_secure_url = "https://www.the-apothecary.ca"</script>
+                        <script>(new Image()).src = 'https://www.the-apothecary.ca/3dvisit.asp'</script>
+                </div>
+            </div>
+        </div>
+    </div>*@

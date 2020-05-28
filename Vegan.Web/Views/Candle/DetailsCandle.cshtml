@@ -15,16 +15,16 @@
             </div>
             <div class="title-wrapper clearfix">
                 <div class="title">
-                    <head>
+                    <div>
                         <h1> @Html.DisplayFor(model => model.Title) </h1>
-                    </head>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="productdetails" class="docsection-wrapper" itemscope itemtype="/">
         <div class="docsection boxed">
-            <form enctype="multipart/form-data" method="post" action="/ECommerce/Cart" name="add" id="add">
+            
                 <div class="content-wrapper clearfix">
                     <div id="productimage-wrapper">
                         <div id="productimage">
@@ -63,20 +63,23 @@
                                 </div>
                                 <div id="productcart">
                                     <div class="addToCartBlock">
-
                                         @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
                                         {
-                                            var id = @Html.DisplayFor(model => model.Id);
-                                            @Html.Hidden("ProductId", id);
-                                            <div class="qtybox-addcart">
+                                            
+                                            @Html.Hidden("ProductId", Model.Id)
 
-                                                <label>Quantity</label>
-                                                <input type="text" size="3" name="qty-0" value="1" onchange="validateValues(document.add,1);" class="txtBoxStyle" />
+                                            <div>
 
-                                                <a href="javascript:void(0);" onclick="$(this).closest('form').submit();"><i class="icon-basket"></i> Add to Cart</a>
+                                                <div class="qtybox-addcart">
+
+                                                    <label>Quantity</label>
+                                                    <input type="text" size="3" name="quant" class="txtBoxStyle" />
+
+                                                    <a href="javascript:void(0);" onclick="$(this).closest('form').submit();"><i class="icon-basket"></i> Add to Cart</a>
+                                                </div>
+
                                             </div>
                                         }
-
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +90,7 @@
                         </section>
                     </div>
                 </div>
-            </form>
+            
         </div>
     </div>
 </div>

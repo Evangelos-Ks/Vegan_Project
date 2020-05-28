@@ -14,5 +14,11 @@ namespace Vegan.Web.Models.ECommerce
         {
             CartItems = new List<CartItem>();
         }
+
+        public decimal Sum()
+        {
+            decimal sum = 0m;
+            return sum = CartItems.Sum(x => x.Price * x.Quantity);
+        }
     }
 }

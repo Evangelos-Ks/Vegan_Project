@@ -219,6 +219,7 @@
     <Compile Include="Controllers\EssentialOilController.cs" />
     <Compile Include="Controllers\SupplementController.cs" />
     <Compile Include="Controllers\TeaController.cs" />
+    <Compile Include="Extras\PaypalConfiguration.cs" />
     <Compile Include="Extras\SimulatableWebhook.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1137,6 +1138,7 @@
     <Content Include="Views\HomeVegan\EditHomeVegan.cshtml" />
     <Content Include="Views\Administrator\Map.cshtml" />
     <Content Include="Views\ECommerce\Cart.cshtml" />
+    <Content Include="Views\ECommerce\EmptyViewCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

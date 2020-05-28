@@ -38,10 +38,18 @@
                         <ul id="nav-store-icons">
 
                             @RenderPage("~/Views/Shared/_LoginPartial.cshtml")
-                            <li id="nav-store-cart"><a href="/ECommerce/Cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <span>Cart</span> <strong>$0</strong></a></li>
-                            
-                            @*========================== ADD Session Counter ===========================*@
-                            <li class="badge">@Session["counter"]</li>
+
+                            <li id="nav-store-cart">
+                                <a href="/ECommerce/Cart">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                                    <span>Cart</span>
+                                    <strong>
+                                        @*============ ADD Session Price with Currency Change to Euro ===========================*@
+                                        @string.Format(@System.Globalization.CultureInfo.CurrentCulture = @System.Globalization.CultureInfo.CreateSpecificCulture("gr-GR"), "{0:c2}", Session["Price"])
+                                        
+                                    </strong>
+                                </a>
+                            </li>
                         </ul>
 
                     </nav>
@@ -136,11 +144,11 @@
 
 @*=======================================  Sorting Action Links  ========================================================================*@
 @*<div>
-    <em> Sort By : </em>
-    @Html.ActionLink("Title", "CourseTables", "Course", new { sortOrder = ViewBag.TitleSortParam }, new { @class = ViewBag.TiView })
-    @Html.ActionLink("Type", "CourseTables", "Course", new { sortOrder = ViewBag.TypeSortParam }, new { @class = ViewBag.TyView })
-    @Html.ActionLink("Start Date", "CourseTables", "Course", new { sortOrder = ViewBag.StartDateSortParam }, new { @class = ViewBag.SdView })
-    @Html.ActionLink("End Date", "CourseTables", "Course", new { sortOrder = ViewBag.EndDateSortParam }, new { @class = ViewBag.EdView })
-    @Html.ActionLink("Fee", "CourseTables", "Course", new { sortOrder = ViewBag.FeeSortParam }, new { @class = ViewBag.FeView })
-</div>*@
+        <em> Sort By : </em>
+        @Html.ActionLink("Title", "CourseTables", "Course", new { sortOrder = ViewBag.TitleSortParam }, new { @class = ViewBag.TiView })
+        @Html.ActionLink("Type", "CourseTables", "Course", new { sortOrder = ViewBag.TypeSortParam }, new { @class = ViewBag.TyView })
+        @Html.ActionLink("Start Date", "CourseTables", "Course", new { sortOrder = ViewBag.StartDateSortParam }, new { @class = ViewBag.SdView })
+        @Html.ActionLink("End Date", "CourseTables", "Course", new { sortOrder = ViewBag.EndDateSortParam }, new { @class = ViewBag.EdView })
+        @Html.ActionLink("Fee", "CourseTables", "Course", new { sortOrder = ViewBag.FeeSortParam }, new { @class = ViewBag.FeView })
+    </div>*@
 

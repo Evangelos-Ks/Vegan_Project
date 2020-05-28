@@ -37,20 +37,19 @@ namespace Vegan.Web.Controllers
             return View(cart);
         }
 
-        //[HttpPost]
-        public ActionResult Add(int ProductId)
+        [HttpPost]
+        public ActionResult Add(int ProductId, string quant="1")
         {
             var product = _dbContext.Products.FirstOrDefault(x => x.Id == ProductId);
-
+            var quantity = Convert.ToInt32(quant);
             var cart = CreateOrGetCart();
             var existingItem = cart.CartItems.FirstOrDefault(x => x.ProductId == product.Id);
-            if (Session["counter"] == null)
-                Session["counter"] = 0;
+            if (Session["Price"] == null)
+                Session["Price"] = 0m;
             if (existingItem != null)
             {
-                var numberOfItems = cart.CartItems.FindAll(x =>x.ProductId == product.Id).Count;
-                existingItem.Quantity++;
-                Session["counter"] = (int)Session["counter"] + numberOfItems;
+                existingItem.Quantity = quantity;
+                Session["Price"] = cart.Sum();//(decimal)Session["Price"] + existingItem.Price;
             }
             else
             {
@@ -59,11 +58,12 @@ namespace Vegan.Web.Controllers
                     ProductId = product.Id,
                     Name = product.Title,
                     Price = product.Price,
-                    Quantity = 1
+                    Quantity = quantity
                 });
-                var numberOfItems = cart.CartItems.FindAll(x => x.ProductId == product.Id).Count;
-                Session["counter"] = (int)Session["counter"] + numberOfItems;
+
+                Session["Price"] = cart.Sum();//(decimal)Session["Price"] + (product.Price*quantity);
             }
+            
 
             SaveCart(cart);
 
@@ -80,20 +80,30 @@ namespace Vegan.Web.Controllers
 
             if (existingItem != null)
             {
-
+                
                 cart.CartItems.Remove(existingItem);
-
-                Session["counter"] = (int)Session["counter"] - existingItem.Quantity;
             }
             if (!cart.CartItems.Any())
             {
-                @Session["counter"] = 0;
+                @Session["Price"] = 0m;
             }
 
             SaveCart(cart);
-
+            Session["Price"] = cart.Sum();//(decimal)Session["Price"] - (existingItem.Price*existingItem.Quantity);
             return RedirectToAction("Cart", "ECommerce");
         }
+
+
+        public ActionResult EmptyViewCart()
+        {
+            return View();
+        }
+
+
+
+
+
+
 
 
         //private MyDatabase _dbContext2 => HttpContext.GetOwinContext().Get<MyDatabase>();
@@ -267,5 +277,12 @@ namespace Vegan.Web.Controllers
             var apiContext = new APIContext(accessToken);
             return apiContext;
         }
+
+
+       
+
+
+
+
     }
 }
