@@ -20,18 +20,18 @@ namespace Vegan.Web.Controllers
         //private MyDatabase _dbContext => HttpContext.GetOwinContext().Get<MyDatabase>();
         //private MyDatabase _dbContext => HttpContext.GetOwinContext().Get<MyDatabase>();
 
-    //    public ActionResult Index()
-    //    {
-    //        var model = new IndexVm()
-    //        {
-    //            Products = _dbContext.Products.ToList();
+        //    public ActionResult Index()
+        //    {
+        //        var model = new IndexVm()
+        //        {
+        //            Products = _dbContext.Products.ToList();
 
-    //    };
+        //    };
 
-    //        return View(model);
-    //}
+        //        return View(model);
+        //}
 
-    public ActionResult Cart()
+        public ActionResult Cart()
         {
             var cart = CreateOrGetCart();
 
@@ -39,7 +39,7 @@ namespace Vegan.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Add(int ProductId, string quant="1")
+        public ActionResult Add(int ProductId, string quant = "1")
         {
             //var product = _dbContext.Products.FirstOrDefault(x => x.Id == ProductId);
             //var productList = _dbContext.Products;
@@ -62,12 +62,13 @@ namespace Vegan.Web.Controllers
                     ProductId = product.Id,
                     Name = product.Title,
                     Price = product.Price,
-                    Quantity = quantity
+                    Quantity = quantity,
+                    ImageUrl = product.ImageURL
                 });
 
                 Session["Price"] = cart.Sum();//(decimal)Session["Price"] + (product.Price*quantity);
             }
-            
+
 
             SaveCart(cart);
 
@@ -84,7 +85,7 @@ namespace Vegan.Web.Controllers
 
             if (existingItem != null)
             {
-                
+
                 cart.CartItems.Remove(existingItem);
             }
             if (!cart.CartItems.Any())
@@ -111,10 +112,10 @@ namespace Vegan.Web.Controllers
             if (cart.CartItems.Any())
             {
                 // Flat rate shipping
-                int shipping = 500;
+                decimal shipping = 0m;
 
                 // Flat rate tax 10%
-                var taxRate = 0.1M;
+                decimal taxRate = 0M;
 
                 var subtotal = cart.CartItems.Sum(x => x.Price * x.Quantity);
                 var tax = Convert.ToInt32((subtotal + shipping) * taxRate);
@@ -154,10 +155,10 @@ namespace Vegan.Web.Controllers
                     {
                         new Transaction
                         {
-                            description = $"BeerPal Brewery Shopping Cart Purchase",
+                            description = $"Vegan Shopping Cart Purchase",
                             amount = new Amount
                             {
-                                currency = "USD",
+                                currency = "EUR",
                                 total = (order.Total).ToString(), // PayPal expects string amounts, eg. "20.00",
                                 details = new Details()
                                 {
@@ -172,7 +173,7 @@ namespace Vegan.Web.Controllers
                                     order.OrderItems.Select(x => new Item()
                                     {
                                         description = x.Name,
-                                        currency = "USD",
+                                        currency = "EUR",
                                         quantity = x.Quantity.ToString(),
                                         price = (x.Price).ToString(), // PayPal expects string amounts, eg. "20.00"
                                     }).ToList()
@@ -188,7 +189,7 @@ namespace Vegan.Web.Controllers
 
                 // Send the payment to PayPal
                 var createdPayment = payment.Create(apiContext);
-
+                
                 // Save a reference to the paypal payment
                 order.PayPalReference = createdPayment.id;
 
@@ -271,10 +272,14 @@ namespace Vegan.Web.Controllers
         private APIContext GetApiContext()
         {
             // Authenticate with PayPal
-            var config = ConfigManager.Instance.GetProperties();
-            var accessToken = new OAuthTokenCredential(config).GetAccessToken();
+            var config = GetConfig();
+            var clientId = config["clientid"];
+            var clientSecret = config["clientsecret"];
+            var accessToken = new OAuthTokenCredential(clientId, clientSecret, config).GetAccessToken();
             var apiContext = new APIContext(accessToken);
             return apiContext;
         }
+
+        private Dictionary<string, string> GetConfig() { return ConfigManager.Instance.GetProperties(); }
     }
 }
