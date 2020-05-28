@@ -16,9 +16,13 @@ namespace Vegan.Web.API.Controllers
 {
     public class CategoriesController : ApiController
     {
+        
         // GET: api/Categories
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
+        /// <summary>
+        /// This will bring all of the categories with the products
+        /// </summary>
         // GET: api/Products
         public IEnumerable<IEnumerable<Product>> GetProducts()
         {

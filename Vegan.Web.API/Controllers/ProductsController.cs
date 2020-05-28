@@ -20,12 +20,18 @@ namespace Vegan.Web.API.Controllers
     {
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
+        /// <summary>
+        /// This will bring all the products
+        /// </summary>
         // GET: api/Products
         public IEnumerable<Product> GetProducts()
         {
             return unitOfWork.Products.GetAll();
         }
 
+        /// <summary>
+        /// This will bring a product based on id
+        /// </summary>
         // GET: api/Products/5
         [ResponseType(typeof(Product))]
         public IHttpActionResult GetProduct(int id)

@@ -18,6 +18,7 @@ namespace Vegan.Web.API
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+        //https://localhost:44332/swagger/ui/index#/
         }
     }
 }
