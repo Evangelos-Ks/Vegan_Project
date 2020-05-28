@@ -1903,11 +1903,11 @@ function angularInit(element, bootstrap) {
  *
  * <script src="angular.js"></script>
  * <script>
- *   var app = angular.module('demo', [])
+ *   var app = angular.module('chart', [])
  *   .controller('WelcomeController', function($scope) {
  *       $scope.greeting = 'Welcome!';
  *   });
- *   angular.bootstrap(document, ['demo']);
+ *   angular.bootstrap(document, ['chart']);
  * </script>
  * </body>
  * </html>
@@ -13684,13 +13684,13 @@ $interpolateMinErr.interr = function(text, err) {
       this.label = "This binding is brought you by // interpolation symbols.";
   });
 </script>
-<div ng-controller="DemoController as demo">
-    //demo.label//
+<div ng-controller="DemoController as chart">
+    //chart.label//
 </div>
 </file>
 <file name="protractor.js" type="protractor">
   it('should interpolate binding with custom symbols', function() {
-    expect(element(by.binding('demo.label')).getText()).toBe('This binding is brought you by // interpolation symbols.');
+    expect(element(by.binding('chart.label')).getText()).toBe('This binding is brought you by // interpolation symbols.');
   });
 </file>
 </example>
@@ -13825,7 +13825,7 @@ function $InterpolateProvider() {
      * <example name="interpolation">
      *  <file name="index.html">
      *    <div ng-init="username='A user'">
-     *      <p ng-init="apptitle='Escaping demo'">{{apptitle}}: \{\{ username = "defaced value"; \}\}
+     *      <p ng-init="apptitle='Escaping chart'">{{apptitle}}: \{\{ username = "defaced value"; \}\}
      *        </p>
      *      <p><strong>{{username}}</strong> attempts to inject code which will deface the
      *        application, but fails to accomplish their task, because the server has correctly
@@ -20639,7 +20639,7 @@ function $SceDelegateProvider() {
  * </file>
  *
  * <file name="protractor.js" type="protractor">
- *   describe('SCE doc demo', function() {
+ *   describe('SCE doc chart', function() {
  *     it('should sanitize untrusted values', function() {
  *       expect(element.all(by.css('.htmlComment')).first().getAttribute('innerHTML'))
  *           .toBe('<span>Is <i>anyone</i> reading this?</span>');
@@ -24282,7 +24282,7 @@ var htmlAnchorDirective = valueFn({
     <example name="ng-selected">
       <file name="index.html">
         <label>Check me to select: <input type="checkbox" ng-model="selected"></label><br/>
-        <select aria-label="ngSelected demo">
+        <select aria-label="ngSelected chart">
           <option>Hello!</option>
           <option id="greet" ng-selected="selected">Greetings!</option>
         </select>
@@ -29841,7 +29841,7 @@ var ngIncludeFillContentDirective = ['$compile',
  * There are only a few appropriate uses of `ngInit`:
  * <ul>
  *   <li>aliasing special properties of {@link ng.directive:ngRepeat `ngRepeat`},
- *     as seen in the demo below.</li>
+ *     as seen in the chart below.</li>
  *   <li>initializing data during development, or for examples, as seen throughout these docs.</li>
  *   <li>injecting data via server side scripting.</li>
  * </ul>
@@ -31698,7 +31698,7 @@ defaultModelOptions = new ModelOptions({
  *
   <example name="ngModelOptions-advanced" module="optionsExample">
     <file name="index.html">
-       <model-update-demo></model-update-demo>
+       <model-update-chart></model-update-chart>
     </file>
     <file name="app.js">
       angular.module('optionsExample', [])
