@@ -37,14 +37,5 @@ namespace Vegan.Entities.Library
         {
             return new ApplicationDbContext();
         }
-
-        //====================== Product ==================
-        public DbSet<Product> Products { get; set; }
-
-        //====================== Sales ==================
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<Subscription> Subscriptions { get; set; }
-        public DbSet<WebhookEvent> WebhookEvents { get; set; }
     }
 }

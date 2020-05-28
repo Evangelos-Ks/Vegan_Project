@@ -21,15 +21,15 @@ namespace Vegan.Database
         {
            
         }
+       
+        //====================== Product ==================
+        public DbSet<Product> Products { get; set; }
 
-        ////====================== Product ==================
-        //public DbSet<Product> Products { get; set; }
-
-        ////====================== Sales ==================
-        //public DbSet<Order> Orders { get; set; }
-        //public DbSet<OrderItem> OrderItems { get; set; }
-        //public DbSet<Subscription> Subscriptions { get; set; }
-        //public DbSet<WebhookEvent> WebhookEvents { get; set; }
+        //====================== Sales ===================
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Subscription> Subscriptions { get; set; }
+        public DbSet<WebhookEvent> WebhookEvents { get; set; }
 
         //====================== Care =====================
         public DbSet<Care> Cares { get; set; }
