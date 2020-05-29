@@ -103,7 +103,7 @@
         });
     },
 
-    initDashboardPageCharts: function (years, totals) { // 
+    initDashboardPageCharts: function (years, totals, taxTotalsPerYear) { // 
 
         chartColor = "#FFFFFF";
 
@@ -221,7 +221,7 @@
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: years,
+                labels: years, //----------------------------------------------------------------------------------------- blue OK 
                 datasets: [{
                     label: "Data",
                     borderColor: chartColor,
@@ -315,9 +315,9 @@
             type: 'line',
             responsive: true,
             data: {
-                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                labels: years,//----------------------------------------------------------------------------------------- orange
                 datasets: [{
-                    label: "Active Users",
+                    label: "Tax pay",
                     borderColor: "#f96332",
                     pointBorderColor: "#FFF",
                     pointBackgroundColor: "#f96332",
@@ -328,15 +328,14 @@
                     fill: true,
                     backgroundColor: gradientFill,
                     borderWidth: 2,
-                    data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 630]
+                    data: taxTotalsPerYear
                 }]
             },
             options: gradientChartOptionsConfiguration
         });
 
 
-        ctx = document.getElementById('lineChartExampleWithNumbersAndGrid').getContext("2d");
-
+        ctx = document.getElementById('lineChartExampleWithNumbersAndGrid').getContext("2d"); //-----------------------------------------------------------------------green
         gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
         gradientStroke.addColorStop(0, '#18ce0f');
         gradientStroke.addColorStop(1, chartColor);
@@ -351,7 +350,7 @@
             data: {
                 labels: years,/* =====*/
                 datasets: [{
-                    label: "Email Stats",
+                    label: years,
                     borderColor: "#18ce0f",
                     pointBorderColor: "#FFF",
                     pointBackgroundColor: "#18ce0f",
@@ -362,7 +361,7 @@
                     fill: true,
                     backgroundColor: gradientFill,
                     borderWidth: 2,
-                    data: totals/* =====*/
+                    data: taxTotalsPerYear/* =====*/
                 }]
             },
             options: gradientChartOptionsConfigurationWithNumbersAndGrid
@@ -379,7 +378,7 @@
             data: {
                 labels: ["Home Category", "Care", "Food & Herbs", "Supplements"],
                 datasets: [{
-                    label: "Active Countries",
+                    label: "Active Countries", //--------------------------------------------------------------bars
                     backgroundColor: gradientFill,
                     borderColor: "#2CA8FF",
                     pointBorderColor: "#FFF",

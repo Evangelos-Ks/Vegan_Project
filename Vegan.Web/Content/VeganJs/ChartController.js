@@ -27,38 +27,53 @@
                     $scope.years = unique;
 
                     var yearlyTotalArray = [];
+                    var yearlyTaxTotalArray = [];
                     var taxArray = [];
+                    var priceArray = [];
+                    var ordersIDArray = [];
 
                     //Check the orders for every year
                     for (var t = 0; t < unique.length; t++) {
 
                         //Calculate the total for every year
                         var yearlyTotal = 0;
+                        var taxYearlyTotal = 0;
                         for (var i = 0; i < response.data.length; i++) {
                             //Find the total
                             if (unique[t] === parseInt(response.data[i].OrderStamp.split("-")[0])) {
+                                //Yearly total
                                 yearlyTotal = yearlyTotal + response.data[i].Total;
+                                //Tax Total
+                                taxYearlyTotal = taxYearlyTotal + response.data[i].Tax;
+                                //Price array
+                                priceArray.push(response.data[i].Price);
+                               
                             }
-                            console.log(yearlyTotal)
+                            
+
                             //Calculate tax
-                            //taxArray.push(response.data[i].tax)
-                            //console.log(response.data[i].tax)
-                            //console.log(    taxArray);
+                            taxArray.push(taxYearlyTotal)
+                            //Collect orders
+                            ordersIDArray.push(response.data[i].OrderId)
+                           
+
                         }
                         //Create an array with the totals
                         yearlyTotalArray.push(yearlyTotal);
-
+                        yearlyTaxTotalArray.push(taxYearlyTotal)
+                       
                     }
+                   
+                    //Total
                     $scope.totalsPerYear = yearlyTotalArray;
+                    //TaxTotal
+                    $scope.taxTotalsPerYear = yearlyTaxTotalArray;
+                    //Price
+                    $scope.price = priceArray;
+                    //Orders
+                    $scope.orders = ordersIDArray;
 
-                    //Tax
-                 
-                    //console.log(taxArray);
-
-                    //$scope.tax = taxArray;
-
-
-                    demo.initDashboardPageCharts($scope.years, $scope.totalsPerYear/*, $scope.tax*/);
+                    demo.initDashboardPageCharts($scope.years, $scope.totalsPerYear, $scope.taxTotalsPerYear, $scope.price, $scope.orders);
 
 
                 });

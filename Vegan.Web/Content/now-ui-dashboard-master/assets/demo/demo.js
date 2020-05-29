@@ -83,9 +83,9 @@ demo = {
       type: 'line',
       responsive: true,
       data: {
-        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        labels: years,
         datasets: [{
-          label: "Active Users",
+          label: "Tax payments",
           borderColor: "#f96332",
           pointBorderColor: "#FFF",
           pointBackgroundColor: "#f96332",
@@ -96,14 +96,14 @@ demo = {
           fill: true,
           backgroundColor: gradientFill,
           borderWidth: 2,
-          data: [542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 630]
+          data: taxTotalsPerYear
         }]
       },
       options: gradientChartOptionsConfiguration
     });
   },
 
-    initDashboardPageCharts: function (years, totalsPerYear) { // ============= // 
+    initDashboardPageCharts: function (years, totalsPerYear, taxTotalsPerYear, price, order) { // ============= //  OK 
 
     chartColor = "#FFFFFF";
 
@@ -317,9 +317,9 @@ demo = {
       type: 'line',
       responsive: true,
       data: {
-            labels: years, //<================
+            labels: years, //<================ OK 
         datasets: [{
-          label: "Active Users",
+          label: "Tax",
           borderColor: "#f96332",
           pointBorderColor: "#FFF",
           pointBackgroundColor: "#f96332",
@@ -329,8 +329,8 @@ demo = {
           pointRadius: 4,
           fill: true,
           backgroundColor: gradientFill,
-          borderWidth: 2,
-            data: totalsPerYear //<================
+            borderWidth: 2,
+            data: taxTotalsPerYear //<================ OK 
         }]
       },
       options: gradientChartOptionsConfiguration
@@ -351,9 +351,9 @@ demo = {
       type: 'line',
       responsive: true,
       data: {
-        labels: ["12pm,", "3pm", "6pm", "9pm", "12am", "3am", "6am", "9am"],
+          labels: price, //<================
         datasets: [{
-          label: "Email Stats",
+          label: "Highest orders this month",
           borderColor: "#18ce0f",
           pointBorderColor: "#FFF",
           pointBackgroundColor: "#18ce0f",
@@ -363,8 +363,8 @@ demo = {
           pointRadius: 4,
           fill: true,
           backgroundColor: gradientFill,
-          borderWidth: 2,
-          data: [40, 500, 650, 700, 1200, 1250, 1300, 1900]
+            borderWidth: 2,
+            data: taxTotalsPerYear //<================
         }]
       },
       options: gradientChartOptionsConfigurationWithNumbersAndGrid
@@ -379,9 +379,9 @@ demo = {
     var a = {
       type: "bar",
       data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+          labels: price,  //<================
         datasets: [{
-          label: "Active Countries",
+          label: "Price per order",
           backgroundColor: gradientFill,
           borderColor: "#2CA8FF",
           pointBorderColor: "#FFF",
@@ -392,7 +392,7 @@ demo = {
           pointRadius: 4,
           fill: true,
           borderWidth: 1,
-          data: [80, 99, 86, 96, 123, 85, 100, 75, 88, 90, 123, 155]
+            data: order //<================
         }]
       },
       options: {
