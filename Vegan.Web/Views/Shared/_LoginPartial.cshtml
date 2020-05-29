@@ -6,24 +6,27 @@
         @Html.AntiForgeryToken()
 
         var identity = "Hello " + @User.Identity.GetUserName() + "!";
-        <li id="registerLink"><a href="/Manage/Index"><i class="fa fa-registered" aria-hidden="true"></i> <span>@identity</span> </a></li>
-        <li id="loginLink"><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Log off</span> </a></li>
-        <li id="nav-store-cart">
-            <a href="/ECommerce/Cart">
-                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                <span>Cart</span>
-                <strong>
-                    @*============ ADD Session Price with Currency Change to Euro ===========================*@
-                    @string.Format(@System.Globalization.CultureInfo.CurrentCulture = @System.Globalization.CultureInfo.CreateSpecificCulture("gr-GR"), "{0:c2}", Session["Price"])
-                </strong>
-            </a>
-        </li>
+        <ul id="nav-store-icons">
+            <li id="nav-store-login"><a href="/Manage/Index"><i class="fa fa-registered" aria-hidden="true"></i> <span>@identity</span> </a></li>
+            <li id="nav-store-logout"><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Log off</span> </a></li>
+            <li id="nav-store-cart">
+                <a href="/ECommerce/Cart">
+                    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span>Cart</span>
+                    <strong>
+                        @*============ ADD Session Price with Currency Change to Euro ===========================*@
+                        @string.Format(@System.Globalization.CultureInfo.CurrentCulture = @System.Globalization.CultureInfo.CreateSpecificCulture("gr-GR"), "{0:c2}", Session["Price"])
+                    </strong>
+                </a>
+            </li>
+        </ul>
+
     }
 }
 else
 {
-    <li id="registerLink"><a href="/Account/Register"><i class="fa fa-registered" aria-hidden="true"></i> <span>Register</span> </a></li>
-    <li id="loginLink"><a href="/Account/Login"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Log in</span> </a></li>
+    <li id="nav-store-login"><a href="/Account/Register"><i class="fa fa-registered" aria-hidden="true"></i> <span>Register</span> </a></li>
+    <li id="nav-store-login"><a href="/Account/Login"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Log in</span> </a></li>
     <li id="nav-store-cart">
         <a href="/ECommerce/Cart">
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -34,6 +37,4 @@ else
             </strong>
         </a>
     </li>
-
 }
-
