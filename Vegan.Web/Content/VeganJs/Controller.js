@@ -14,6 +14,7 @@
                     $scope.Homes = response.data[2];
                     $scope.Supplements = response.data[3];
                     $scope.AllProducts = $scope.Care.concat($scope.FoodHerbs).concat($scope.Homes).concat($scope.Supplements);
+                    $scope.NumberOfProducts = $scope.AllProducts.length;
 
                     //autocomplete
                     autocomplete(document.getElementById("searchlight"), AutocompleteItems($scope.AllProducts));
@@ -50,22 +51,24 @@
     VeganProject.controller("VeganController", VeganController);
 
     //============================================== AllProductsController =================================================
-    var allProductsUrl = "https://localhost:44304/api/ProductsAPI";
+    //var allProductsUrl = "https://localhost:44304/api/ProductsAPI";
 
 
-    var AllProductsController = function ($scope, $http) {
+    //var AllProductsController = function ($scope, $http) {
 
-        var GetAllProducts = function myfunction() {
-            $http.get(allProductsUrl)
-                .then(function (response) {
-                    $scope.AllProducts = response.data;
-                }, function myError(response) {
-                    console.log(response);
-                })
-        };
-        GetAllProducts();
-    };
+    //    var GetAllProducts = function myfunction() {
+    //        $http.get(allProductsUrl)
+    //            .then(function (response) {
+    //                $scope.AllProducts = response.data;
+    //                $scope.NumberOfProducts = response.length;
+    //                console.log(scope.NumberOfProducts);
+    //            }, function myError(response) {
+    //                console.log(response);
+    //            })
+    //    };
+    //    GetAllProducts();
+    //};
 
-    VeganProject.controller("AllProductsController", AllProductsController);
+    //VeganProject.controller("AllProductsController", AllProductsController);
 
 })();

@@ -10,287 +10,65 @@
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
-<div ng-controller="AllProductsController" id="AllProducts">
-    <div id="top" pxlurl="[product_url]" class="container-fluid">
-        <div class="contentbox-wrapper docsection-wrapper">
+<div ng-controller="VeganController" id="AllProducts">
+    <div id="top" pxlurl="[product_url]">
+        <div class="contentbox-wrapper">
             <div class="contentbox docsection boxed productlist">
-                <div id="pageheader">
-                    <div class="breadcrumbs-wrapper clearfix">
-                        <div class="breadcrumbs">
-                            <section>
-                                <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/AllProduct/IndexUser">All Products</a></p>
-                            </section>
+                <div id="pageheader" class="docsection-wrapper ">
+                    <div class="">
+                        <div class="breadcrumbs-wrapper clearfix">
+                            <div class="breadcrumbs">
+                                <section>
+                                    <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/FoodHerb/IndexUser">Dry food & Herbs > </a> <a href="/Tea/IndexUser">Teas</a></p>
+                                </section>
+                            </div>
                         </div>
-                    </div>
-                    <div class="title-wrapper clearfix">
-                        <div class="title">
-                            <header>
-                                <h1>All Products</h1>
-                            </header>
+                        <div class="title-wrapper clearfix">
+                            <div class="title">
+                                <header>
+                                    <h1>All Products</h1>
+                                </header>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="header-wrapper clearfix">
                     <div class="header">
-                        <header class="container">
-                            <br />
-                            <br />
+                        <header>
                             <h2>
-                                Products
-
-                            </h2>
-                            <h2 class="" style=" float: right;
-                                                    margin: 0 0 10px;">
-                                <small style="display:inline; ">
-                                    @Html.PagedListPager((IPagedList)Model.HomeProducts, x => @Url.Action("IndexUser", "AllProduct", new
-                               {
-                                   page = x,
-                                   pSize = ViewBag.CurrentpSize
-                               }), new PagedListRenderOptions() { LiElementClasses = new List<string> { "pager" } })
-
-                                </small>
-                            </h2>
-                            <br />
-                            <h2>
-                                @{
-                                    SelectListItem a1 = new SelectListItem() { Text = "3", Value = "3" };
-                                    SelectListItem a2 = new SelectListItem() { Text = "5", Value = "5" };
-                                    SelectListItem a3 = new SelectListItem() { Text = "10", Value = "10" };
-                                    List<SelectListItem> selectItems = new List<SelectListItem>() { a1, a2, a3 };
-                                }
-
-                                <div class="" style="flex">
-                                    @using (Html.BeginForm("IndexUser", "AllProduct", FormMethod.Get, new { @class = "form-inline" }))
-                                    {
-                                        <h2><small style="margin: 20px 20px 20px 20px; width : 250px;">@Html.Label("Items of category per page:")</small></h2>
-                                        @Html.DropDownList("pSize", selectItems, new { @class = "form-control", style = "margin: 25px 20px 20px 20px; width : 150px; height : 30px;" })
-
-                                        <input type="submit" value="Search" class="btn" style="margin: 0px 20px 20px 10px; width : 150px; height : 30px; font-size : 18px; text-align:center" />
-
-                                    }
-                                </div>
+                                <small>Total Items: {{NumberOfProducts}} </small>
                             </h2>
                         </header>
                     </div>
                 </div>
-            </div>
-            <div class="content container">
-                <div class="title-wrapper clearfix">
-                    <div class="title">
-                        <header>
-                            <h2> Home Products</h2>
-                        </header>
-                    </div>
-                </div>
-
-
-                @foreach (var item in Model.HomeProducts)
-                {
-                    <div class="product">
-                        @{
-                            string baseType = item.GetType().BaseType.ToString();
-                            var splitBaseType = baseType.Split('.');
-                            baseType = splitBaseType[splitBaseType.Length - 1];
-                        }
-                        <div class="image"
-                             style="
-                                filter:
-                                -webkit-filter: blur(4px);
-                                background-position: center;
-                                background-repeat: no-repeat;
-                                background-size: cover;
-                                background-position: right top;
-                                background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));
-                                max-height: 400px; ">
-                            <img src="@Html.DisplayFor(modelItem => item.ImageURL)" style="max-height:400px;  filter: blur(0px);">
-                        </div>
-                        <div class="frame"></div>
-                        <div class="info">
-                            <div class="info-data">
-                                <div>
-                                    <div>
-                                        @Html.ActionLink("Read More", String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType), new { productId = item.Id }, null)
-                                        <div class="price">
-                                            <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+                <div class="content-wrapper clearfix">
+                    <div class="content">
+                        <div ng-repeat="product in AllProducts">
+                            <div class="product">
+                                <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)"></div>
+                                <div class="frame"></div>
+                                <div class="info">
+                                    <div class="info-data">
+                                        <div>
+                                            <div>
+                                                @Html.ActionLink("Read More", "DetailsTea", new { productId = item.Id }, new { @class = "btn" })
+                                                <div class="price">
+                                                    <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
+                                <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsTea", new { productId = item.Id })</h3>
                             </div>
                         </div>
-                        <h3>
-                            @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType),
-      new { productId = item.Id }, new { @class = "btn btn-light" })
-                        </h3>
-                    </div>
-                    <hr />
-                }
-            </div>
-
-            <div class="content container">
-                <div class="title-wrapper clearfix">
-                    <div class="title">
-                        <header>
-                            <h2> Care Products</h2>
-                        </header>
                     </div>
                 </div>
 
-
-                @foreach (var item in Model.CareProducts)
-                {
-                    <div class="product">
-
-
-
-                        @{
-                            string baseType = item.GetType().BaseType.ToString();
-                            var splitBaseType = baseType.Split('.');
-                            baseType = splitBaseType[splitBaseType.Length - 1];
-
-                        }
-
-                        <div class="image"
-                             style="
-                             filter:
-                                -webkit-filter: blur(4px);
-                                background-position: center;
-                                background-repeat: no-repeat;
-                                background-size: cover;
-                             background-position: right top;
-                                background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));
-                                max-height: 400px; ">
-
-                            <img src="@Html.DisplayFor(modelItem => item.ImageURL)" style="max-height:400px;  filter: blur(0px);">
-                        </div>
-                        <div class="frame"></div>
-                        <div class="info">
-                            <div class="info-data">
-                                <div>
-                                    <div>
-                                        @Html.ActionLink("Read More", String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType), new { productId = item.Id }, null)
-                                        <div class="price">
-                                            <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType), new { productId = item.Id }, null)</h3>
-                    </div>
-                    <hr />
-                }
-            </div>
-            <div class="content container">
-                <div class="title-wrapper clearfix">
-                    <div class="title">
-                        <header>
-                            <h2>Dry Food & Herbs</h2>
-                        </header>
-                    </div>
-                </div>
-
-
-                @foreach (var item in Model.FoodHerbProducts)
-                {
-                    <div class="product">
-
-
-
-                        @{
-                            string baseType = item.GetType().BaseType.ToString();
-                            var splitBaseType = baseType.Split('.');
-                            baseType = splitBaseType[splitBaseType.Length - 1];
-
-                        }
-
-                        <div class="image"
-                             style="
-                             filter:
-                                -webkit-filter: blur(4px);
-                                background-position: center;
-                                background-repeat: no-repeat;
-                                background-size: cover;
-                             background-position: right top;
-                                background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));
-                                max-height: 400px; ">
-
-                            <img src="@Html.DisplayFor(modelItem => item.ImageURL)" style="max-height:400px;  filter: blur(0px);">
-                        </div>
-                        <div class="frame"></div>
-                        <div class="info">
-                            <div class="info-data">
-                                <div>
-                                    <div>
-                                        @Html.ActionLink("Read More", String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType), new { productId = item.Id }, null)
-                                        <div class="price">
-                                            <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType), new { productId = item.Id }, null)</h3>
-                    </div>
-                    <hr />
-                }
-            </div>
-            <div class="content container">
-                <div class="title-wrapper clearfix">
-                    <div class="title">
-                        <header>
-                            <h2> Supplement Products</h2>
-                        </header>
-                    </div>
-                </div>
-
-
-                @foreach (var item in Model.SupplementProducts)
-                {
-                    <div class="product">
-
-
-
-                        @{
-                            string baseType = item.GetType().BaseType.ToString();
-                            var splitBaseType = baseType.Split('.');
-                            baseType = splitBaseType[splitBaseType.Length - 1];
-
-                        }
-
-                        <div class="image"
-                             style="
-                             filter:
-                                -webkit-filter: blur(4px);
-                                background-position: center;
-                                background-repeat: no-repeat;
-                                background-size: cover;
-                             background-position: right top;
-                                background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));
-                                max-height: 400px; ">
-
-                            <img src="@Html.DisplayFor(modelItem => item.ImageURL)" style="max-height:400px;  filter: blur(0px);">
-                        </div>
-                        <div class="frame"></div>
-                        <div class="info">
-                            <div class="info-data">
-                                <div>
-                                    <div>
-                                        @Html.ActionLink("Read More", String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType), new { productId = item.Id }, null)
-                                        <div class="price">
-                                            <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), String.Format("{0}{1}", "Details", baseType), String.Format("{0}", baseType), new { productId = item.Id }, null)</h3>
-                    </div>
-                    <hr />
-                }
             </div>
         </div>
     </div>
-
 </div>
 
 
