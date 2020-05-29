@@ -3,14 +3,16 @@
 @using PagedList;
 @using PagedList.Mvc;
 
-<link href="~/Content/assets/PagedList.css" rel="stylesheet" />
+@*<link href="~/Content/assets/PagedList.css" rel="stylesheet" />*@
 
 @{
     ViewBag.Title = "All Products";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
-<div ng-controller="VeganController" id="AllProducts">
+
+
+<div ng-controller="VeganController">
     <div id="top" pxlurl="[product_url]">
         <div class="contentbox-wrapper">
             <div class="contentbox docsection boxed productlist">
@@ -43,35 +45,34 @@
                 </div>
                 <div class="content-wrapper clearfix">
                     <div class="content">
-                        <div ng-repeat="product in AllProducts">
-                            <div class="product">
-                                <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)"></div>
-                                <div class="frame"></div>
-                                <div class="info">
-                                    <div class="info-data">
+                        <div class="product" ng-repeat="product in AllProducts">
+                            <div class="image" style="background-image: url({{product.ImageURL}});"><img src="~/Content/assets/templates/vegan2020/images/img10x10blank.png" alt="{{product.Title}}"></div>
+                            <div class="frame"></div>
+                            <div class="info">
+                                <div class="info-data">
+                                    <div>
                                         <div>
-                                            <div>
-                                                @Html.ActionLink("Read More", "DetailsTea", new { productId = item.Id }, new { @class = "btn" })
-                                                <div class="price">
-                                                    <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-                                                </div>
+                                            <div class="morebutton"><a ng-click="UrlBuilder(product)" class="btn">Read More</a></div>
+                                            <div class="price">
+
+                                                <span class="yourprice">Your Price: <strong>€{{product.Price}}</strong></span>
+
                                             </div>
+
+                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1429" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+
                                         </div>
                                     </div>
                                 </div>
-                                @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
-                                <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsTea", new { productId = item.Id })</h3>
                             </div>
+                            <h3><a ng-click="UrlBuilder(product)"><span><span>Caboo Bamboo Toilet Paper</span></span></a></h3>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
-
-
 
 
 

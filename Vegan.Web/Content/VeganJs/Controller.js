@@ -41,6 +41,20 @@
                         }
 
                     });
+
+                    $scope.UrlBuilder = function UrlBuilder(product) {
+                        if (product.SubCategory == "FaceCream") {
+                            var controller = product.SubCategory + "s";
+                        }
+                        else {
+                            var controller = product.SubCategory;
+                        }
+                        var detailsActionMethod = "Details" + product.SubCategory;
+                        var id = product.Id;
+                        var url = "/" + controller + "/" + detailsActionMethod + "?" + "productId=" + id;
+                        window.location.href  = url;
+                    }
+
                 }, function myError(response) {
                     console.log(response);
                 });
