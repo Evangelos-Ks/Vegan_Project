@@ -25,7 +25,7 @@ Let us know your thoughts below. And good luck with development!
 ## Table of Contents
 
 * [Versions](#versions)
-* [Demo](#demo)
+* [Demo](#chart)
 * [Quick Start](#quick-start)
 * [Documentation](#documentation)
 * [File Structure](#file-structure)
@@ -85,8 +85,8 @@ now-ui-dashboard
 │   │   ├── bootstrap.min.css
 │   │   ├── bootstrap.min.css.map
 │   │   └── now-ui-dashboard.css.map
-│   ├── demo
-│   │   └── demo.js
+│   ├── chart
+│   │   └── chart.js
 │   ├── fonts
 │   │   ├── nucleo-license.md
 │   │   ├── nucleo-outline.eot
@@ -139,7 +139,7 @@ At present, we officially aim to support the last two versions of the following 
 - License Agreement: https://www.creative-tim.com/license
 - Support: https://www.creative-tim.com/contact-us
 - Issues: [Github Issues Page](https://github.com/creativetimofficial/now-ui-dashboard/issues)
-- Now UI Dashboard PRO - [demo](https://www.creative-tim.com/product/now-ui-dashboard-pro?ref=github-nud-pro)
+- Now UI Dashboard PRO - [chart](https://www.creative-tim.com/product/now-ui-dashboard-pro?ref=github-nud-pro)
 
 ## Reporting Issues
 We use GitHub Issues as the official bug tracker for the Material Dashboard Pro. Here are some advices for our users that want to report an issue:

@@ -106,7 +106,7 @@
     <Compile Include="DomainClasses\Sales\PayPal.cs" />
     <Compile Include="DomainClasses\Sales\Sale.cs" />
     <Compile Include="DomainClasses\Sales\Subscription.cs" />
-    <Compile Include="DomainClasses\Sales\WebhookEvent.cs" />
+    <Compile Include="Enums\Enums.cs" />
     <Compile Include="Interfaces\CareInterfaces\ICare.cs" />
     <Compile Include="Interfaces\CareInterfaces\IFaceCream.cs" />
     <Compile Include="Interfaces\CareInterfaces\IHair.cs" />

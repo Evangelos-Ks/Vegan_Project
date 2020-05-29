@@ -11,11 +11,13 @@ using Vegan.Entities.FoodHerb;
 using Vegan.Entities.Supplement;
 using Vegan.Entities.Library;
 using Vegan.Entities.DomainClasses;
+using Newtonsoft.Json;
 using Vegan.Entities.DomainClasses.Sales;
 
 namespace Vegan.Database
 {
-   public  class MyDatabase : ApplicationDbContext
+
+    public class MyDatabase : ApplicationDbContext
     {
         public MyDatabase() : base()
         {
@@ -25,11 +27,11 @@ namespace Vegan.Database
         //====================== Product ==================
         public DbSet<Product> Products { get; set; }
 
-        //====================== Sales ===================
+        ////====================== Sales ==================
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
-        public DbSet<WebhookEvent> WebhookEvents { get; set; }
+        //public DbSet<WebhookEvent> WebhookEvents { get; set; }
 
         //====================== Care =====================
         public DbSet<Care> Cares { get; set; }
@@ -56,5 +58,6 @@ namespace Vegan.Database
         public DbSet<Supplement> Supplements { get; set; }
         public DbSet<PowerHealth> PowerHealths { get; set; }
         public DbSet<SuperFood> SuperFoods { get; set; }
+
     }
 }

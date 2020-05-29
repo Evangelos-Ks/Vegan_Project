@@ -15,9 +15,7 @@
             </div>
             <div class="title-wrapper clearfix">
                 <div class="title">
-                    <head>
                         <h1> @Html.DisplayFor(model => model.Title) </h1>
-                    </head>
                 </div>
             </div>
         </div>
@@ -44,8 +42,7 @@
                                     <dd> <p>  @Html.DisplayFor(model => model.UseInstruction)</p></dd>
 
                                     <dt>  @Html.DisplayNameFor(model => model.NameOfIngredient)</dt>
-                                    <dd> <p>  @Html.DisplayFor(model => model.NameOfIngredient)</p></dd>
-                                    <dd> <p>  @Html.DisplayFor(model => model.ValueOfIngredient)</p></dd>
+                                    <dd><p>  @Html.DisplayFor(model => model.NameOfIngredient) @Html.DisplayFor(model => model.ValueOfIngredient)</p></dd>
                                 </dl>
                             </div>
 
@@ -56,10 +53,8 @@
                                     <div class="price">
                                         <span class="yourprice">
                                             Your @Html.DisplayNameFor(model => model.Price):
-                                            <strong>
-                                                <div itemprop="price" id="price" class="price" style="display: inline;">
+                                            <strong itemprop="price" id="price" class="price" style="display: inline;">
                                                     € @Html.DisplayFor(model => model.Price)
-                                                </div>
                                             </strong>
                                         </span>
                                     </div>

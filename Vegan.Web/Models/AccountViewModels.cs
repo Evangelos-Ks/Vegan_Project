@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using Vegan.Entities.Enums;
 
 namespace Vegan.Web.Models
 {
@@ -64,6 +65,7 @@ namespace Vegan.Web.Models
 
     public class RegisterViewModel
     {
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -76,9 +78,45 @@ namespace Vegan.Web.Models
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Confirm")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 1)]
+        [Display(Name = "First name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 1)]
+        [Display(Name = "Last name")]
+        public string LastName { get; set; }
+
+        [Required]
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Phone")]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        [Display(Name = "Country")]
+        public Countries? Country { get; set; }
+
+        [Required]
+        [Display(Name = "City")]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
+        public string City { get; set; }
+
+        [Required]
+        [Display(Name = "Address")]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
+        public string Address { get; set; }
+
+        [Required]
+        [Display(Name = "Post code")]
+        public string PostCode { get; set; }
+
+        public string Role { get; set; } = "Subscribers";
+
     }
 
     public class ResetPasswordViewModel
