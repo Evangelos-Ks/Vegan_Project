@@ -318,6 +318,7 @@
     <Content Include="Content\VeganCSS\Autocomplete.css" />
     <Content Include="Content\VeganJs\Autocomplete.js" />
     <Content Include="Content\VeganJs\Controller.js" />
+    <Content Include="Content\VeganJs\ControllerAllProducts.js" />
     <Content Include="Content\VeganLifePictures\Candle\190x190\Honey Candles 3x3 Pillar Beeswax Candle190x190.jpg" />
     <Content Include="Content\VeganLifePictures\Candle\190x190\Honey Candles 5x3 Pillar Beeswax Candle190x190.jpg" />
     <Content Include="Content\VeganLifePictures\Candle\190x190\Honey Candles 6 Natural Column Beeswax Candle190x190.jpg" />
