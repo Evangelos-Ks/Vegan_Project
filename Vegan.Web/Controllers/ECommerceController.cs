@@ -52,7 +52,15 @@ namespace Vegan.Web.Controllers
                 Session["Price"] = 0m;
             if (existingItem != null)
             {
-                existingItem.Quantity = quantity;
+                if (quantity==1)
+                {
+                    existingItem.Quantity++;
+                }
+                else
+                {
+                    existingItem.Quantity = quantity;
+                }
+                
                 Session["Price"] = cart.Sum();//(decimal)Session["Price"] + existingItem.Price;
             }
             else
