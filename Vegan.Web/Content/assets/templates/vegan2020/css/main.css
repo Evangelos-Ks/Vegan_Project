@@ -6264,7 +6264,7 @@ only screen and (min-device-pixel-ratio: 2) {}
     background: #444039 url('../../../bg2000x780footer.jpg') repeat center center;
     background-size: 1200px auto;
     background-image: url('../images/bg2000x780footer.jpg');
-    height:250px;
+    height:200px;
 }
 
 
@@ -6279,12 +6279,12 @@ only screen and (min-device-pixel-ratio: 2) {}
     }
 
     #footernav ul.pages > li {
-        margin-top: 5%;
+        margin-top: 3%;
         padding: 8px 0px;
         border-bottom: solid 1px #9b9388;
         font-size: 2rem;
         position: relative;
-        left: 30%;
+        left: 25%;
         color:blanchedalmond;
     }
 
