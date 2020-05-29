@@ -7,16 +7,11 @@
 <script src="~/Scripts/angular.js"></script>
 <script src="~/Content/VeganJs/ChartController.js"></script>
 
-
 <div class="wrapper " ng-app="ChartProject" ng-controller="ChartController">
-
     <div class="main-panel" id="main-panel">
-
         <div class="panel-header panel-header-lg">
             <canvas id="bigDashboardChart"></canvas>
         </div>
-
-
         <div class="content">
             <div class="row">
                 <div class="col-lg-4">
@@ -39,9 +34,6 @@
                         </div>
                     </div>
                 </div>
-
-
-
                 <div class="col-lg-4 col-md-6">
                     <div class="card card-chart">
                         <div class="card-header">
@@ -64,8 +56,8 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="card card-chart">
                         <div class="card-header">
-                            <h5 class="card-category">Sales</h5>
-                            <h4 class="card-title">This week's orders</h4>
+                            <h5 class="card-category">Orders</h5>
+                            <h4 class="card-title">weekly orders</h4>
                         </div>
                         <div class="card-body">
                             <div class="chart-area">
@@ -81,16 +73,8 @@
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
-<script src="~/Content/now-ui-dashboard-master/assets/demo/demo.js"></script>  <!--//-->
-<script src="../../VeganJs/ChartController.js"></script>  <!--//-->
-@*<script>
-    $(document).ready(function () {
-        // Javascript method's body can be found in assets/js/demos.js    <!--//-->
-        demo.initDashboardPageCharts(years, totalsPerYear);
-
-    });
-</script>*@
+<script src="~/Content/now-ui-dashboard-master/assets/demo/demo.js"></script>
+<script src="../../VeganJs/ChartController.js"></script> 
