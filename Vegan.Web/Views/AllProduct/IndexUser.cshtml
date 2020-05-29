@@ -1,18 +1,16 @@
 ﻿
-
-
-
 @model  Vegan.Web.Models.AllProductViewModel
-    @using PagedList;
-    @using PagedList.Mvc;
+@using PagedList;
+@using PagedList.Mvc;
 
-    <link href="~/Content/assets/PagedList.css" rel="stylesheet" />
+<link href="~/Content/assets/PagedList.css" rel="stylesheet" />
 
-    @{
-        ViewBag.Title = "All Products";
-        Layout = "~/Views/Shared/_LayoutUser.cshtml";
-    }
+@{
+    ViewBag.Title = "All Products";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
 
+<div ng-controller="AllProductsController" id="AllProducts">
     <div id="top" pxlurl="[product_url]" class="container-fluid">
         <div class="contentbox-wrapper docsection-wrapper">
             <div class="contentbox docsection boxed productlist">
@@ -39,7 +37,7 @@
                             <br />
                             <h2>
                                 Products
-                              
+
                             </h2>
                             <h2 class="" style=" float: right;
                                                     margin: 0 0 10px;">
@@ -48,7 +46,7 @@
                                {
                                    page = x,
                                    pSize = ViewBag.CurrentpSize
-                               }), new PagedListRenderOptions() { LiElementClasses = new List<string> { "pager" }})
+                               }), new PagedListRenderOptions() { LiElementClasses = new List<string> { "pager" } })
 
                                 </small>
                             </h2>
@@ -293,6 +291,7 @@
         </div>
     </div>
 
+</div>
 
 
 
