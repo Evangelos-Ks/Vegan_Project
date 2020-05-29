@@ -349,14 +349,20 @@
 
             Order or21 = new Order() { OrderStamp = new DateTime(2018, 12, 06), Products = new List<Product> { ph1, sf1 }, Subtotal = 34.50m, Tax = 8.28m, Shipping = 1.10m, Total = 43.88m, PayPalReference = "false"/*, OrderId = 21*/ };
             Order or22 = new Order() { OrderStamp = new DateTime(2018, 03, 09), Products = new List<Product> { h8, h9, s2, k2, k3 }, Subtotal = 37.27m, Tax = 8.94m, Shipping = 1.10m, Total = 47.31m, PayPalReference = "false"/*, OrderId = 22*/ };
-            Order or23 = new Order() { OrderStamp = new DateTime(2018, 10, 17), Products = new List<Product> { t12, t23, t15 }, Subtotal = 5.63m, Tax = 1.35m, Shipping = 1.10m, Total = 8.08m, PayPalReference = "false"/*, OrderId = 23*/ };
-            Order or24 = new Order() { OrderStamp = new DateTime(2018, 12, 15), Products = new List<Product> { sp13, sp16 }, Subtotal = 8.03m, Tax = 1.93m, Shipping = 1.10m, Total = 11.06m, PayPalReference = "false"/*, OrderId = 24*/ };
+            Order or23 = new Order() { OrderStamp = new DateTime(2019, 10, 17), Products = new List<Product> { t12, t23, t15 }, Subtotal = 5.63m, Tax = 1.35m, Shipping = 1.10m, Total = 8.08m, PayPalReference = "false"/*, OrderId = 23*/ };
+            Order or24 = new Order() { OrderStamp = new DateTime(2019, 12, 15), Products = new List<Product> { sp13, sp16 }, Subtotal = 8.03m, Tax = 1.93m, Shipping = 1.10m, Total = 11.06m, PayPalReference = "false"/*, OrderId = 24*/ };
             Order or25 = new Order() { OrderStamp = new DateTime(2018, 12, 17), Products = new List<Product> { sb6, h13, f14 }, Subtotal = 100.98m, Tax = 24.24m, Shipping = 1.10m, Total = 126.32m, PayPalReference = "false"/*, OrderId = 25*/ };
             Order or26 = new Order() { OrderStamp = new DateTime(2017, 08, 20), Products = new List<Product> { h2, f9 }, Subtotal = 73.00m, Tax = 17.52m, Shipping = 1.10m, Total = 91.62m, PayPalReference = "false"/*, OrderId = 26*/ };
             Order or27 = new Order() { OrderStamp = new DateTime(2017, 07, 31), Products = new List<Product> { sb2, l7, sb5 }, Subtotal = 51.95m, Tax = 12.47m, Shipping = 1.10m, Total = 65.52m, PayPalReference = "false"/*, OrderId = 27*/ };
             Order or28 = new Order() { OrderStamp = new DateTime(2017, 06, 04), Products = new List<Product> { sp2, sp13, sp16, k1 }, Subtotal = 25.25m, Tax = 6.06m, Shipping = 1.10m, Total = 32.41m, PayPalReference = "false"/*, OrderId = 28*/ };
             Order or29 = new Order() { OrderStamp = new DateTime(2017, 08, 26), Products = new List<Product> { eo9, eo8, sf3, sf5 }, Subtotal = 80.00m, Tax = 19.20m, Shipping = 1.10m, Total = 100.30m, PayPalReference = "false"/*, OrderId = 29*/ };
-            Order or30 = new Order() { OrderStamp = new DateTime(2017, 01, 01), Products = new List<Product> { ph1, ph3, sf5, k3, t16, t22 }, Subtotal = 65.06m, Tax = 15.61m, Shipping = 1.10m, Total = 81.77m, PayPalReference = "false"/*, OrderId = 30*/ };
+            Order or30 = new Order() { OrderStamp = new DateTime(2017, 10, 05), Products = new List<Product> { ph1, ph3, sf5, k3, t16, t22 }, Subtotal = 65.06m, Tax = 15.61m, Shipping = 1.10m, Total = 81.77m, PayPalReference = "false"/*, OrderId = 30*/ };
+            Order or31 = new Order() { OrderStamp = new DateTime(2017, 10, 04), Products = new List<Product> { ph1, ph3, sf5, k3, t16, t22 }, Subtotal = 65.06m, Tax = 15.61m, Shipping = 1.10m, Total = 81.77m, PayPalReference = "false"/*, OrderId = 30*/ };
+            Order or32 = new Order() { OrderStamp = new DateTime(2017, 10, 03), Products = new List<Product> { ph1, ph3, sf5, k3, t16, t22 }, Subtotal = 65.06m, Tax = 15.61m, Shipping = 1.10m, Total = 81.77m, PayPalReference = "false"/*, OrderId = 30*/ };
+            Order or33 = new Order() { OrderStamp = new DateTime(2017, 10, 02), Products = new List<Product> { ph1, ph3, sf5, k3, t16, t22 }, Subtotal = 65.06m, Tax = 15.61m, Shipping = 1.10m, Total = 81.77m, PayPalReference = "false"/*, OrderId = 30*/ };
+            Order or34 = new Order() { OrderStamp = new DateTime(2019, 10, 04), Products = new List<Product> { ph1, ph3, sf5, k3, t16, t22 }, Subtotal = 65.06m, Tax = 15.61m, Shipping = 1.10m, Total = 81.77m, PayPalReference = "false"/*, OrderId = 30*/ };
+            Order or35 = new Order() { OrderStamp = new DateTime(2019, 10, 03), Products = new List<Product> { ph1, ph3, sf5, k3, t16, t22 }, Subtotal = 65.06m, Tax = 15.61m, Shipping = 1.10m, Total = 81.77m, PayPalReference = "false"/*, OrderId = 30*/ };
+            Order or36 = new Order() { OrderStamp = new DateTime(2019, 10, 02), Products = new List<Product> { ph1, ph3, sf5, k3, t16, t22 }, Subtotal = 65.06m, Tax = 15.61m, Shipping = 1.10m, Total = 81.77m, PayPalReference = "false"/*, OrderId = 30*/ };
 
 
 
@@ -380,7 +386,7 @@
 
 
             //*************************************************** Order ***************************************************
-            context.Orders.AddOrUpdate(x => x.OrderStamp, or1, or2, or3, or4, or5, or6, or7, or8, or9, or10, or11, or12, or13, or14, or15, or16, or17, or18, or19, or20, or21, or22, or23, or24, or25, or26, or27, or28, or29, or30);
+            context.Orders.AddOrUpdate(x => x.OrderStamp, or1, or2, or3, or4, or5, or6, or7, or8, or9, or10, or11, or12, or13, or14, or15, or16, or17, or18, or19, or20, or21, or22, or23, or24, or25, or26, or27, or28, or29, or30, or31, or32, or33, or34, or35, or36);
 
             //*************************************************** User ***************************************************
             context.Users.AddOrUpdate(x => x.Email, user1, user2, user3, user4, user5, user6, user7, user8, user9, user10, user11, user12, user13, user14);

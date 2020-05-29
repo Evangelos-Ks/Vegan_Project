@@ -221,7 +221,7 @@
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+                labels: years,
                 datasets: [{
                     label: "Data",
                     borderColor: chartColor,
@@ -236,7 +236,7 @@
                     fill: true,
                     backgroundColor: gradientFill,
                     borderWidth: 2,
-                    data: [50, 150, 100, 190, 130, 90, 150, 160, 120, 140, 190, 95]
+                    data: totals
                 }]
             },
             options: {
@@ -349,7 +349,7 @@
             type: 'line',
             responsive: true,
             data: {
-                labels: ["12pm,", "3pm", "6pm", "9pm", "12am", "3am", "6am", "9am"],
+                labels: years,/* =====*/
                 datasets: [{
                     label: "Email Stats",
                     borderColor: "#18ce0f",
@@ -362,7 +362,7 @@
                     fill: true,
                     backgroundColor: gradientFill,
                     borderWidth: 2,
-                    data: [40, 500, 650, 700, 1200, 1250, 1300, 1900]
+                    data: totals/* =====*/
                 }]
             },
             options: gradientChartOptionsConfigurationWithNumbersAndGrid
