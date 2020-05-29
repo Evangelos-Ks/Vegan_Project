@@ -21,7 +21,7 @@ namespace Vegan.Web.API.Controllers
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         /// <summary>
-        /// This will bring all of the categories with the products
+        /// This will bring all of the categories with the products including the orders in which they were included
         /// </summary>
         // GET: api/Products
         public IEnumerable<IEnumerable<Product>> GetProducts()
