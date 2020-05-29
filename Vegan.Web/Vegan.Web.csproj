@@ -1139,6 +1139,7 @@
     <Content Include="Views\Administrator\Map.cshtml" />
     <Content Include="Views\ECommerce\Cart.cshtml" />
     <Content Include="Views\ECommerce\EmptyViewCart.cshtml" />
+    <Content Include="Views\ECommerce\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

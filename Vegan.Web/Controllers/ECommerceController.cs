@@ -103,7 +103,7 @@ namespace Vegan.Web.Controllers
         {
             return View();
         }
-        //private MyDatabase _dbContext2 => HttpContext.GetOwinContext().Get<MyDatabase>();
+
 
         public ActionResult Checkout()
         {
@@ -243,6 +243,7 @@ namespace Vegan.Web.Controllers
 
         public ActionResult ThankYou()
         {
+            @Session["Price"] = 0m;
             return View();
         }
 
