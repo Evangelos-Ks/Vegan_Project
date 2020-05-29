@@ -1,7 +1,7 @@
 ﻿(function myfunction() {
     var VeganProject = angular.module("VeganProject", []);
 
-    var productsPerCategoryUrl = "https://localhost:44332/api/Categories";
+    var productsPerCategoryUrl = "https://localhost:44304/api/CategoriesAPI";
 
     var VeganController = function ($scope, $http) {
         var GetData = function () {
@@ -41,10 +41,7 @@
                 }, function myError(response) {
                     console.log(response);
                 });
-
-           
         }
-
         GetData();
     };
 
