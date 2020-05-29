@@ -6232,15 +6232,23 @@ only screen and (min-device-pixel-ratio: 2) {}
 
 /* FOOTER ------------------------------------------------------------------ */
 
+#imgRotate {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+    border: none;
+    padding-top: 0;
+    margin-top:0;
+}
 .footerbox-wrapper {
-    margin-top: -2px;
     text-align: center;
 }
 
 
 
 .footerbox-wrapper:after {
-    content: "";
     display: table;
     clear: both;
 }
@@ -6249,22 +6257,15 @@ only screen and (min-device-pixel-ratio: 2) {}
 
 .footerbox {
     position: relative;
-    padding-top: 5px;
-    background: url(../images/img6x5line-footer.png) repeat-x center top;
+    background-image: url('../images/bg2000x780footer.jpg');
 }
 
 #footernav {
-    padding: 10px 0;
-    background: #444039 url('../../../images/wood.jpg') repeat center center;
+    background: #444039 url('../../../bg2000x780footer.jpg') repeat center center;
     background-size: 1200px auto;
-   
+    background-image: url('../images/bg2000x780footer.jpg');
+    height:250px;
 }
-
-/*#footernav ul.pages {
-    width: 240px;
-    margin: 0 auto;
-    color: blue;
-}*/
 
 
     #footernav > div > ul > li:nth-child(1) > a {
@@ -6278,40 +6279,19 @@ only screen and (min-device-pixel-ratio: 2) {}
     }
 
     #footernav ul.pages > li {
+        margin-top: 5%;
         padding: 8px 0px;
         border-bottom: solid 1px #9b9388;
         font-size: 2rem;
         position: relative;
-        left: 10%;
+        left: 30%;
         color:blanchedalmond;
     }
 
-/*#footernav ul.pages>li span:hover {
-    color: /* #cf8a2b  #d5b6a1 */ /*#e98747;
-    cursor: pointer;
-}*/
 
-/*#footernav ul.pages>li .fa-fw {
-    width: 30px;
-}
-
-#footernav ul.pages>li>ul {
-    display: none;
-    padding-bottom: 10px;
-}
-
-#footernav ul.pages>li>ul>li {
-    padding-left: 30px;
-    font-size: 1.6rem;
-}*/
-
-/*#footernav ul.pages>li>ul>li.news {
-    text-transform: uppercase;
-}*/
 
 #footernav ul.pages>li>ul>li>a {
     display: block;
-    padding: 3px 0;
     color: #dad5c9;
     text-decoration: none;
     font-weight: 400;
