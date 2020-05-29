@@ -377,7 +377,7 @@
         var a = {
             type: "bar",
             data: {
-                labels: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                labels: ["Home Category", "Care", "Food & Herbs", "Supplements"],
                 datasets: [{
                     label: "Active Countries",
                     backgroundColor: gradientFill,
@@ -390,7 +390,7 @@
                     pointRadius: 4,
                     fill: true,
                     borderWidth: 1,
-                    data: [80, 99, 86, 96, 123, 85, 100, 75, 88, 90, 123, 155]
+                    data: [80, 123, 45, 155]
                 }]
             },
             options: {
