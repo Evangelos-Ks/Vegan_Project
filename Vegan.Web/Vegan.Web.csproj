@@ -284,6 +284,7 @@
     <Content Include="Content\now-ui-dashboard-master\assets\css\chat.css" />
     <Content Include="Content\now-ui-dashboard-master\assets\css\now-ui-dashboard.css" />
     <Content Include="Content\now-ui-dashboard-master\assets\css\now-ui-dashboard.min.css" />
+    <Content Include="Content\now-ui-dashboard-master\assets\demo\chartShow.js" />
     <Content Include="Content\now-ui-dashboard-master\assets\demo\demo.css" />
     <Content Include="Content\now-ui-dashboard-master\assets\demo\demo.js" />
     <Content Include="Content\now-ui-dashboard-master\assets\img\apple-icon.png" />
@@ -317,6 +318,7 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\VeganCSS\Autocomplete.css" />
     <Content Include="Content\VeganJs\Autocomplete.js" />
+    <Content Include="Content\VeganJs\ChartController.js" />
     <Content Include="Content\VeganJs\Controller.js" />
     <Content Include="Content\VeganLifePictures\Candle\190x190\Honey Candles 3x3 Pillar Beeswax Candle190x190.jpg" />
     <Content Include="Content\VeganLifePictures\Candle\190x190\Honey Candles 5x3 Pillar Beeswax Candle190x190.jpg" />

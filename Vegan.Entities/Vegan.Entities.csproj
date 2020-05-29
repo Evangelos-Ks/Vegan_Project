@@ -101,9 +101,11 @@
     <Compile Include="DomainClasses\Home\HomeCleaning.cs" />
     <Compile Include="DomainClasses\Home\Kitchen.cs" />
     <Compile Include="DomainClasses\Sales\Cash.cs" />
+    <Compile Include="DomainClasses\Sales\OrderItem.cs" />
     <Compile Include="DomainClasses\Sales\PaymentMethod.cs" />
     <Compile Include="DomainClasses\Sales\PayPal.cs" />
     <Compile Include="DomainClasses\Sales\Sale.cs" />
+    <Compile Include="DomainClasses\Sales\Subscription.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Interfaces\CareInterfaces\ICare.cs" />
     <Compile Include="Interfaces\CareInterfaces\IFaceCream.cs" />

@@ -12,7 +12,7 @@ using Vegan.Entities.Supplement;
 using Vegan.Entities.Library;
 using Vegan.Entities.DomainClasses;
 using Newtonsoft.Json;
-
+using Vegan.Entities.DomainClasses.Sales;
 
 namespace Vegan.Database
 {
@@ -27,8 +27,11 @@ namespace Vegan.Database
         //====================== Product ==================
         public DbSet<Product> Products { get; set; }
 
-        //====================== Sales ==================
+        ////====================== Sales ==================
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Subscription> Subscriptions { get; set; }
+        //public DbSet<WebhookEvent> WebhookEvents { get; set; }
 
         //====================== Care =====================
         public DbSet<Care> Cares { get; set; }
