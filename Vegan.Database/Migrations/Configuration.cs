@@ -1,19 +1,18 @@
 ﻿namespace Vegan.Database.Migrations
 {
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
+    using Vegan.Entities;
     using Vegan.Entities.Care;
+    using Vegan.Entities.Enums;
     using Vegan.Entities.FoodHerb;
     using Vegan.Entities.Home;
-    using Vegan.Entities.Supplement;
-    using Microsoft.AspNet.Identity.EntityFramework;
-    using Microsoft.AspNet.Identity;
     using Vegan.Entities.Library;
-    using Vegan.Entities;
-    using Vegan.Entities.Enums;
+    using Vegan.Entities.Supplement;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Vegan.Database.MyDatabase>
     {
@@ -24,7 +23,6 @@
 
         protected override void Seed(Vegan.Database.MyDatabase context)
         {
-            //TODO: ADD PICTURES FOR SPICE
             #region Care
 
             //*************************************************** Care ***************************************************
@@ -108,20 +106,20 @@
 
             //*************************************************** FoodHerb ***********************************************
             //=================================================== Salt ===================================================
-            Salt s1 = new Salt() { Title = "Celery Salt", Price = 0.70m, ImageURL = "/Content/VeganLifePictures/Salt/600x600/Celery_Salt600x600.jpg", Description = "", Information = "More info coming soon!", BulkPricing = " Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
-            Salt s2 = new Salt() { Title = "Himalayan Salt, Fine", Price = 0.06m, ImageURL = "/Content/VeganLifePictures/Salt/600x600/himalayan_salt600x600.jpg", Description = "", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
-            Salt s3 = new Salt() { Title = "Coarse Sea Salt", Price = 0.18m, ImageURL = "/Content/VeganLifePictures/Salt/600x600/coarse_sea_salt1600x600.jpg", Description = "", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
-            Salt s4 = new Salt() { Title = "Fine Sea Salt", Price = 0.15m, ImageURL = "/Content/VeganLifePictures/Salt/600x600/Sea_Salt_Fine_600x600.jpg", Description = "", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
-            Salt s5 = new Salt() { Title = "Seasoning Salt", Price = 0.52m, ImageURL = "/Content/VeganLifePictures/Salt/600x600/Seasoning-Salt600x600.jpg", Description = "", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
+            Salt s1 = new Salt() { Title = "Celery Salt", Price = 0.70m, ImageURL = "/Content/VeganLifePictures/Salt/600x600/Celery_Salt600x600.jpg", Description = "Origins: India", Information = "More info coming soon!", BulkPricing = " Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
+            Salt s2 = new Salt() { Title = "Himalayan Salt, Fine", Price = 0.06m, ImageURL = "/Content/VeganLifePictures/Salt/600x600/himalayan_salt600x600.jpg", Description = "Origins: Himalaya", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
+            Salt s3 = new Salt() { Title = "Coarse Sea Salt", Price = 0.18m, ImageURL = "/Content/VeganLifePictures/Salt/600x600/coarse_sea_salt1600x600.jpg", Description = "Coarse Sea salt is used for cooked food. Add a little, since it is really salty.", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
+            Salt s4 = new Salt() { Title = "Fine Sea Salt", Price = 0.15m, ImageURL = "/Content/VeganLifePictures/Salt/600x600/Sea_Salt_Fine_600x600.jpg", Description = "Fine Sea salt is used for raw seasoning.", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
+            Salt s5 = new Salt() { Title = "Seasoning Salt", Price = 0.52m, ImageURL = "/Content/VeganLifePictures/Salt/600x600/Seasoning-Salt600x600.jpg", Description = "Seasoning salt is used for raw seasoning and cooked food. Top quality.", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
 
             //=================================================== Spice =================================================
 
-            Spice sp1 = new Spice() { Title = "Cajun Seasoning", Price = 1.08m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/cajun-seasoning600x600.jpg", Description = "", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
-            Spice sp2 = new Spice() { Title = "All Purpose Seasoning", Price = 1.22m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/AllPurposeSeasoning600x600.jpg", Description = "", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
-            Spice sp3 = new Spice() { Title = "Chinese 5 Spice Blend", Price = 1.25m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/Chinese5spiceblend600x574.jpg", Description = "", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
-            Spice sp4 = new Spice() { Title = "Chili Power Blend", Price = 1.05m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/ChiliPowerBlend600x600.jpg", Description = "", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
-            Spice sp5 = new Spice() { Title = "Curry Powder", Price = 0.52m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/curry-powder600x600.jpg", Description = "", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
-            Spice sp6 = new Spice() { Title = "Black Peppercorn", Price = 0.84m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/black-peppecorn600x600.jpg", Description = "", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
+            Spice sp1 = new Spice() { Title = "Cajun Seasoning", Price = 1.08m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/cajun-seasoning600x600.jpg", Description = "Cajun Seasoning was utilized extensively thousands of years ago and is still popular today. Its scent is uniquely warming, uplifting, and stimulating, and its flavor sweet and delicious, hence the flavor and aroma have been utilized in countless confectionaries, baked goods, perfumes, cosmetics, beverages, and cordials.", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
+            Spice sp2 = new Spice() { Title = "All Purpose Seasoning", Price = 1.22m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/AllPurposeSeasoning600x600.jpg", Description = "Seasoning was utilized extensively thousands of years ago and is still popular today. Its scent is uniquely warming, uplifting, and stimulating.", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
+            Spice sp3 = new Spice() { Title = "Chinese 5 Spice Blend", Price = 1.25m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/Chinese5spiceblend600x574.jpg", Description = "5 Sice blend comes from spices utilized extensively thousands of years ago and is still popular today. Its scent is uniquely uplifting, and stimulating.", Information = "Origins: South America", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
+            Spice sp4 = new Spice() { Title = "Chili Power Blend", Price = 1.05m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/ChiliPowerBlend600x600.jpg", Description = "Chili comes from spices utilized extensively thousands of years ago and is still popular today. Its scent is uniquely hot.", Information = "Comes is 3 spice-levels", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
+            Spice sp5 = new Spice() { Title = "Curry Powder", Price = 0.52m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/curry-powder600x600.jpg", Description = "Curry comes from spices utilized extensively thousands of years ago and is still popular today. Its scent is uniquely uplifting, and stimulating.", Information = "Origins: India", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
+            Spice sp6 = new Spice() { Title = "Black Peppercorn", Price = 0.84m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/black-peppecorn600x600.jpg", Description = "Black pepper comes from spices utilized extensively thousands of years ago and is still popular today. Its scent is uniquely uplifting, and stimulating.", Information = "Extra good for blood stimulation.", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
             Spice sp7 = new Spice() { Title = "Cacao Powder, Raw Organic", Price = 0.88m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/cacao-powder600x600.jpg", Description = "Our raw cacao powder starts as raw whole beans carefully collected from the cacao fruit. The beans are washed and then dried using a forced air dehydrator. The dried, whole beans are then husked and processed into smaller pieces. These pieces are then cold pressed, resulting in the separation of raw cacao butter and a raw cacao cake. This cake is then further milled into this fine powder.", Information = "Raw cacao powder has a rich flavor that is more subtle in its nuances then its roasted counterpart. The aroma has a slight floral aspect balanced with deep chocolate undertones. Cacao beans and nibs have a long and colorful history, beginning in Central and South America before 1500 BC. The entire cacao fruit was used medicinally by the Mayan, Olmec and Aztec civilizations. These early American peoples also enjoyed consuming chocolate as a beverage; each culture adding its own mix of spices and flavorings to the drink. After the Spanish conquest in the 1500's, cacao made its way to Europe and began to spread worldwide.", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
             Spice sp8 = new Spice() { Title = "Cinnamon Cassia Powder", Price = 0.85m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/cinnamon-cassia600x600.jpg", Description = "Cinnamon was utilized extensively thousands of years ago and is still popular today. Enjoyed since ancient times, cinnamon was mentioned in ancient Egyptian texts and was widely traded thousands of years ago in Europe and in Asia by spice traders. Its scent is uniquely warming, uplifting, and stimulating, and its flavor sweet and delicious, hence the flavor and aroma have been utilized in countless confectionaries, baked goods, perfumes, cosmetics, beverages, and cordials.", Information = "Not for use in pregnancy except under the supervision of a qualified healthcare practitioner. We recommend that you consult with a qualified healthcare practitioner before using herbal products, particularly if you are pregnant, nursing, or on any medications. This information has not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. For educational purposes only.", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
             Spice sp9 = new Spice() { Title = "Clove Powder", Price = 1.80m, ImageURL = "/Content/VeganLifePictures/Spice/600x600/Clove-Powder600x600.jpg", Description = "", Information = "More info coming soon!", BulkPricing = "Price is per 10 g. To save on packaging, our herbs are sold in bulk and will arrive to you in a labelled paper bag. Now you may order as much or as little as you'd like!" };
@@ -383,8 +381,6 @@
             ApplicationUser user14 = new ApplicationUser() { UserName = "Albi Alikaj", Email = "albi@alikaj.com", Orders = new List<Order> { or30, or23, or9 }, Address = "Hrakleio", PhoneNumber = "6974554567", Country = Countries.Greece, City = "Athina", PostCode = "370 10", FirstName = "Albi", LastName = "Alikaj", PasswordHash = PasswordHash.HashPassword("Alikaj!1") };
             #endregion
 
-
-
             //*************************************************** Order ***************************************************
             context.Orders.AddOrUpdate(x => x.OrderStamp, or1, or2, or3, or4, or5, or6, or7, or8, or9, or10, or11, or12, or13, or14, or15, or16, or17, or18, or19, or20, or21, or22, or23, or24, or25, or26, or27, or28, or29, or30, or31, or32, or33, or34, or35, or36);
 
@@ -427,7 +423,6 @@
             //*************************************************** Supplement *********************************************
             context.PowerHealths.AddOrUpdate(x => x.Title, ph1, ph2, ph3, ph4);
             context.SuperFoods.AddOrUpdate(x => x.Title, sf1, sf2, sf3, sf4, sf5);
-
 
             context.SaveChanges();
         }
