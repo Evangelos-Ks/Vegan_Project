@@ -1,6 +1,6 @@
 ﻿(function myfunction() {
     var ChartProject = angular.module("ChartProject", []);
-    var ordersURL = "https://localhost:44332/api/Orders";
+    var ordersURL = "https://localhost:44304/api/OrdersAPI";
     var ChartController = function ($scope, $http) {
         var GetData = function () {
             $http.get(ordersURL)
