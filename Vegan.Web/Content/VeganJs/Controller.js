@@ -52,7 +52,7 @@
                         var detailsActionMethod = "Details" + product.SubCategory;
                         var id = product.Id;
                         var url = "/" + controller + "/" + detailsActionMethod + "?" + "productId=" + id;
-                        window.location.href  = url;
+                        window.location.href = url;
                     }
 
                 }, function myError(response) {
@@ -63,26 +63,4 @@
     };
 
     VeganProject.controller("VeganController", VeganController);
-
-    //============================================== AllProductsController =================================================
-    //var allProductsUrl = "https://localhost:44304/api/ProductsAPI";
-
-
-    //var AllProductsController = function ($scope, $http) {
-
-    //    var GetAllProducts = function myfunction() {
-    //        $http.get(allProductsUrl)
-    //            .then(function (response) {
-    //                $scope.AllProducts = response.data;
-    //                $scope.NumberOfProducts = response.length;
-    //                console.log(scope.NumberOfProducts);
-    //            }, function myError(response) {
-    //                console.log(response);
-    //            })
-    //    };
-    //    GetAllProducts();
-    //};
-
-    //VeganProject.controller("AllProductsController", AllProductsController);
-
 })();
