@@ -133,15 +133,30 @@
                             <div class="info">
                                 <div class="info-data">
                                     <div>
-                                        <div>
-                                            @Html.ActionLink("Read More", "DetailsCandle", new { productId = item.Id }, new { @class = "btn" })
-                                            <div class="price">
-                                                <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+                                        @*<div>
+                                                @Html.ActionLink("Read More", "DetailsCandle", new { productId = item.Id }, new { @class = "btn" })
+                                                <div class="price">
+                                                    <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+                                                </div>
+                                            </div>*@
+
+                                        @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
+                                        {
+                                            @Html.Hidden("ProductId", item.Id)
+                                            <div style="padding-top:60px">
+                                                @Html.ActionLink("Read More", "DetailsCandle", new { productId = item.Id }, new { @class="btn"})
+                                                <div class="price">
+                                                    <span class="yourprice" style="padding-bottom:15px">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
+                                                    
+                                                    <a class="btn" style="max-width:120px; text-align:center; padding-left:8px; padding-right:8px;" href="javascript:void(0);" onclick="$(this).closest('form').submit();">Add to cart</a>
+                                                </div>
                                             </div>
-                                        </div>
+                                        }
+
                                     </div>
                                 </div>
                             </div>
+                            @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
                             <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsCandle", new { productId = item.Id })</h3>
                         </div>
                     }

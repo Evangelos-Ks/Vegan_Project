@@ -15,70 +15,89 @@
             </div>
             <div class="title-wrapper clearfix">
                 <div class="title">
-                        <h1> @Html.DisplayFor(model => model.Title) </h1>
+                    <h1> @Html.DisplayFor(model => model.Title) </h1>
                 </div>
             </div>
         </div>
     </div>
     <div id="productdetails" class="docsection-wrapper" itemscope itemtype="/">
         <div class="docsection boxed">
-            <form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add">
-                <div class="content-wrapper clearfix">
-                    <div id="productimage-wrapper">
-                        <div id="productimage">
-                            <img src="@Html.DisplayFor(model => model.ImageURL)" width="100" height="100" alt="@Html.DisplayFor(model => model.Title)" />
-                            <div class="image image1" style="background-image: url( @Html.DisplayFor(model => model.ImageURL) />);"></div>
-                        </div>
+
+            <div class="content-wrapper clearfix">
+                <div id="productimage-wrapper">
+                    <div id="productimage">
+                        <img src="@Html.DisplayFor(model => model.ImageURL)" width="100" height="100" alt="@Html.DisplayFor(model => model.Title)" />
+                        <div class="image image1" style="background-image: url( @Html.DisplayFor(model => model.ImageURL) />);"></div>
                     </div>
-                    <div id="productinfo" class="content">
-                        <section>
-                            <div id="productdesription" itemprop="description">
+                </div>
+                <div id="productinfo" class="content">
+                    <section>
+                        <div id="productdesription" itemprop="description">
 
 
-                                <p> @Html.DisplayFor(model => model.Description)</p>
-                                <dl>
-                                    <dt>  @Html.DisplayNameFor(model => model.Information)</dt>
+                            <p> @Html.DisplayFor(model => model.Description)</p>
+                            <dl>
+                                <dt>  @Html.DisplayNameFor(model => model.Information)</dt>
 
-                                    <dd> <p>  @Html.DisplayFor(model => model.Information)</p></dd>
+                                <dd> <p>  @Html.DisplayFor(model => model.Information)</p></dd>
 
-                                    <dt>  @Html.DisplayNameFor(model => model.NameOfIngredient)</dt>
+                                <dt>  @Html.DisplayNameFor(model => model.NameOfIngredient)</dt>
 
-                                    <dd> <p>  @Html.DisplayFor(model => model.NameOfIngredient)</p></dd>
-                                </dl>
-                            </div>
+                                <dd> <p>  @Html.DisplayFor(model => model.NameOfIngredient)</p></dd>
+                            </dl>
+                        </div>
 
-                            <div id="productavailability">Availability: <span>In Stock</span></div>
+                        <div id="productavailability">Availability: <span>In Stock</span></div>
 
-                            <div class="dottedbox">
-                                <div id="productprice">
-                                    <div class="price">
-                                        <span class="yourprice">
-                                            Your @Html.DisplayNameFor(model => model.Price):
-                                            <strong itemprop="price" id="price" class="price" style="display: inline;">
-                                                    € @Html.DisplayFor(model => model.Price)
-                                            </strong>
-                                        </span>
-                                    </div>
+                        <div class="dottedbox">
+                            <div id="productprice">
+                                <div class="price">
+                                    <span class="yourprice">
+                                        Your @Html.DisplayNameFor(model => model.Price):
+                                        <strong itemprop="price" id="price" class="price" style="display: inline;">
+                                            € @Html.DisplayFor(model => model.Price)
+                                        </strong>
+                                    </span>
                                 </div>
-                                <div id="productcart">
-                                    <div class="addToCartBlock">
-                                        <div class="qtybox-addcart">
+                            </div>
+                            <div id="productcart">
+                                <div class="addToCartBlock">
+                                    @*<div class="qtybox-addcart">
 
                                             <label>Quantity</label>
                                             <input type="text" size="3" name="qty-0" value="1" onchange="validateValues(document.add,1);" class="txtBoxStyle" />
                                             <button type="button" id="Add" class="btn" onclick="check_and_add(document.add,1);"><i class="icon-basket"></i> Add to Cart</button>
+                                        </div>*@
+
+                                    @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
+                                    {
+
+                                        @Html.Hidden("ProductId", Model.Id)
+
+                                        <div>
+
+                                            <div class="qtybox-addcart">
+
+                                                <label>Quantity</label>
+
+                                                <input type="number" step="1" min="1" max="3" size="3" value="1" name="quant" class="txtBoxStyle" style="width:50px;" />
+
+                                                <a href="javascript:void(0);" onclick="$(this).closest('form').submit();"><i class="icon-basket"></i> Add to Cart</a>
+                                            </div>
+
                                         </div>
-                                    </div>
+                                    }
                                 </div>
                             </div>
-                            <p>
+                        </div>
+                        <p>
 
-                                @Html.ActionLink("Back to List", "IndexUser")
-                            </p>
-                        </section>
-                    </div>
+                            @Html.ActionLink("Back to List", "IndexUser")
+                        </p>
+                    </section>
                 </div>
-            </form>
+            </div>
+
         </div>
     </div>
 </div>

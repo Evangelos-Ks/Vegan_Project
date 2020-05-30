@@ -15,14 +15,16 @@
             </div>
             <div class="title-wrapper clearfix">
                 <div class="title">
+                    <div>
                         <h1> @Html.DisplayFor(model => model.Title) </h1>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="productdetails" class="docsection-wrapper" itemscope itemtype="/">
         <div class="docsection boxed">
-            <form enctype="multipart/form-data" method="post" action="add_cart.asp" name="add" id="add">
+            
                 <div class="content-wrapper clearfix">
                     <div id="productimage-wrapper">
                         <div id="productimage">
@@ -51,20 +53,34 @@
                                     <div class="price">
                                         <span class="yourprice">
                                             Your @Html.DisplayNameFor(model => model.Price):
-                                            <strong itemprop="price" id="price" class="price" style="display: inline;">
+                                            <strong>
+                                                <div itemprop="price" id="price" class="price" style="display: inline;">
                                                     € @Html.DisplayFor(model => model.Price)
+                                                </div>
                                             </strong>
                                         </span>
                                     </div>
                                 </div>
                                 <div id="productcart">
                                     <div class="addToCartBlock">
-                                        <div class="qtybox-addcart">
+                                        @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
+                                        {
+                                            
+                                            @Html.Hidden("ProductId", Model.Id)
 
-                                            <label>Quantity</label>
-                                            <input type="text" size="3" name="qty-0" value="1" onchange="validateValues(document.add,1);" class="txtBoxStyle" />
-                                            <button type="button" id="Add" class="btn" onclick="check_and_add(document.add,1);"><i class="icon-basket"></i> Add to Cart</button>
-                                        </div>
+                                            <div>
+
+                                                <div class="qtybox-addcart">
+
+                                                    <label>Quantity</label>
+                                                    
+                                                    <input type="number" step="1" min="1"  max="3"  size="3" value="1" name="quant" class="txtBoxStyle" style="width:50px;" />
+
+                                                    <a href="javascript:void(0);" onclick="$(this).closest('form').submit();"><i class="icon-basket"></i> Add to Cart</a>
+                                                </div>
+
+                                            </div>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +91,7 @@
                         </section>
                     </div>
                 </div>
-            </form>
+            
         </div>
     </div>
 </div>

@@ -23,7 +23,7 @@ namespace Vegan.Database
         {
            
         }
-
+       
         //====================== Product ==================
         public DbSet<Product> Products { get; set; }
 
