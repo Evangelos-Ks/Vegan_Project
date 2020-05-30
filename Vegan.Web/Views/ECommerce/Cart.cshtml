@@ -1,0 +1,239 @@
+﻿@using Newtonsoft.Json
+@model Vegan.Web.Models.ECommerce.Cart
+
+@{
+    ViewBag.Title = "Shopping Cart";
+}
+
+@if (!Model.CartItems.Any())
+{
+    <script type="text/javascript">
+        function load() {
+            window.location.href = "https://localhost:44304/ECommerce/EmptyViewCart"
+        }
+    </script>
+    <body onload="load()">
+    </body>
+    @*@{ Response.Redirect("~/ECommerce/EmptyViewCart");}*@
+
+}
+else
+{
+    <div id="top" pxlurl="[product_url]">
+
+        <div class="contentbox-wrapper">
+            <div class="contentbox">
+
+                <div id="pageheader" class="docsection-wrapper">
+                    <div class="docsection boxed">
+                        <div class="breadcrumbs-wrapper clearfix">
+                            <div class="breadcrumbs">
+                                <section>
+                                    <p><a href="/Home/Index">Home</a> > Shopping Cart</p>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="title-wrapper clearfix">
+                            <div class="title">
+                                <div>
+                                    <h1>My Shopping Cart</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="updateback" class="docsection-wrapper">
+                    <div class="docsection boxed">
+                        <a href="/Home/Index">Continue Shopping</a>
+                    </div>
+                </div>
+
+
+                <div id="shoppingcart" class="docsection-wrapper">
+                    <div class="docsection boxed">
+                        <section id="viewCart">
+                            <form action="shipquote.asp" method="post" name="shipquote" onSubmit="return submitForm();">
+                                <input type="hidden" name="thispage" value="" />
+                                <input type="hidden" name="shipping_zip" value="[shipping_zip]" />
+                                <script type="text/javascript">document.shipquote.thispage.value = window.location.href;</script>
+                            </form>
+                            
+
+                                <div class="updatebtn updatebtn-top">
+                                    <div style="min-height: 60px;"><a style="display: none;" class="btn btn-small update-qty" href="#" onclick="document.forms['recalculate'].submit();return false;">Update Cart</a></div>
+                                </div>
+
+                                <div class="shoppingCartItems" id="divshoppingCartItems">
+                                    <div class="titles2">
+                                        <div class="item-info">ITEMS</div>
+                                        <div class="item-qty">QTY</div>
+                                        <div class="item-price">PRICE</div>
+                                        <div class="item-total">SUBTOTAL</div>
+                                        <div class="item-remove"></div>
+                                    </div>
+
+
+                                    @foreach (var item in Model.CartItems)
+                                    {
+                                        <div class="row">
+                                            <div class="item-info">
+                                                <div class="product-image">
+                                                    <a href="#"><img src="@item.ImageUrl" /></a>
+                                                </div>
+                                                <div class="product-name-options">
+                                                    <div>
+                                                        <div>
+                                                            <a href="#">@item.Name</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
+                                            {
+                                                @Html.Hidden("ProductId", item.ProductId)
+                                                
+                                                    <div class="item-qty">
+                                                        <input type="number" step="1" min="1" max="3" size="3" value="@item.Quantity" name="quant" style="width:50px" />
+                                                        <a href="javascript:void(0);" onclick="$(this).closest('form').submit();"><i class="fa fa-refresh"  aria-hidden="true" style="float:inherit"></i> </a>
+                                                    </div>
+                                                
+                                            }
+
+                                            <div class="item-price">
+                                                @string.Format(@System.Globalization.CultureInfo.CurrentCulture = @System.Globalization.CultureInfo.CreateSpecificCulture("gr-GR"), "{0:c2}", item.Price)
+
+                                            </div>
+
+
+                                            <div class="item-total">
+                                                @string.Format(@System.Globalization.CultureInfo.CurrentCulture = @System.Globalization.CultureInfo.CreateSpecificCulture("gr-GR"), "{0:c2}", (item.Price * item.Quantity))
+                                            </div>
+
+
+                                            @using (Html.BeginForm("Delete", "ECommerce", FormMethod.Post))
+                                            {
+                                                @Html.Hidden("ProductId", item.ProductId)
+                                                <div class="item-remove">
+                                                    <button type="submit" class="btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                                </div>
+                                            }
+                                        </div>
+
+                                    }
+
+                                    @* ======================= UPDATE CART ========================== *@
+                                    <div class="updatebtn updatebtn-btm">
+                                        <div style="padding:30px"></div>
+                                    </div>
+                                    @* ============================================================== *@
+
+                                    <div class="shoppingCartTotal">
+                                        <div class="clearfix">
+                                            <div class="item-total-label"><strong>TOTAL</strong></div>
+                                            <div class="item-total-value item-total-total">
+                                                <strong>
+                                                    @string.Format(@System.Globalization.CultureInfo.CurrentCulture = @System.Globalization.CultureInfo.CreateSpecificCulture("gr-GR"), "{0:c2}", (Model.CartItems.Sum(x => x.Price * x.Quantity)))
+                                                </strong>
+                                            </div>
+
+                                        </div>
+                                        <span>Note: Total include tax, shipping, and handling rates. </span>
+
+
+                                    </div>
+
+                                    @* ============================= PayPal ============================= *@
+                                    <div class="updatebtn updatebtn-btm" id="ChkButtonWrap">
+                                        <div class="form-group">
+                                            <label>In-line Checkout Experience</label>
+                                            <p>
+                                                <a href="@Url.Action("Checkout", "ECommerce")" class="btn btn-warning">Checkout with PayPal</a>
+                                            </p>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Popup Checkout Experience</label>
+                                            <form id="myContainer" method="post" action="@Url.Action("Checkout", "ECommerce")"></form>
+                                            <script>
+                                                window.paypalCheckoutReady = function () {
+                                                    paypal.checkout.setup('BRKKN32NLUD56',
+                                                        {
+                                                            environment: 'sandbox',
+                                                            container: 'myContainer'
+                                                        });
+                                                };</script>
+                                            <script src="//www.paypalobjects.com/api/checkout.js" async></script>
+                                        </div>
+                                        @*<span id="ChkButton"><button type="button" onclick="window.location='checkout.asp?step=1'" id="vc_ChkButton" class="btn">CHECKOUT</button></span>*@
+                                    </div>
+                                    @* ===================================================================== *@
+                                </div>
+
+                                @*<div class="updatebtn updatebtn-btm">
+                                        <div><a class="btn btn-small update-qty" href="#" onclick="document.forms['recalculate'].submit();return false;">Update Cart</a></div>
+                                    </div>*@
+
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                           
+                        </section>
+
+                        @*<script type="text/javascript">
+                                //You should create the validator only after the definition of the HTML form
+                                var frmvalidator = new Validator("recalculate");
+
+                                frmvalidator.setAddnlValidationFunction("submitForm");
+
+                                //<!--START: apply_coupon_validation-->
+                                frmvalidator.addValidation("maxlen=20", "Maximun Coupon Length is 20");
+                                //<!--END: apply_coupon_validation-->
+                            </script>*@
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@*<script>
+        function woocommerce_quantity_input($data = null) {
+            global $product;
+            if (!$data) {
+                $defaults = array(
+                    'input_name'=>'quantity',
+                    'input_value'   => '1',
+                    'max_value'     => apply_filters('woocommerce_quantity_input_max', '', $product),
+                    'min_value'     => apply_filters('woocommerce_quantity_input_min', '', $product),
+                    'step'         => apply_filters('woocommerce_quantity_input_step', '1', $product),
+                    'style'         => apply_filters('woocommerce_quantity_style', 'float:left;', $product)
+                );
+            } else {
+                $defaults = array(
+                    'input_name'   => $data['input_name'],
+                    'input_value'   => $data['input_value'],
+                    'step'         => apply_filters('cw_woocommerce_quantity_input_step', '1', $product),
+                    'max_value'     => apply_filters('cw_woocommerce_quantity_input_max', '', $product),
+                    'min_value'     => apply_filters('cw_woocommerce_quantity_input_min', '', $product),
+                    'style'         => apply_filters('cw_woocommerce_quantity_style', 'float:left;', $product)
+                );
+            }
+            if (!empty($defaults['min_value']))
+                $min = $defaults['min_value'];
+            else $min = 1;
+            if (!empty($defaults['max_value']))
+                $max = $defaults['max_value'];
+            else $max = 15;
+            if (!empty($defaults['step']))
+                $step = $defaults['step'];
+            else $step = 1;
+            $options = '';
+            for ($count = $min; $count <= $max; $count = $count + $step) {
+                $selected = $count === $defaults['input_value'] ? ' selected' : '';
+                $options.= '<option value="'.$count. '"'.$selected.'>'.$count. '</option>';
+            }
+            echo '<div class="cw_quantity_select" style="'.$defaults['style']. '"><select name="'.esc_attr($defaults['input_name']). '" title="'._x('Qty', 'Product Description', 'woocommerce'). '" class="cw_qty">'.$options. '</select></div>';
+
+    </script>*@

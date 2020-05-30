@@ -110,7 +110,7 @@
   }
 }
 
-/* demo stuff */
+/* chart stuff */
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;

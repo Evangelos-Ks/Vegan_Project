@@ -90,12 +90,17 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <!-- ======================================== ADD =========================================================== -->
+      <Private>True</Private>
     </Reference>
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
     </Reference>
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
     </Reference>
     <Reference Include="SendGrid, Version=9.15.1.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
       <HintPath>..\packages\SendGrid.9.15.1\lib\net452\SendGrid.dll</HintPath>
@@ -164,9 +169,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
+    <!-- ===================== REMOVE TO FIX ERROR "Newtonsoft.Json_exists_in_both_blend_Newtonsoft.Json.dll_and_solution_packages" ================= -->
+    <!-- <Reference Include="Newtonsoft.Json"> -->
+    <!-- <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath> -->
+    <!-- </Reference> -->
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -202,6 +208,7 @@
     <Compile Include="ControllersAPI\CategoriesAPIController.cs" />
     <Compile Include="ControllersAPI\OrdersAPIController.cs" />
     <Compile Include="ControllersAPI\ProductsAPIController.cs" />
+    <Compile Include="Controllers\ECommerceController.cs" />
     <Compile Include="Views\ChatHub\ChatHub.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministratorController.cs" />
@@ -228,10 +235,15 @@
     <Compile Include="Controllers\EssentialOilController.cs" />
     <Compile Include="Controllers\SupplementController.cs" />
     <Compile Include="Controllers\TeaController.cs" />
+    <Compile Include="Extras\PaypalConfiguration.cs" />
+    <Compile Include="Extras\SimulatableWebhook.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ECommerce\Cart.cs" />
+    <Compile Include="Models\ECommerce\CartItem.cs" />
+    <Compile Include="Models\ECommerce\IndexVm.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -262,6 +274,8 @@
     <Content Include="Content\assets\templates\vegan2020\images\bg1500x440head.jpg" />
     <Content Include="Content\assets\templates\vegan2020\images\bg2000x780footer.jpg" />
     <Content Include="Content\assets\templates\vegan2020\images\EleniParisi.jpg" />
+    <Content Include="Content\assets\templates\vegan2020\images\Evangelos.jpg" />
+    <Content Include="Content\assets\templates\vegan2020\images\GeorgePoulakos %281%29.jpg" />
     <Content Include="Content\assets\templates\vegan2020\images\img10x10blank.png" />
     <Content Include="Content\assets\templates\vegan2020\images\logo-v.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img160x104floral.png.ico" />
@@ -270,6 +284,7 @@
     <Content Include="Content\assets\templates\vegan2020\images\img6x5line-footer.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img6x9line-btm.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img6x9line-top.png" />
+    <Content Include="Content\assets\templates\vegan2020\images\StathisKannellis %281%29.jpg" />
     <Content Include="Content\assets\templates\vegan2020\js\gambit-smoothscroll-min.js" />
     <Content Include="Content\assets\templates\vegan2020\js\jquery.quicksearch.js" />
     <Content Include="Content\assets\templates\vegan2020\js\jquery.simplemodal.min.js" />
@@ -285,6 +300,7 @@
     <Content Include="Content\now-ui-dashboard-master\assets\css\chat.css" />
     <Content Include="Content\now-ui-dashboard-master\assets\css\now-ui-dashboard.css" />
     <Content Include="Content\now-ui-dashboard-master\assets\css\now-ui-dashboard.min.css" />
+    <Content Include="Content\now-ui-dashboard-master\assets\demo\chartShow.js" />
     <Content Include="Content\now-ui-dashboard-master\assets\demo\demo.css" />
     <Content Include="Content\now-ui-dashboard-master\assets\demo\demo.js" />
     <Content Include="Content\now-ui-dashboard-master\assets\img\apple-icon.png" />
@@ -318,6 +334,7 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\VeganCSS\Autocomplete.css" />
     <Content Include="Content\VeganJs\Autocomplete.js" />
+    <Content Include="Content\VeganJs\ChartController.js" />
     <Content Include="Content\VeganJs\Controller.js" />
     <Content Include="Content\VeganJs\PaginationLibrary.js" />
     <Content Include="Content\VeganLifePictures\Candle\190x190\Honey Candles 3x3 Pillar Beeswax Candle190x190.jpg" />
@@ -1828,6 +1845,9 @@
     <Content Include="Views\Account\ConfirmEmailView.cshtml" />
     <Content Include="Views\AllProduct\IndexUser.cshtml" />
     <Content Include="Scripts\version.json" />
+    <Content Include="Views\ECommerce\Cart.cshtml" />
+    <Content Include="Views\ECommerce\EmptyViewCart.cshtml" />
+    <Content Include="Views\ECommerce\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
