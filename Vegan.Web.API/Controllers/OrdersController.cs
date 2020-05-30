@@ -18,6 +18,9 @@ namespace Vegan.Web.API.Controllers
     {
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
+        /// <summary>
+        /// This will bring all the orders 
+        /// </summary>
         // GET: api/Orders
         public IEnumerable<Order> GetOrders()
         {

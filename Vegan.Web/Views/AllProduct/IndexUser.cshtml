@@ -9,12 +9,7 @@
     ViewBag.Title = "All Products";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
-
-    <link data-require="bootstrap-css@@*" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
-    <script data-require="angular.js@@*" data-semver="1.3.15" src="https://code.angularjs.org/1.3.15/angular.js"></script>
-    <script data-require="ui-bootstrap@@*" data-semver="0.12.1" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.1.min.js"></script>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
 <div ng-controller="VeganController">
@@ -41,17 +36,28 @@
                 </div>
                 <div class="header-wrapper clearfix">
                     <div class="header">
-                        <header>
+                        <header class="container">
                             <h2>
                                 <small>Total Items: {{NumberOfProducts}} </small>
                             </h2>
+                            <div id="pagination" style=" float: right;
+                                                    margin: 0 0 10px;
+                                                    line-height: 40px;
+                                                    color: gray;">
+                                <ul>
+                                    <li>
+                                        <small><dir-pagination-controls ></dir-pagination-controls></small>
+                                    </li>
+                                </ul>
+                            </div>
+
                         </header>
                     </div>
                 </div>
                 <div class="content-wrapper clearfix">
                     <div class="content">
-                        <div class="product" ng-repeat="product in AllProducts">
-                            <div class="image" style="background-image: url({{product.ImageURL}});"><img src="~/Content/assets/templates/vegan2020/images/img10x10blank.png" alt="{{product.Title}}"></div>
+                        <div class="product" dir-paginate="product in AllProducts | itemsPerPage: 12">
+                            <div class="image" style="background-image: url({{product.ImageURL}});"><img src={{product.ImageURL}} alt="{{product.Title}}"></div>
                             <div class="frame"></div>
                             <div class="info">
                                 <div class="info-data">
@@ -64,7 +70,11 @@
 
                                             </div>
 
-                                            <div class="cartbutton"><a href="add_cart.asp?quick=1&amp;item_id=1429" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a></div>
+                                            <div class="cartbutton">
+                                                @*<a  onclick="$(this).closest('form').submit();" href="javascript:void(0);" class="btn"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add To Cart</a>*@
+                                                @*<a class="btn" style="max-width:120px; text-align:center; padding-left:8px; padding-right:8px;" href="javascript:void(0);" onclick="$(this).closest('form').submit();">Add to cart</a>*@
+
+                                            </div>
 
                                         </div>
                                     </div>

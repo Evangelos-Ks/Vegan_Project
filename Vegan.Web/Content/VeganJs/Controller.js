@@ -1,5 +1,5 @@
 ﻿(function myfunction() {
-    var VeganProject = angular.module("VeganProject", []);
+    var VeganProject = angular.module("VeganProject", ['angularUtils.directives.dirPagination']);
 
 
     //============================================== VeganController =======================================================
