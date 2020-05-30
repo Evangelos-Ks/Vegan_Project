@@ -262,6 +262,8 @@
     <Content Include="Content\assets\templates\vegan2020\images\bg1500x440head.jpg" />
     <Content Include="Content\assets\templates\vegan2020\images\bg2000x780footer.jpg" />
     <Content Include="Content\assets\templates\vegan2020\images\EleniParisi.jpg" />
+    <Content Include="Content\assets\templates\vegan2020\images\Evangelos.jpg" />
+    <Content Include="Content\assets\templates\vegan2020\images\GeorgePoulakos %281%29.jpg" />
     <Content Include="Content\assets\templates\vegan2020\images\logo-v.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img160x104floral.png.ico" />
     <Content Include="Content\assets\templates\vegan2020\images\img52x80floral-l.png" />
@@ -269,6 +271,7 @@
     <Content Include="Content\assets\templates\vegan2020\images\img6x5line-footer.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img6x9line-btm.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img6x9line-top.png" />
+    <Content Include="Content\assets\templates\vegan2020\images\StathisKannellis %281%29.jpg" />
     <Content Include="Content\assets\templates\vegan2020\js\gambit-smoothscroll-min.js" />
     <Content Include="Content\assets\templates\vegan2020\js\jquery.quicksearch.js" />
     <Content Include="Content\assets\templates\vegan2020\js\jquery.simplemodal.min.js" />

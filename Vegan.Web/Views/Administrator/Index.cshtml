@@ -9,72 +9,82 @@
 
 <div class="wrapper " ng-app="ChartProject" ng-controller="ChartController">
     <div class="main-panel" id="main-panel">
-        <div class="panel-header panel-header-lg">
-            <canvas id="bigDashboardChart"></canvas>
-        </div>
-        <div class="content">
-            <div class="row">
-                <div class="col-lg-4">
 
-                    <div class="card card-chart">
 
-                        <div class="card-header">
-                            <h5 class="card-category">Tax payments</h5>
-                            <h4 class="card-title">Tax</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart-area">
-                                <canvas id="lineChartExample"></canvas>   
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="stats">
-                                <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
-                            </div>
-                        </div>
-                    </div>
+        <div class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <div class="navbar-brand">Hello admin@vegan.com</div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card card-chart">
-                        <div class="card-header">
-                            <h5 class="card-category">2020 Sales</h5>
-                            <h4 class="card-title">Top Orders</h4>
-                          
-                        </div>
-                        <div class="card-body">
-                            <div class="chart-area">
-                                <canvas id="lineChartExampleWithNumbersAndGrid"></canvas>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="stats">
-                                <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
-                            </div>
-                        </div>
-                    </div>
+            </div>
+         </div>
+
+                <div class="panel-header panel-header-lg">
+                    <canvas id="bigDashboardChart"></canvas>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card card-chart">
-                        <div class="card-header">
-                            <h5 class="card-category">Orders</h5>
-                            <h4 class="card-title">weekly orders</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart-area">
-                                <canvas id="barChartSimpleGradientsNumbers"></canvas>
+                <div class="content">
+                    <div class="row">
+                        <div class="col-lg-4">
+
+                            <div class="card card-chart">
+
+                                <div class="card-header">
+                                    <h5 class="card-category">Tax payments</h5>
+                                    <h4 class="card-title">Tax</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="lineChartExample"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <div class="stats">
-                                <i class="now-ui-icons ui-2_time-alarm"></i> Updated last week
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card card-chart">
+                                <div class="card-header">
+                                    <h5 class="card-category">2020 Sales</h5>
+                                    <h4 class="card-title">Top Orders</h4>
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="lineChartExampleWithNumbersAndGrid"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <div class="card card-chart">
+                                <div class="card-header">
+                                    <h5 class="card-category">Orders</h5>
+                                    <h4 class="card-title">weekly orders</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="barChartSimpleGradientsNumbers"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="stats">
+                                        <i class="now-ui-icons ui-2_time-alarm"></i> Updated last week
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </div>
-</div>
 
 <script src="~/Content/now-ui-dashboard-master/assets/demo/demo.js"></script>
 <script src="../../VeganJs/ChartController.js"></script> 
