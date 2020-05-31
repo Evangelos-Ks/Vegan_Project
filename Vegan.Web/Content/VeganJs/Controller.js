@@ -1,6 +1,8 @@
 ﻿(function myfunction() {
-    var VeganProject = angular.module("VeganProject", []);
+    var VeganProject = angular.module("VeganProject", ['angularUtils.directives.dirPagination']);
 
+
+    //============================================== VeganController =======================================================
     var productsPerCategoryUrl = "https://localhost:44304/api/CategoriesAPI";
 
     var VeganController = function ($scope, $http) {
@@ -11,7 +13,8 @@
                     $scope.FoodHerbs = response.data[1];
                     $scope.Homes = response.data[2];
                     $scope.Supplements = response.data[3];
-                    $scope.AllProducts = $scope.Care.concat($scope.FoodHerbs).concat($scope.Homes).concat($scope.Supplements);                  
+                    $scope.AllProducts = $scope.Care.concat($scope.FoodHerbs).concat($scope.Homes).concat($scope.Supplements);
+                    $scope.NumberOfProducts = $scope.AllProducts.length;
 
                     //autocomplete
                     autocomplete(document.getElementById("searchlight"), AutocompleteItems($scope.AllProducts));
@@ -32,12 +35,26 @@
                                 }
                                 var detailsActionMethod = "Details" + $scope.AllProducts[i].SubCategory;
                                 var id = $scope.AllProducts[i].Id;
-                                var url = "/" + controller + "/" + detailsActionMethod + "?" + "productId=" + id; 
+                                var url = "/" + controller + "/" + detailsActionMethod + "?" + "productId=" + id;
                                 window.location.href = url;
                             }
                         }
-                       
+
                     });
+
+                    $scope.UrlBuilder = function UrlBuilder(product) {
+                        if (product.SubCategory == "FaceCream") {
+                            var controller = product.SubCategory + "s";
+                        }
+                        else {
+                            var controller = product.SubCategory;
+                        }
+                        var detailsActionMethod = "Details" + product.SubCategory;
+                        var id = product.Id;
+                        var url = "/" + controller + "/" + detailsActionMethod + "?" + "productId=" + id;
+                        window.location.href = url;
+                    }
+
                 }, function myError(response) {
                     console.log(response);
                 });
@@ -46,5 +63,4 @@
     };
 
     VeganProject.controller("VeganController", VeganController);
-
 })();

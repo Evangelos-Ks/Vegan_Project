@@ -22,11 +22,11 @@
 
     <meta name="msapplication-config" content="~/Content/assets/templates/vegan2020/favicons/browserconfig.xml">
     <meta name="theme-color" content="#fdf7ed">
-    
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cardo|Roboto+Condensed:400,400i,700,700i|Roboto:100,900" type="text/css" media="all" />
     <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/font-awesome.css?vcart=10.1.4" type="text/css" media="screen" />
-    @*<link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/main.css?vcart=10.1.4" type="text/css" media="screen" />
-    <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/print.css?vcart=10.1.4" type="text/css" media="print" />*@
+    <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/main.css?vcart=10.1.4" type="text/css" media="screen" />
+    <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/print.css?vcart=10.1.4" type="text/css" media="print" />
     <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/messagebar.min.css?vcart=10.1.4" type="text/css" media="screen" />
     <link href="~/Content/assets/templates/vegan2020/css/main.css" rel="stylesheet" />
     
@@ -83,9 +83,11 @@
 
 
     <script src="~/Scripts/jquery.signalR-2.2.2.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    
 
 </head>
-<body>
+<body ng-app="VeganProject">
     <nav>
         @RenderPage("~/Views/Shared/Components/User/_NavigationBarUser.cshtml")
     </nav>
@@ -99,6 +101,11 @@
     </footer>
 
     @RenderSection("Scripts", false)
+
+
+    <script src="~/Content/VeganJs/Autocomplete.js"></script>
+    <script src="~/Content/VeganJs/Controller.js"></script>
+    <script src="https://rawgit.com/michaelbromley/angularUtils-pagination/master/dirPagination.js"></script>
 
 </body>
 
