@@ -284,7 +284,7 @@
     <Content Include="Content\assets\templates\vegan2020\images\img6x5line-footer.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img6x9line-btm.png" />
     <Content Include="Content\assets\templates\vegan2020\images\img6x9line-top.png" />
-    <Content Include="Content\assets\templates\vegan2020\images\StathisKannellis %281%29.jpg" />
+    <Content Include="Content\assets\templates\vegan2020\images\StathisKannellis.jpg" />
     <Content Include="Content\assets\templates\vegan2020\js\gambit-smoothscroll-min.js" />
     <Content Include="Content\assets\templates\vegan2020\js\jquery.quicksearch.js" />
     <Content Include="Content\assets\templates\vegan2020\js\jquery.simplemodal.min.js" />
