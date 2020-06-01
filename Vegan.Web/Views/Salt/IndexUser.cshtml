@@ -46,12 +46,6 @@
                             <div class="info">
                                 <div class="info-data">
                                     <div>
-                                        @*<div>
-                                                @Html.ActionLink("Read More", "DetailsSalt", new { productId = item.Id }, new { @class = "btn" })
-                                                <div class="price">
-                                                    <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-                                                </div>
-                                            </div>*@
 
                                         @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
                                         {
@@ -68,7 +62,6 @@
                                     </div>
                                 </div>
                             </div>
-                            @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
                             <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsSalt", new { productId = item.Id })</h3>
                         </div>
                     }

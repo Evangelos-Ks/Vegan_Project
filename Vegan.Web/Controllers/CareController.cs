@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Vegan.Database;
-using Vegan.Entities.Care;
 using Vegan.Services;
 
 namespace Vegan.Web.Controllers.CareVegan
@@ -14,7 +9,7 @@ namespace Vegan.Web.Controllers.CareVegan
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: Care
-     // [Authorize(Roles = "Admins, Supervisors")]
+        // [Authorize(Roles = "Admins, Supervisors")]
         public ActionResult Index()
         {
             return View( unitOfWork.Cares.GetAll());

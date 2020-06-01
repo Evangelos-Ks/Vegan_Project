@@ -1805,7 +1805,6 @@
     <Content Include="Views\HomeVegan\DetailsHomeVegan.cshtml" />
     <Content Include="Views\Supplement\Index.cshtml" />
     <Content Include="Views\Supplement\Details.cshtml" />
-    <Content Include="Views\Shared\TestLayoutTEST.cshtml" />
     <Content Include="Views\Shared\Components\User\_FooterUser.cshtml" />
     <Content Include="Views\Shared\Components\User\_NavigationBarUser.cshtml" />
     <Content Include="Views\Product\IndexUser.cshtml" />

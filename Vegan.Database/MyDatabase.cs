@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
-using Vegan.Entities.Home;
+﻿using System.Data.Entity;
 using Vegan.Entities;
 using Vegan.Entities.Care;
-using Vegan.Entities.FoodHerb;
-using Vegan.Entities.Supplement;
-using Vegan.Entities.Library;
-using Vegan.Entities.DomainClasses;
-using Newtonsoft.Json;
 using Vegan.Entities.DomainClasses.Sales;
+using Vegan.Entities.FoodHerb;
+using Vegan.Entities.Home;
+using Vegan.Entities.Library;
+using Vegan.Entities.Supplement;
 
 namespace Vegan.Database
 {
@@ -58,6 +51,5 @@ namespace Vegan.Database
         public DbSet<Supplement> Supplements { get; set; }
         public DbSet<PowerHealth> PowerHealths { get; set; }
         public DbSet<SuperFood> SuperFoods { get; set; }
-
     }
 }

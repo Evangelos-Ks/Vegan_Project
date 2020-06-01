@@ -114,15 +114,6 @@
                     </header>
                 </div>
             </div>
-            @*<div class="header-wrapper clearfix">
-                <div class="header">
-                    <header>
-                        <h2>
-                            <small>Total Items: @Model.ToList().Count() </small>
-                        </h2>
-                    </header>
-                </div>
-            </div>*@
             <div class="content-wrapper clearfix">
                 <div class="content">
                     @foreach (var item in Model)
@@ -133,12 +124,6 @@
                         <div class="info">
                             <div class="info-data">
                                 <div>
-                                    @*<div>
-                        @Html.ActionLink("Read More", "DetailsEssentialOil", new { productId = item.Id }, new { @class = "btn" })
-                        <div class="price">
-                            <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-                        </div>
-                    </div>*@
 
                                     @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
                                     {
@@ -155,7 +140,6 @@
                                 </div>
                             </div>
                         </div>
-                        @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
                         <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsEssentialOil", new { productId = item.Id })</h3>
                     </div>
 

@@ -14,7 +14,7 @@
     </script>
     <body onload="load()">
     </body>
-    @*@{ Response.Redirect("~/ECommerce/EmptyViewCart");}*@
+ 
 
 }
 else
@@ -162,34 +162,11 @@ else
                                                         });
                                                 };</script>
                                             <script src="//www.paypalobjects.com/api/checkout.js" async></script>
-                                        </div>
-                                        @*<span id="ChkButton"><button type="button" onclick="window.location='checkout.asp?step=1'" id="vc_ChkButton" class="btn">CHECKOUT</button></span>*@
+                                        </div> 
                                     </div>
-                                    @* ===================================================================== *@
+                             
                                 </div>
-
-                                @*<div class="updatebtn updatebtn-btm">
-                                        <div><a class="btn btn-small update-qty" href="#" onclick="document.forms['recalculate'].submit();return false;">Update Cart</a></div>
-                                    </div>*@
-
-                                <br />
-                                <br />
-                                <br />
-                                <br />
-                           
                         </section>
-
-                        @*<script type="text/javascript">
-                                //You should create the validator only after the definition of the HTML form
-                                var frmvalidator = new Validator("recalculate");
-
-                                frmvalidator.setAddnlValidationFunction("submitForm");
-
-                                //<!--START: apply_coupon_validation-->
-                                frmvalidator.addValidation("maxlen=20", "Maximun Coupon Length is 20");
-                                //<!--END: apply_coupon_validation-->
-                            </script>*@
-
 
                     </div>
                 </div>
@@ -197,43 +174,3 @@ else
         </div>
     </div>
 }
-
-@*<script>
-        function woocommerce_quantity_input($data = null) {
-            global $product;
-            if (!$data) {
-                $defaults = array(
-                    'input_name'=>'quantity',
-                    'input_value'   => '1',
-                    'max_value'     => apply_filters('woocommerce_quantity_input_max', '', $product),
-                    'min_value'     => apply_filters('woocommerce_quantity_input_min', '', $product),
-                    'step'         => apply_filters('woocommerce_quantity_input_step', '1', $product),
-                    'style'         => apply_filters('woocommerce_quantity_style', 'float:left;', $product)
-                );
-            } else {
-                $defaults = array(
-                    'input_name'   => $data['input_name'],
-                    'input_value'   => $data['input_value'],
-                    'step'         => apply_filters('cw_woocommerce_quantity_input_step', '1', $product),
-                    'max_value'     => apply_filters('cw_woocommerce_quantity_input_max', '', $product),
-                    'min_value'     => apply_filters('cw_woocommerce_quantity_input_min', '', $product),
-                    'style'         => apply_filters('cw_woocommerce_quantity_style', 'float:left;', $product)
-                );
-            }
-            if (!empty($defaults['min_value']))
-                $min = $defaults['min_value'];
-            else $min = 1;
-            if (!empty($defaults['max_value']))
-                $max = $defaults['max_value'];
-            else $max = 15;
-            if (!empty($defaults['step']))
-                $step = $defaults['step'];
-            else $step = 1;
-            $options = '';
-            for ($count = $min; $count <= $max; $count = $count + $step) {
-                $selected = $count === $defaults['input_value'] ? ' selected' : '';
-                $options.= '<option value="'.$count. '"'.$selected.'>'.$count. '</option>';
-            }
-            echo '<div class="cw_quantity_select" style="'.$defaults['style']. '"><select name="'.esc_attr($defaults['input_name']). '" title="'._x('Qty', 'Product Description', 'woocommerce'). '" class="cw_qty">'.$options. '</select></div>';
-
-    </script>*@

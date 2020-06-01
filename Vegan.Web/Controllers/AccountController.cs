@@ -1,16 +1,14 @@
-﻿using System;
-using System.Globalization;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using System;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using Vegan.Web.Models;
-using Vegan.Entities.Library;
 using Vegan.Entities.Enums;
+using Vegan.Entities.Library;
+using Vegan.Web.Models;
 
 namespace Vegan.Web.Controllers
 {

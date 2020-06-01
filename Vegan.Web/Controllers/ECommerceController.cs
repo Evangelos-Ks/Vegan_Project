@@ -1,15 +1,11 @@
-﻿using System;
+﻿using PayPal.Api;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity.Owin;
-using PayPal.Api;
-using Vegan.Services;
 using Vegan.Database;
-using Vegan.Entities.Library;
-using Vegan.Entities;
 using Vegan.Entities.DomainClasses.Sales;
+using Vegan.Services;
 using Vegan.Web.Models.ECommerce;
 
 namespace Vegan.Web.Controllers
@@ -17,20 +13,7 @@ namespace Vegan.Web.Controllers
     public class ECommerceController : Controller
     {
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
-        //private MyDatabase _dbContext => HttpContext.GetOwinContext().Get<MyDatabase>();
-        //private MyDatabase _dbContext => HttpContext.GetOwinContext().Get<MyDatabase>();
-
-        //    public ActionResult Index()
-        //    {
-        //        var model = new IndexVm()
-        //        {
-        //            Products = _dbContext.Products.ToList();
-
-        //    };
-
-        //        return View(model);
-        //}
-
+        
         public ActionResult Cart()
         {
             var cart = CreateOrGetCart();
@@ -41,9 +24,6 @@ namespace Vegan.Web.Controllers
         [HttpPost]
         public ActionResult Add(int ProductId, string quant = "1")
         {
-            //var product = _dbContext.Products.FirstOrDefault(x => x.Id == ProductId);
-            //var productList = _dbContext.Products;
-            //var product = productList.Find(x => x.Id == ProductId);
             var product = unitOfWork.Products.GetById(ProductId);
             var quantity = Convert.ToInt32(quant);
             var cart = CreateOrGetCart();
@@ -61,7 +41,7 @@ namespace Vegan.Web.Controllers
                     existingItem.Quantity = quantity;
                 }
                 
-                Session["Price"] = cart.Sum();//(decimal)Session["Price"] + existingItem.Price;
+                Session["Price"] = cart.Sum();
             }
             else
             {
@@ -74,19 +54,18 @@ namespace Vegan.Web.Controllers
                     ImageUrl = product.ImageURL
                 });
 
-                Session["Price"] = cart.Sum();//(decimal)Session["Price"] + (product.Price*quantity);
+                Session["Price"] = cart.Sum();
             }
 
 
             SaveCart(cart);
 
-            //return RedirectToAction("Cart", "ECommerce");
             return Redirect(Request.UrlReferrer.PathAndQuery);
         }
 
         public ActionResult Delete(int ProductId)
         {
-            //var product = _dbContext.Products.FirstOrDefault(x => x.Id == ProductId);
+            
             var product = unitOfWork.Products.GetById(ProductId);
             var cart = CreateOrGetCart();
             var existingItem = cart.CartItems.FirstOrDefault(x => x.ProductId == product.Id);
@@ -102,7 +81,7 @@ namespace Vegan.Web.Controllers
             }
 
             SaveCart(cart);
-            Session["Price"] = cart.Sum();//(decimal)Session["Price"] - (existingItem.Price*existingItem.Quantity);
+            Session["Price"] = cart.Sum();
             return RedirectToAction("Cart", "ECommerce");
         }
 
@@ -144,8 +123,6 @@ namespace Vegan.Web.Controllers
                         Quantity = x.Quantity
                     }).ToList()
                 };
-                //_dbContext.Orders.Add(order);
-                //_dbContext.SaveChanges();
                 unitOfWork.Orders.Add(order);
 
                 // Get PayPal API Context using configuration from web.config

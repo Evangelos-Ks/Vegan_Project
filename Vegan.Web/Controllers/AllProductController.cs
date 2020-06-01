@@ -1,12 +1,7 @@
 ﻿using PagedList;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Vegan.Database;
-using Vegan.Entities;
-using Vegan.Entities.Home;
 using Vegan.Services;
 using Vegan.Web.Models;
 

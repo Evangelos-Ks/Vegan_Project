@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Vegan.Database;
+﻿using Vegan.Database;
 using Vegan.Entities.Interfaces;
 using Vegan.Entities.Interfaces.CareInterfaces;
 using Vegan.Entities.Interfaces.FoodInterfaces;

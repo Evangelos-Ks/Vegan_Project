@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using Vegan.Entities.Interfaces;
 
 namespace Vegan.Services
@@ -36,11 +34,10 @@ namespace Vegan.Services
             Context.Set<TEntity>().Add(entity);
         }
 
-        public void Edit(TEntity entity) //I implemented it by my self. I don't know if it works. Evangelos
+        public void Edit(TEntity entity) 
         {
             Context.Set<TEntity>();
             Context.Entry(entity).State = EntityState.Modified;
-            //Context.SaveChanges();
         }
 
         public void Delete(TEntity entity)

@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using PagedList;
+using System;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Vegan.Database;
 using Vegan.Entities.Home;
 using Vegan.Services;
-using System.ComponentModel.DataAnnotations;
-using PagedList;
 
 namespace Vegan.Web.Controllers.TestControllers
 {
