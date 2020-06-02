@@ -5,7 +5,6 @@ A web application using MVC
 
 Students: Kanellis Stathis, Koutsogiorgos Evangelos, Parisi Eleni, Poulakos Giorgos
 
-Project Owner : Gatsos Ektoras
 Athens, 2020
 Overview - Introduction
 The “Vegan” health store’s online system is designed to keep detailed records of the store, the products, 
