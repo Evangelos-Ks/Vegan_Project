@@ -110,6 +110,6 @@ The S.O.L.I.D principles were followed.
 
 
 Milestones and Time plan
-The project was completed in two months. 
+The project was completed in 1.5 month. 
 
 
