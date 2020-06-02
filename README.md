@@ -86,15 +86,19 @@ Technologies/tools:
 
 C#
 Visual Studio
-SQL Server
-HTML5/CSS
 ASP.NET MVC
-Internet Browsers
 web.API
-Paypal.sandbox (tutorial μονοι μας)
+Swagger
+Entity Framework
+SQL Server
+HTML5
+CSS
+Bootstrap 4
 JavaScript
 JQuery
-Bootstrap 4
+Angularjs
+Ajax
+Paypal.sandbox
 
 
 Methodology
@@ -106,6 +110,6 @@ The S.O.L.I.D principles were followed.
 
 
 Milestones and Time plan
-The project was completed in a month. 
+The project was completed in two months. 
 
 
