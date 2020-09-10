@@ -1719,7 +1719,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\TestUCare\Index.cshtml" />
     <Content Include="Views\EssentialOil\AddEssentialOil.cshtml" />
     <Content Include="Views\EssentialOil\DeleteEssentialOil.cshtml" />
     <Content Include="Views\EssentialOil\DetailsEssentialOil.cshtml" />
@@ -1849,7 +1848,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
