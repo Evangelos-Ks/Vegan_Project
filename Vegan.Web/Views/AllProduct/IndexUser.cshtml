@@ -8,7 +8,7 @@
     ViewBag.Title = "All Products";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
 <div ng-controller="VeganController">
@@ -45,7 +45,7 @@
                                                     color: gray;">
                                 <ul>
                                     <li>
-                                        <small><dir-pagination-controls ></dir-pagination-controls></small>
+                                        <small><dir-pagination-controls></dir-pagination-controls></small>
                                     </li>
                                 </ul>
                             </div>
@@ -56,8 +56,8 @@
                 <div class="content-wrapper clearfix">
                     <div class="content">
                         <div class="product" dir-paginate="product in AllProducts | itemsPerPage: 12">
-                            <div class="image" style="background-image: url({{product.ImageURL}});"><img src={{product.ImageURL}} alt="{{product.Title}}"></div>
                             <div class="frame"></div>
+                            <div class="image" style="background-image: url({{product.ImageURL}});"><img src={{product.ImageURL}} alt="{{product.Title}}"></div>
                             <div class="info">
                                 <div class="info-data">
                                     <div>
