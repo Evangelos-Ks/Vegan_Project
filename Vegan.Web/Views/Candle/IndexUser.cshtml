@@ -8,6 +8,7 @@
     ViewBag.Title = "Vegan Candles";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
 
 <div id="top" pxlurl="[product_url]">
     <div class="contentbox-wrapper">
@@ -80,37 +81,36 @@
                             </small>
                         </h2>
                         <br />
-                        <h2>
-                            @*================================  Drop down items for pagination  ==============================================================================*@
-                            @{
-                                SelectListItem a1 = new SelectListItem() { Text = "3", Value = "3" };
-                                SelectListItem a2 = new SelectListItem() { Text = "5", Value = "5" };
-                                SelectListItem a3 = new SelectListItem() { Text = "10", Value = "10" };
-                                List<SelectListItem> selectItems = new List<SelectListItem>() { a1, a2, a3 };
+
+                        @*================================  Drop down items for pagination  ==============================================================================*@
+                        @{
+                            SelectListItem a1 = new SelectListItem() { Text = "3", Value = "3" };
+                            SelectListItem a2 = new SelectListItem() { Text = "5", Value = "5" };
+                            SelectListItem a3 = new SelectListItem() { Text = "10", Value = "10" };
+                            List<SelectListItem> selectItems = new List<SelectListItem>() { a1, a2, a3 };
+                        }
+                        @*====================================================  Search form  ==============================================================================*@
+
+                        <div style="flex:auto">
+                            @*//TODO the form for the prices needs validation*@
+                            @using (Html.BeginForm("IndexUser", "Candle", FormMethod.Get, new { @class = "form-inline" }))
+                            {
+                                string currentSortOrder = ViewBag.CurrentSortOrder;
+                                <h2><small style="margin: 20px 20px 20px 20px; width : 150px;">@Html.Label("Items per page:")</small></h2>
+                                @Html.DropDownList("pSize", selectItems, new { @class = "form-control", style = "margin: 25px 20px 20px 20px; width : 150px; height : 30px;" })
+
+                                @Html.TextBox("sortOrder", currentSortOrder, new { type = "hidden", width = "150px", height = "40px", color = "gray" })
+
+                                @Html.TextBox("searchTitle", null, new { @class = "form-control", type = "text", placeholder = "Search Title", style = "margin: 20px; width : 150px; height : 40px; color:gray;" });
+
+                                @Html.TextBox("searchminPrice", null, new { @class = "form-control", type = "number", placeholder = "Search Min Price", style = "margin: 20px; width : 150px; height : 40px; font-size : 18px; " })
+
+                                @Html.TextBox("searchmaxPrice", null, new { @class = "form-control", type = "number", placeholder = "Search Max Price", style = "margin: 20px; width : 150px; height : 40px; font-size : 18px;" })
+
+                                <input type="submit" value="Search" class="btn" style="margin: 0px 20px 20px 10px; width : 150px; height : 40px; font-size : 18px; text-align:center" />
+
                             }
-                            @*====================================================  Search form  ==============================================================================*@
-
-                            <div class="" style="flex">
-                                @*//TODO the form for the prices needs validation*@
-                                @using (Html.BeginForm("IndexUser", "Candle", FormMethod.Get, new { @class = "form-inline" }))
-                                {
-                                    string currentSortOrder = ViewBag.CurrentSortOrder;
-                                    <h2><small style="margin: 20px 20px 20px 20px; width : 150px;">@Html.Label("Items per page:")</small></h2>
-                                    @Html.DropDownList("pSize", selectItems, new { @class = "form-control", style = "margin: 25px 20px 20px 20px; width : 150px; height : 30px;" })
-
-                                    @Html.TextBox("sortOrder", currentSortOrder, new { type = "hidden", width = "150px", height = "40px", color = "gray" })
-
-                                    @Html.TextBox("searchTitle", null, new { @class = "form-control", type = "text", placeholder = "Search Title", style = "margin: 20px; width : 150px; height : 40px; color:gray;" });
-
-                                    @Html.TextBox("searchminPrice", null, new { @class = "form-control", type = "number", placeholder = "Search Min Price", style = "margin: 20px; width : 150px; height : 40px; font-size : 18px; " })
-
-                                    @Html.TextBox("searchmaxPrice", null, new { @class = "form-control", type = "number", placeholder = "Search Max Price", style = "margin: 20px; width : 150px; height : 40px; font-size : 18px;" })
-
-                                    <input type="submit" value="Search" class="btn" style="margin: 0px 20px 20px 10px; width : 150px; height : 40px; font-size : 18px; text-align:center" />
-
-                                }
-                            </div>
-                        </h2>
+                        </div>
                     </header>
                 </div>
             </div>
@@ -128,31 +128,26 @@
                     @foreach (var item in Model)
                     {
                         <div class="product">
-                            <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)"></div>
+                            <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)" alt="@Html.DisplayFor(modelItem => item.Title)"></div>
                             <div class="frame"></div>
                             <div class="info">
                                 <div class="info-data">
                                     <div>
-                                        @*<div>
-                                                @Html.ActionLink("Read More", "DetailsCandle", new { productId = item.Id }, new { @class = "btn" })
-                                                <div class="price">
-                                                    <span class="yourprice">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-                                                </div>
-                                            </div>*@
-
                                         @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
                                         {
                                             @Html.Hidden("ProductId", item.Id)
                                             <div style="padding-top:60px">
-                                                @Html.ActionLink("Read More", "DetailsCandle", new { productId = item.Id }, new { @class="btn"})
+                                                <div class="morebutton">
+                                                    @Html.ActionLink("Read More", "DetailsCandle", new { productId = item.Id }, new { @class = "btn" })
+                                                </div>
                                                 <div class="price">
                                                     <span class="yourprice" style="padding-bottom:15px">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-                                                    
-                                                    <a class="btn" style="max-width:120px; text-align:center; padding-left:8px; padding-right:8px;" href="javascript:void(0);" onclick="$(this).closest('form').submit();">Add to cart</a>
+                                                    <div class="morebutton">
+                                                        <a class="btn" style="max-width:120px; text-align:center; padding-left:8px; padding-right:8px;" href="javascript:void(0);" onclick="$(this).closest('form').submit();">Add to cart</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         }
-
                                     </div>
                                 </div>
                             </div>
