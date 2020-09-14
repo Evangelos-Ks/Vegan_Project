@@ -21,17 +21,16 @@ namespace Vegan.Web.Controllers
         {
             return View(unitOfWork.Candles.GetAll());
         }
-        public ActionResult IndexUser(string sortOrder, string searchTitle, int? searchminPrice, int? searchmaxPrice, int? page, int? pSize)
+        public ActionResult IndexUser(string sortOrder, string searchTitle, int? searchMinPrice, int? searchMaxPrice, int? page, int? pSize)
         {
             //================================== Viewbags ====================================
             ViewBag.CurrentTitle = searchTitle;
-            ViewBag.CurrentMinPrice = searchminPrice;
-            ViewBag.CurrentMaxPrice = searchmaxPrice;
+            ViewBag.CurrentMinPrice = searchMinPrice;
+            ViewBag.CurrentMaxPrice = searchMaxPrice;
             ViewBag.CurrentSortOrder = sortOrder;
             ViewBag.CurrentpSize = pSize;
 
 
-            //ViewBag.CurrentPage = page;
 
             //Viebag that holds the sorting
             ViewBag.TitleSortParam = String.IsNullOrWhiteSpace(sortOrder) ? "TitleDesc" : "";
@@ -68,14 +67,14 @@ namespace Vegan.Web.Controllers
             }
             //-----Filtering  Price------
             //Filtering  Minimum
-            if (!(searchminPrice is null))
+            if (!(searchMinPrice is null))
             {
-                candles = candles.Where(x => x.Price >= searchminPrice);
+                candles = candles.Where(x => x.Price >= searchMinPrice);
             }
             //Filtering  Maximum
-            if (!(searchmaxPrice is null))
+            if (!(searchMaxPrice is null))
             {
-                candles = candles.Where(x => x.Price <= searchmaxPrice);
+                candles = candles.Where(x => x.Price <= searchMaxPrice);
             }
            
 
