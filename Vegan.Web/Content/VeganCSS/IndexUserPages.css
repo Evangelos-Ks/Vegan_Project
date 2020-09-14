@@ -1,0 +1,13 @@
+﻿.contentbox-wrapper .contentbox .header-wrapper .container .header button {
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    background-color: #ded9ce;
+    color: dimgrey;
+    font-weight: 600;
+}
+
+    .contentbox-wrapper .contentbox .header-wrapper .container .header button:hover{
+        background-color: #e98747;
+    }
+
+    

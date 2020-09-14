@@ -9,6 +9,7 @@
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/VeganCSS/IndexUserPages.css" rel="stylesheet" />
 
 <div id="top" pxlurl="[product_url]">
     <div class="contentbox-wrapper">
@@ -31,68 +32,67 @@
                     </div>
                 </div>
             </div>
-            <div class="header-wrapper clearfix">
+            <!--<div class="header-wrapper clearfix">
                 <div class="header">
-                    <header class="container">
+                    <div class="container">
                         <br />
-                        <br />
-
-                        @*====================================================  Sorting action links ==========================================================================*@
+                        <br />-->
+                        @*====================================================  Sorting action links =====================*@
                         @*<div>
-                            Sort by:
-                            @Html.ActionLink("Title", "IndexUser", "Candle", new
-                       {
-                           sortOrder = ViewBag.TitleSortParam,
-                           searchTitle = ViewBag.CurrentTitle,
-                           searchMinPrice = ViewBag.CurrentMinPrice,
-                           searchMaxPrice = ViewBag.CurrentMaxPrice,
-                           pSize = ViewBag.CurrentpSize
+                                 Sort by:
+                                 @Html.ActionLink("Title", "IndexUser", "Candle", new
+                            {
+                                sortOrder = ViewBag.TitleSortParam,
+                                searchTitle = ViewBag.CurrentTitle,
+                                searchMinPrice = ViewBag.CurrentMinPrice,
+                                searchMaxPrice = ViewBag.CurrentMaxPrice,
+                                pSize = ViewBag.CurrentpSize
 
-                       }, new { @class = ViewBag.TitleView }) |
+                            }, new { @class = ViewBag.TitleView }) |
 
 
-                            @Html.ActionLink("Price", "IndexUser", "Candle", new
-                       {
-                           sortOrder = ViewBag.PriceSortParam,
-                           searchTitle = ViewBag.CurrentTitle,
-                           searchMinPrice = ViewBag.CurrentMinPrice,
-                           searchMaxPrice = ViewBag.CurrentMaxPrice,
-                           pSize = ViewBag.CurrentpSize
+                                 @Html.ActionLink("Price", "IndexUser", "Candle", new
+                            {
+                                sortOrder = ViewBag.PriceSortParam,
+                                searchTitle = ViewBag.CurrentTitle,
+                                searchMinPrice = ViewBag.CurrentMinPrice,
+                                searchMaxPrice = ViewBag.CurrentMaxPrice,
+                                pSize = ViewBag.CurrentpSize
 
-                       }, new { @class = ViewBag.PriceView }) |
-                        </div>
+                            }, new { @class = ViewBag.PriceView }) |
+                             </div>
 
-                        <h2 class="" style=" float: right;
-                                                margin: 0 0 10px;
-                                                line-height: 40px;
-                                                text-align: right;
-                                                background-color: #f1f0ec">
-                            <small>
-                                @Html.PagedListPager((IPagedList)Model, x => @Url.Action("IndexUser", "Candle", new
-                                                         {
-                                                             page = x,
-                                                             sortOrder = ViewBag.CurrentSortOrder,
-                                                             searchTitle = ViewBag.CurrentTitle,
-                                                             searchMinPrice = ViewBag.CurrentMinPrice,
-                                                             searchMaxPrice = ViewBag.CurrentMaxPrice,
-                                                             pSize = ViewBag.CurrentpSize
-                                                         }))
-                            </small>
-                        </h2>
-                        <br />*@
+                             <h2 class="" style=" float: right;
+                                                     margin: 0 0 10px;
+                                                     line-height: 40px;
+                                                     text-align: right;
+                                                     background-color: #f1f0ec">
+                                 <small>
+                                     @Html.PagedListPager((IPagedList)Model, x => @Url.Action("IndexUser", "Candle", new
+                                                              {
+                                                                  page = x,
+                                                                  sortOrder = ViewBag.CurrentSortOrder,
+                                                                  searchTitle = ViewBag.CurrentTitle,
+                                                                  searchMinPrice = ViewBag.CurrentMinPrice,
+                                                                  searchMaxPrice = ViewBag.CurrentMaxPrice,
+                                                                  pSize = ViewBag.CurrentpSize
+                                                              }))
+                                 </small>
+                             </h2>
+                             <br />*@
 
                         @*================================  Drop down items for pagination  ==============================================================================*@
-                        @{
-//SelectListItem a1 = new SelectListItem() { Text = "3", Value = "3" };
-//SelectListItem a2 = new SelectListItem() { Text = "5", Value = "5" };
-//SelectListItem a3 = new SelectListItem() { Text = "10", Value = "10" };
-//List<SelectListItem> selectItems = new List<SelectListItem>() { a1, a2, a3 };
-                        }
+                        <!--@{
+                            //SelectListItem a1 = new SelectListItem() { Text = "3", Value = "3" };
+                            //SelectListItem a2 = new SelectListItem() { Text = "5", Value = "5" };
+                            //SelectListItem a3 = new SelectListItem() { Text = "10", Value = "10" };
+                            //List<SelectListItem> selectItems = new List<SelectListItem>() { a1, a2, a3 };
+                        }-->
                         @*====================================================  Search form  ==============================================================================*@
 
-                        <!--<div style="flex:auto">-->
-                            @*//TODO the form for the prices needs validation*@
-                            @*@using (Html.BeginForm("IndexUser", "Candle", FormMethod.Get, new { @class = "form-inline" }))
+                        <!--<!--<div style="flex:auto">-->
+                        <!--@*//TODO the form for the prices needs validation*@
+                        @*@using (Html.BeginForm("IndexUser", "Candle", FormMethod.Get, new { @class = "form-inline" }))
                             {
                                 string currentSortOrder = ViewBag.CurrentSortOrder;
                                 <h2><small style="margin: 20px 20px 20px 20px; width : 150px;">@Html.Label("Items per page:")</small></h2>
@@ -108,18 +108,20 @@
 
                                 <input type="submit" value="Search" class="btn" style="margin: 0px 20px 20px 10px; width : 150px; height : 40px; font-size : 18px; text-align:center" />
 
-                            }*@
+                            }*@-->
                         <!--</div>-->
-                    </header>
+                    <!--</div>
                 </div>
-            </div>
+            </div>-->
             <div class="header-wrapper clearfix">
-                <div class="header">
-                    <header>
-                        <h2>
-                            <small>Total Items: @Model.ToList().Count() </small>
-                        </h2>
-                    </header>
+                <div class="container">
+                    <div class="header">
+                        Total Items: @Model.ToList().Count()
+                    </div>
+                    <div class="header">
+                        @*Sort by: @Html.ActionLink("Title", "IndexUser", new { sortOrder = ViewBag.TitleSortParam }, new { @class = "btn sortButtons" })*@
+                        Sort by: <button name="sortOrder" value=@ViewBag.TitleSortParam class="sortButtons">Title</button>
+                    </div>
                 </div>
             </div>
             <div class="content-wrapper clearfix">
@@ -162,3 +164,5 @@
 </div>
 
 
+
+<script src="~/Content/VeganJs/IndexUserPages.js"></script>
