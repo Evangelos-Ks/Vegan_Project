@@ -1,12 +1,13 @@
-﻿.contentbox-wrapper .contentbox .header-wrapper .container .header button {
+﻿.contentbox-wrapper .contentbox .header-wrapper .container .header a {
     border: none;
     border-radius: 5px 5px 5px 5px;
     background-color: #ded9ce;
     color: dimgrey;
     font-weight: 600;
+    font-size:10px;
 }
 
-    .contentbox-wrapper .contentbox .header-wrapper .container .header button:hover{
+    .contentbox-wrapper .contentbox .header-wrapper .container .header a:hover{
         background-color: #e98747;
     }
 

@@ -118,9 +118,11 @@
                     <div class="header">
                         Total Items: @Model.ToList().Count()
                     </div>
+                    <br />   
                     <div class="header">
-                        @*Sort by: @Html.ActionLink("Title", "IndexUser", new { sortOrder = ViewBag.TitleSortParam }, new { @class = "btn sortButtons" })*@
-                        Sort by: <button name="sortOrder" value=@ViewBag.TitleSortParam class="sortButtons">Title</button>
+                        Sort by: 
+                        @Html.ActionLink("Title", "IndexUser", new { sortOrder = ViewBag.TitleSortParam }, new { @class = "btn sortButtons" })
+                        @Html.ActionLink("Price", "IndexUser", new { sortOrder = ViewBag.PriceSortParam }, new { @class = "btn sortButtons" })
                     </div>
                 </div>
             </div>
@@ -158,11 +160,7 @@
                     }
                 </div>
             </div>
-
         </div>
     </div>
 </div>
 
-
-
-<script src="~/Content/VeganJs/IndexUserPages.js"></script>
