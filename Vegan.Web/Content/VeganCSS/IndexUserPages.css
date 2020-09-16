@@ -1,14 +1,32 @@
-﻿.contentbox-wrapper .contentbox .header-wrapper .container .header a {
-    border: none;
-    border-radius: 5px 5px 5px 5px;
-    background-color: #ded9ce;
-    color: dimgrey;
-    font-weight: 600;
-    font-size:10px;
+﻿.contentbox-wrapper .contentbox .header-wrapper .container .header .sorting {
+    display: inline;
 }
 
-    .contentbox-wrapper .contentbox .header-wrapper .container .header a:hover{
-        background-color: #e98747;
+    .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a, .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn {
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+        background-color: #ded9ce;
+        color: dimgrey;
+        font-weight: 600;
+        font-size: 10px;
     }
 
-    
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a:hover {
+            background-color: #e98747;
+        }
+
+.contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown {
+    display: inline;
+    float: right;
+}
+
+    .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn {
+    }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn:hover {
+            background-color: #e98747;
+        }
+
+.contentbox-wrapper .contentbox .content-wrapper .content {
+    margin-top: 10px;
+}

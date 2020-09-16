@@ -25,7 +25,7 @@ namespace Vegan.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult IndexUser(string sortOrder)
+        public ActionResult IndexUser(string sortOrder, int? minPrice, int? maxPrice)
         {
             //Get all Candles
             IEnumerable<Candle> candles = unitOfWork.Candles.GetAll().ToList();

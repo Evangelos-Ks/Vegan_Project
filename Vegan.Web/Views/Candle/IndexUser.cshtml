@@ -10,6 +10,7 @@
 }
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 <link href="~/Content/VeganCSS/IndexUserPages.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
 
 <div id="top" pxlurl="[product_url]">
     <div class="contentbox-wrapper">
@@ -37,92 +38,107 @@
                     <div class="container">
                         <br />
                         <br />-->
-                        @*====================================================  Sorting action links =====================*@
-                        @*<div>
-                                 Sort by:
-                                 @Html.ActionLink("Title", "IndexUser", "Candle", new
-                            {
-                                sortOrder = ViewBag.TitleSortParam,
-                                searchTitle = ViewBag.CurrentTitle,
-                                searchMinPrice = ViewBag.CurrentMinPrice,
-                                searchMaxPrice = ViewBag.CurrentMaxPrice,
-                                pSize = ViewBag.CurrentpSize
+            @*====================================================  Sorting action links =====================*@
+            @*<div>
+                     Sort by:
+                     @Html.ActionLink("Title", "IndexUser", "Candle", new
+                {
+                    sortOrder = ViewBag.TitleSortParam,
+                    searchTitle = ViewBag.CurrentTitle,
+                    searchMinPrice = ViewBag.CurrentMinPrice,
+                    searchMaxPrice = ViewBag.CurrentMaxPrice,
+                    pSize = ViewBag.CurrentpSize
 
-                            }, new { @class = ViewBag.TitleView }) |
+                }, new { @class = ViewBag.TitleView }) |
 
 
-                                 @Html.ActionLink("Price", "IndexUser", "Candle", new
-                            {
-                                sortOrder = ViewBag.PriceSortParam,
-                                searchTitle = ViewBag.CurrentTitle,
-                                searchMinPrice = ViewBag.CurrentMinPrice,
-                                searchMaxPrice = ViewBag.CurrentMaxPrice,
-                                pSize = ViewBag.CurrentpSize
+                     @Html.ActionLink("Price", "IndexUser", "Candle", new
+                {
+                    sortOrder = ViewBag.PriceSortParam,
+                    searchTitle = ViewBag.CurrentTitle,
+                    searchMinPrice = ViewBag.CurrentMinPrice,
+                    searchMaxPrice = ViewBag.CurrentMaxPrice,
+                    pSize = ViewBag.CurrentpSize
 
-                            }, new { @class = ViewBag.PriceView }) |
-                             </div>
+                }, new { @class = ViewBag.PriceView }) |
+                 </div>
 
-                             <h2 class="" style=" float: right;
-                                                     margin: 0 0 10px;
-                                                     line-height: 40px;
-                                                     text-align: right;
-                                                     background-color: #f1f0ec">
-                                 <small>
-                                     @Html.PagedListPager((IPagedList)Model, x => @Url.Action("IndexUser", "Candle", new
-                                                              {
-                                                                  page = x,
-                                                                  sortOrder = ViewBag.CurrentSortOrder,
-                                                                  searchTitle = ViewBag.CurrentTitle,
-                                                                  searchMinPrice = ViewBag.CurrentMinPrice,
-                                                                  searchMaxPrice = ViewBag.CurrentMaxPrice,
-                                                                  pSize = ViewBag.CurrentpSize
-                                                              }))
-                                 </small>
-                             </h2>
-                             <br />*@
+                 <h2 class="" style=" float: right;
+                                         margin: 0 0 10px;
+                                         line-height: 40px;
+                                         text-align: right;
+                                         background-color: #f1f0ec">
+                     <small>
+                         @Html.PagedListPager((IPagedList)Model, x => @Url.Action("IndexUser", "Candle", new
+                                                  {
+                                                      page = x,
+                                                      sortOrder = ViewBag.CurrentSortOrder,
+                                                      searchTitle = ViewBag.CurrentTitle,
+                                                      searchMinPrice = ViewBag.CurrentMinPrice,
+                                                      searchMaxPrice = ViewBag.CurrentMaxPrice,
+                                                      pSize = ViewBag.CurrentpSize
+                                                  }))
+                     </small>
+                 </h2>
+                 <br />*@
 
-                        @*================================  Drop down items for pagination  ==============================================================================*@
-                        <!--@{
-                            //SelectListItem a1 = new SelectListItem() { Text = "3", Value = "3" };
-                            //SelectListItem a2 = new SelectListItem() { Text = "5", Value = "5" };
-                            //SelectListItem a3 = new SelectListItem() { Text = "10", Value = "10" };
-                            //List<SelectListItem> selectItems = new List<SelectListItem>() { a1, a2, a3 };
-                        }-->
-                        @*====================================================  Search form  ==============================================================================*@
+            @*================================  Drop down items for pagination  ==============================================================================*@
+            <!--@{
+                //SelectListItem a1 = new SelectListItem() { Text = "3", Value = "3" };
+                //SelectListItem a2 = new SelectListItem() { Text = "5", Value = "5" };
+                //SelectListItem a3 = new SelectListItem() { Text = "10", Value = "10" };
+                //List<SelectListItem> selectItems = new List<SelectListItem>() { a1, a2, a3 };
+            }-->
+            @*====================================================  Search form  ==============================================================================*@
 
-                        <!--<!--<div style="flex:auto">-->
-                        <!--@*//TODO the form for the prices needs validation*@
-                        @*@using (Html.BeginForm("IndexUser", "Candle", FormMethod.Get, new { @class = "form-inline" }))
-                            {
-                                string currentSortOrder = ViewBag.CurrentSortOrder;
-                                <h2><small style="margin: 20px 20px 20px 20px; width : 150px;">@Html.Label("Items per page:")</small></h2>
-                                @Html.DropDownList("pSize", selectItems, new { @class = "form-control", style = "margin: 25px 20px 20px 20px; width : 150px; height : 30px;" })
+            <!--<!--<div style="flex:auto">-->
+            <!--@*//TODO the form for the prices needs validation*@
+            @*@using (Html.BeginForm("IndexUser", "Candle", FormMethod.Get, new { @class = "form-inline" }))
+                {
+                    string currentSortOrder = ViewBag.CurrentSortOrder;
+                    <h2><small style="margin: 20px 20px 20px 20px; width : 150px;">@Html.Label("Items per page:")</small></h2>
+                    @Html.DropDownList("pSize", selectItems, new { @class = "form-control", style = "margin: 25px 20px 20px 20px; width : 150px; height : 30px;" })
 
-                                @Html.TextBox("sortOrder", currentSortOrder, new { type = "hidden", width = "150px", height = "40px", color = "gray" })
+                    @Html.TextBox("sortOrder", currentSortOrder, new { type = "hidden", width = "150px", height = "40px", color = "gray" })
 
-                                @Html.TextBox("searchTitle", null, new { @class = "form-control", type = "text", placeholder = "Search Title", style = "margin: 20px; width : 150px; height : 40px; color:gray;" });
+                    @Html.TextBox("searchTitle", null, new { @class = "form-control", type = "text", placeholder = "Search Title", style = "margin: 20px; width : 150px; height : 40px; color:gray;" });
 
-                                @Html.TextBox("searchMinPrice", null, new { @class = "form-control", type = "number", placeholder = "Search Min Price", style = "margin: 20px; width : 150px; height : 40px; font-size : 18px; " })
+                    @Html.TextBox("searchMinPrice", null, new { @class = "form-control", type = "number", placeholder = "Search Min Price", style = "margin: 20px; width : 150px; height : 40px; font-size : 18px; " })
 
-                                @Html.TextBox("searchMaxPrice", null, new { @class = "form-control", type = "number", placeholder = "Search Max Price", style = "margin: 20px; width : 150px; height : 40px; font-size : 18px;" })
+                    @Html.TextBox("searchMaxPrice", null, new { @class = "form-control", type = "number", placeholder = "Search Max Price", style = "margin: 20px; width : 150px; height : 40px; font-size : 18px;" })
 
-                                <input type="submit" value="Search" class="btn" style="margin: 0px 20px 20px 10px; width : 150px; height : 40px; font-size : 18px; text-align:center" />
+                    <input type="submit" value="Search" class="btn" style="margin: 0px 20px 20px 10px; width : 150px; height : 40px; font-size : 18px; text-align:center" />
 
-                            }*@-->
-                        <!--</div>-->
-                    <!--</div>
+                }*@-->
+            <!--</div>-->
+            <!--</div>
                 </div>
             </div>-->
+
             <div class="header-wrapper clearfix">
                 <div class="container">
                     <div class="header">
                         Total Items: @Model.ToList().Count()
-                    </div>
-                    <br />   
-                    <div class="header">
-                        Sort by: 
-                        @Html.ActionLink("Title", "IndexUser", new { sortOrder = ViewBag.TitleSortParam }, new { @class = "btn sortButtons" })
-                        @Html.ActionLink("Price", "IndexUser", new { sortOrder = ViewBag.PriceSortParam }, new { @class = "btn sortButtons" })
+                        <br />
+                        <br />
+                        <div class="sorting">
+                            Sort by:
+                            @Html.ActionLink("Title", "IndexUser", new { sortOrder = ViewBag.TitleSortParam }, new { @class = "btn sortButtons" })
+                            @Html.ActionLink("Price", "IndexUser", new { sortOrder = ViewBag.PriceSortParam }, new { @class = "btn sortButtons" })
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                Price Range
+                                <span class="caret"></span>
+                            </button>
+                            <form class="dropdown-menu dropdown-menu-right" action="" method="get">
+                                <label for="minPrice">Min Price</label>
+                                <input type="number" name="minPrice" value="" min="0" />
+                                <label for="maxPrice">Max Price</label>
+                                <input type="number" name="maxPrice" value="" min="0" />
+                                <input type="submit" name="Apply" value="" />
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
