@@ -8,7 +8,8 @@
         background-color: #ded9ce;
         color: dimgrey;
         font-weight: 600;
-        font-size: 10px;
+        font-size: 11px;
+        transition: 0.4s;
     }
 
         .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a:hover {
@@ -20,11 +21,50 @@
     float: right;
 }
 
-    .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn {
+    .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn:hover {
+        background-color: #e98747;
     }
 
-        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn:hover {
-            background-color: #e98747;
+    .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu {
+        background-color: #ded9ce;
+        text-align: center;
+    }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label, .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input {
+            font-size: 11px;
+            display: inline;
+            color: dimgrey;
+        }
+
+            .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label:first-child {
+                margin-right: 4px;
+            }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input {
+            border: none;
+            border-radius: 5px 5px 5px 5px;
+            margin-bottom: 5px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 5px;
+        }
+
+            .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input:last-child {
+                margin-left: 68px;
+                margin-top: 5px;
+                font-size: 11px;
+                background-color: #e98747;
+                font-weight: 600;
+                transition: 0.4s;
+                padding: inherit;
+            }
+
+                .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input:last-child:hover {
+                    background-color: limegreen;
+                }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input {
+            width: 70px;
         }
 
 .contentbox-wrapper .contentbox .content-wrapper .content {
