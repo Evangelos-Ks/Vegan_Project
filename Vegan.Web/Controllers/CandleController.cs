@@ -31,6 +31,17 @@ namespace Vegan.Web.Controllers
             IEnumerable<Candle> candles = unitOfWork.Candles.GetAll().ToList();
             unitOfWork.Dispose();
 
+            //Filter
+            if (minPrice != null)
+            {
+                candles = candles.Where(c => c.Price >= minPrice);
+            }
+
+            if (maxPrice != null)
+            {
+                candles = candles.Where(c => c.Price <= maxPrice);
+            }
+
             //Sorting
             ViewBag.TitleSortParam = string.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
             ViewBag.PriceSortParam = sortOrder == "price_asc" ? "price_desc" : "price_asc";
