@@ -25,7 +25,7 @@ namespace Vegan.Web.Controllers
         }
 
         [HttpGet]
-        public ActionResult IndexUser(string sortOrder, int? minPrice, int? maxPrice)
+        public ActionResult IndexUser(string sortOrder, int? minPrice, int? maxPrice, int? page, int? pageSize)
         {
             //Get all Candles
             IEnumerable<Candle> candles = unitOfWork.Candles.GetAll().ToList();
@@ -65,7 +65,30 @@ namespace Vegan.Web.Controllers
                     break;
             }
 
-            return View(candles);
+            //Paging
+            ViewBag.CurrentSort = sortOrder;
+
+            if (minPrice != null || maxPrice != null)
+            {
+                page = 1;
+            }
+
+
+            int pSize = pageSize ?? 3;
+            int pageNumber = page ?? 1;
+
+            ViewBag.PageSize = new List<SelectListItem>()
+            {
+             new SelectListItem() { Value="3", Text= "3" },
+             new SelectListItem() { Value="6", Text= "6" },
+             new SelectListItem() { Value="12", Text= "12" },
+             new SelectListItem() { Value="24", Text= "24" },
+             new SelectListItem() { Value="10000000", Text= "All" },
+            };
+
+            ViewBag.CurrentPageSize = pSize;
+
+            return View(candles.ToPagedList(pageNumber, pSize));
         }
 
 

@@ -1,15 +1,14 @@
-﻿@model IEnumerable<Vegan.Entities.Home.Candle>
+﻿@model PagedList.IPagedList<Vegan.Entities.Home.Candle>
 
-@using PagedList;
-
-
-
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Vegan Candles";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
+
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 <link href="~/Content/VeganCSS/IndexUserPages.css" rel="stylesheet" />
+<link href="~/Content/PagedList.css" rel="stylesheet" />
 
 <div id="top" pxlurl="[product_url]">
     <div class="contentbox-wrapper">
@@ -151,6 +150,17 @@
                         </div>
                     }
                 </div>
+                <form action="/Candle/IndexUser" method="get" id="form">
+                    <input type="hidden" name="sortOrder" value=@ViewBag.CurrentSort />
+                    <input type="number" name="minPrice" value=@ViewBag.MinPrice hidden />
+                    <input type="number" name="maxPrice" value=@ViewBag.MaxPrice hidden />
+                    <div class="float-left">
+                        @{ string cps = Convert.ToString(ViewBag.CurrentPageSize); }
+                        Items per page: @Html.DropDownList("pageSize", cps)
+                        @Html.PagedListPager(Model, page => Url.Action("IndexUser", new { page, sortOrder = ViewBag.CurrentSort, pageSize = ViewBag.CurrentPageSize }))
+                    </div>
+                </form>
+
             </div>
         </div>
     </div>
