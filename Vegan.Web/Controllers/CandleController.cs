@@ -32,6 +32,9 @@ namespace Vegan.Web.Controllers
             unitOfWork.Dispose();
 
             //Filter
+            ViewBag.MinPrice = minPrice;
+            ViewBag.MaxPrice = maxPrice;
+
             if (minPrice != null)
             {
                 candles = candles.Where(c => c.Price >= minPrice);
@@ -61,68 +64,6 @@ namespace Vegan.Web.Controllers
                     candles = candles.OrderBy(c => c.Title);
                     break;
             }
-
-
-
-
-
-            ////================================== Viewbags ====================================
-            //ViewBag.CurrentTitle = searchTitle;
-            //ViewBag.CurrentMinPrice = searchMinPrice;
-            //ViewBag.CurrentMaxPrice = searchMaxPrice;
-            //ViewBag.CurrentSortOrder = sortOrder;
-            //ViewBag.CurrentpSize = pSize;
-
-
-
-            ////Viebag that holds the sorting
-            //ViewBag.TitleSortParam = String.IsNullOrWhiteSpace(sortOrder) ? "TitleDesc" : "";
-            //ViewBag.PriceSortParam = sortOrder == "PriceAsc" ? "PriceDesc" : "PriceAsc";
-
-            //ViewBag.TitleView = "badge badge-light";
-            //ViewBag.PriceView = "badge badge-light";
-
-            //var candles = unitOfWork.Candles.GetAll();
-
-            ////================================== Sorting ====================================
-
-
-            ////Sorting by title & price
-            //switch (sortOrder)
-            //{
-            //    case "TitleDesc": candles = candles.OrderByDescending(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-            //    case "TitleAsc": candles = candles.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-            //    case "PriceDesc": candles = candles.OrderByDescending(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
-            //    case "PriceAsc": candles = candles.OrderBy(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
-            //    default: candles = candles.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-            //}
-            ////Pagination
-            //int pageSize = pSize ?? 3;
-            //int pageNumber = page ?? 1;
-
-
-            ////================================== Filters ====================================
-
-            ////------Filtering  Title-----
-            //if (!(string.IsNullOrWhiteSpace(searchTitle)))
-            //{
-            //    candles = candles.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
-            //}
-            ////-----Filtering  Price------
-            ////Filtering  Minimum
-            //if (!(searchMinPrice is null))
-            //{
-            //    candles = candles.Where(x => x.Price >= searchMinPrice);
-            //}
-            ////Filtering  Maximum
-            //if (!(searchMaxPrice is null))
-            //{
-            //    candles = candles.Where(x => x.Price <= searchMaxPrice);
-            //}
-
-
-            //// Assign the sorting - searching to the viewModel
-            //candles = candles.ToPagedList(pageNumber, pageSize);
 
             return View(candles);
         }

@@ -10,6 +10,7 @@
         font-weight: 600;
         font-size: 11px;
         transition: 0.4s;
+        margin-bottom: 3px;
     }
 
         .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a:hover {
@@ -68,5 +69,5 @@
         }
 
 .contentbox-wrapper .contentbox .content-wrapper .content {
-    margin-top: 10px;
+    margin-top: 7px;
 }
