@@ -150,16 +150,32 @@
                         </div>
                     }
                 </div>
-                <form action="/Candle/IndexUser" method="get" id="form">
-                    <input type="hidden" name="sortOrder" value=@ViewBag.CurrentSort />
-                    <input type="number" name="minPrice" value=@ViewBag.MinPrice hidden />
-                    <input type="number" name="maxPrice" value=@ViewBag.MaxPrice hidden />
-                    <div class="float-left">
-                        @{ string cps = Convert.ToString(ViewBag.CurrentPageSize); }
-                        Items per page: @Html.DropDownList("pageSize", cps)
-                        @Html.PagedListPager(Model, page => Url.Action("IndexUser", new { page, sortOrder = ViewBag.CurrentSort, pageSize = ViewBag.CurrentPageSize }))
-                    </div>
-                </form>
+
+
+
+
+
+
+
+
+                <div class="paging">
+                    <form action="/Candle/IndexUser" method="get" id="form">
+                        <input type="hidden" name="sortOrder" value=@ViewBag.CurrentSort />
+                        <input type="number" name="minPrice" value=@ViewBag.MinPrice hidden />
+                        <input type="number" name="maxPrice" value=@ViewBag.MaxPrice hidden />
+                        <div>
+                            @{ string cps = ViewBag.CurrentPageSize == 10000000 ? "All" : Convert.ToString(ViewBag.CurrentPageSize); }
+                            Items per page: @Html.DropDownList("pageSize", cps)
+                            @Html.PagedListPager(Model, page => Url.Action("IndexUser", new { page, sortOrder = ViewBag.CurrentSort, pageSize = ViewBag.CurrentPageSize }))
+                        </div>
+                    </form>
+                </div>
+
+
+
+
+
+
 
             </div>
         </div>

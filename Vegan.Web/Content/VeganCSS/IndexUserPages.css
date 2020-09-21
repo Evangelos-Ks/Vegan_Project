@@ -71,3 +71,53 @@
 .contentbox-wrapper .contentbox .content-wrapper .content {
     margin-top: 7px;
 }
+
+.contentbox-wrapper .contentbox .content-wrapper .paging {
+    text-align: right !important;
+}
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #pageSize {
+        width: auto;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 12px;
+        padding-right: 12px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+        background-color: #ded9ce;
+        color: dimgrey;
+        cursor: pointer;
+    }
+
+        .contentbox-wrapper .contentbox .content-wrapper .paging #pageSize:hover {
+            background-color: #e98747;
+        }
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div #pageSize option {
+        font-weight: 600;
+        font-size: 12px;
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+        background-color: #ded9ce;
+        color: dimgrey;
+    }
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a {
+        border-color: #ded9ce;
+        border-radius: 5px 5px 5px 5px;
+        font-weight: 600;
+        font-size: 14px;
+        color: dimgrey;
+        transition: 0.4s;
+    }
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination .active a {
+        background-color: #ded9ce;
+    }
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a:hover {
+        background-color: #e98747;
+    }
