@@ -31,44 +31,16 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <div class="header-wrapper clearfix">
                 <div class="container">
                     <div class="header">
-                        Total Items: @Model.ToList().Count()
+                        Total Items: @Model.TotalItemCount
                         <br />
                         <br />
                         <div class="sorting">
-                            Sort by:
-                            @Html.ActionLink("Title", "IndexUser", new { sortOrder = ViewBag.TitleSortParam, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice }, new { @class = "btn sortButtons" })
-                            @Html.ActionLink("Price", "IndexUser", new { sortOrder = ViewBag.PriceSortParam, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice }, new { @class = "btn sortButtons" })
+                            Sort by
+                            @Html.ActionLink("Title", "IndexUser", new { sortOrder = ViewBag.TitleSortParam, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, pageSize = ViewBag.CurrentPageSize }, new { @class = "btn sortButtons" })
+                            @Html.ActionLink("Price", "IndexUser", new { sortOrder = ViewBag.PriceSortParam, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, pageSize = ViewBag.CurrentPageSize }, new { @class = "btn sortButtons" })
                         </div>
                         <div class="dropdown">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
@@ -76,6 +48,7 @@
                                 <span class="caret"></span>
                             </button>
                             <form class="dropdown-menu dropdown-menu-right" action="" method="get">
+                                <input type="hidden" name="pageSize" value="@ViewBag.CurrentPageSize" />
                                 <label for="minPrice">Min Price: </label>
                                 <input id="minPrice" type="number" name="minPrice" value="" min="0" />
                                 <br />
@@ -85,38 +58,21 @@
                                 <input type="submit" name="" value="Apply" class="btn" />
                             </form>
                         </div>
-                        <div class="text-right">
+                        <div class="text-right priceInf">
                             @if (ViewBag.MinPrice != null || ViewBag.MaxPrice != null)
                             {
                                 var MinPrice = ViewBag.MinPrice == null ? 0 : ViewBag.MinPrice;
                                 var MaxPrice = ViewBag.MaxPrice == null ? "\u221E" : ViewBag.MaxPrice;
                                 <span>
                                     Min Price: @MinPrice &nbsp &nbsp Max Price: @MaxPrice
+                                    &nbsp &nbsp
+                                    @Html.ActionLink("Reset", "IndexUser", new { pageSize = @ViewBag.CurrentPageSize, minPrice = "", maxPrice = "" }, new { @class = "btn", id = "btnReset" })
                                 </span>
                             }
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             <div class="content-wrapper clearfix">
                 <div class="content">
                     @foreach (var item in Model)
@@ -145,38 +101,22 @@
                                     </div>
                                 </div>
                             </div>
-                            @*Brings dynamicly the title and tranform it into a link connected to the candle's details*@
                             <h3>  @Html.ActionLink((@Html.DisplayFor(modelItem => item.Title).ToString()), "DetailsCandle", new { productId = item.Id })</h3>
                         </div>
                     }
                 </div>
-
-
-
-
-
-
-
-
                 <div class="paging">
                     <form action="/Candle/IndexUser" method="get" id="form">
                         <input type="hidden" name="sortOrder" value=@ViewBag.CurrentSort />
-                        <input type="number" name="minPrice" value=@ViewBag.MinPrice hidden />
-                        <input type="number" name="maxPrice" value=@ViewBag.MaxPrice hidden />
+                        <input type="hidden" name="minPrice" value=@ViewBag.MinPrice />
+                        <input type="hidden" name="maxPrice" value=@ViewBag.MaxPrice />
                         <div>
                             @{ string cps = ViewBag.CurrentPageSize == 10000000 ? "All" : Convert.ToString(ViewBag.CurrentPageSize); }
-                            Items per page: @Html.DropDownList("pageSize", cps)
-                            @Html.PagedListPager(Model, page => Url.Action("IndexUser", new { page, sortOrder = ViewBag.CurrentSort, pageSize = ViewBag.CurrentPageSize }))
+                            Items per page @Html.DropDownList("pageSize", cps)
+                            @Html.PagedListPager(Model, page => Url.Action("IndexUser", new { page, sortOrder = ViewBag.CurrentSort, pageSize = ViewBag.CurrentPageSize, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice }))
                         </div>
                     </form>
                 </div>
-
-
-
-
-
-
-
             </div>
         </div>
     </div>

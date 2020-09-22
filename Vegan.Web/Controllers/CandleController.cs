@@ -68,12 +68,6 @@ namespace Vegan.Web.Controllers
             //Paging
             ViewBag.CurrentSort = sortOrder;
 
-            if (minPrice != null || maxPrice != null)
-            {
-                page = 1;
-            }
-
-
             int pSize = pageSize ?? 3;
             int pageNumber = page ?? 1;
 
