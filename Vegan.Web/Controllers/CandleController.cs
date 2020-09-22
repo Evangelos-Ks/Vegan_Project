@@ -1,5 +1,7 @@
 ﻿using PagedList;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Vegan.Database;
@@ -15,75 +17,72 @@ namespace Vegan.Web.Controllers
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         //===================================== Methods ====================================================================
-     // [Authorize(Roles = "Admins, Supervisors")]
+        // [Authorize(Roles = "Admins, Supervisors")]
         [HttpGet]
         public ActionResult Index()
         {
             return View(unitOfWork.Candles.GetAll());
         }
-        public ActionResult IndexUser(string sortOrder, string searchTitle, int? searchMinPrice, int? searchMaxPrice, int? page, int? pSize)
+
+        [HttpGet]
+        public ActionResult IndexUser(string sortOrder, int? minPrice, int? maxPrice, int? page, int? pageSize)
         {
-            //================================== Viewbags ====================================
-            ViewBag.CurrentTitle = searchTitle;
-            ViewBag.CurrentMinPrice = searchMinPrice;
-            ViewBag.CurrentMaxPrice = searchMaxPrice;
-            ViewBag.CurrentSortOrder = sortOrder;
-            ViewBag.CurrentpSize = pSize;
+            //Get all Candles
+            IEnumerable<Candle> candles = unitOfWork.Candles.GetAll().ToList();
+            unitOfWork.Dispose();
 
+            //Filter
+            ViewBag.MinPrice = minPrice;
+            ViewBag.MaxPrice = maxPrice;
 
+            if (minPrice != null)
+            {
+                candles = candles.Where(c => c.Price >= minPrice);
+            }
 
-            //Viebag that holds the sorting
-            ViewBag.TitleSortParam = String.IsNullOrWhiteSpace(sortOrder) ? "TitleDesc" : "";
-            ViewBag.PriceSortParam = sortOrder == "PriceAsc" ? "PriceDesc" : "PriceAsc";
+            if (maxPrice != null)
+            {
+                candles = candles.Where(c => c.Price <= maxPrice);
+            }
 
-            ViewBag.TitleView = "badge badge-light";
-            ViewBag.PriceView = "badge badge-light";
+            //Sorting
+            ViewBag.TitleSortParam = string.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
+            ViewBag.PriceSortParam = sortOrder == "price_asc" ? "price_desc" : "price_asc";
 
-            var candles = unitOfWork.Candles.GetAll();
-
-            //================================== Sorting ====================================
-
-
-            //Sorting by title & price
             switch (sortOrder)
             {
-                case "TitleDesc": candles = candles.OrderByDescending(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-                case "TitleAsc": candles = candles.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-                case "PriceDesc": candles = candles.OrderByDescending(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
-                case "PriceAsc": candles = candles.OrderBy(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
-                default: candles = candles.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
+                case "title_desc":
+                    candles = candles.OrderByDescending(c => c.Title);
+                    break;
+                case "price_asc":
+                    candles = candles.OrderBy(c => c.Price);
+                    break;
+                case "price_desc":
+                    candles = candles.OrderByDescending(c => c.Price);
+                    break;
+                default:
+                    candles = candles.OrderBy(c => c.Title);
+                    break;
             }
-            //Pagination
-            int pageSize = pSize ?? 3;
+
+            //Paging
+            ViewBag.CurrentSort = sortOrder;
+
+            int pSize = pageSize ?? 3;
             int pageNumber = page ?? 1;
 
-
-            //================================== Filters ====================================
-
-            //------Filtering  Title-----
-            if (!(string.IsNullOrWhiteSpace(searchTitle)))
+            ViewBag.PageSize = new List<SelectListItem>()
             {
-                candles = candles.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
-            }
-            //-----Filtering  Price------
-            //Filtering  Minimum
-            if (!(searchMinPrice is null))
-            {
-                candles = candles.Where(x => x.Price >= searchMinPrice);
-            }
-            //Filtering  Maximum
-            if (!(searchMaxPrice is null))
-            {
-                candles = candles.Where(x => x.Price <= searchMaxPrice);
-            }
-           
+             new SelectListItem() { Value="3", Text= "3" },
+             new SelectListItem() { Value="6", Text= "6" },
+             new SelectListItem() { Value="12", Text= "12" },
+             new SelectListItem() { Value="24", Text= "24" },
+             new SelectListItem() { Value="10000000", Text= "All" },
+            };
 
-            // Assign the sorting - searching to the viewModel
-            candles = candles.ToPagedList(pageNumber, pageSize);
+            ViewBag.CurrentPageSize = pSize;
 
-            return View(candles);
-
-
+            return View(candles.ToPagedList(pageNumber, pSize));
         }
 
 
@@ -151,7 +150,7 @@ namespace Vegan.Web.Controllers
             }
         }
 
-    
+
 
         [HttpGet]
         public ActionResult DeleteCandle(int productId)

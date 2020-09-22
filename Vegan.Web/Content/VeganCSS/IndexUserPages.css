@@ -1,0 +1,140 @@
+﻿.contentbox-wrapper .contentbox .header-wrapper .container .header .sorting {
+    display: inline;
+}
+
+    .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a, .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn {
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+        background-color: #ded9ce;
+        color: dimgrey;
+        font-weight: 600;
+        font-size: 13px;
+        transition: 0.4s;
+        margin-bottom: 3px;
+    }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a:hover {
+            background-color: #e98747;
+        }
+
+.contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown {
+    display: inline;
+    float: right;
+}
+
+    .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn:hover {
+        background-color: #e98747;
+    }
+
+    .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu {
+        background-color: #ded9ce;
+        text-align: center;
+    }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label, .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input {
+            font-size: 13px;
+            display: inline;
+            color: dimgrey;
+        }
+
+            .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label:first-child {
+                margin-right: 4px;
+            }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input {
+            border: none;
+            border-radius: 5px 5px 5px 5px;
+            margin-bottom: 5px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 5px;
+        }
+
+            .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input:last-child {
+                margin-left: 68px;
+                margin-top: 5px;
+                font-size: 13px;
+                background-color: #e98747;
+                font-weight: 600;
+                transition: 0.4s;
+                padding: inherit;
+            }
+
+                .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input:last-child:hover {
+                    background-color: limegreen;
+                }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input {
+            width: 70px;
+        }
+
+.contentbox-wrapper .contentbox .header-wrapper .container .header .priceInf span #btnReset {
+    border-color: tomato;
+    background-color: transparent;
+    padding: 2px 5px 2px 5px;
+    font-size: 13px;
+    font-weight: 600;
+    color: tomato;
+    transition: 0.4s;
+}
+
+    .contentbox-wrapper .contentbox .header-wrapper .container .header .priceInf span #btnReset:hover {
+        background-color: tomato;
+        border-color: transparent;
+        color: dimgray;
+    }
+
+.contentbox-wrapper .contentbox .content-wrapper .content {
+    margin-top: 7px;
+}
+
+.contentbox-wrapper .contentbox .content-wrapper .paging {
+    text-align: right !important;
+    color: #9b9388;
+}
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #pageSize {
+        width: auto;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 12px;
+        padding-right: 12px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+        background-color: #ded9ce;
+        color: dimgrey;
+        cursor: pointer;
+    }
+
+        .contentbox-wrapper .contentbox .content-wrapper .paging #pageSize:hover {
+            background-color: #e98747;
+        }
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div #pageSize option {
+        font-weight: 600;
+        font-size: 13px;
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+        background-color: #ded9ce;
+        color: dimgrey;
+    }
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a {
+        border-color: #ded9ce;
+        border-radius: 5px 5px 5px 5px;
+        font-weight: 600;
+        font-size: 14px;
+        color: dimgrey;
+        transition: 0.4s;
+    }
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination .active a {
+        background-color: #ded9ce;
+    }
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a:hover {
+        background-color: #e98747;
+    }
