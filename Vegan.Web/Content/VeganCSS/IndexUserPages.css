@@ -88,6 +88,11 @@
     margin-top: 7px;
 }
 
+    .contentbox-wrapper .contentbox .content-wrapper .content .product h3 a {
+        height: fit-content;
+        margin:auto;
+    }
+
 .contentbox-wrapper .contentbox .content-wrapper .paging {
     text-align: right !important;
     color: #9b9388;
