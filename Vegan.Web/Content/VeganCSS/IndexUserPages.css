@@ -88,9 +88,13 @@
     margin-top: 7px;
 }
 
+    .contentbox-wrapper .contentbox .content-wrapper .content .info a {
+        transition: 0.4s;
+    }
+
     .contentbox-wrapper .contentbox .content-wrapper .content .product h3 a {
         height: fit-content;
-        margin:auto;
+        margin: auto;
     }
 
 .contentbox-wrapper .contentbox .content-wrapper .paging {
@@ -112,6 +116,7 @@
         background-color: #ded9ce;
         color: dimgrey;
         cursor: pointer;
+        transition: 0.4s;
     }
 
         .contentbox-wrapper .contentbox .content-wrapper .paging #pageSize:hover {

@@ -84,8 +84,6 @@ namespace Vegan.Web.Controllers
             return View(candles.ToPagedList(pageNumber, pSize));
         }
 
-
-
         [HttpGet]
         public ActionResult AddProduct()
         {
