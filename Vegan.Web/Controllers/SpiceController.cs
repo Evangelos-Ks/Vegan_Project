@@ -14,7 +14,7 @@ namespace Vegan.Web.Controllers.TestControllers
         //===================================== Fields =====================================================================
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
-        //===================================== Methods ====================================================================
+        //===================================== Action Methods =============================================================
         [HttpGet]
         public ActionResult Index()
         {
