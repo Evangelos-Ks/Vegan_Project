@@ -21,6 +21,7 @@ namespace Vegan.Web.Controllers.TestControllers
             return View(unitOfWork.Teas.GetAll());
         }
 
+        [HttpGet]
         public ActionResult IndexUser(string sortOrder, int? minPrice, int? maxPrice, int? page, int? pageSize)
         {
             //Get all Tea products
