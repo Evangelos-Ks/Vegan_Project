@@ -1,10 +1,14 @@
-﻿@model IEnumerable<Vegan.Entities.FoodHerb.Salt>
+﻿@model PagedList.IPagedList<Vegan.Entities.FoodHerb.Salt>
 
+@using PagedList.Mvc;
 @{
-    ViewBag.Title = "Vegan Salts";
+    ViewBag.Title = "Vegan HomeCleaning";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/VeganCSS/IndexUserPages.css" rel="stylesheet" />
+<link href="~/Content/PagedList.css" rel="stylesheet" />
 
 <div id="top" pxlurl="[product_url]">
     <div class="contentbox-wrapper">
@@ -14,26 +18,59 @@
                     <div class="breadcrumbs-wrapper clearfix">
                         <div class="breadcrumbs">
                             <section>
-                                <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/FoodHerb/IndexUser">Dry Food & Herbs Products > </a> <a href="/Salt/IndexUser">Salts</a></p>
+                                <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/FoodHerb/IndexUser">Dry food & herbs > </a> <a href="/Salt/IndexUser">Salt</a></p>
                             </section>
                         </div>
                     </div>
                     <div class="title-wrapper clearfix">
                         <div class="title">
                             <header>
-                                <h1>Salts</h1>
+                                <h1>Salt products</h1>
                             </header>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="header-wrapper clearfix">
-                <div class="header">
-                    <header>
-                        <h2>
-                            <small>Total Items: @Model.ToList().Count() </small>
-                        </h2>
-                    </header>
+                <div class="container">
+                    <div class="header">
+                        Total Items: @Model.TotalItemCount
+                        <br />
+                        <br />
+                        <div class="sorting">
+                            Sort by
+                            @Html.ActionLink("Title", "IndexUser", new { sortOrder = ViewBag.TitleSortParam, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, pageSize = ViewBag.CurrentPageSize }, new { @class = "btn sortButtons" })
+                            @Html.ActionLink("Price", "IndexUser", new { sortOrder = ViewBag.PriceSortParam, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, pageSize = ViewBag.CurrentPageSize }, new { @class = "btn sortButtons" })
+                        </div>
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                Price Range
+                                <span class="caret"></span>
+                            </button>
+                            <form class="dropdown-menu dropdown-menu-right" action="" method="get">
+                                <input type="hidden" name="pageSize" value="@ViewBag.CurrentPageSize" />
+                                <label for="minPrice">Min Price: </label>
+                                <input id="minPrice" type="number" name="minPrice" value="" min="0" />
+                                <br />
+                                <label for="maxPrice">Max Price: </label>
+                                <input id="maxPrice" type="number" name="maxPrice" value="" min="0" />
+                                <br />
+                                <input type="submit" name="" value="Apply" class="btn" />
+                            </form>
+                        </div>
+                        <div class="text-right priceInf">
+                            @if (ViewBag.MinPrice != null || ViewBag.MaxPrice != null)
+                            {
+                                var MinPrice = ViewBag.MinPrice == null ? 0 : ViewBag.MinPrice;
+                                var MaxPrice = ViewBag.MaxPrice == null ? "\u221E" : ViewBag.MaxPrice;
+                                <span>
+                                    Min Price: @MinPrice &nbsp &nbsp Max Price: @MaxPrice
+                                    &nbsp &nbsp
+                                    @Html.ActionLink("Reset", "IndexUser", new { pageSize = @ViewBag.CurrentPageSize, minPrice = "", maxPrice = "" }, new { @class = "btn", id = "btnReset" })
+                                </span>
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="content-wrapper clearfix">
@@ -41,21 +78,23 @@
                     @foreach (var item in Model)
                     {
                         <div class="product">
-                            <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)"></div>
+                            <div class="image" style=" background-image: url( @Html.DisplayFor(modelItem => item.ImageURL));"><img src="@Html.DisplayFor(modelItem => item.ImageURL)" alt="@Html.DisplayFor(modelItem => item.Title)"></div>
                             <div class="frame"></div>
                             <div class="info">
                                 <div class="info-data">
                                     <div>
-
                                         @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
                                         {
                                             @Html.Hidden("ProductId", item.Id)
                                             <div style="padding-top:60px">
-                                                @Html.ActionLink("Read More", "DetailsSalt", new { productId = item.Id }, new { @class = "btn" })
+                                                <div class="morebutton">
+                                                    @Html.ActionLink("Read More", "DetailsSalt", new { productId = item.Id }, new { @class = "btn" })
+                                                </div>
                                                 <div class="price">
                                                     <span class="yourprice" style="padding-bottom:15px">Your Price: <strong>€ @Html.DisplayFor(modelItem => item.Price) </strong></span>
-
-                                                    <a class="btn" style="max-width:120px; text-align:center; padding-left:8px; padding-right:8px;" href="javascript:void(0);" onclick="$(this).closest('form').submit();">Add to cart</a>
+                                                    <div class="morebutton">
+                                                        <a class="btn" style="max-width:120px; text-align:center; padding-left:8px; padding-right:8px;" href="javascript:void(0);" onclick="$(this).closest('form').submit();">Add to cart</a>
+                                                    </div>
                                                 </div>
                                             </div>
                                         }
@@ -66,10 +105,22 @@
                         </div>
                     }
                 </div>
+                <div class="paging">
+                    <form action="/Salt/IndexUser" method="get" id="form">
+                        <input type="hidden" name="sortOrder" value=@ViewBag.CurrentSort />
+                        <input type="hidden" name="minPrice" value=@ViewBag.MinPrice />
+                        <input type="hidden" name="maxPrice" value=@ViewBag.MaxPrice />
+                        <div>
+                            @{ string cps = ViewBag.CurrentPageSize == 10000000 ? "All" : Convert.ToString(ViewBag.CurrentPageSize); }
+                            Items per page @Html.DropDownList("pageSize", cps)
+                            @Html.PagedListPager(Model, page => Url.Action("IndexUser", new { page, sortOrder = ViewBag.CurrentSort, pageSize = ViewBag.CurrentPageSize, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice }))
+                        </div>
+                    </form>
+                </div>
             </div>
-
         </div>
     </div>
 </div>
 
-
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Content/VeganJs/IndexUserJs.js"></script>

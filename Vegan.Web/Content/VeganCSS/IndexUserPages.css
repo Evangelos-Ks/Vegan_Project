@@ -28,7 +28,7 @@
 
     .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu {
         background-color: #ded9ce;
-        text-align: center;
+        text-align: left;
     }
 
         .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label, .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input {
@@ -37,9 +37,13 @@
             color: dimgrey;
         }
 
-            .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label:first-child {
-                margin-right: 4px;
-            }
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label {
+            margin-left:5px;
+        }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label:first-of-type {
+            padding-right: 5px;
+        }
 
         .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input {
             border: none;
@@ -51,7 +55,7 @@
         }
 
             .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input:last-child {
-                margin-left: 68px;
+                margin-left: 85px;
                 margin-top: 5px;
                 font-size: 13px;
                 background-color: #e98747;

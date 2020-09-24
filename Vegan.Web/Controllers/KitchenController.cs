@@ -24,7 +24,7 @@ namespace Vegan.Web.Controllers.TestControllers
         [HttpGet]
         public ActionResult IndexUser(string sortOrder, int? minPrice, int? maxPrice, int? page, int? pageSize)
         {
-            //Get all Candles
+            //Get all kitchen products
             IEnumerable<Kitchen> kitchens = unitOfWork.Kitchens.GetAll().ToList();
             unitOfWork.Dispose();
 
