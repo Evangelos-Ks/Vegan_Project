@@ -65,7 +65,7 @@ namespace Vegan.Web.Controllers.TestControllers
             //Paging
             ViewBag.CurrentSort = sortOrder;
 
-            int pSize = pageSize ?? 3;
+            int pSize = pageSize ?? 6;
             int pageNumber = page ?? 1;
 
             ViewBag.PageSize = new List<SelectListItem>()

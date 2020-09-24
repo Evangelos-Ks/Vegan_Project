@@ -67,7 +67,7 @@ namespace Vegan.Web.Controllers
             //Paging
             ViewBag.CurrentSort = sortOrder;
 
-            int pSize = pageSize ?? 3;
+            int pSize = pageSize ?? 6;
             int pageNumber = page ?? 1;
 
             ViewBag.PageSize = new List<SelectListItem>()
@@ -146,8 +146,6 @@ namespace Vegan.Web.Controllers
                 return View(model);
             }
         }
-
-
 
         [HttpGet]
         public ActionResult DeleteCandle(int productId)

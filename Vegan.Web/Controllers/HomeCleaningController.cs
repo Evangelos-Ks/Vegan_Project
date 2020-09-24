@@ -24,7 +24,7 @@ namespace Vegan.Web.Controllers.TestControllers
         [HttpGet]
         public ActionResult IndexUser(string sortOrder, int? minPrice, int? maxPrice, int? page, int? pageSize)
         {
-            //Get all Candles
+            //Get all homeCleanings
             IEnumerable<HomeCleaning> homeCleanings = unitOfWork.HomeCleanings.GetAll().ToList();
             unitOfWork.Dispose();
 
@@ -65,7 +65,7 @@ namespace Vegan.Web.Controllers.TestControllers
             //Paging
             ViewBag.CurrentSort = sortOrder;
 
-            int pSize = pageSize ?? 3;
+            int pSize = pageSize ?? 6;
             int pageNumber = page ?? 1;
 
             ViewBag.PageSize = new List<SelectListItem>()
