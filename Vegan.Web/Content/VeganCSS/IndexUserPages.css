@@ -1,4 +1,8 @@
-﻿.contentbox-wrapper .contentbox .header-wrapper .container .header .sorting {
+﻿.contentbox-wrapper .contentbox #pageheader div .breadcrumbs-wrapper .breadcrumbs section p {
+    font-stretch: condensed;
+}
+
+.contentbox-wrapper .contentbox .header-wrapper .container .header .sorting {
     display: inline;
 }
 
@@ -38,12 +42,12 @@
         }
 
         .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label {
-            margin-left:5px;
+            margin-left: 5px;
         }
 
-        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label:first-of-type {
-            padding-right: 5px;
-        }
+            .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label:first-of-type {
+                padding-right: 5px;
+            }
 
         .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input {
             border: none;
