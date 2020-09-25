@@ -109,7 +109,7 @@
         margin: auto;
     }
 
-.contentbox-wrapper .contentbox .content-wrapper .paging {
+.contentbox-wrapper .contentbox .content-wrapper .paging, #pagination {
     text-align: right !important;
     color: #9b9388;
 }
@@ -144,7 +144,7 @@
         color: dimgrey;
     }
 
-    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a {
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a, #paginationAllProducts ul li a{
         border-color: #ded9ce;
         border-radius: 5px 5px 5px 5px;
         font-weight: 600;
@@ -153,10 +153,12 @@
         transition: 0.4s;
     }
 
-    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination .active a {
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination .active a, #paginationAllProducts ul .active a {
         background-color: #ded9ce;
     }
 
-    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a:hover {
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a:hover, #paginationAllProducts ul li a:hover {
         background-color: #e98747;
     }
+
+

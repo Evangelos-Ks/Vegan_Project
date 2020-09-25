@@ -9,6 +9,7 @@
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/VeganCSS/IndexUserPages.css" rel="stylesheet" />
 
 <div ng-controller="VeganController">
     <div id="top" pxlurl="[product_url]">
@@ -33,23 +34,13 @@
                     </div>
                 </div>
                 <div class="header-wrapper clearfix">
-                    <div class="header">
-                        <header class="container">
-                            <h2>
-                                <small>Total Items: {{NumberOfProducts}} </small>
-                            </h2>
-                            <div id="pagination" style=" float: right;
-                                                    margin: 0 0 10px;
-                                                    line-height: 40px;
-                                                    color: gray;">
-                                <ul>
-                                    <li>
-                                        <small><dir-pagination-controls></dir-pagination-controls></small>
-                                    </li>
-                                </ul>
+                    <div class="container">
+                        <div class="header">
+                            Total Items: {{NumberOfProducts}}
+                            <div id="pagination">
+                                <dir-pagination-controls id="paginationAllProducts"></dir-pagination-controls>
                             </div>
-
-                        </header>
+                        </div>
                     </div>
                 </div>
                 <div class="content-wrapper clearfix">
@@ -79,15 +70,8 @@
                         </div>
                     </div>
                 </div>
-                <div id="pagination" style=" float: right;
-                                                    margin: 0 0 10px;
-                                                    line-height: 40px;
-                                                    color: gray;">
-                    <ul>
-                        <li>
-                            <small><dir-pagination-controls></dir-pagination-controls></small>
-                        </li>
-                    </ul>
+                <div id="pagination">
+                    <dir-pagination-controls id="paginationAllProducts"></dir-pagination-controls>
                 </div>
             </div>
         </div>

@@ -1,3 +1,7 @@
-﻿#top .headerbox-wrapper .headerbox #topbar div #nav-utils ul{
-    margin-bottom:0;
+﻿#top .headerbox-wrapper .headerbox #topbar div #nav-utils ul {
+    margin-bottom: 0;
+}
+
+#top .headerbox-wrapper .headerbox #logo label {
+    margin-bottom: 0;
 }
