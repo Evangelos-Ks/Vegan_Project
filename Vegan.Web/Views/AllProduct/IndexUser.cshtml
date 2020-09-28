@@ -8,6 +8,7 @@
     ViewBag.Title = "All Products";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
+
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 <link href="~/Content/VeganCSS/IndexUserPages.css" rel="stylesheet" />
 
@@ -20,7 +21,7 @@
                         <div class="breadcrumbs-wrapper clearfix">
                             <div class="breadcrumbs">
                                 <section>
-                                    <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/FoodHerb/IndexUser">Dry food & Herbs > </a> <a href="/Tea/IndexUser">Teas</a></p>
+                                    <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/AllProduct/IndexUser">All Products</a></p>
                                 </section>
                             </div>
                         </div>
@@ -37,14 +38,22 @@
                     <div class="container">
                         <div class="header">
                             Total Items: {{NumberOfProducts}}
-                            <div id="pagination">
-                                <dir-pagination-controls id="paginationAllProducts"></dir-pagination-controls>
+                            @*<div id="pagination">
+                                    <dir-pagination-controls id="paginationAllProducts"></dir-pagination-controls>
+                                </div>*@
+                            <br />
+                            <br />
+                            <div class="sorting">
+                                Sort by
+                                <button class="btn sortButtons" id="sortButtonTitle">Title</button>
+                                @*@Html.ActionLink("Title", "IndexUser", new { sortOrder = ViewBag.TitleSortParam, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, pageSize = ViewBag.CurrentPageSize }, new { @class = "btn sortButtons" })
+                                @Html.ActionLink("Price", "IndexUser", new { sortOrder = ViewBag.PriceSortParam, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, pageSize = ViewBag.CurrentPageSize }, new { @class = "btn sortButtons" })*@
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="content-wrapper clearfix">
-                    <div class="content">
+                    <div class="content" id="mainContent">
                         <div class="product" dir-paginate="product in AllProducts | itemsPerPage: 12">
                             <div class="frame"></div>
                             <div class="image" style="background-image: url({{product.ImageURL}});"><img src={{product.ImageURL}} alt="{{product.Title}}"></div>
@@ -58,10 +67,8 @@
                                                 <span class="yourprice">Your Price: <strong>€{{product.Price}}</strong></span>
 
                                             </div>
-
                                             <div class="cartbutton">
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>

@@ -10,7 +10,7 @@
     display: inline;
 }
 
-    .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a, .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn {
+    .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a, .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn, .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting .sortButtons {
         border: none;
         border-radius: 5px 5px 5px 5px;
         background-color: #ded9ce;
@@ -19,9 +19,10 @@
         font-size: 13px;
         transition: 0.4s;
         margin-bottom: 3px;
+        outline: none;
     }
 
-        .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a:hover {
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a:hover, .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting .sortButtons:hover {
             background-color: #e98747;
         }
 
@@ -144,7 +145,7 @@
         color: dimgrey;
     }
 
-    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a, #paginationAllProducts ul li a{
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a, #paginationAllProducts ul li a {
         border-color: #ded9ce;
         border-radius: 5px 5px 5px 5px;
         font-weight: 600;
@@ -160,5 +161,3 @@
     .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a:hover, #paginationAllProducts ul li a:hover {
         background-color: #e98747;
     }
-
-
