@@ -37,13 +37,14 @@
 
     .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu {
         background-color: #ded9ce;
-        text-align: left;
+        text-align: right;
     }
 
         .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label, .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input {
             font-size: 13px;
             display: inline;
             color: dimgrey;
+            margin-right: 8px;
         }
 
         .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label {

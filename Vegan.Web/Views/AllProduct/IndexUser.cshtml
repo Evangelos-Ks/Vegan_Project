@@ -38,17 +38,28 @@
                     <div class="container">
                         <div class="header">
                             Total Items: {{NumberOfProducts}}
-                            @*<div id="pagination">
-                                    <dir-pagination-controls id="paginationAllProducts"></dir-pagination-controls>
-                                </div>*@
                             <br />
                             <br />
                             <div class="sorting">
                                 Sort by
                                 <button class="btn sortButtons" id="sortButtonTitle">Title</button>
                                 <button class="btn sortButtons" id="sortButtonPrice">Price</button>
-                                @*@Html.ActionLink("Title", "IndexUser", new { sortOrder = ViewBag.TitleSortParam, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, pageSize = ViewBag.CurrentPageSize }, new { @class = "btn sortButtons" })
-                                    @Html.ActionLink("Price", "IndexUser", new { sortOrder = ViewBag.PriceSortParam, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, pageSize = ViewBag.CurrentPageSize }, new { @class = "btn sortButtons" })*@
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                    Price Range
+                                    <span class="caret"></span>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <input type="hidden" name="pageSize" value="@ViewBag.CurrentPageSize" />
+                                    <label for="minPrice">Min Price: </label>
+                                    <input id="minPrice" type="number" name="minPrice" value="" min="0" />
+                                    <br />
+                                    <label for="maxPrice">Max Price: </label>
+                                    <input id="maxPrice" type="number" name="maxPrice" value="" min="0" />
+                                    <br />
+                                    <input type="submit" name="" value="Apply" class="btn" />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -84,6 +95,8 @@
     </div>
 </div>
 
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Content/VeganJs/IndexUserJs.js"></script>
 
 
 
