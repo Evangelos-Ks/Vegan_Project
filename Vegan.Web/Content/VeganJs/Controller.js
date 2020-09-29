@@ -3,34 +3,21 @@
 
 
     //============================================== VeganController =======================================================
-    var productsPerCategoryUrl = "https://localhost:44304/api/CategoriesAPI";
+    var productsPerCategoryUrl = "/api/CategoriesAPI";
     var VeganController = function ($scope, $http) {
-        var GetData = function (sortingAsc = true) {
+        var GetData = function (sortingTitle = true, sortingPrice = true, sortedProducts = null) {
             $http.get(productsPerCategoryUrl)
                 .then(function (response) {
                     $scope.Care = response.data[0];
                     $scope.FoodHerbs = response.data[1];
                     $scope.Homes = response.data[2];
                     $scope.Supplements = response.data[3];
-                    if (sortingAsc) {
-                        $scope.AllProducts = $scope.Care.concat($scope.FoodHerbs).concat($scope.Homes).concat($scope.Supplements).sort((a, b) => {
-                            var keyA = a.Title;
-                            var keyB = b.Title;
-                            if (keyA < keyB) return -1;
-                            if (keyA > keyB) return 1;
-                            return 0;
-                        });
+                    if (sortedProducts == null) {
+                        $scope.AllProducts = $scope.Care.concat($scope.FoodHerbs).concat($scope.Homes).concat($scope.Supplements);                    
                     }
                     else {
-                        $scope.AllProducts = $scope.Care.concat($scope.FoodHerbs).concat($scope.Homes).concat($scope.Supplements).sort((a, b) => {
-                            var keyA = a.Title;
-                            var keyB = b.Title;
-                            if (keyA > keyB) return -1;
-                            if (keyA < keyB) return 1;
-                            return 0;
-                        });
+                        $scope.AllProducts = sortedProducts;
                     }
-
                     $scope.NumberOfProducts = $scope.AllProducts.length;
 
                     //autocomplete
@@ -60,16 +47,77 @@
                     });
 
                     //sorting-btn
-                    if (sortingAsc) {
-                        $("#sortButtonTitle").click((sortingAsc) => {
+                    if (sortingTitle == true) {
+                        $("#sortButtonTitle").click(() => {
                             $("#sortButtonTitle").off();
-                            GetData(false);
+
+                            sortedProducts = $scope.AllProducts.sort((a, b) => {
+                                var keyA = a.Title;
+                                var keyB = b.Title;
+                                if (keyA < keyB) return -1;
+                                if (keyA > keyB) return 1;
+                                return 0;
+                            });
+
+                            console.log("Title cl");
+                            console.log("Price :" + sortingPrice);
+                            console.log("Title :" + sortingTitle);
+                            sortingTitle = false;
+                            GetData(sortingTitle, sortingPrice, sortedProducts);
                         });
                     }
                     else {
-                        $("#sortButtonTitle").click((sortingAsc) => {
+                        $("#sortButtonTitle").click(() => {
                             $("#sortButtonTitle").off();
-                            GetData(true);
+
+                            sortedProducts = $scope.AllProducts.sort((a, b) => {
+                                var keyA = a.Title;
+                                var keyB = b.Title;
+                                if (keyA > keyB) return -1;
+                                if (keyA < keyB) return 1;
+                                return 0;
+                            });
+
+                            console.log("Title cl");
+                            console.log("Price :" + sortingPrice);
+                            console.log("Title :" + sortingTitle);
+                            sortingTitle = true;
+                            GetData(sortingTitle, sortingPrice, sortedProducts);
+                        });
+                    }
+
+                    if (sortingPrice == true) {
+                        $("#sortButtonPrice").click(() => {
+                            $("#sortButtonPrice").off();
+                            console.log("Price cl");
+                            console.log("Price :" + sortingPrice);
+                            console.log("Title :" + sortingTitle);
+                            sortedProducts = $scope.AllProducts.sort((a, b) => {
+                                var keyA = a.Price;
+                                var keyB = b.Price;
+                                if (keyA < keyB) return -1;
+                                if (keyA > keyB) return 1;
+                                return 0;
+                            });
+                            sortingPrice = false;
+                            GetData(sortingTitle, sortingPrice, sortedProducts);
+                        });
+                    }
+                    else {
+                        $("#sortButtonPrice").click(() => {
+                            $("#sortButtonPrice").off();
+                            console.log("Price cl");
+                            console.log("Price :" + sortingPrice);
+                            console.log("Title :" + sortingTitle);
+                            sortedProducts = $scope.AllProducts.sort((a, b) => {
+                                var keyA = a.Price;
+                                var keyB = b.Price;
+                                if (keyA > keyB) return -1;
+                                if (keyA < keyB) return 1;
+                                return 0;
+                            });
+                            sortingPrice = true;
+                            GetData(sortingTitle, sortingPrice, sortedProducts);
                         });
                     }
 

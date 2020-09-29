@@ -46,8 +46,9 @@
                             <div class="sorting">
                                 Sort by
                                 <button class="btn sortButtons" id="sortButtonTitle">Title</button>
+                                <button class="btn sortButtons" id="sortButtonPrice">Price</button>
                                 @*@Html.ActionLink("Title", "IndexUser", new { sortOrder = ViewBag.TitleSortParam, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, pageSize = ViewBag.CurrentPageSize }, new { @class = "btn sortButtons" })
-                                @Html.ActionLink("Price", "IndexUser", new { sortOrder = ViewBag.PriceSortParam, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, pageSize = ViewBag.CurrentPageSize }, new { @class = "btn sortButtons" })*@
+                                    @Html.ActionLink("Price", "IndexUser", new { sortOrder = ViewBag.PriceSortParam, minPrice = ViewBag.MinPrice, maxPrice = ViewBag.MaxPrice, pageSize = ViewBag.CurrentPageSize }, new { @class = "btn sortButtons" })*@
                             </div>
                         </div>
                     </div>
@@ -63,9 +64,7 @@
                                         <div>
                                             <div class="morebutton"><a ng-click="UrlBuilder(product)" class="btn">Read More</a></div>
                                             <div class="price">
-
                                                 <span class="yourprice">Your Price: <strong>€{{product.Price}}</strong></span>
-
                                             </div>
                                             <div class="cartbutton">
                                             </div>
