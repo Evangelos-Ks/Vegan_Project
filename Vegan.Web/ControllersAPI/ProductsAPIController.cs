@@ -20,7 +20,7 @@ namespace Vegan.Web.ControllersAPI
 
         // GET: api/ProductsAPI/5
         [ResponseType(typeof(Product))]
-        public async Task<IHttpActionResult> GetProduct(int id)
+        public IHttpActionResult GetProduct(int id)
         {
             var product = unitOfWork.Products.GetById(id);
             if (product == null)

@@ -1,4 +1,5 @@
-﻿(function myfunction() {
+﻿
+(function myfunction() {
     var VeganProject = angular.module("VeganProject", ['angularUtils.directives.dirPagination']);
 
 
@@ -13,7 +14,7 @@
                     $scope.Homes = response.data[2];
                     $scope.Supplements = response.data[3];
                     if (sortedProducts == null) {
-                        $scope.AllProducts = $scope.Care.concat($scope.FoodHerbs).concat($scope.Homes).concat($scope.Supplements);                    
+                        $scope.AllProducts = $scope.Care.concat($scope.FoodHerbs).concat($scope.Homes).concat($scope.Supplements);
                     }
                     else {
                         $scope.AllProducts = sortedProducts;
@@ -49,8 +50,9 @@
                     //sorting-btn
                     if (sortingTitle == true) {
                         $("#sortButtonTitle").click(() => {
+                            $("#applyButton").off();
+                            $("#sortButtonPrice").off();
                             $("#sortButtonTitle").off();
-
                             sortedProducts = $scope.AllProducts.sort((a, b) => {
                                 var keyA = a.Title;
                                 var keyB = b.Title;
@@ -58,18 +60,17 @@
                                 if (keyA > keyB) return 1;
                                 return 0;
                             });
+                            console.log("sortButtonTitleIf");
 
-                            console.log("Title cl");
-                            console.log("Price :" + sortingPrice);
-                            console.log("Title :" + sortingTitle);
                             sortingTitle = false;
                             GetData(sortingTitle, sortingPrice, sortedProducts);
                         });
                     }
                     else {
                         $("#sortButtonTitle").click(() => {
+                            $("#applyButton").off();
+                            $("#sortButtonPrice").off();
                             $("#sortButtonTitle").off();
-
                             sortedProducts = $scope.AllProducts.sort((a, b) => {
                                 var keyA = a.Title;
                                 var keyB = b.Title;
@@ -77,10 +78,8 @@
                                 if (keyA < keyB) return 1;
                                 return 0;
                             });
+                            console.log("sortButtonTitleElse");
 
-                            console.log("Title cl");
-                            console.log("Price :" + sortingPrice);
-                            console.log("Title :" + sortingTitle);
                             sortingTitle = true;
                             GetData(sortingTitle, sortingPrice, sortedProducts);
                         });
@@ -88,10 +87,9 @@
 
                     if (sortingPrice == true) {
                         $("#sortButtonPrice").click(() => {
+                            $("#applyButton").off();
                             $("#sortButtonPrice").off();
-                            console.log("Price cl");
-                            console.log("Price :" + sortingPrice);
-                            console.log("Title :" + sortingTitle);
+                            $("#sortButtonTitle").off();
                             sortedProducts = $scope.AllProducts.sort((a, b) => {
                                 var keyA = a.Price;
                                 var keyB = b.Price;
@@ -99,16 +97,17 @@
                                 if (keyA > keyB) return 1;
                                 return 0;
                             });
+                            console.log("sortButtonPriceIf");
+
                             sortingPrice = false;
                             GetData(sortingTitle, sortingPrice, sortedProducts);
                         });
                     }
                     else {
                         $("#sortButtonPrice").click(() => {
+                            $("#applyButton").off();
                             $("#sortButtonPrice").off();
-                            console.log("Price cl");
-                            console.log("Price :" + sortingPrice);
-                            console.log("Title :" + sortingTitle);
+                            $("#sortButtonTitle").off();
                             sortedProducts = $scope.AllProducts.sort((a, b) => {
                                 var keyA = a.Price;
                                 var keyB = b.Price;
@@ -116,11 +115,54 @@
                                 if (keyA < keyB) return 1;
                                 return 0;
                             });
+                            console.log("sortButtonPriceElse");
+
                             sortingPrice = true;
                             GetData(sortingTitle, sortingPrice, sortedProducts);
                         });
                     }
 
+                    //Price filtering btn
+                    $("#applyButton").click(() => {
+                        $("#applyButton").off();
+                        $("#sortButtonPrice").off();
+                        $("#sortButtonTitle").off();
+                        var minPrice = $("#minPrice").val();
+                        var maxPrice = $("#maxPrice").val();
+
+                        var products = $scope.Care.concat($scope.FoodHerbs).concat($scope.Homes).concat($scope.Supplements);
+                        var filteringProducts = [];
+                        if (minPrice != "" && maxPrice != "") {
+                            if (minPrice <= maxPrice) {
+                                products.forEach((product) => {
+                                    if (product.Price >= minPrice && product.Price <= maxPrice) {
+                                        filteringProducts.push(product);
+                                    }
+                                })
+                                GetData(sortingTitle, sortingPrice, filteringProducts);
+                            }
+                        }
+                        else if (minPrice != "") {
+                            products.forEach((product) => {
+                                if (product.Price >= minPrice) {
+                                    filteringProducts.push(product);
+                                }
+                            })
+                            GetData(sortingTitle, sortingPrice, filteringProducts);
+                        }
+                        else if (maxPrice != "") {
+                            products.forEach((product) => {
+                                if (product.Price <= maxPrice) {
+                                    filteringProducts.push(product);
+                                }
+                            })
+                            GetData(sortingTitle, sortingPrice, filteringProducts);
+                        }
+                        else {
+                            GetData(sortingTitle, sortingPrice, products);
+                        }
+                        console.log("applyButton");
+                    })
 
 
                     $scope.UrlBuilder = function UrlBuilder(product) {
@@ -142,6 +184,5 @@
         }
         GetData();
     };
-
     VeganProject.controller("VeganController", VeganController);
 })();

@@ -12,7 +12,7 @@
 <link href="~/Content/bootstrap.css" rel="stylesheet" />
 <link href="~/Content/VeganCSS/IndexUserPages.css" rel="stylesheet" />
 
-<div ng-controller="VeganController">
+<div ng-controller="VeganController" ng-app="VeganProject">
     <div id="top" pxlurl="[product_url]">
         <div class="contentbox-wrapper">
             <div class="contentbox docsection boxed productlist">
@@ -50,16 +50,15 @@
                                     Price Range
                                     <span class="caret"></span>
                                 </button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <input type="hidden" name="pageSize" value="@ViewBag.CurrentPageSize" />
+                                <form class="dropdown-menu dropdown-menu-right" method="get">
                                     <label for="minPrice">Min Price: </label>
                                     <input id="minPrice" type="number" name="minPrice" value="" min="0" />
                                     <br />
                                     <label for="maxPrice">Max Price: </label>
                                     <input id="maxPrice" type="number" name="maxPrice" value="" min="0" />
                                     <br />
-                                    <input type="submit" name="" value="Apply" class="btn" />
-                                </div>
+                                    <input type="submit" name="" value="Apply" class="btn" id="applyButton"/>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -97,7 +96,6 @@
 
 <script src="~/Scripts/bootstrap.min.js"></script>
 <script src="~/Content/VeganJs/IndexUserJs.js"></script>
-
 
 
 
