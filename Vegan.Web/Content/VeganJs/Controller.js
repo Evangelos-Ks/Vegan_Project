@@ -123,8 +123,7 @@
                     }
 
                     //Price filtering btn
-                    $("#applyButton").click(() => {
-                        $("#applyButton").off();
+                    $("#applyButton").click(function ApplyButton() {
                         $("#sortButtonPrice").off();
                         $("#sortButtonTitle").off();
                         var minPrice = $("#minPrice").val();
@@ -133,12 +132,17 @@
                         var products = $scope.Care.concat($scope.FoodHerbs).concat($scope.Homes).concat($scope.Supplements);
                         var filteringProducts = [];
                         if (minPrice != "" && maxPrice != "") {
+                            if (maxPrice == 0) {
+                                maxPrice = 10000000;
+                            }
+
                             if (minPrice <= maxPrice) {
                                 products.forEach((product) => {
                                     if (product.Price >= minPrice && product.Price <= maxPrice) {
                                         filteringProducts.push(product);
                                     }
                                 })
+                                $("#applyButton").off();
                                 GetData(sortingTitle, sortingPrice, filteringProducts);
                             }
                         }
@@ -148,6 +152,7 @@
                                     filteringProducts.push(product);
                                 }
                             })
+                            $("#applyButton").off();
                             GetData(sortingTitle, sortingPrice, filteringProducts);
                         }
                         else if (maxPrice != "") {
@@ -156,12 +161,60 @@
                                     filteringProducts.push(product);
                                 }
                             })
+                            $("#applyButton").off();
                             GetData(sortingTitle, sortingPrice, filteringProducts);
                         }
                         else {
+                            $("#applyButton").off();
                             GetData(sortingTitle, sortingPrice, products);
                         }
-                        console.log("applyButton");
+
+                        //Insert information about the price filter
+                        if (filteringProducts.length > 0) {
+                            if (minPrice == "") {
+                                $("#priceInformation").html("Min Price: " + 0 + "&nbsp;" + "&nbsp;" + "&nbsp;" + "&nbsp;" + "Max Price: " + maxPrice +
+                                    "&nbsp;" + "&nbsp;" + "&nbsp;" + "&nbsp;" +
+                                    "<button class=\"btn\" id=\"btnReset\">Reset</button>"
+                                );
+                                $("#btnReset").click(() => {
+                                    $("#applyButton").off();
+                                    $("#btnReset").off();
+                                    GetData(sortingTitle, sortingPrice, products);
+                                    $("#priceInformation").empty();
+                                    console.log("Reset");
+                                });
+                            }
+                            else if (maxPrice == "" || maxPrice == 10000000) {
+                                $("#priceInformation").html("Min Price: " + minPrice + "&nbsp;" + "&nbsp;" + "Max Price: " + "&infin;" +
+                                    "&nbsp;" + "&nbsp;" + "&nbsp;" + "&nbsp;" +
+                                    "<button class=\"btn\" id=\"btnReset\">Reset</button>"
+                                );
+                                $("#btnReset").click(() => {
+                                    $("#applyButton").off();
+                                    $("#btnReset").off();
+                                    GetData(sortingTitle, sortingPrice, products);
+                                    $("#priceInformation").empty();
+                                    console.log("Reset");
+                                });
+                            }
+                            else {
+                                $("#priceInformation").html("Min Price: " + minPrice + "&nbsp;" + "&nbsp;" + "Max Price: " + maxPrice +
+                                    "&nbsp;" + "&nbsp;" + "&nbsp;" + "&nbsp;" +
+                                    "<button class=\"btn\" id=\"btnReset\">Reset</button>"
+                                );
+                                $("#btnReset").click(() => {
+                                    $("#applyButton").off();
+                                    $("#btnReset").off();
+                                    GetData(sortingTitle, sortingPrice, products);
+                                    $("#priceInformation").empty();
+                                    console.log("Reset");
+                                });
+                            }
+                        }
+                        else {
+                            $("#priceInformation").empty();
+                        }
+                        console.log("applButton");
                     })
 
 

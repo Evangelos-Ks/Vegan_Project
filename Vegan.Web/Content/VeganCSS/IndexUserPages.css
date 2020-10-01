@@ -45,6 +45,7 @@
             display: inline;
             color: dimgrey;
             margin-right: 8px;
+            outline-color: #e98747;
         }
 
         .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label {
@@ -90,6 +91,7 @@
     font-weight: 600;
     color: tomato;
     transition: 0.4s;
+    outline: none
 }
 
     .contentbox-wrapper .contentbox .header-wrapper .container .header .priceInf span #btnReset:hover {

@@ -55,39 +55,42 @@
                                     <input id="minPrice" type="number" name="minPrice" value="" min="0" />
                                     <br />
                                     <label for="maxPrice">Max Price: </label>
-                                    <input id="maxPrice" type="number" name="maxPrice" value="" min="0" />
+                                    <input id="maxPrice" type="number" name="maxPrice" value="" min="1" />
                                     <br />
-                                    <input type="submit" name="" value="Apply" class="btn" id="applyButton"/>
+                                    <input type="submit" name="" value="Apply" class="btn" id="applyButton" />
                                 </form>
+                            </div>
+                            <div class="text-right priceInf">
+                                <span id="priceInformation"></span>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="content-wrapper clearfix">
-                    <div class="content" id="mainContent">
-                        <div class="product" dir-paginate="product in AllProducts | itemsPerPage: 12">
-                            <div class="frame"></div>
-                            <div class="image" style="background-image: url({{product.ImageURL}});"><img src={{product.ImageURL}} alt="{{product.Title}}"></div>
-                            <div class="info">
-                                <div class="info-data">
-                                    <div>
+                    <div class="content-wrapper clearfix">
+                        <div class="content" id="mainContent">
+                            <div class="product" dir-paginate="product in AllProducts | itemsPerPage: 12">
+                                <div class="frame"></div>
+                                <div class="image" style="background-image: url({{product.ImageURL}});"><img src={{product.ImageURL}} alt="{{product.Title}}"></div>
+                                <div class="info">
+                                    <div class="info-data">
                                         <div>
-                                            <div class="morebutton"><a ng-click="UrlBuilder(product)" class="btn">Read More</a></div>
-                                            <div class="price">
-                                                <span class="yourprice">Your Price: <strong>€{{product.Price}}</strong></span>
-                                            </div>
-                                            <div class="cartbutton">
+                                            <div>
+                                                <div class="morebutton"><a ng-click="UrlBuilder(product)" class="btn">Read More</a></div>
+                                                <div class="price">
+                                                    <span class="yourprice">Your Price: <strong>€{{product.Price}}</strong></span>
+                                                </div>
+                                                <div class="cartbutton">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <h3><a ng-click="UrlBuilder(product)"><span><span>{{product.Title}}</span></span></a></h3>
                             </div>
-                            <h3><a ng-click="UrlBuilder(product)"><span><span>{{product.Title}}</span></span></a></h3>
                         </div>
                     </div>
-                </div>
-                <div id="pagination">
-                    <dir-pagination-controls id="paginationAllProducts"></dir-pagination-controls>
+                    <div id="pagination">
+                        <dir-pagination-controls id="paginationAllProducts"></dir-pagination-controls>
+                    </div>
                 </div>
             </div>
         </div>

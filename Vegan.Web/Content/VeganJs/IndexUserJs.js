@@ -3,7 +3,10 @@
     $("#minPrice").change(() => {
         var minPrice = $("#minPrice").val();
         if (minPrice === "") {
-            $("#maxPrice").attr("min", 0);
+            $("#maxPrice").attr("min", 1);
+        }
+        else if (minPrice == 0) {
+            $("#maxPrice").attr("min", 1);
         }
         else {
             $("#maxPrice").attr("min", minPrice);
