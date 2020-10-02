@@ -73,14 +73,18 @@
                                 <div class="info">
                                     <div class="info-data">
                                         <div>
-                                            <div>
-                                                <div class="morebutton"><a ng-click="UrlBuilder(product)" class="btn">Read More</a></div>
-                                                <div class="price">
-                                                    <span class="yourprice">Your Price: <strong>€{{product.Price}}</strong></span>
+                                            <form action="/ECommerce/Add" method="post">
+                                                <input type="hidden" name="ProductId" value={{product.Id}} />
+                                                <div style="padding-top:60px">
+                                                    <div class="morebutton"><a ng-click="UrlBuilder(product)" class="btn">Read More</a></div>
+                                                    <div class="price">
+                                                        <span class="yourprice">Your Price: <strong>€{{product.Price}}</strong></span>
+                                                    </div>
+                                                    <div class="cartbutton">
+                                                        <a class="btn" style="max-width:120px; text-align:center; padding-left:8px; padding-right:8px;" href="javascript:void(0);" onclick="$(this).closest('form').submit();">Add to cart</a>
+                                                    </div>
                                                 </div>
-                                                <div class="cartbutton">
-                                                </div>
-                                            </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
