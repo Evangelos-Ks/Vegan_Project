@@ -13,7 +13,7 @@
     .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a, .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn, .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting .sortButtons {
         border: none;
         border-radius: 5px 5px 5px 5px;
-        background-color: #ded9ce;
+        background-color: rgba(221, 221, 219, 0.66);
         color: dimgrey;
         font-weight: 600;
         font-size: 13px;
@@ -36,7 +36,7 @@
     }
 
     .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu {
-        background-color: #ded9ce;
+        background-color: rgba(221, 221, 219, 0.96);
         text-align: right;
     }
 
@@ -91,7 +91,8 @@
     font-weight: 600;
     color: tomato;
     transition: 0.4s;
-    outline: none
+    outline: none;
+    padding-top: 3px;
 }
 
     .contentbox-wrapper .contentbox .header-wrapper .container .header .priceInf span #btnReset:hover {
@@ -118,7 +119,7 @@
     color: #9b9388;
 }
 
-    .contentbox-wrapper .contentbox .content-wrapper .paging #pageSize {
+    .contentbox-wrapper .contentbox .content-wrapper .paging #pageSize, #pageSizeAllProducts {
         width: auto;
         padding-top: 6px;
         padding-bottom: 6px;
@@ -129,24 +130,25 @@
         font-size: 14px;
         border: none;
         border-radius: 5px 5px 5px 5px;
-        background-color: #ded9ce;
+        background-color: rgba(221, 221, 219, 0.66);
         color: dimgrey;
         cursor: pointer;
         transition: 0.4s;
+        outline: none;
     }
 
-        .contentbox-wrapper .contentbox .content-wrapper .paging #pageSize:hover {
+        .contentbox-wrapper .contentbox .content-wrapper .paging #pageSize:hover, #pageSizeAllProducts:hover {
             background-color: #e98747;
         }
 
-    .contentbox-wrapper .contentbox .content-wrapper .paging #form div #pageSize option {
-        font-weight: 600;
-        font-size: 13px;
-        border: none;
-        border-radius: 5px 5px 5px 5px;
-        background-color: #ded9ce;
-        color: dimgrey;
-    }
+        .contentbox-wrapper .contentbox .content-wrapper .paging #form div #pageSize option, #pageSizeAllProducts option {
+            font-weight: 600;
+            font-size: 13px;
+            border: none;
+            border-radius: 5px 5px 5px 5px;
+            background-color: rgba(221, 221, 219, 1);
+            color: dimgrey;
+        }
 
     .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a, #paginationAllProducts ul li a {
         border-color: #ded9ce;
@@ -158,7 +160,7 @@
     }
 
     .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination .active a, #paginationAllProducts ul .active a {
-        background-color: #ded9ce;
+        background-color: rgba(221, 221, 219, 1);
     }
 
     .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a:hover, #paginationAllProducts ul li a:hover {

@@ -6,7 +6,7 @@
     //============================================== VeganController =======================================================
     var productsPerCategoryUrl = "/api/CategoriesAPI";
     var VeganController = function ($scope, $http) {
-        var GetData = function (sortingTitle = true, sortingPrice = true, sortedProducts = null) {
+        var GetData = function (sortingTitle = true, sortingPrice = true, sortedProducts = null, pageSize) {
             $http.get(productsPerCategoryUrl)
                 .then(function (response) {
                     $scope.Care = response.data[0];
@@ -20,6 +20,7 @@
                         $scope.AllProducts = sortedProducts;
                     }
                     $scope.NumberOfProducts = $scope.AllProducts.length;
+                    $scope.PageSize = pageSize ?? 12;
 
                     //autocomplete
                     autocomplete(document.getElementById("searchlight"), AutocompleteItems($scope.AllProducts));
@@ -53,6 +54,7 @@
                             $("#applyButton").off();
                             $("#sortButtonPrice").off();
                             $("#sortButtonTitle").off();
+                            $("#pageSizeAllProducts").off();
                             sortedProducts = $scope.AllProducts.sort((a, b) => {
                                 var keyA = a.Title;
                                 var keyB = b.Title;
@@ -63,7 +65,7 @@
                             console.log("sortButtonTitleIf");
 
                             sortingTitle = false;
-                            GetData(sortingTitle, sortingPrice, sortedProducts);
+                            GetData(sortingTitle, sortingPrice, sortedProducts, pageSize);
                         });
                     }
                     else {
@@ -71,6 +73,7 @@
                             $("#applyButton").off();
                             $("#sortButtonPrice").off();
                             $("#sortButtonTitle").off();
+                            $("#pageSizeAllProducts").off();
                             sortedProducts = $scope.AllProducts.sort((a, b) => {
                                 var keyA = a.Title;
                                 var keyB = b.Title;
@@ -81,7 +84,7 @@
                             console.log("sortButtonTitleElse");
 
                             sortingTitle = true;
-                            GetData(sortingTitle, sortingPrice, sortedProducts);
+                            GetData(sortingTitle, sortingPrice, sortedProducts, pageSize);
                         });
                     }
 
@@ -90,6 +93,7 @@
                             $("#applyButton").off();
                             $("#sortButtonPrice").off();
                             $("#sortButtonTitle").off();
+                            $("#pageSizeAllProducts").off();
                             sortedProducts = $scope.AllProducts.sort((a, b) => {
                                 var keyA = a.Price;
                                 var keyB = b.Price;
@@ -100,7 +104,7 @@
                             console.log("sortButtonPriceIf");
 
                             sortingPrice = false;
-                            GetData(sortingTitle, sortingPrice, sortedProducts);
+                            GetData(sortingTitle, sortingPrice, sortedProducts, pageSize);
                         });
                     }
                     else {
@@ -108,6 +112,7 @@
                             $("#applyButton").off();
                             $("#sortButtonPrice").off();
                             $("#sortButtonTitle").off();
+                            $("#pageSizeAllProducts").off();
                             sortedProducts = $scope.AllProducts.sort((a, b) => {
                                 var keyA = a.Price;
                                 var keyB = b.Price;
@@ -118,7 +123,7 @@
                             console.log("sortButtonPriceElse");
 
                             sortingPrice = true;
-                            GetData(sortingTitle, sortingPrice, sortedProducts);
+                            GetData(sortingTitle, sortingPrice, sortedProducts, pageSize);
                         });
                     }
 
@@ -126,6 +131,7 @@
                     $("#applyButton").click(function ApplyButton() {
                         $("#sortButtonPrice").off();
                         $("#sortButtonTitle").off();
+                        $("#pageSizeAllProducts").off();
                         var minPrice = $("#minPrice").val();
                         var maxPrice = $("#maxPrice").val();
 
@@ -143,7 +149,7 @@
                                     }
                                 })
                                 $("#applyButton").off();
-                                GetData(sortingTitle, sortingPrice, filteringProducts);
+                                GetData(sortingTitle, sortingPrice, filteringProducts, pageSize);
                             }
                         }
                         else if (minPrice != "") {
@@ -153,7 +159,7 @@
                                 }
                             })
                             $("#applyButton").off();
-                            GetData(sortingTitle, sortingPrice, filteringProducts);
+                            GetData(sortingTitle, sortingPrice, filteringProducts, pageSize);
                         }
                         else if (maxPrice != "") {
                             products.forEach((product) => {
@@ -162,11 +168,11 @@
                                 }
                             })
                             $("#applyButton").off();
-                            GetData(sortingTitle, sortingPrice, filteringProducts);
+                            GetData(sortingTitle, sortingPrice, filteringProducts, pageSize);
                         }
                         else {
                             $("#applyButton").off();
-                            GetData(sortingTitle, sortingPrice, products);
+                            GetData(sortingTitle, sortingPrice, products, pageSize);
                         }
 
                         //Insert information about the price filter
@@ -179,7 +185,7 @@
                                 $("#btnReset").click(() => {
                                     $("#applyButton").off();
                                     $("#btnReset").off();
-                                    GetData(sortingTitle, sortingPrice, products);
+                                    GetData(sortingTitle, sortingPrice, products, pageSize);
                                     $("#priceInformation").empty();
                                     console.log("Reset");
                                 });
@@ -192,7 +198,7 @@
                                 $("#btnReset").click(() => {
                                     $("#applyButton").off();
                                     $("#btnReset").off();
-                                    GetData(sortingTitle, sortingPrice, products);
+                                    GetData(sortingTitle, sortingPrice, products, pageSize);
                                     $("#priceInformation").empty();
                                     console.log("Reset");
                                 });
@@ -205,7 +211,7 @@
                                 $("#btnReset").click(() => {
                                     $("#applyButton").off();
                                     $("#btnReset").off();
-                                    GetData(sortingTitle, sortingPrice, products);
+                                    GetData(sortingTitle, sortingPrice, products, pageSize);
                                     $("#priceInformation").empty();
                                     console.log("Reset");
                                 });
@@ -217,6 +223,17 @@
                         console.log("applButton");
                     })
 
+                    //Page Size
+                    $("#pageSizeAllProducts").change(() => {
+                        $("#applyButton").off();
+                        $("#sortButtonPrice").off();
+                        $("#sortButtonTitle").off();
+                        $("#pageSizeAllProducts").off();
+                        var value = $("#pageSizeAllProducts").val();
+                        console.log("pageSize : " + value);
+                        $scope.PageSize = value;
+                        GetData(sortingTitle, sortingPrice, sortedProducts, value);
+                    })
 
                     $scope.UrlBuilder = function UrlBuilder(product) {
                         if (product.SubCategory == "FaceCream") {

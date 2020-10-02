@@ -67,7 +67,7 @@
                     </div>
                     <div class="content-wrapper clearfix">
                         <div class="content" id="mainContent">
-                            <div class="product" dir-paginate="product in AllProducts | itemsPerPage: 12">
+                            <div class="product" dir-paginate="product in AllProducts | itemsPerPage: PageSize">
                                 <div class="frame"></div>
                                 <div class="image" style="background-image: url({{product.ImageURL}});"><img src={{product.ImageURL}} alt="{{product.Title}}"></div>
                                 <div class="info">
@@ -92,8 +92,21 @@
                             </div>
                         </div>
                     </div>
-                    <div id="pagination">
-                        <dir-pagination-controls id="paginationAllProducts"></dir-pagination-controls>
+                    <div id="pagination" class="container">
+                        <div>
+                            <div>
+                                Items per page
+                                <select id="pageSizeAllProducts" name="pageSize">
+                                    <option value="">12</option>
+                                    <option value="6">6</option>
+                                    <option value="12">12</option>
+                                    <option value="24">24</option>
+                                    <option value="36">36</option>
+                                    <option value={{NumberOfProducts}}>All</option>
+                                </select>
+                            </div>
+                            <dir-pagination-controls id="paginationAllProducts"></dir-pagination-controls>
+                        </div>
                     </div>
                 </div>
             </div>
