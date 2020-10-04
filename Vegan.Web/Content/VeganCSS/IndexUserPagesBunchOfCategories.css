@@ -1,0 +1,39 @@
+﻿body {
+    font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
+}
+
+#subcategories {
+    margin-top: 0;
+    margin-bottom: 80px;
+}
+
+    #subcategories .docsection #pageheader .docsection .breadcrumbs-wrapper .breadcrumbs section p {
+        font-stretch: condensed;
+        color: blue;
+    }
+
+    #subcategories .docsection #top .contentbox-wrapper .contentbox .productlist .docsection .content-wrapper .content .subcats-wrapper ul {
+        list-style-type: none;
+        margin-top: 80px;
+    }
+
+        #subcategories .docsection #top .contentbox-wrapper .contentbox .productlist .docsection .content-wrapper .content .subcats-wrapper ul li {
+            display: inline;
+            margin: 10px;
+        }
+
+            #subcategories .docsection #top .contentbox-wrapper .contentbox .productlist .docsection .content-wrapper .content .subcats-wrapper ul li a {
+                font-size: 20px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                padding-left: 30px;
+                padding-right: 30px;
+                width: 190px;
+                color: dimgrey;
+                transition: 0.4s;
+            }
+
+                #subcategories .docsection #top .contentbox-wrapper .contentbox .productlist .docsection .content-wrapper .content .subcats-wrapper ul li a:hover {
+                    background-color: dimgrey;
+                    color: #e98747;
+                }
