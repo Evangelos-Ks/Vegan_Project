@@ -1,12 +1,15 @@
 ﻿@model IEnumerable<Vegan.Entities.Home.Home>
 
 @{
-    ViewBag.Title = "Home Vegan Products";
+    ViewBag.Title = "HomeVegan Products";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/VeganCSS/IndexUserPagesBunchOfCategories.css" rel="stylesheet" />
 
 <div id="subcategories" class="othercategories docsection-wrapper">
     <div class="docsection boxed">
-
         <div id="pageheader" class="docsection-wrapper">
             <div class="docsection boxed">
                 <div class="breadcrumbs-wrapper clearfix">
@@ -19,7 +22,7 @@
                 <div class="title-wrapper clearfix">
                     <div class="title">
                         <header>
-                            <h1>Home Vegan Products</h1>
+                            <h1>Home Products</h1>
                         </header>
                     </div>
                 </div>
@@ -28,51 +31,31 @@
         <div id="top" pxlurl="[product_url]">
             <div class="contentbox-wrapper">
                 <div class="contentbox">
-
                     <div class="productlist docsection-wrapper">
                         <div class="docsection boxed">
-
                             <div class="content-wrapper clearfix">
                                 <div class="content">
                                     <div class="subcats-wrapper clearfix">
                                         <div class="header-wrapper clearfix">
-                                            <div class="header">
-                                                <header>
-                                                    <h2>
-                                                        <small>Total Items of all categories: @Model.ToList().Count() </small>
-                                                    </h2>
-                                                </header>
+                                            <div class="container">
+                                                <div class="header">
+                                                    Total Items of all categories: @Model.ToList().Count()
+                                                </div>
                                             </div>
                                         </div>
                                         <ul class="columns-5">
-                                            <div class="subcats">
-                                                <section>
-                                                    <ul style="list-style: none;">
-                                                        <li><a href="/Candle/IndexUser"><span><span> Candles</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </section>
-                                            </div>
-                                            <div class="subcats">
-                                                <section>
-                                                    <ul>
-                                                        <li><a href="/EssentialOil/IndexUser"><span><span>Essential Oils</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </section>
-                                            </div>
-                                            <div class="subcats">
-                                                <section>
-                                                    <ul>
-                                                        <li><a href="/HomeCleaning/IndexUser"><span><span>Home cleaning</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </section>
-                                            </div>
-                                            <div class="subcats">
-                                                <section>
-                                                    <ul>
-                                                        <li><a href="/Kitchen/IndexUser"><span><span>Kitchen</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </section>
-                                            </div>
+                                            <li class="subcats">
+                                                <a href="/Candle/IndexUser" class="btn col-2">Candles</a>
+                                            </li>
+                                            <li class="subcats">
+                                                <a href="/EssentialOil/IndexUser" class="btn col-2">Essential Oils</a>
+                                            </li>
+                                            <li class="subcats">
+                                                <a href="/HomeCleaning/IndexUser" class="btn col-2">Home Cleaning</a>
+                                            </li>
+                                            <li class="subcats">
+                                                <a href="/Kitchen/IndexUser" class="btn col-2">Kitchen</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -84,4 +67,3 @@
         </div>
     </div>
 </div>
-
