@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/print.css?vcart=10.1.4" type="text/css" media="print" />
     <link rel="stylesheet" href="~/Content/assets/templates/vegan2020/css/messagebar.min.css?vcart=10.1.4" type="text/css" media="screen" />
     <link href="~/Content/assets/templates/vegan2020/css/main.css" rel="stylesheet" />
-    
+
     <script type="text/javascript">
         if (typeof jQuery == 'undefined') {
             document.write("<script type=\"text/javascript\" src=\"~/Content/assets/templates/vegan2020/js/jquery-1.11.1.min.js?vcart=10.1.4\"></" + "script>");
@@ -83,10 +83,10 @@
 
     <script src="~/Scripts/jquery.signalR-2.2.2.js"></script>
     <script src="~/Scripts/angular.js"></script>
-    
+
 
 </head>
-<body>
+<body ng-controller="VeganController" ng-app="VeganProject">
     <nav>
         @RenderPage("~/Views/Shared/Components/User/_NavigationBarUser.cshtml")
     </nav>
