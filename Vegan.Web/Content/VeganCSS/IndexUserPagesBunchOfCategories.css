@@ -9,7 +9,15 @@
 
     #subcategories .docsection #pageheader .docsection .breadcrumbs-wrapper .breadcrumbs section p {
         font-stretch: condensed;
-        color: #e98747;
+        color: #cf8a2b;
+    }
+
+        #subcategories .docsection #pageheader .docsection .breadcrumbs-wrapper .breadcrumbs section p a:hover {
+            color: black;
+        }
+
+    #subcategories .docsection #pageheader .docsection .title-wrapper .title header h1 {
+        color: #cf8a2b;
     }
 
     #subcategories .docsection #top .contentbox-wrapper .contentbox .productlist .docsection .content-wrapper .content .subcats-wrapper ul {
@@ -34,6 +42,6 @@
             }
 
                 #subcategories .docsection #top .contentbox-wrapper .contentbox .productlist .docsection .content-wrapper .content .subcats-wrapper ul li a:hover {
-                    background-color: gray;
-                    color: #e98747;
+                    background-color: #cf8a2b;
+                    color: black;
                 }

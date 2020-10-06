@@ -47,3 +47,7 @@
             body footer .footerbox-wrapper .footerbox #footerbar .boxed a:hover {
                 color: #cf8a2b;
             }
+
+        body footer .footerbox-wrapper .footerbox #footerbar .boxed a i{
+            align-self:baseline;
+        }
