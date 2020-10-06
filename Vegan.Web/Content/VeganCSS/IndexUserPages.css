@@ -4,7 +4,16 @@
 
 .contentbox-wrapper .contentbox #pageheader div .breadcrumbs-wrapper .breadcrumbs section p {
     font-stretch: condensed;
-    color: #e98747;
+    color: #cf8a2b;
+    transition: 0.4s;
+}
+
+    .contentbox-wrapper .contentbox #pageheader div .breadcrumbs-wrapper .breadcrumbs section p a:hover {
+        color: black;
+    }
+
+.contentbox-wrapper .contentbox #pageheader div .title-wrapper .title header h1 {
+    color: #cf8a2b;
 }
 
 .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting {
@@ -24,8 +33,8 @@
     }
 
         .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a:hover, .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting .sortButtons:hover {
-            background-color: dimgrey;
-            color: #e98747;
+            background-color: #cf8a2b;
+            color: black;
         }
 
 .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown {
@@ -34,8 +43,8 @@
 }
 
     .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn:hover {
-        background-color: dimgrey;
-        color: #e98747;
+        background-color: #cf8a2b;
+        color: black;
     }
 
     .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu {
@@ -48,7 +57,7 @@
             display: inline;
             color: dimgrey;
             margin-right: 8px;
-            outline-color: #e98747;
+            outline-color: #cf8a2b;
         }
 
         .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label {
@@ -72,11 +81,11 @@
                 margin-left: 85px;
                 margin-top: 5px;
                 font-size: 13px;
-                background-color: dimgrey;
-                color: #e98747;
                 font-weight: 600;
                 transition: 0.4s;
                 padding: inherit;
+                background-color: #cf8a2b;
+                color: black;
             }
 
                 .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input:last-child:hover {
@@ -114,6 +123,11 @@
         transition: 0.4s;
     }
 
+        .contentbox-wrapper .contentbox .content-wrapper .content .info a:hover {
+            background-color: #cf8a2b;
+            font-weight: 600;
+        }
+
     .contentbox-wrapper .contentbox .content-wrapper .content .product h3 a {
         height: fit-content;
         margin: auto;
@@ -143,8 +157,8 @@
     }
 
         .contentbox-wrapper .contentbox .content-wrapper .paging #pageSize:hover, #pageSizeAllProducts:hover {
-            background-color: dimgrey;
-            color: #e98747;
+            background-color: #cf8a2b;
+            color: black;
         }
 
         .contentbox-wrapper .contentbox .content-wrapper .paging #form div #pageSize option, #pageSizeAllProducts option {
@@ -170,6 +184,6 @@
     }
 
     .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a:hover, #paginationAllProducts ul li a:hover {
-        background-color: dimgrey;
-        color: #e98747;
+        background-color: #cf8a2b;
+        color: black;
     }

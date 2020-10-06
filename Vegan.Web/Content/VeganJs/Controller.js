@@ -9,6 +9,7 @@
         var GetData = function (sortingTitle = true, sortingPrice = true, sortedProducts = null, pageSize) {
             $http.get(productsPerCategoryUrl)
                 .then(function (response) {
+                    console.log("AjaxCall");
                     $scope.Care = response.data[0];
                     $scope.FoodHerbs = response.data[1];
                     $scope.Homes = response.data[2];
