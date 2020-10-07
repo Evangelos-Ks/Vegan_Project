@@ -2,21 +2,22 @@
     ViewBag.Title = "Contact";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
+<link href="~/Content/VeganCSS/Contact.css" rel="stylesheet" />
 
                 <div id="pageheader" class="docsection-wrapper">
                     <div class="docsection boxed">
                         <div class="breadcrumbs-wrapper clearfix">
                             <div class="breadcrumbs">
                                 <section>
-                                    <p><a href="/">Home</a> > Contact Us</p>
+                                    <p><a href="/">Home</a> > <a href="/Home/Contact">Contact Us</a></p>
                                 </section>
                             </div>
                         </div>
                         <div class="title-wrapper clearfix">
                             <div class="title">
-                                <head>
+                                <header>
                                     <h1>Contact Us</h1>
-                                </head>
+                                </header>
                             </div>
                         </div>
                     </div>
@@ -78,7 +79,7 @@
                                             <textarea name="reply" id="reply" tabindex="6" class="txtBoxStyle"></textarea>
                                     </div>
                                     <div id="divSubmitButton" class="update-btn">
-                                        <button type="button" @*onclick="javascript:addNew();"*@ class="btn"><i class="icon-pencil"></i> Submit Request</button>
+                                        <button type="button" class="btn"> Submit Request</button>
                                     </div>
                                 </form>
                             </div>
