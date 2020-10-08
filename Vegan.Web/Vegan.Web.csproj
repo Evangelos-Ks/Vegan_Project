@@ -330,6 +330,7 @@
     <Content Include="Content\now-ui-dashboard-master\gulpfile.js" />
     <Content Include="Content\now-ui-dashboard-master\nucleo-icons.html" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\VeganCSS\About.css" />
     <Content Include="Content\VeganCSS\Autocomplete.css" />
     <Content Include="Content\VeganCSS\ChangePassword.css" />
     <Content Include="Content\VeganCSS\Contact.css" />
