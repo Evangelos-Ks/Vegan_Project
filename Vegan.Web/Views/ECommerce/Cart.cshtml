@@ -5,6 +5,8 @@
     ViewBag.Title = "Shopping Cart";
 }
 
+<link href="~/Content/VeganCSS/Cart.css" rel="stylesheet" />
+
 @if (!Model.CartItems.Any())
 {
     <script type="text/javascript">
@@ -14,30 +16,26 @@
     </script>
     <body onload="load()">
     </body>
- 
-
 }
 else
 {
     <div id="top" pxlurl="[product_url]">
-
         <div class="contentbox-wrapper">
             <div class="contentbox">
-
                 <div id="pageheader" class="docsection-wrapper">
                     <div class="docsection boxed">
                         <div class="breadcrumbs-wrapper clearfix">
                             <div class="breadcrumbs">
                                 <section>
-                                    <p><a href="/Home/Index">Home</a> > Shopping Cart</p>
+                                    <p><a href="/Home/Index">Home</a> > <a href="#">Shopping Cart</a></p>
                                 </section>
                             </div>
                         </div>
                         <div class="title-wrapper clearfix">
                             <div class="title">
-                                <div>
+                                <header>
                                     <h1>My Shopping Cart</h1>
-                                </div>
+                                </header>
                             </div>
                         </div>
                     </div>
@@ -47,8 +45,6 @@ else
                         <a href="/Home/Index">Continue Shopping</a>
                     </div>
                 </div>
-
-
                 <div id="shoppingcart" class="docsection-wrapper">
                     <div class="docsection boxed">
                         <section id="viewCart">
@@ -57,115 +53,104 @@ else
                                 <input type="hidden" name="shipping_zip" value="[shipping_zip]" />
                                 <script type="text/javascript">document.shipquote.thispage.value = window.location.href;</script>
                             </form>
-                            
-
-                                <div class="updatebtn updatebtn-top">
-                                    <div style="min-height: 60px;"><a style="display: none;" class="btn btn-small update-qty" href="#" onclick="document.forms['recalculate'].submit();return false;">Update Cart</a></div>
+                            <div class="updatebtn updatebtn-top">
+                                <div style="min-height: 60px;"><a style="display: none;" class="btn btn-small update-qty" href="#" onclick="document.forms['recalculate'].submit();return false;">Update Cart</a></div>
+                            </div>
+                            <div class="shoppingCartItems" id="divshoppingCartItems">
+                                <div class="titles2">
+                                    <div class="item-info">ITEMS</div>
+                                    <div class="item-qty">QTY</div>
+                                    <div class="item-price">PRICE</div>
+                                    <div class="item-total">SUBTOTAL</div>
+                                    <div class="item-remove"></div>
                                 </div>
-
-                                <div class="shoppingCartItems" id="divshoppingCartItems">
-                                    <div class="titles2">
-                                        <div class="item-info">ITEMS</div>
-                                        <div class="item-qty">QTY</div>
-                                        <div class="item-price">PRICE</div>
-                                        <div class="item-total">SUBTOTAL</div>
-                                        <div class="item-remove"></div>
-                                    </div>
-
-
-                                    @foreach (var item in Model.CartItems)
-                                    {
-                                        <div class="row">
-                                            <div class="item-info">
-                                                <div class="product-image">
-                                                    <a href="#"><img src="@item.ImageUrl" /></a>
-                                                </div>
-                                                <div class="product-name-options">
+                                @foreach (var item in Model.CartItems)
+                                {
+                                    <div class="row">
+                                        <div class="item-info">
+                                            <div class="product-image">
+                                                @*<a href="#"><img src="@item.ImageUrl" /></a>*@
+                                                <img src="@item.ImageUrl" />
+                                            </div>
+                                            <div class="product-name-options">
+                                                <div>
                                                     <div>
-                                                        <div>
-                                                            <a href="#">@item.Name</a>
-                                                        </div>
+                                                        @*<a href="#">@item.Name</a>*@
+                                                        @item.Name
                                                     </div>
                                                 </div>
                                             </div>
-                                            @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
-                                            {
-                                                @Html.Hidden("ProductId", item.ProductId)
-                                                
-                                                    <div class="item-qty">
-                                                        <input type="number" step="1" min="1" max="3" size="3" value="@item.Quantity" name="quant" style="width:50px" />
-                                                        <a href="javascript:void(0);" onclick="$(this).closest('form').submit();"><i class="fa fa-refresh"  aria-hidden="true" style="float:inherit"></i> </a>
-                                                    </div>
-                                                
-                                            }
-
-                                            <div class="item-price">
-                                                @string.Format(@System.Globalization.CultureInfo.CurrentCulture = @System.Globalization.CultureInfo.CreateSpecificCulture("gr-GR"), "{0:c2}", item.Price)
-
-                                            </div>
-
-
-                                            <div class="item-total">
-                                                @string.Format(@System.Globalization.CultureInfo.CurrentCulture = @System.Globalization.CultureInfo.CreateSpecificCulture("gr-GR"), "{0:c2}", (item.Price * item.Quantity))
-                                            </div>
-
-
-                                            @using (Html.BeginForm("Delete", "ECommerce", FormMethod.Post))
-                                            {
-                                                @Html.Hidden("ProductId", item.ProductId)
-                                                <div class="item-remove">
-                                                    <button type="submit" class="btn"><i class="fa fa-times" aria-hidden="true"></i></button>
-                                                </div>
-                                            }
                                         </div>
-
-                                    }
-
-                                    @* ======================= UPDATE CART ========================== *@
-                                    <div class="updatebtn updatebtn-btm">
-                                        <div style="padding:30px"></div>
-                                    </div>
-                                    @* ============================================================== *@
-
-                                    <div class="shoppingCartTotal">
-                                        <div class="clearfix">
-                                            <div class="item-total-label"><strong>TOTAL</strong></div>
-                                            <div class="item-total-value item-total-total">
-                                                <strong>
-                                                    @string.Format(@System.Globalization.CultureInfo.CurrentCulture = @System.Globalization.CultureInfo.CreateSpecificCulture("gr-GR"), "{0:c2}", (Model.CartItems.Sum(x => x.Price * x.Quantity)))
-                                                </strong>
+                                        @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
+                                        {
+                                            @Html.Hidden("ProductId", item.ProductId)
+                                            <div class="item-qty">
+                                                <input type="number" step="1" min="1" max="3" size="3" value="@item.Quantity" name="quant" style="width:50px" />
+                                                <a href="javascript:void(0);" onclick="$(this).closest('form').submit();"><i class="fa fa-refresh" aria-hidden="true" style="float:inherit"></i> </a>
                                             </div>
-
+                                        }
+                                        <div class="item-price">
+                                            @string.Format(@System.Globalization.CultureInfo.CurrentCulture = @System.Globalization.CultureInfo.CreateSpecificCulture("gr-GR"), "{0:c2}", item.Price)
                                         </div>
-                                        <span>Note: Total include tax, shipping, and handling rates. </span>
-
-
+                                        <div class="item-total">
+                                            @string.Format(@System.Globalization.CultureInfo.CurrentCulture = @System.Globalization.CultureInfo.CreateSpecificCulture("gr-GR"), "{0:c2}", (item.Price * item.Quantity))
+                                        </div>
+                                        @using (Html.BeginForm("Delete", "ECommerce", FormMethod.Post))
+                                        {
+                                            @Html.Hidden("ProductId", item.ProductId)
+                                            <div class="item-remove">
+                                                <button type="submit" class="btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                            </div>
+                                        }
                                     </div>
 
-                                    @* ============================= PayPal ============================= *@
-                                    <div class="updatebtn updatebtn-btm" id="ChkButtonWrap">
-                                        <div class="form-group">
-                                            <label>In-line Checkout Experience</label>
-                                            <p>
-                                                <a href="@Url.Action("Checkout", "ECommerce")" class="btn btn-warning">Checkout with PayPal</a>
-                                            </p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Popup Checkout Experience</label>
-                                            <form id="myContainer" method="post" action="@Url.Action("Checkout", "ECommerce")"></form>
-                                            <script>
-                                                window.paypalCheckoutReady = function () {
-                                                    paypal.checkout.setup('BRKKN32NLUD56',
-                                                        {
-                                                            environment: 'sandbox',
-                                                            container: 'myContainer'
-                                                        });
-                                                };</script>
-                                            <script src="//www.paypalobjects.com/api/checkout.js" async></script>
-                                        </div> 
-                                    </div>
-                             
+                                }
+
+                                @* ======================= UPDATE CART ========================== *@
+                                <div class="updatebtn updatebtn-btm">
+                                    <div style="padding:30px"></div>
                                 </div>
+                                @* ============================================================== *@
+
+                                <div class="shoppingCartTotal">
+                                    <div class="clearfix">
+                                        <div class="item-total-label"><strong>TOTAL</strong></div>
+                                        <div class="item-total-value item-total-total">
+                                            <strong>
+                                                @string.Format(@System.Globalization.CultureInfo.CurrentCulture = @System.Globalization.CultureInfo.CreateSpecificCulture("gr-GR"), "{0:c2}", (Model.CartItems.Sum(x => x.Price * x.Quantity)))
+                                            </strong>
+                                        </div>
+
+                                    </div>
+                                    <span>Note: Total include tax, shipping, and handling rates. </span>
+
+
+                                </div>
+
+                                @* ============================= PayPal ============================= *@
+                                <div class="updatebtn updatebtn-btm" id="ChkButtonWrap">
+                                    <div class="form-group">
+                                        <label>In-line Checkout Experience</label>
+                                        <p>
+                                            <a href="@Url.Action("Checkout", "ECommerce")" class="btn btn-warning">Checkout with PayPal</a>
+                                        </p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Popup Checkout Experience</label>
+                                        <form id="myContainer" method="post" action="@Url.Action("Checkout", "ECommerce")"></form>
+                                        <script>
+                                            window.paypalCheckoutReady = function () {
+                                                paypal.checkout.setup('BRKKN32NLUD56',
+                                                    {
+                                                        environment: 'sandbox',
+                                                        container: 'myContainer'
+                                                    });
+                                            };</script>
+                                        <script src="//www.paypalobjects.com/api/checkout.js" async></script>
+                                    </div>
+                                </div>
+
+                            </div>
                         </section>
 
                     </div>

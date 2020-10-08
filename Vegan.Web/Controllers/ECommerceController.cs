@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 using Vegan.Database;
 using Vegan.Entities.DomainClasses.Sales;
@@ -13,7 +14,7 @@ namespace Vegan.Web.Controllers
     public class ECommerceController : Controller
     {
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
-        
+
         public ActionResult Cart()
         {
             var cart = CreateOrGetCart();
@@ -32,7 +33,7 @@ namespace Vegan.Web.Controllers
                 Session["Price"] = 0m;
             if (existingItem != null)
             {
-                if (quantity==1)
+                if (quantity == 1)
                 {
                     existingItem.Quantity++;
                 }
@@ -40,7 +41,7 @@ namespace Vegan.Web.Controllers
                 {
                     existingItem.Quantity = quantity;
                 }
-                
+
                 Session["Price"] = cart.Sum();
             }
             else
@@ -65,7 +66,7 @@ namespace Vegan.Web.Controllers
 
         public ActionResult Delete(int ProductId)
         {
-            
+
             var product = unitOfWork.Products.GetById(ProductId);
             var cart = CreateOrGetCart();
             var existingItem = cart.CartItems.FirstOrDefault(x => x.ProductId == product.Id);
@@ -174,7 +175,7 @@ namespace Vegan.Web.Controllers
 
                 // Send the payment to PayPal
                 var createdPayment = payment.Create(apiContext);
-                
+
                 // Save a reference to the paypal payment
                 order.PayPalReference = createdPayment.id;
 

@@ -332,6 +332,7 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\VeganCSS\About.css" />
     <Content Include="Content\VeganCSS\Autocomplete.css" />
+    <Content Include="Content\VeganCSS\Cart.css" />
     <Content Include="Content\VeganCSS\ChangePassword.css" />
     <Content Include="Content\VeganCSS\Contact.css" />
     <Content Include="Content\VeganCSS\EmptyViewCart.css" />
@@ -1861,6 +1862,9 @@
       <Project>{6cb08aab-4499-4454-bf34-ad914cf50721}</Project>
       <Name>Vegan.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
