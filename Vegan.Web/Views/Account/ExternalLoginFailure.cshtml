@@ -2,6 +2,8 @@
     ViewBag.Title = "Login Failure";
 }
 
+<link href="~/Content/VeganCSS/LogInFailure.css" rel="stylesheet" />
+
 <div id="pageheader" class="docsection-wrapper">
     <div class="docsection boxed">
         <div class="breadcrumbs-wrapper clearfix">
@@ -13,9 +15,9 @@
         </div>
         <div class="title-wrapper clearfix">
             <div class="title">
-                <div>
+                <header>
                     <h1>Login Error</h1>
-                </div>
+                </header>
             </div>
         </div>
     </div>
@@ -24,10 +26,8 @@
     <div class="docsection boxed">
         <section id="message">
             <div class="dottedbox">
-                <form action="~/Account/Login">
-                    <div class="notice">Your email or password are incorrect! If you forgot your password, please visit the forgot your password page.</div>
-                    <button type="submit" value="Register" class="btn">Click here to continue</button>
-                </form>
+                <div class="notice">Your email or password is incorrect! If you forgot your password, please visit the forgot your password page.</div>
+                <a type="submit" href="/Account/LogIn" class="btn">Click here to continue</a>
             </div>
         </section>
     </div>

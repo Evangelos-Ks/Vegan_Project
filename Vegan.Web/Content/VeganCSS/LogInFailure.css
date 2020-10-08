@@ -1,0 +1,27 @@
+﻿#pageheader .docsection .breadcrumbs-wrapper .breadcrumbs section p {
+    color: #cf8a2b;
+}
+
+    #pageheader .docsection .breadcrumbs-wrapper .breadcrumbs section p a:hover {
+        color: black;
+    }
+
+#pageheader .docsection .title-wrapper .title header h1 {
+    color: #cf8a2b;
+}
+
+.docsection-wrapper .docsection #message .dottedbox {
+    border-radius: 6px 6px 6px 6px;
+}
+
+    .docsection-wrapper .docsection #message .dottedbox a {
+        border-radius: 6px 6px 6px 6px;
+        outline-color: #cf8a2b;
+        transition: 0.4s;
+    }
+
+        .docsection-wrapper .docsection #message .dottedbox a:hover {
+            background-color: #cf8a2b;
+            color: black;
+            border-color: #cf8a2b;
+        }
