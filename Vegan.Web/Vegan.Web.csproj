@@ -331,12 +331,14 @@
     <Content Include="Content\now-ui-dashboard-master\nucleo-icons.html" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\VeganCSS\Autocomplete.css" />
+    <Content Include="Content\VeganCSS\ChangePassword.css" />
     <Content Include="Content\VeganCSS\Contact.css" />
     <Content Include="Content\VeganCSS\EmptyViewCart.css" />
     <Content Include="Content\VeganCSS\Footer.css" />
     <Content Include="Content\VeganCSS\IndexUserPages.css" />
     <Content Include="Content\VeganCSS\IndexUserPagesBunchOfCategories.css" />
     <Content Include="Content\VeganCSS\LogIn.css" />
+    <Content Include="Content\VeganCSS\ManageIndex.css" />
     <Content Include="Content\VeganCSS\Nav.css" />
     <Content Include="Content\VeganCSS\Register.css" />
     <Content Include="Content\VeganJs\Autocomplete.js" />
