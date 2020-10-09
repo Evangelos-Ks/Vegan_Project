@@ -16,6 +16,7 @@ namespace Vegan.Web.Controllers.TestControllers
 
         //===================================== Action Methods =============================================================
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.Lotions.GetAll());
@@ -83,12 +84,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddLotion()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddLotion(Lotion model)
         {
             try
@@ -115,12 +118,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditLotion(int productId)
         {
             return View(unitOfWork.Lotions.GetById(productId));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditLotion(Lotion model)
         {
             if (ModelState.IsValid)
@@ -137,12 +142,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteLotion(int productId)
         {
             return View(unitOfWork.Lotions.GetById(productId));
         }
 
         [HttpPost, ActionName("DeleteLotion")]
+        [Authorize(Roles = "Admins")]
         public ActionResult Delete(int productId)
         {
 

@@ -18,6 +18,7 @@ namespace Vegan.Web.Controllers
 
         //===================================== Methods ====================================================================
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.Candles.GetAll());
@@ -85,19 +86,21 @@ namespace Vegan.Web.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddProduct()
         {
             return View();
         }
 
-
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddCandle()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddCandle(Candle model)
         {
             try
@@ -125,6 +128,7 @@ namespace Vegan.Web.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditCandle(int productId)
         {
 
@@ -132,6 +136,7 @@ namespace Vegan.Web.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditCandle(Candle model)
         {
             if (ModelState.IsValid)
@@ -148,12 +153,14 @@ namespace Vegan.Web.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteCandle(int productId)
         {
             return View(unitOfWork.Candles.GetById(productId));
         }
 
         [HttpPost, ActionName("DeleteCandle")]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeletePost(int productId)
         {
 

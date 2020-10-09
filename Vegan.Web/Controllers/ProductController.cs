@@ -14,6 +14,7 @@ namespace Vegan.Web.Controllers.TestControllers
         //===================================== Methods ====================================================================
        
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.Products.GetAll());
@@ -26,12 +27,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddProduct()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddProduct(Product model)
         {
             try
@@ -57,12 +60,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditProduct(int productId)
         {
             return View(unitOfWork.Products.GetById(productId));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditProduct(Product model)
         {
             if (ModelState.IsValid)
@@ -79,12 +84,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteProduct(int productId)
         {
             return View(unitOfWork.Products.GetById(productId));
         }
 
         [HttpPost, ActionName("DeleteProduct")]
+        [Authorize(Roles = "Admins")]
         public ActionResult Delete(int productId)
         {
 

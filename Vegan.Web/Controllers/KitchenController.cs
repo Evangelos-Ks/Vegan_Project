@@ -16,6 +16,7 @@ namespace Vegan.Web.Controllers.TestControllers
 
         //===================================== Action Methods =============================================================
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.Kitchens.GetAll());
@@ -83,12 +84,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddKitchen()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddKitchen(Kitchen model)
         {
             try
@@ -115,12 +118,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditKitchen(int productId)
         {
             return View(unitOfWork.Kitchens.GetById(productId));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditKitchen(Kitchen model)
         {
             if (ModelState.IsValid)
@@ -137,12 +142,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteKitchen(int productId)
         {
             return View(unitOfWork.Kitchens.GetById(productId));
         }
 
         [HttpPost, ActionName("DeleteKitchen")]
+        [Authorize(Roles = "Admins")]
         public ActionResult Delete(int productId)
         {
 

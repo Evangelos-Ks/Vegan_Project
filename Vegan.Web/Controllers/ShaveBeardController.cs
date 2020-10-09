@@ -16,6 +16,7 @@ namespace Vegan.Web.Controllers.TestControllers
 
         //===================================== Action Methods =============================================================
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.ShaveBeards.GetAll());
@@ -83,12 +84,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddShaveBeard()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddShaveBeard(ShaveBeard model)
         {
             try
@@ -114,12 +117,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditShaveBeard(int productId)
         {
             return View(unitOfWork.ShaveBeards.GetById(productId));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditShaveBeard(ShaveBeard model)
         {
             if (ModelState.IsValid)
@@ -136,12 +141,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteShaveBeard(int productId)
         {
             return View(unitOfWork.ShaveBeards.GetById(productId));
         }
 
         [HttpPost, ActionName("DeleteShaveBeard")]
+        [Authorize(Roles = "Admins")]
         public ActionResult Delete(int productId)
         {
 

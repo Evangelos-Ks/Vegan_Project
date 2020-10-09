@@ -270,16 +270,16 @@
             }
 
             var PasswordHash = new PasswordHasher();
-            if (!context.Users.Any(x => x.UserName == "admin@admin.net"))
+            if (!context.Users.Any(x => x.UserName == "admin1A@admin.net"))
             {
                 var store = new UserStore<ApplicationUser>(context);
                 var manager = new UserManager<ApplicationUser>(store);
                 var user = new ApplicationUser
                 {
-                    UserName = "admin@admin.net",
-                    Email = "admin@admin.net",
+                    UserName = "admin1A@admin.net",
+                    Email = "admin1A@admin.net",
 
-                    PasswordHash = PasswordHash.HashPassword("Admin1!")
+                    PasswordHash = PasswordHash.HashPassword("admin1A@admin.net")
                 };
 
                 manager.Create(user);

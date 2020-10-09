@@ -16,6 +16,7 @@ namespace Vegan.Web.Controllers.TestControllers
 
         //===================================== Methods ====================================================================
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.Teas.GetAll());
@@ -83,12 +84,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddTea()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddTea(Tea model)
         {
             try
@@ -115,12 +118,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditTea(int productId)
         {
             return View(unitOfWork.Teas.GetById(productId));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditTea(Tea model)
         {
             if (ModelState.IsValid)
@@ -137,12 +142,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteTea(int productId)
         {
             return View(unitOfWork.Teas.GetById(productId));
         }
 
         [HttpPost, ActionName("DeleteTea")]
+        [Authorize(Roles = "Admins")]
         public ActionResult Delete(int productId)
         {
 

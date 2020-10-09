@@ -16,6 +16,7 @@ namespace Vegan.Web.Controllers.TestControllers
 
         //===================================== Action Methods =============================================================
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.Spices.GetAll());
@@ -83,12 +84,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddSpice()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddSpice(Spice model)
         {
             try
@@ -115,12 +118,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditSpice(int productId)
         {
             return View(unitOfWork.Spices.GetById(productId));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditSpice(Spice model)
         {
             if (ModelState.IsValid)
@@ -137,12 +142,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteSpice(int productId)
         {
             return View(unitOfWork.Spices.GetById(productId));
         }
 
         [HttpPost, ActionName("DeleteSpice")]
+        [Authorize(Roles = "Admins")]
         public ActionResult Delete(int productId)
         {
 

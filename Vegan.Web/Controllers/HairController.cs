@@ -16,6 +16,7 @@ namespace Vegan.Web.Controllers.TestControllers
 
         //===================================== Action Methods =============================================================
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.Hairs.GetAll());
@@ -83,12 +84,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddHair()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddHair(Hair model)
         {
             try
@@ -115,12 +118,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditHair(int productId)
         {
             return View(unitOfWork.Hairs.GetById(productId));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditHair(Hair model)
         {
             if (ModelState.IsValid)
@@ -137,12 +142,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteHair(int productId)
         {
             return View(unitOfWork.Hairs.GetById(productId));
         }
 
         [HttpPost, ActionName("DeleteHair")]
+        [Authorize(Roles = "Admins")]
         public ActionResult Delete(int productId)
         {
 

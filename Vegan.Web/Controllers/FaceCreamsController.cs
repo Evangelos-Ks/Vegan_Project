@@ -16,6 +16,7 @@ namespace Vegan.Web.Controllers.TestControllers
 
         //===================================== Action Method ==============================================================
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.FaceCreams.GetAll());
@@ -83,12 +84,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddFaceCream()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddFaceCream(FaceCream model)
         {
             try
@@ -115,12 +118,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditFaceCream(int productId)
         {
             return View(unitOfWork.FaceCreams.GetById(productId));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditFaceCream(FaceCream model)
         {
             if (ModelState.IsValid)
@@ -137,11 +142,13 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteFaceCream(int productId)
         {
             return View(unitOfWork.FaceCreams.GetById(productId));
         }
 
+        [Authorize(Roles = "Admins")]
         [HttpPost, ActionName("DeleteFaceCream")]
         public ActionResult Delete(int productId)
         {

@@ -9,11 +9,12 @@ namespace Vegan.Web.Controllers
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: FoodHerb
-     // [Authorize(Roles = "Admins, Supervisors")]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.FoodHerbs.GetAll());
         }
+
         // GET: FoodHerb
         public ActionResult IndexUser()
         {

@@ -16,6 +16,7 @@ namespace Vegan.Web.Controllers.TestControllers
 
         //===================================== Methods ====================================================================
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.SproutingSeeds.GetAll());
@@ -82,12 +83,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddSproutingSeed()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddSproutingSeed(SproutingSeed model)
         {
             try
@@ -113,12 +116,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditSproutingSeed(int productId)
         {
             return View(unitOfWork.SproutingSeeds.GetById(productId));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditSproutingSeed(SproutingSeed model)
         {
             if (ModelState.IsValid)
@@ -135,12 +140,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteSproutingSeed(int productId)
         {
             return View(unitOfWork.SproutingSeeds.GetById(productId));
         }
 
         [HttpPost, ActionName("DeleteSproutingSeed")]
+        [Authorize(Roles = "Admins")]
         public ActionResult Delete(int productId)
         {
 

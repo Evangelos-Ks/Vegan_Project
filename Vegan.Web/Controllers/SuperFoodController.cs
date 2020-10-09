@@ -16,6 +16,7 @@ namespace Vegan.Web.Controllers.TestControllers
 
         //===================================== Action Methods =============================================================
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.SuperFoods.GetAll());
@@ -83,12 +84,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddSuperFood()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddSuperFood(SuperFood model)
         {
             try
@@ -114,12 +117,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditSuperFood(int productId)
         {
             return View(unitOfWork.SuperFoods.GetById(productId));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditSuperFood(SuperFood model)
         {
             if (ModelState.IsValid)
@@ -136,12 +141,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteSuperFood(int productId)
         {
             return View(unitOfWork.SuperFoods.GetById(productId));
         }
 
         [HttpPost, ActionName("DeleteSuperFood")]
+        [Authorize(Roles = "Admins")]
         public ActionResult Delete(int productId)
         {
 
