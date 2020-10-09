@@ -34,6 +34,7 @@
     border-radius: 6px 6px 6px 6px;
     border: 1px solid;
     outline-color: #cf8a2b;
+    text-align: center;
 }
 
 #top .contentbox-wrapper .contentbox #shoppingcart .docsection #viewCart .shoppingCartItems .row form .item-qty a > i {

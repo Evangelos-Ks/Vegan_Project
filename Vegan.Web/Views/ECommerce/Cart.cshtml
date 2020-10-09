@@ -121,28 +121,52 @@ else
                                 </div>
                                 <div class="updatebtn updatebtn-btm" id="ChkButtonWrap">
                                     <div class="form-group">
-                                        <label>In-line Checkout Experience</label>
-                                        <p>
-                                            <a href="@Url.Action("Checkout", "ECommerce")" class="btn btn-warning">Checkout with PayPal</a>
-                                        </p>
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <div>In-line Checkout Experience</div>
+                                            <p>
+                                                <a href="@Url.Action("Checkout", "ECommerce")" class="btn btn-warning">Checkout with PayPal</a>
+                                            </p>
+                                        }
+                                        else
+                                        {
+                                            <div>Log in or Register to continue</div>
+                                            <br />
+                                            <p>
+                                                <a href="@Url.Action("LogIn", "Account")" class="btn btn-warning">Log In</a>
+                                            </p>
+                                            <br />
+
+                                            <p>
+                                                <a href="@Url.Action("Register", "Account")" class="btn btn-warning">Register</a>
+                                            </p>
+                                        }
                                     </div>
                                     <div class="form-group">
-                                        <label>Popup Checkout Experience</label>
-                                        <form id="myContainer" method="post" action="@Url.Action("Checkout", "ECommerce")"></form>
-                                        <script>
-                                            window.paypalCheckoutReady = function () {
-                                                paypal.checkout.setup('BRKKN32NLUD56',
-                                                    {
-                                                        environment: 'sandbox',
-                                                        container: 'myContainer'
-                                                    });
-                                            };</script>
-                                        <script src="//www.paypalobjects.com/api/checkout.js" async></script>
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                            <div>Popup Checkout Experience</div>
+                                            <form id="myContainer" method="post" action="@Url.Action("Checkout", "ECommerce")"></form>
+                                            <script>
+                                                window.paypalCheckoutReady = function () {
+                                                    paypal.checkout.setup('BRKKN32NLUD56',
+                                                        {
+                                                            environment: 'sandbox',
+                                                            container: 'myContainer'
+                                                        });
+                                                };</script>
+                                            <script src="//www.paypalobjects.com/api/checkout.js" async></script>
+                                        }
+                                        else
+                                        {
+                                            @*<div>Register to continue</div>*@
+
+                                        }
+
                                     </div>
                                 </div>
                             </div>
                         </section>
-
                     </div>
                 </div>
             </div>
