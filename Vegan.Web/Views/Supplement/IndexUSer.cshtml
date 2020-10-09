@@ -1,19 +1,21 @@
 ﻿@model IEnumerable<Vegan.Entities.Supplement.Supplement>
 
 @{
-    ViewBag.Title = "Vegan Supplements";
+    ViewBag.Title = "Supplements Vegan";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/VeganCSS/IndexUserPagesBunchOfCategories.css" rel="stylesheet" />
+
 <div id="subcategories" class="othercategories docsection-wrapper">
     <div class="docsection boxed">
-
         <div id="pageheader" class="docsection-wrapper">
             <div class="docsection boxed">
                 <div class="breadcrumbs-wrapper clearfix">
                     <div class="breadcrumbs">
                         <section>
-                            <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/Supplement/IndexUser">Supplements</a></p>
+                            <p><a id='catCrumbSupplementLink' href='/'>Home</a> > <a href="/Supplement/IndexUser">Supplements</a></p>
                         </section>
                     </div>
                 </div>
@@ -29,37 +31,25 @@
         <div id="top" pxlurl="[product_url]">
             <div class="contentbox-wrapper">
                 <div class="contentbox">
-
                     <div class="productlist docsection-wrapper">
                         <div class="docsection boxed">
-
                             <div class="content-wrapper clearfix">
                                 <div class="content">
                                     <div class="subcats-wrapper clearfix">
                                         <div class="header-wrapper clearfix">
-                                            <div class="header">
-                                                <header>
-                                                    <h2>
-                                                        <small>Total Items of all categories: @Model.ToList().Count() </small>
-                                                    </h2>
-                                                </header>
+                                            <div class="container">
+                                                <div class="header">
+                                                    Total Items of all categories: @Model.ToList().Count()
+                                                </div>
                                             </div>
                                         </div>
                                         <ul class="columns-5">
-                                            <div class="subcats">
-                                                <section>
-                                                    <ul style="list-style: none;">
-                                                        <li><a href="/PowerHealth/IndexUser"><span><span> PowerHealth</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </section>
-                                            </div>
-                                            <div class="subcats">
-                                                <section>
-                                                    <ul>
-                                                        <li><a href="/SuperFood/IndexUser"><span><span>SuperFood</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </section>
-                                            </div>
+                                            <li class="subcats">
+                                                <a href="/PowerHealth/IndexUser" class="btn col-2">PowerHealth</a>
+                                            </li>
+                                            <li class="subcats">
+                                                <a href="/SuperFood/IndexUser" class="btn col-2">SuperFoods</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -71,4 +61,3 @@
         </div>
     </div>
 </div>
-

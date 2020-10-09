@@ -1,8 +1,8 @@
 ﻿
 <link href="~/Content/VeganCSS/Autocomplete.css" rel="stylesheet" />
+<link href="~/Content/VeganCSS/Nav.css" rel="stylesheet" />
 
-
-<div ng-controller="VeganController" id="top" pxlurl="[product_url]">
+<div id="top" pxlurl="[product_url]">
     <div id="curtain"></div>
     <div class="headerbox-wrapper">
         <div class="headerbox">
@@ -10,8 +10,8 @@
                 <div>
                     <nav id="nav-utils">
                         <ul>
-                            <li id="nav-utils-home"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a></li>
-                            <li id="nav-utils-search"><a href="search.asp"><i class="fa fa-search" aria-hidden="true"></i> <span>Search</span></a></li>
+                            <li id="nav-utils-home"><a href="/" class="btn"><i class="fa fa-home" aria-hidden="true"></i></a></li>
+                            <li id="nav-utils-search"><a href="search.asp" class="btn"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                         </ul>
                         <div id="nav-search">
                             <div id="searchBox">
@@ -26,10 +26,10 @@
                         <span class="nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></span>
                         <div class="nav-sub">
                             <ul>
-                                <li><a href="/Home/Contact"><i class="fa fa-fw fa-circle" aria-hidden="true"></i>Contact</a></li>
+                                <li><a href="/Home/Contact" class="btn"><i class="fa fa-fw fa-circle" aria-hidden="true"></i>Contact</a></li>
                                 @if (User.IsInRole("Admins"))
                                 {
-                                    <li><a href="/Administrator/index"><i class="fa fa-fw fa-circle" aria-hidden="true"></i>Admin Area</a></li>
+                                    <li><a href="/Administrator/index" class="btn"><i class="fa fa-fw fa-circle" aria-hidden="true"></i>Admin Area</a></li>
                                 }
                             </ul>
                         </div>
@@ -46,8 +46,7 @@
                     <a href="/">
                         <img id="logo-v" src="/Content/assets/templates/vegan2020/images/logo-v.png" alt="The Vegan Shop" style="height:100px; width: 80px;  opacity: 0.5;  " />
                     </a>
-                        <label style="display:block; font-size:xx-large; color:dimgrey"><strong>The Vegan Shop</strong></label>
-                   
+                    <label style="display:block; font-size:xx-large; color:dimgrey"><strong>The Vegan Shop</strong></label>
                 </header>
             </div>
             <div id="mainmenu">

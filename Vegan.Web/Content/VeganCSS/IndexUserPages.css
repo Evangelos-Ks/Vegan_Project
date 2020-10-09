@@ -1,0 +1,189 @@
+﻿body {
+    font-family: 'Roboto Condensed', Helvetica, Arial, sans-serif;
+}
+
+.contentbox-wrapper .contentbox #pageheader div .breadcrumbs-wrapper .breadcrumbs section p {
+    font-stretch: condensed;
+    color: #cf8a2b;
+    transition: 0.4s;
+}
+
+    .contentbox-wrapper .contentbox #pageheader div .breadcrumbs-wrapper .breadcrumbs section p a:hover {
+        color: black;
+    }
+
+.contentbox-wrapper .contentbox #pageheader div .title-wrapper .title header h1 {
+    color: #cf8a2b;
+}
+
+.contentbox-wrapper .contentbox .header-wrapper .container .header .sorting {
+    display: inline;
+}
+
+    .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a, .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn, .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting .sortButtons {
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+        background-color: rgba(221, 221, 219, 0.66);
+        color: dimgrey;
+        font-weight: 600;
+        font-size: 13px;
+        transition: 0.4s;
+        margin-bottom: 3px;
+        outline: none;
+    }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting a:hover, .contentbox-wrapper .contentbox .header-wrapper .container .header .sorting .sortButtons:hover {
+            background-color: #cf8a2b;
+            color: black;
+        }
+
+.contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown {
+    display: inline;
+    float: right;
+}
+
+    .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .btn:hover {
+        background-color: #cf8a2b;
+        color: black;
+    }
+
+    .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu {
+        background-color: rgba(221, 221, 219, 0.96);
+        text-align: right;
+    }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label, .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input {
+            font-size: 13px;
+            display: inline;
+            color: dimgrey;
+            margin-right: 8px;
+            outline-color: #cf8a2b;
+        }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label {
+            margin-left: 5px;
+        }
+
+            .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu label:first-of-type {
+                padding-right: 5px;
+            }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input {
+            border: none;
+            border-radius: 5px 5px 5px 5px;
+            margin-bottom: 5px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            padding-left: 5px;
+        }
+
+            .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input:last-child {
+                margin-left: 85px;
+                margin-top: 5px;
+                font-size: 13px;
+                font-weight: 600;
+                transition: 0.4s;
+                padding: inherit;
+                background-color: #cf8a2b;
+                color: black;
+            }
+
+                .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input:last-child:hover {
+                    background-color: limegreen;
+                    color: dimgray;
+                }
+
+        .contentbox-wrapper .contentbox .header-wrapper .container .header .dropdown .dropdown-menu input {
+            width: 70px;
+        }
+
+.contentbox-wrapper .contentbox .header-wrapper .container .header .priceInf span #btnReset {
+    border-color: tomato;
+    background-color: transparent;
+    padding: 2px 5px 2px 5px;
+    font-size: 13px;
+    font-weight: 600;
+    color: tomato;
+    transition: 0.4s;
+    outline: none;
+    padding-top: 3px;
+}
+
+    .contentbox-wrapper .contentbox .header-wrapper .container .header .priceInf span #btnReset:hover {
+        background-color: tomato;
+        border-color: transparent;
+        color: dimgray;
+    }
+
+.contentbox-wrapper .contentbox .content-wrapper .content {
+    margin-top: 7px;
+}
+
+    .contentbox-wrapper .contentbox .content-wrapper .content .info a {
+        transition: 0.4s;
+    }
+
+        .contentbox-wrapper .contentbox .content-wrapper .content .info a:hover {
+            background-color: #cf8a2b;
+            font-weight: 600;
+        }
+
+    .contentbox-wrapper .contentbox .content-wrapper .content .product h3 a {
+        height: fit-content;
+        margin: auto;
+    }
+
+.contentbox-wrapper .contentbox .content-wrapper .paging, #pagination {
+    text-align: right !important;
+    color: #9b9388;
+}
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #pageSize, #pageSizeAllProducts {
+        width: auto;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        padding-left: 12px;
+        padding-right: 12px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 14px;
+        border: none;
+        border-radius: 5px 5px 5px 5px;
+        background-color: rgba(221, 221, 219, 0.66);
+        color: dimgrey;
+        cursor: pointer;
+        transition: 0.4s;
+        outline: none;
+    }
+
+        .contentbox-wrapper .contentbox .content-wrapper .paging #pageSize:hover, #pageSizeAllProducts:hover {
+            background-color: #cf8a2b;
+            color: black;
+        }
+
+        .contentbox-wrapper .contentbox .content-wrapper .paging #form div #pageSize option, #pageSizeAllProducts option {
+            font-weight: 600;
+            font-size: 13px;
+            border: none;
+            border-radius: 5px 5px 5px 5px;
+            background-color: rgba(221, 221, 219, 1);
+            color: dimgrey;
+        }
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a, #paginationAllProducts ul li a {
+        border-color: #ded9ce;
+        border-radius: 5px 5px 5px 5px;
+        font-weight: 600;
+        font-size: 14px;
+        color: dimgrey;
+        transition: 0.4s;
+    }
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination .active a, #paginationAllProducts ul .active a {
+        background-color: rgba(221, 221, 219, 1);
+    }
+
+    .contentbox-wrapper .contentbox .content-wrapper .paging #form div .pagination a:hover, #paginationAllProducts ul li a:hover {
+        background-color: #cf8a2b;
+        color: black;
+    }

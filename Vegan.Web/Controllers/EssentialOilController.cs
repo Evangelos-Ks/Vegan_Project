@@ -1,5 +1,6 @@
 ﻿using PagedList;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Vegan.Database;
@@ -14,95 +15,83 @@ namespace Vegan.Web.Controllers.TestControllers
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         //===================================== Methods ====================================================================
-        // [Authorize(Roles = "Admins, Supervisors")]
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.EssentialOils.GetAll());
         }
 
         [HttpGet]
-
-        public ActionResult IndexUser(string sortOrder, string searchTitle, int? searchminPrice, int? searchmaxPrice, int? page, int? pSize)
+        public ActionResult IndexUser(string sortOrder, int? minPrice, int? maxPrice, int? page, int? pageSize)
         {
-            //================================== Viewbags ====================================
-            ViewBag.CurrentTitle = searchTitle;
-            ViewBag.CurrentMinPrice = searchminPrice;
-            ViewBag.CurrentMaxPrice = searchmaxPrice;
-            ViewBag.CurrentSortOrder = sortOrder;
-            ViewBag.CurrentpSize = pSize;
+            //Get all essentialOils
+            IEnumerable<EssentialOil> essentialOils = unitOfWork.EssentialOils.GetAll().ToList();
+            unitOfWork.Dispose();
 
+            //Filter
+            ViewBag.MinPrice = minPrice;
+            ViewBag.MaxPrice = maxPrice;
 
-            //ViewBag.CurrentPage = page;
+            if (minPrice != null)
+            {
+                essentialOils = essentialOils.Where(c => c.Price >= minPrice);
+            }
 
-            //Viebag that holds the sorting
-            ViewBag.TitleSortParam = String.IsNullOrWhiteSpace(sortOrder) ? "TitleDesc" : "";
-            ViewBag.PriceSortParam = sortOrder == "PriceAsc" ? "PriceDesc" : "PriceAsc";
+            if (maxPrice != null)
+            {
+                essentialOils = essentialOils.Where(c => c.Price <= maxPrice);
+            }
 
-            ViewBag.TitleView = "badge badge-light";
-            ViewBag.PriceView = "badge badge-light";
+            //Sorting
+            ViewBag.TitleSortParam = string.IsNullOrEmpty(sortOrder) ? "title_desc" : "";
+            ViewBag.PriceSortParam = sortOrder == "price_asc" ? "price_desc" : "price_asc";
 
-            var essentialOils = unitOfWork.EssentialOils.GetAll();
-
-            //================================== Sorting ====================================
-
-
-            //Sorting by title & price
             switch (sortOrder)
             {
-                case "TitleDesc": essentialOils = essentialOils.OrderByDescending(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-                case "TitleAsc": essentialOils = essentialOils.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
-                case "PriceDesc": essentialOils = essentialOils.OrderByDescending(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
-                case "PriceAsc": essentialOils = essentialOils.OrderBy(x => x.Price); ViewBag.PriceView = "badge badge-secondary"; break;
-                default: essentialOils = essentialOils.OrderBy(x => x.Title).ThenBy(x => x.Price); ViewBag.TitleView = "badge badge-secondary"; break;
+                case "title_desc":
+                    essentialOils = essentialOils.OrderByDescending(c => c.Title);
+                    break;
+                case "price_asc":
+                    essentialOils = essentialOils.OrderBy(c => c.Price);
+                    break;
+                case "price_desc":
+                    essentialOils = essentialOils.OrderByDescending(c => c.Price);
+                    break;
+                default:
+                    essentialOils = essentialOils.OrderBy(c => c.Title);
+                    break;
             }
-            //Pagination
-            int pageSize = pSize ?? 3;
+
+            //Paging
+            ViewBag.CurrentSort = sortOrder;
+
+            int pSize = pageSize ?? 6;
             int pageNumber = page ?? 1;
 
-
-            //================================== Filters ====================================
-
-            //------Filtering  Title-----
-            if (searchTitle == null)
+            ViewBag.PageSize = new List<SelectListItem>()
             {
-                essentialOils = unitOfWork.EssentialOils.GetAll();
+             new SelectListItem() { Value="3", Text= "3" },
+             new SelectListItem() { Value="6", Text= "6" },
+             new SelectListItem() { Value="12", Text= "12" },
+             new SelectListItem() { Value="24", Text= "24" },
+             new SelectListItem() { Value="10000000", Text= "All" },
+            };
 
-            }
-            else if (!(string.IsNullOrWhiteSpace(searchTitle)))
-            {
-                essentialOils = essentialOils.Where(x => x.Title.ToUpper().Contains(searchTitle.ToUpper()));
-            }
-            //-----Filtering  Price------
-            //Filtering  Minimum
-            if (!(searchminPrice is null))
-            {
-                essentialOils = essentialOils.Where(x => x.Price >= searchminPrice);
-            }
-            //Filtering  Maximum
-            if (!(searchmaxPrice is null))
-            {
-                essentialOils = essentialOils.Where(x => x.Price <= searchmaxPrice);
-            }
+            ViewBag.CurrentPageSize = pSize;
 
-
-            // Assign the sorting - searching to the viewModel
-            essentialOils = essentialOils.ToPagedList(pageNumber, pageSize);
-
-            return View(essentialOils);
-
-
-
+            return View(essentialOils.ToPagedList(pageNumber, pSize));
         }
 
-
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddEssentialOil()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddEssentialOil(EssentialOil model)
         {
             try
@@ -129,12 +118,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditEssentialOil(int productId)
         {
             return View(unitOfWork.EssentialOils.GetById(productId));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditEssentialOil(EssentialOil model)
         {
             if (ModelState.IsValid)
@@ -151,12 +142,14 @@ namespace Vegan.Web.Controllers.TestControllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteEssentialOil(int productId)
         {
             return View(unitOfWork.EssentialOils.GetById(productId));
         }
 
         [HttpPost, ActionName("DeleteEssentialOil")]
+        [Authorize(Roles = "Admins")]
         public ActionResult Delete(int productId)
         {
 

@@ -85,10 +85,7 @@
     <Compile Include="SupplementRepository\SuperFoodRepository.cs" />
     <Compile Include="SupplementRepository\SupplementRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
-    <Compile Include="Interfaces\OldIGenericRepository.cs" />
-    <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitOfWorkPattern\OldUnitOfWork.cs" />
     <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
+
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
@@ -7,10 +8,10 @@
 
         var identity = "Hello " + @User.Identity.GetUserName() + "!";
         <ul id="nav-store-icons">
-            <li id="nav-store-login"><a href="/Manage/Index"><i class="fa fa-registered" aria-hidden="true"></i> <span>@identity</span> </a></li>
-            <li id="nav-store-logout"><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Log off</span> </a></li>
+            <li id="nav-store-login"><a href="/Manage/Index" class="btn"><i class="fa fa-registered" aria-hidden="true"></i> <span>@identity</span> </a></li>
+            <li id="nav-store-logout"><a class="btn" href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Log off</span> </a></li>
             <li id="nav-store-cart">
-                <a href="/ECommerce/Cart">
+                <a href="/ECommerce/Cart" class="btn">
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     <span>Cart</span>
                     <strong>
@@ -25,10 +26,10 @@
 }
 else
 {
-    <li id="nav-store-login"><a href="/Account/Register"><i class="fa fa-registered" aria-hidden="true"></i> <span>Register</span> </a></li>
-    <li id="nav-store-login"><a href="/Account/Login"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Log in</span> </a></li>
+    <li id="nav-store-login"><a href="/Account/Register" class="btn"><i class="fa fa-registered" aria-hidden="true"></i> <span>Register</span> </a></li>
+    <li id="nav-store-login"><a href="/Account/Login" class="btn"><i class="fa fa-sign-in" aria-hidden="true"></i> <span>Log in</span> </a></li>
     <li id="nav-store-cart">
-        <a href="/ECommerce/Cart">
+        <a href="/ECommerce/Cart" class="btn">
             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
             <span>Cart</span>
             <strong>

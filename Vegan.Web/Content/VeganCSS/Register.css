@@ -1,0 +1,30 @@
+﻿.contentbox-wrapper .contentbox #pageheader .docsection .breadcrumbs-wrapper .breadcrumbs section p {
+    color: #cf8a2b;
+}
+
+    .contentbox-wrapper .contentbox #pageheader .docsection .breadcrumbs-wrapper .breadcrumbs section p a:hover {
+        color: black;
+    }
+
+.contentbox-wrapper .contentbox #pageheader .docsection .title-wrapper .title header h1 {
+    color: #cf8a2b;
+}
+
+.contentbox-wrapper .contentbox #registration .docsection #registration0 #registrationform input, .contentbox-wrapper .contentbox #registration .docsection #registration0 #registrationform select {
+    border-radius: 6px 6px 6px 6px;
+    outline-color: #cf8a2b;
+}
+
+.contentbox-wrapper .contentbox #registration .docsection #registration0 #registrationform .submit-button input {
+    color: dimgrey;
+    border: none;
+    border-radius: 6px 6px 6px 6px;
+    width: calc(100% - 25px);
+    transition: 0.4s;
+    outline: none;
+}
+
+    .contentbox-wrapper .contentbox #registration .docsection #registration0 #registrationform .submit-button input:hover {
+        background-color: #cf8a2b;
+        color: black;
+    }

@@ -1,264 +1,131 @@
-﻿
-<style>
-    .our-team {
-        padding: 30px 0 40px;
-        margin-bottom: 30px;
-        background-color: #f7f5ec;
-        text-align: center;
-        overflow: hidden;
-        position: relative;
-    }
+﻿<link href="~/Content/VeganCSS/About.css" rel="stylesheet" />
 
-        .our-team .picture {
-            display: inline-block;
-            height: 130px;
-            width: 130px;
-            margin-bottom: 50px;
-            z-index: 1;
-            position: relative;
-        }
-
-            .our-team .picture::before {
-                content: "";
-                width: 100%;
-                height: 0;
-                border-radius: 50%;
-                background-color: #6db5e2;
-                position: absolute;
-                bottom: 135%;
-                right: 0;
-                left: 0;
-                opacity: 0.9;
-                transform: scale(3);
-                transition: all 0.3s linear 0s;
-            }
-
-        .our-team:hover .picture::before {
-            height: 100%;
-        }
-
-        .our-team .picture::after {
-            content: "";
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background-color: #6db5e2;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
-        }
-
-        .our-team .picture img {
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
-            transform: scale(1);
-            transition: all 0.9s ease 0s;
-        }
-
-        .our-team:hover .picture img {
-            box-shadow: 0 0 0 14px #f7f5ec;
-            transform: scale(0.7);
-        }
-
-        .our-team .title {
-            display: block;
-            font-size: 15px;
-            color: #4e5052;
-            text-transform: capitalize;
-        }
-
-        .our-team .social {
-            width: 100%;
-            padding: 0;
-            margin: 0;
-            background-color: #6db5e2;
-            position: absolute;
-            bottom: -100px;
-            left: 0;
-            transition: all 0.5s ease 0s;
-        }
-
-        .our-team:hover .social {
-            bottom: 0;
-        }
-
-        .our-team .social li {
-            display: inline-block;
-        }
-
-            .our-team .social li a {
-                display: block;
-                padding: 10px;
-                font-size: 17px;
-                color: white;
-                transition: all 0.3s ease 0s;
-                text-decoration: none;
-            }
-
-                .our-team .social li a:hover {
-                    color: #6db5e2;
-                    background-color: #f7f5ec;
-                }
-
-    /*===================================================================*/
-    .row {
-        font-size: 28px;
-    }
-
-    .column {
-        float: left;
-        width: 20%;
-        padding-bottom: 5%;
-    }
-
-    /* Clear floats after the columns */
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    img {
-        border-radius: 50%;
-        height: 50px;
-        width: 50px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-</style>
+<h1 style="font-size: 48px; padding-top: 5%;"><strong>  Our Team  </strong> </h1>
 
 
-
-            <h1 style="font-size: 48px; padding-top: 5%;"><strong>  Our Team  </strong> </h1>
-
-
-            <div class="row" style="padding: 7%; padding-left: 20%;">
-                <div class="column">
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="padding: 15%">
-                        <div class="our-team">
-                            <div class="picture">
-                                <img class="img-fluid" src="~/Content/assets/templates/vegan2020/images/StathisKannellis.jpg">
-                            </div>
-                            <div class="team-content">
-                                <h2>Kanellis </h2>
-                                <h2>Stathis </h2>
-                                <p class="title">Web Developer</p>
-                            </div>
-                            <ul class="social">
-                                <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
-                                <li><a href="https://github.com/StathisKanellis" class="fa fa-github" aria-hidden="true"></a></li>
-                                <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
-                                <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
-                            </ul>
-                        </div>
-                    </div>
+<div class="row" style="padding: 7%; padding-left: 20%;">
+    <div class="column">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="padding: 15%">
+            <div class="our-team">
+                <div class="picture">
+                    <img class="img-fluid" src="~/Content/assets/templates/vegan2020/images/StathisKannellis.jpg">
                 </div>
-
-                <div class=" column">
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="padding: 15%">
-                        <div class="our-team">
-                            <div class="picture">
-                                <img class="img-fluid" src="~/Content/assets/templates/vegan2020/images/EleniParisi.jpg">
-                            </div>
-                            <div class="team-content">
-                                <h2>Parisi </h2>
-                                <h2>Eleni </h2>
-                                <p class="title">Web Developer</p>
-                            </div>
-                            <ul class="social">
-                                <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
-                                <li><a href="https://github.com/elprs" class="fa fa-github" aria-hidden="true"></a></li>
-                                <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
-                                <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-
+                <div class="team-content">
+                    <h2>Kanellis </h2>
+                    <h2>Stathis </h2>
+                    <p class="title">Web Developer</p>
                 </div>
-
-                <div class=" column">
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="padding: 15%">
-                        <div class="our-team">
-                            <div class="picture">
-                                <img class="img-fluid" src="~/Content/assets/templates/vegan2020/images/GeorgePoulakos (1).jpg">
-                            </div>
-                            <div class="team-content">
-                                <h2> Poulakos  </h2>
-                                <h2>  George  </h2>
-                                <p class="title">Web Developer</p>
-                            </div>
-                            <ul class="social">
-                                <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
-                                <li><a href="https://github.com/gpoulakos" class="fa fa-github" aria-hidden="true"></a></li>
-                                <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
-                                <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class=" column">
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="padding: 15%">
-                        <div class="our-team">
-                            <div class="picture">
-                                <img class="img-fluid" src="~/Content/assets/templates/vegan2020/images/Evangelos.jpg">
-                            </div>
-                            <div class="team-content">
-                                <h2>Koutsogiorgos Evangelos</h2>
-                                <p class="title">Web Developer</p>
-                            </div>
-                            <ul class="social">
-                                <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
-                                <li><a href="https://github.com/Evangelos-Ks" class="fa fa-github" aria-hidden="true"></a></li>
-                                <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
-                                <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <ul class="social">
+                    <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
+                    <li><a target="_blank" href="https://github.com/StathisKanellis" class="fa fa-github" aria-hidden="true"></a></li>
+                    <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                    <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                </ul>
             </div>
-            <br />
-            <br />
-            <br />
-            <div class="row" style="padding-bottom: 5%; ">
-                <h1 style="font-size: 38px;"><strong>  Technologies used:  </strong> </h1>
-                <h1 style="font-size: 38px;">
+        </div>
+    </div>
 
-                    .NET Framework
-                    <br />
-                    C#
-                    <br />
-                    Linq
-                    <br />
-                    SQL Server
-                    <br />
-                    <br />
-                    JavaScript/JQuery
-                    <br />
-                    Bootstrap 4
-                    <br />
-                    Angular
-                    <br />
-                    SignalR
-                    <br />
-                    Email Confirmation
-                    <br />
-                    <br />
-                    Paypal.sandbox
-                    <br />
-                    Web.API
-                    <br />
-                    Facebook & Google authentication
-                    <br />
-                    Google Maps
-                    <br />
-                    API Controller
-                    <br />
-                    Swagger UI
-                    <br />
-                </h1>
+    <div class=" column">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="padding: 15%">
+            <div class="our-team">
+                <div class="picture">
+                    <img class="img-fluid" src="~/Content/assets/templates/vegan2020/images/EleniParisi.jpg">
+                </div>
+                <div class="team-content">
+                    <h2>Parisi </h2>
+                    <h2>Eleni </h2>
+                    <p class="title">Web Developer</p>
+                </div>
+                <ul class="social">
+                    <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
+                    <li><a target="_blank" href="https://github.com/elprs" class="fa fa-github" aria-hidden="true"></a></li>
+                    <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                    <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                </ul>
             </div>
+        </div>
+
+    </div>
+
+    <div class=" column">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="padding: 15%">
+            <div class="our-team">
+                <div class="picture">
+                    <img class="img-fluid" src="~/Content/assets/templates/vegan2020/images/GeorgePoulakos (1).jpg">
+                </div>
+                <div class="team-content">
+                    <h2> Poulakos  </h2>
+                    <h2>  George  </h2>
+                    <p class="title">Web Developer</p>
+                </div>
+                <ul class="social">
+                    <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
+                    <li><a target="_blank" href="https://github.com/gpoulakos" class="fa fa-github" aria-hidden="true"></a></li>
+                    <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                    <li><a href="#" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class=" column">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" style="padding: 15%">
+            <div class="our-team">
+                <div class="picture">
+                    <img class="img-fluid" src="~/Content/assets/templates/vegan2020/images/Evangelos.jpg">
+                </div>
+                <div class="team-content">
+                    <h2>Koutsogiorgos Evangelos</h2>
+                    <p class="title">Web Developer</p>
+                </div>
+                <ul class="social">
+                    <li><a href="#" class="fa fa-facebook" aria-hidden="true"></a></li>
+                    <li><a target="_blank" href="https://github.com/Evangelos-Ks" class="fa fa-github" aria-hidden="true"></a></li>
+                    <li><a href="#" class="fa fa-google-plus" aria-hidden="true"></a></li>
+                    <li><a target="_blank" href="https://www.linkedin.com/in/evangelos-koutsogiorgios/" class="fa fa-linkedin" aria-hidden="true"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<div class="row" style="padding-bottom: 5%; ">
+    <h1 style="font-size: 38px;"><strong>  Technologies used:  </strong> </h1>
+    <h1 style="font-size: 38px;">
+
+        .NET Framework
+        <br />
+        C#
+        <br />
+        Linq
+        <br />
+        SQL Server
+        <br />
+        <br />
+        JavaScript/JQuery
+        <br />
+        Bootstrap 4
+        <br />
+        Angular
+        <br />
+        SignalR
+        <br />
+        Email Confirmation
+        <br />
+        <br />
+        Paypal.sandbox
+        <br />
+        Web.API
+        <br />
+        Facebook & Google authentication
+        <br />
+        Google Maps
+        <br />
+        API Controller
+        <br />
+        Swagger UI
+        <br />
+    </h1>
+</div>
 

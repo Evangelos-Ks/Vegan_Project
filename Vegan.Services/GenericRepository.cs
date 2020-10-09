@@ -26,7 +26,14 @@ namespace Vegan.Services
 
         public TEntity GetById(int id)
         {
-            return Context.Set<TEntity>().Find(id);
+            try
+            {
+                return Context.Set<TEntity>().Find(id);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public void Add(TEntity entity)

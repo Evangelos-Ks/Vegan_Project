@@ -290,10 +290,8 @@
     <Content Include="Content\assets\templates\vegan2020\js\jquery.simplemodal.min.js" />
     <Content Include="Content\assets\templates\vegan2020\js\messagebar.min.js" />
     <Content Include="Content\assets\templates\vegan2020\js\pxl.js" />
-    <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\now-ui-dashboard-master\assets\css\bootstrap.min.css" />
@@ -332,10 +330,25 @@
     <Content Include="Content\now-ui-dashboard-master\gulpfile.js" />
     <Content Include="Content\now-ui-dashboard-master\nucleo-icons.html" />
     <Content Include="Content\PagedList.css" />
+    <Content Include="Content\VeganCSS\About.css" />
     <Content Include="Content\VeganCSS\Autocomplete.css" />
+    <Content Include="Content\VeganCSS\Cart.css" />
+    <Content Include="Content\VeganCSS\ChangePassword.css" />
+    <Content Include="Content\VeganCSS\Contact.css" />
+    <Content Include="Content\VeganCSS\Details.css" />
+    <Content Include="Content\VeganCSS\EmptyViewCart.css" />
+    <Content Include="Content\VeganCSS\Footer.css" />
+    <Content Include="Content\VeganCSS\IndexUserPages.css" />
+    <Content Include="Content\VeganCSS\IndexUserPagesBunchOfCategories.css" />
+    <Content Include="Content\VeganCSS\LogIn.css" />
+    <Content Include="Content\VeganCSS\LogInFailure.css" />
+    <Content Include="Content\VeganCSS\ManageIndex.css" />
+    <Content Include="Content\VeganCSS\Nav.css" />
+    <Content Include="Content\VeganCSS\Register.css" />
     <Content Include="Content\VeganJs\Autocomplete.js" />
     <Content Include="Content\VeganJs\ChartController.js" />
     <Content Include="Content\VeganJs\Controller.js" />
+    <Content Include="Content\VeganJs\IndexUserJs.js" />
     <Content Include="Content\VeganLifePictures\Candle\190x190\Honey Candles 3x3 Pillar Beeswax Candle190x190.jpg" />
     <Content Include="Content\VeganLifePictures\Candle\190x190\Honey Candles 5x3 Pillar Beeswax Candle190x190.jpg" />
     <Content Include="Content\VeganLifePictures\Candle\190x190\Honey Candles 6 Natural Column Beeswax Candle190x190.jpg" />
@@ -717,6 +730,7 @@
     <Content Include="Content\VeganLifePictures\TeaPictures\700x634\YogaChai700x634.jpg" />
     <Content Include="Error404.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\angular-animate.js" />
@@ -745,20 +759,8 @@
     <Content Include="Scripts\angular-touch.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
@@ -1569,6 +1571,14 @@
     <Content Include="Scripts\angular-cookies.min.js.map" />
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -1664,19 +1674,6 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="TheTeaGame\Build\UnityLoader.js" />
-    <Content Include="TheTeaGame\index.html" />
-    <Content Include="TheTeaGame\TemplateData\favicon.ico" />
-    <Content Include="TheTeaGame\TemplateData\fullscreen.png" />
-    <Content Include="TheTeaGame\TemplateData\progressEmpty.Dark.png" />
-    <Content Include="TheTeaGame\TemplateData\progressEmpty.Light.png" />
-    <Content Include="TheTeaGame\TemplateData\progressFull.Dark.png" />
-    <Content Include="TheTeaGame\TemplateData\progressFull.Light.png" />
-    <Content Include="TheTeaGame\TemplateData\progressLogo.Dark.png" />
-    <Content Include="TheTeaGame\TemplateData\progressLogo.Light.png" />
-    <Content Include="TheTeaGame\TemplateData\style.css" />
-    <Content Include="TheTeaGame\TemplateData\UnityProgress.js" />
-    <Content Include="TheTeaGame\TemplateData\webgl-logo.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1719,7 +1716,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\TestUCare\Index.cshtml" />
     <Content Include="Views\EssentialOil\AddEssentialOil.cshtml" />
     <Content Include="Views\EssentialOil\DeleteEssentialOil.cshtml" />
     <Content Include="Views\EssentialOil\DetailsEssentialOil.cshtml" />
@@ -1834,11 +1830,6 @@
     <Content Include="Views\Administrator\Map.cshtml" />
     <Content Include="Views\Administrator\Chat.cshtml" />
     <Content Include="Views\Contact.cshtml" />
-    <Content Include="TheTeaGame\Build\TheTeaGame.data.unityweb" />
-    <Content Include="TheTeaGame\Build\TheTeaGame.json" />
-    <Content Include="TheTeaGame\Build\TheTeaGame.wasm.code.unityweb" />
-    <Content Include="TheTeaGame\Build\TheTeaGame.wasm.framework.unityweb" />
-    <Content Include="TheTeaGame\web.config" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ConfirmEmailView.cshtml" />
     <Content Include="Views\AllProduct\IndexUser.cshtml" />
@@ -1849,7 +1840,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -1873,6 +1863,9 @@
       <Project>{6cb08aab-4499-4454-bf34-ad914cf50721}</Project>
       <Name>Vegan.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

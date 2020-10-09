@@ -1,26 +1,28 @@
 ﻿@model IEnumerable<Vegan.Entities.FoodHerb.FoodHerb>
 
 @{
-    ViewBag.Title = "Vegan FoodHerbs";
+    ViewBag.Title = "Food & Herb Vegan Products";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<link href="~/Content/VeganCSS/IndexUserPagesBunchOfCategories.css" rel="stylesheet" />
+
 <div id="subcategories" class="othercategories docsection-wrapper">
     <div class="docsection boxed">
-
         <div id="pageheader" class="docsection-wrapper">
             <div class="docsection boxed">
                 <div class="breadcrumbs-wrapper clearfix">
                     <div class="breadcrumbs">
                         <section>
-                            <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href="/FoodHerb/IndexUser"> Dry Food & Herbs</a></p>
+                            <p><a id='catCrumbFoodHerbLink' href='/'>Home</a> > <a href="/FoodHerb/IndexUser">Food & Herb Products</a></p>
                         </section>
                     </div>
                 </div>
                 <div class="title-wrapper clearfix">
                     <div class="title">
                         <header>
-                            <h1>Dry Food & Herbs</h1>
+                            <h1>FoodHerb Products</h1>
                         </header>
                     </div>
                 </div>
@@ -29,52 +31,31 @@
         <div id="top" pxlurl="[product_url]">
             <div class="contentbox-wrapper">
                 <div class="contentbox">
-
                     <div class="productlist docsection-wrapper">
                         <div class="docsection boxed">
-
                             <div class="content-wrapper clearfix">
                                 <div class="content">
                                     <div class="subcats-wrapper clearfix">
                                         <div class="header-wrapper clearfix">
-                                            <div class="header">
-                                                <header>
-                                                    <h2>
-                                                        <small>Total Items of all categories: @Model.ToList().Count() </small>
-                                                    </h2>
-                                                </header>
+                                            <div class="container">
+                                                <div class="header">
+                                                    Total Items of all categories: @Model.ToList().Count()
+                                                </div>
                                             </div>
                                         </div>
                                         <ul class="columns-5">
-                                            <div class="subcats">
-                                                <section>
-                                                    <ul style="list-style: none;">
-                                                        <li><a href="/Salt/IndexUser"><span><span> Salts</span></span>
-                                                            <i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </section>
-                                            </div>
-                                            <div class="subcats">
-                                                <section>
-                                                    <ul>
-                                                        <li><a href="/Spice/IndexUser"><span><span>Spices</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </section>
-                                            </div>
-                                            <div class="subcats">
-                                                <section>
-                                                    <ul>
-                                                        <li><a href="/SproutingSeed/IndexUser"><span><span>Sprouting Seeds</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </section>
-                                            </div>
-                                            <div class="subcats">
-                                                <section>
-                                                    <ul>
-                                                        <li><a href="/Tea/IndexUser"><span><span>Tea</span></span><i class="fa fa-chevron-right" aria-hidden="true"></i></a></li>
-                                                    </ul>
-                                                </section>
-                                            </div>
+                                            <li class="subcats">
+                                                <a href="/Salt/IndexUser" class="btn col-2">Salts</a>
+                                            </li>
+                                            <li class="subcats">
+                                                <a href="/Spice/IndexUser" class="btn col-2">Spices</a>
+                                            </li>
+                                            <li class="subcats">
+                                                <a href="/SproutingSeed/IndexUser" class="btn col-2">Spr. Seeds</a>
+                                            </li>
+                                            <li class="subcats">
+                                                <a href="/Tea/IndexUser" class="btn col-2">Teas</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -86,4 +67,3 @@
         </div>
     </div>
 </div>
-

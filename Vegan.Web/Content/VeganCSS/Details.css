@@ -1,0 +1,88 @@
+﻿.contentbox-wrapper {
+    margin-bottom: 80px;
+}
+
+    .contentbox-wrapper #pageheader .docsection .breadcrumbs-wrapper .breadcrumbs section p {
+        color: #cf8a2b;
+    }
+
+        .contentbox-wrapper #pageheader .docsection .breadcrumbs-wrapper .breadcrumbs section p a:hover {
+            color: black;
+        }
+
+    .contentbox-wrapper #pageheader .docsection .title-wrapper .title header h1 {
+        color: #cf8a2b;
+    }
+
+    .contentbox-wrapper #productdetails .docsection .content-wrapper #productimage-wrapper #productimage {
+        border: none;
+    }
+
+        .contentbox-wrapper #productdetails .docsection .content-wrapper #productimage-wrapper #productimage img {
+            border-radius: 6px 6px 6px 6px;
+        }
+
+    .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section #productdesription {
+        padding-bottom: 0px;
+    }
+
+        .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section #productdesription dl dt:hover {
+            color: black;
+        }
+
+            .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section #productdesription dl dt:hover > i {
+                color: #cf8a2b;
+            }
+
+    .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section .dottedbox {
+        margin-top: 12px;
+        border-radius: 6px 6px 6px 6px;
+    }
+
+        .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section .dottedbox #productprice {
+            margin-bottom: 12px;
+        }
+
+        .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section .dottedbox #productcart .addToCartBlock form div .qtybox-addcart div {
+            display: inline;
+        }
+
+        .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section .dottedbox #productcart .addToCartBlock form div .qtybox-addcart input {
+            border-radius: 6px 6px 6px 6px;
+            border: 1px solid;
+            text-align: center;
+            outline-color: #cf8a2b;
+        }
+
+        .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section .dottedbox #productcart .addToCartBlock form div .qtybox-addcart a {
+            transition: 0.4s;
+            color: dimgray;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+            .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section .dottedbox #productcart .addToCartBlock form div .qtybox-addcart a:hover {
+                color: black;
+            }
+
+                .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section .dottedbox #productcart .addToCartBlock form div .qtybox-addcart a:hover > i {
+                    color: #cf8a2b;
+                }
+
+    .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section .back {
+        margin-top: 12px;
+    }
+
+        .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section .back a {
+            transition: 0.4s;
+            color: dimgray;
+            text-decoration: none;
+        }
+
+            .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section .back a:hover {
+                color: black;
+            }
+
+                .contentbox-wrapper #productdetails .docsection .content-wrapper #productinfo section .back a:hover > i {
+                    color: #cf8a2b;
+                }

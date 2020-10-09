@@ -1,0 +1,48 @@
+﻿
+
+#top .headerbox-wrapper .headerbox #topbar div #nav-utils ul {
+    margin-bottom: 0;
+}
+
+    #top .headerbox-wrapper .headerbox #topbar div #nav-utils ul li a, #top .headerbox-wrapper .headerbox #topbar div #nav-tools .nav-sub ul li a, #top .headerbox-wrapper .headerbox #topbar div #nav-store ul a, #top .headerbox-wrapper .headerbox #mainmenu div #nav-categories span, #top .headerbox-wrapper .headerbox #mainmenu div #nav-categories #desktopMenu li a, #top .headerbox-wrapper .headerbox #mainmenu div #nav-categories #desktopMenu li a .fa-chevron-circle-down {
+        border: none;
+        background-color: transparent;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 13px;
+        padding-right: 13px;
+        color: #9b9388;
+    }
+
+        #top .headerbox-wrapper .headerbox #topbar div #nav-utils ul li a:hover, #top .headerbox-wrapper .headerbox #topbar div #nav-tools .nav-sub ul li a:hover, #top .headerbox-wrapper .headerbox #topbar div #nav-store ul a:hover, #top .headerbox-wrapper .headerbox #mainmenu div #nav-categories span:hover, #top .headerbox-wrapper .headerbox #mainmenu div #nav-categories #desktopMenu li a:hover, #top .headerbox-wrapper .headerbox #mainmenu div #nav-categories #desktopMenu li:hover {
+            background-color: transparent;
+            color: black;
+        }
+
+            #top .headerbox-wrapper .headerbox #topbar div #nav-utils ul li a:hover > i, #top .headerbox-wrapper .headerbox #topbar div #nav-tools .nav-sub ul li a:hover > i, #top .headerbox-wrapper .headerbox #topbar div #nav-store ul a:hover > i, #top .headerbox-wrapper .headerbox #mainmenu div #nav-categories span:hover > i, #top .headerbox-wrapper .headerbox #mainmenu div #nav-categories #desktopMenu li a:hover > i, #top .headerbox-wrapper .headerbox #mainmenu div #nav-categories #desktopMenu li:hover > i {
+                color: #cf8a2b;
+            }
+
+#top .headerbox-wrapper .headerbox #topbar div #nav-utils #nav-search #searchBox form #searchbutton {
+    border: none;
+    border-radius: 6px 6px 6px 6px;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+    #top .headerbox-wrapper .headerbox #topbar div #nav-utils #nav-search #searchBox form #searchbutton:hover {
+        color: black;
+        background-color: #cf8a2b;
+    }
+
+#top .headerbox-wrapper .headerbox #logo label {
+    margin-bottom: 0;
+}
+
+#top .headerbox-wrapper .headerbox #mainmenu div #nav-categories span {
+    color: #9b9388;
+}
+
+#top .headerbox-wrapper .headerbox #mainmenu div #nav-categories #desktopMenu .hov {
+    color: #9b9388;
+}

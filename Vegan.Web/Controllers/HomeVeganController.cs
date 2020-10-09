@@ -12,7 +12,7 @@ namespace Vegan.Web.Controllers
         private UnitOfWork unitOfWork = new UnitOfWork(new MyDatabase());
 
         // GET: Care
-     // [Authorize(Roles = "Admins, Supervisors")]
+        [Authorize(Roles = "Admins")]
         public ActionResult Index()
         {
             return View(unitOfWork.Homes.GetAll());
@@ -23,14 +23,15 @@ namespace Vegan.Web.Controllers
             return View(unitOfWork.Homes.GetAll());
         }
 
-
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddHomeVegan()
         {
             return View();
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult AddHomeVegan(Home model)
         {
             try
@@ -51,19 +52,20 @@ namespace Vegan.Web.Controllers
             return View();
         }
 
-
         public ActionResult DetailsHomeVegan(int productId)
         {
             return View(unitOfWork.Homes.GetById(productId));
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditHomeVegan(int productId)
         {
             return View(unitOfWork.Homes.GetById(productId));
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admins")]
         public ActionResult EditHomeVegan(Candle model)
         {
             if (ModelState.IsValid)
@@ -78,16 +80,16 @@ namespace Vegan.Web.Controllers
                 return View(model);
             }
         }
-
       
-
         [HttpGet]
+        [Authorize(Roles = "Admins")]
         public ActionResult DeleteHomeVegan(int productId)
         {
             return View(unitOfWork.Homes.GetById(productId));
         }
 
         [HttpPost, ActionName("DeleteHomeVegan")]
+        [Authorize(Roles = "Admins")]
         public ActionResult Delete(int productId)
         {
 
@@ -97,7 +99,6 @@ namespace Vegan.Web.Controllers
             unitOfWork.Dispose();
             return RedirectToAction("Index", "HomeVegan");
         }
-
     }
 }
 

@@ -1,5 +1,8 @@
 ﻿@using Vegan.Web.Models
 @model LoginViewModel
+
+<link href="~/Content/VeganCSS/LogIn.css" rel="stylesheet" />
+
 <div id="top" pxlurl="[product_url]">
     <div class="contentbox-wrapper">
         <div class="contentbox">
@@ -14,9 +17,9 @@
                     </div>
                     <div class="title-wrapper clearfix">
                         <div class="title">
-                            <div>
+                            <header>
                                 <h1>My Account</h1>
-                            </div>
+                            </header>
                         </div>
                     </div>
                 </div>
@@ -25,7 +28,7 @@
                 <div class="docsection boxed">
                     <section id="loginAccount" class="clearfix">
                         <div id="accountlogin-returning">
-                            <div class="dottedbox">
+                            <div class="dottedbox first">
                                 <h3>Returning Customers</h3>
                                 <p>Please log in to your account.</p>
                                 @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
@@ -50,7 +53,7 @@
                                     </div>
                                 }
                             </div>
-                            <div class="dottedbox">
+                            <div class="dottedbox second">
                                 <div id="loginSocialParagraph">
                                     <p>
                                         Use another service to log in.
