@@ -4,47 +4,105 @@
     ViewBag.Title = "DetailsProduct";
 }
 
-<h2>DetailsProduct</h2>
-
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImageURL)
-        </dt>
-
-        <dd>
-            <img src=" @Html.DisplayFor(model => model.ImageURL)" width='100' height='100' alt=" @Html.DisplayFor(model => model.Title)" />
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-    </dl>
+<link href="~/Content/VeganCSS/Details.css" rel="stylesheet" />
+@Model.
+<div class="contentbox-wrapper dl-horizontal">
+    <div id="pageheader" class="docsection-wrapper">
+        <div class="docsection boxed">
+            <div class="breadcrumbs-wrapper clearfix">
+                <div class="breadcrumbs">
+                    <section>
+                        <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href='/@Model.SubCategory/IndexUser'>Shave Beard</a> > <a href='#'>@Html.DisplayFor(model => model.Title)</a> </p>
+                    </section>
+                </div>
+            </div>
+            <div class="title-wrapper clearfix">
+                <div class="title">
+                    <header>
+                        <h1> @Html.DisplayFor(model => model.Title) </h1>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="productdetails" class="docsection-wrapper" itemscope itemtype="/">
+        <div class="docsection boxed">
+            <div class="content-wrapper clearfix">
+                <div id="productimage-wrapper">
+                    <div id="productimage">
+                        <img src="@Html.DisplayFor(model => model.ImageURL)" width="100" height="100" alt="@Html.DisplayFor(model => model.Title)" />
+                        <div class="image image1" style="background-image: url( @Html.DisplayFor(model => model.ImageURL) />);"></div>
+                    </div>
+                </div>
+                <div id="productinfo" class="content">
+                    <section>
+                        <div id="productdesription" itemprop="description">
+                            <p>@Html.DisplayFor(model => model.Description)</p>
+                            @if (!string.IsNullOrEmpty(Model.Information))
+                            {
+                                <dl>
+                                    <dt>@Html.DisplayNameFor(model => model.Information)</dt>
+                                    <dd>
+                                        <p>@Html.DisplayFor(model => model.Information)</p>
+                                    </dd>
+                                </dl>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.Directions))
+                            {
+                                <dl>
+                                    <dt>@Html.DisplayNameFor(model => model.Directions)</dt>
+                                    <dd>
+                                        <p>@Html.DisplayFor(model => model.Directions)</p>
+                                    </dd>
+                                </dl>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.NameOfIngredient))
+                            {
+                                <dl>
+                                    <dt>@Html.DisplayNameFor(model => model.NameOfIngredient)</dt>
+                                    <dd>
+                                        <p>
+                                            @Html.DisplayFor(model => model.NameOfIngredient)
+                                        </p>
+                                    </dd>
+                                </dl>
+                            }
+                        </div>
+                        <div class="dottedbox">
+                            <div id="productprice">
+                                <div class="price">
+                                    <span class="yourprice">
+                                        Your @Html.DisplayNameFor(model => model.Price):
+                                        <strong>
+                                            @Html.DisplayFor(model => model.Price) €
+                                        </strong>
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="productcart">
+                                <div class="addToCartBlock">
+                                    @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
+                                    {
+                                        @Html.Hidden("ProductId", Model.Id)
+                                        <div>
+                                            <div class="qtybox-addcart">
+                                                <div>Quantity</div>
+                                                <input type="number" step="1" min="1" max="3" size="3" value="1" name="quant" class="txtBoxStyle" style="width:50px;" />
+                                                <a href="javascript:void(0);" onclick="$(this).closest('form').submit();"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="back">
+                            <a href="/@Model.SubCategory/IndexUser">
+                                <i class="fa fa-arrow-circle-left"></i> Back
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "EditProduct", new { productId = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
