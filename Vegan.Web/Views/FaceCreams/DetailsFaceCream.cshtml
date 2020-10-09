@@ -4,26 +4,30 @@
     ViewBag.Title = "Face Cream Details";
 }
 
+
+<link href="~/Content/VeganCSS/Details.css" rel="stylesheet" />
+
 <div class="contentbox-wrapper dl-horizontal">
     <div id="pageheader" class="docsection-wrapper">
         <div class="docsection boxed">
             <div class="breadcrumbs-wrapper clearfix">
                 <div class="breadcrumbs">
                     <section>
-                        <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href='/FaceCreams/IndexUser'>FaceCreams</a> >  @Html.DisplayFor(model => model.Title) </p>
+                        <p><a id='catCrumbHomeLink' href='/'>Home</a> > <a href='/FaceCreams/IndexUser'>Face cream</a> > <a href='#'>@Html.DisplayFor(model => model.Title)</a> </p>
                     </section>
                 </div>
             </div>
             <div class="title-wrapper clearfix">
                 <div class="title">
-                    <h1> @Html.DisplayFor(model => model.Title) </h1>
+                    <header>
+                        <h1> @Html.DisplayFor(model => model.Title) </h1>
+                    </header>
                 </div>
             </div>
         </div>
     </div>
     <div id="productdetails" class="docsection-wrapper" itemscope itemtype="/">
         <div class="docsection boxed">
-
             <div class="content-wrapper clearfix">
                 <div id="productimage-wrapper">
                     <div id="productimage">
@@ -34,73 +38,70 @@
                 <div id="productinfo" class="content">
                     <section>
                         <div id="productdesription" itemprop="description">
-
-                            <p> @Html.DisplayFor(model => model.Description)</p>
-                            <dl>
-                                <dt>  @Html.DisplayNameFor(model => model.Directions)</dt>
-                                <dd>
-                                    <p>  @Html.DisplayFor(model => model.Directions)</p>
-                                </dd>
-                            </dl>
-                            <dl>
-                                <dt>  @Html.DisplayNameFor(model => model.NameOfIngredient)</dt>
-                                <dd>
-                                    <p>  @Html.DisplayFor(model => model.NameOfIngredient)</p>
-                                </dd>
-                            </dl>
+                            <p>@Html.DisplayFor(model => model.Description)</p>
+                            @if (!string.IsNullOrEmpty(Model.Information))
+                            {
+                                <dl>
+                                    <dt>@Html.DisplayNameFor(model => model.Information)</dt>
+                                    <dd>
+                                        <p>@Html.DisplayFor(model => model.Information)</p>
+                                    </dd>
+                                </dl>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.Directions))
+                            {
+                                <dl>
+                                    <dt>@Html.DisplayNameFor(model => model.Directions)</dt>
+                                    <dd>
+                                        <p>@Html.DisplayFor(model => model.Directions)</p>
+                                    </dd>
+                                </dl>
+                            }
+                            @if (!string.IsNullOrEmpty(Model.NameOfIngredient))
+                            {
+                                <dl>
+                                    <dt>@Html.DisplayNameFor(model => model.NameOfIngredient)</dt>
+                                    <dd>
+                                        <p>@Html.DisplayFor(model => model.NameOfIngredient)</p>
+                                    </dd>
+                                </dl>
+                            }
                         </div>
-
-                        <div id="productavailability">Availability: <span>In Stock</span></div>
-
                         <div class="dottedbox">
                             <div id="productprice">
                                 <div class="price">
                                     <span class="yourprice">
                                         Your @Html.DisplayNameFor(model => model.Price):
-                                        <strong itemprop="price" id="price" class="price" style="display: inline;">
-                                            € @Html.DisplayFor(model => model.Price)
+                                        <strong>
+                                            @Html.DisplayFor(model => model.Price) €
                                         </strong>
                                     </span>
                                 </div>
                             </div>
                             <div id="productcart">
                                 <div class="addToCartBlock">
-                                    @*<div class="qtybox-addcart">
-
-                                            <label>Quantity</label>
-                                            <input type="text" size="3" name="qty-0" value="1" onchange="validateValues(document.add,1);" class="txtBoxStyle" />
-                                            <button type="button" id="Add" class="btn" onclick="check_and_add(document.add,1);"><i class="icon-basket"></i> Add to Cart</button>
-                                        </div>*@
-
                                     @using (Html.BeginForm("Add", "ECommerce", FormMethod.Post))
                                     {
-
                                         @Html.Hidden("ProductId", Model.Id)
-
                                         <div>
-
                                             <div class="qtybox-addcart">
-
-                                                <label>Quantity</label>
-
+                                                <div>Quantity</div>
                                                 <input type="number" step="1" min="1" max="3" size="3" value="1" name="quant" class="txtBoxStyle" style="width:50px;" />
-
-                                                <a href="javascript:void(0);" onclick="$(this).closest('form').submit();"><i class="icon-basket"></i> Add to Cart</a>
+                                                <a href="javascript:void(0);" onclick="$(this).closest('form').submit();"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
                                             </div>
-
                                         </div>
                                     }
                                 </div>
                             </div>
                         </div>
-                        <p>
-
-                            @Html.ActionLink("Back to List", "IndexUser")
-                        </p>
+                        <div class="back">
+                            <a href="/FaceCreams/IndexUser">
+                                <i class="fa fa-arrow-circle-left"></i> Back
+                            </a>
+                        </div>
                     </section>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
