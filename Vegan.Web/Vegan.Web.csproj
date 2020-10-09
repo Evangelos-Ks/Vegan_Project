@@ -335,6 +335,7 @@
     <Content Include="Content\VeganCSS\Cart.css" />
     <Content Include="Content\VeganCSS\ChangePassword.css" />
     <Content Include="Content\VeganCSS\Contact.css" />
+    <Content Include="Content\VeganCSS\Details.css" />
     <Content Include="Content\VeganCSS\EmptyViewCart.css" />
     <Content Include="Content\VeganCSS\Footer.css" />
     <Content Include="Content\VeganCSS\IndexUserPages.css" />
