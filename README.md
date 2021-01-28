@@ -15,7 +15,9 @@
 * #### Run
   If the database has been created run the application from the project Vegan.Web.
 
-# Vegan e-shop 
+
+
+## Vegan e-shop 
 Online Health store 
 
 A web application using MVC
