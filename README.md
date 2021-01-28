@@ -13,7 +13,7 @@
   ”update‐database”.
   
 * #### Run
-  If the database has been created run the application from the project Wesser.Web.
+  If the database has been created run the application from the project Vegan.Web.
 
 # Vegan e-shop 
 Online Health store 
