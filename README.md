@@ -1,3 +1,20 @@
+## Before you run the application
+
+* #### Change the connection string.
+  To run the application you must have a database, so you must change the Data Source in the
+  connection string in the project Wesser.Web.
+  The way to go there is:
+  Vegan.Web ⟹ Web.config ⟹ line 106 ⟹ Data Source 
+
+* #### Create the database
+  To run the migration you must update the database from the Vegan.Database project.
+  If you use Visual Studio you can do that from the Package Manager Console. Make sure that
+  the default project in the Default project tab is the Vegan.Database and type the command
+  ”update‐database”.
+  
+* #### Run
+  If the database has been created run the application from the project Wesser.Web.
+
 # Vegan e-shop 
 Online Health store 
 
