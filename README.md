@@ -2,7 +2,7 @@
 
 * #### Change the connection string.
   To run the application you must have a database, so you must change the Data Source in the
-  connection string in the project Wesser.Web.
+  connection string in the project Vegan.Web.
   The way to go there is:
   Vegan.Web ⟹ Web.config ⟹ line 106 ⟹ Data Source 
 
